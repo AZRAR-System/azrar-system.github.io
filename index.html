@@ -320,15 +320,19 @@ footer{border-top:1px solid var(--navy3);padding:2.25rem 2.5rem;display:flex;ali
 .wa-float,.scroll-top{transition:opacity .3s ease,transform .3s ease,visibility .3s;}
 body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;transform:translateY(14px);pointer-events:none;}
 
-.social-row{display:flex;align-items:center;justify-content:center;gap:0.85rem;margin-top:0.4rem;position:relative;flex-wrap:wrap;}
-.social-label{font-size:0.88rem;color:#bcccea;font-weight:700;margin-inline-end:0.3rem;}
-.social-btn{display:inline-flex;transition:transform .2s;}
-.social-btn img{width:46px;height:46px;display:block;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,.28);}
-.social-btn:hover{transform:translateY(-3px);}
+.social-row{display:flex;align-items:center;justify-content:center;gap:0.9rem;margin-top:0.4rem;position:relative;flex-wrap:wrap;}
+.social-label{font-size:0.92rem;color:#bcccea;font-weight:700;margin-inline-end:0.3rem;}
+.social-btn{width:50px;height:50px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 18px rgba(0,0,0,.28);}
+.social-btn svg{width:26px;height:26px;display:block;}
+.social-btn.wa{background:#25d366;} .social-btn.msg{background:#0084ff;} .social-btn.fb{background:#1877f2;}
+.social-btn:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(0,0,0,.36);}
 
-.fb-follow{margin-top:2rem;display:flex;flex-direction:column;align-items:center;gap:0.9rem;position:relative;}
-.fb-follow-title{font-size:1rem;font-weight:800;color:#fff;}
-.fb-follow iframe{max-width:100%;box-shadow:0 8px 24px rgba(0,0,0,.25);}
+.fb-follow{margin-top:2.25rem;display:flex;flex-direction:column;align-items:center;gap:1rem;position:relative;}
+.fb-follow-title{font-size:1.1rem;font-weight:800;color:#fff;}
+.fb-card{background:#fff;border-radius:16px;padding:10px;box-shadow:0 14px 40px rgba(0,0,0,.3);line-height:0;max-width:100%;overflow:hidden;}
+.fb-card iframe{max-width:100%;border-radius:8px;}
+.fb-follow-btn{display:inline-flex;align-items:center;gap:.4rem;background:#1877f2;color:#fff;padding:.7rem 1.6rem;border-radius:10px;font-weight:800;font-size:.9rem;text-decoration:none;transition:all .2s;box-shadow:0 6px 18px rgba(24,119,242,.4);}
+.fb-follow-btn:hover{background:#1467d6;transform:translateY(-2px);}
 </style>
 
 <script type="application/ld+json">
@@ -697,9 +701,9 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
       <a href="https://wa.me/962786170080?text=أريد%20تجربة%20نظام%20أزرار%20مجاناً" class="wa-btn"><svg viewBox="0 0 32 32" width="22" height="22" fill="#fff" style="vertical-align:-4px;margin-inline-end:6px;" aria-hidden="true"><path d="M16.04 4C9.96 4 5 8.96 5 15.04c0 2.12.59 4.09 1.62 5.79L5 28l7.36-1.93a11 11 0 0 0 3.68.64h.01c6.08 0 11.04-4.96 11.04-11.04C27.09 8.96 22.12 4 16.04 4zm6.45 15.6c-.27.76-1.58 1.46-2.18 1.5-.56.05-1.27.24-4.27-.94-3.6-1.42-5.9-5.1-6.08-5.34-.18-.24-1.45-1.93-1.45-3.68 0-1.76.92-2.62 1.24-2.97.32-.36.7-.45.94-.45.24 0 .47 0 .68.01.22.01.51-.08.8.61.27.66.93 2.28 1.01 2.45.08.17.13.36.02.59-.11.24-.17.39-.33.6-.16.21-.34.47-.49.63-.16.17-.33.35-.14.68.18.33.82 1.35 1.77 2.18 1.21 1.08 2.23 1.42 2.55 1.58.33.16.52.13.71-.08.19-.21.82-.95 1.04-1.28.21-.33.43-.28.71-.17.29.11 1.85.87 2.17 1.03.32.16.53.24.61.37.08.13.08.76-.19 1.51z"/></svg><span class="ar">تواصل عبر واتساب</span><span class="en">Contact via WhatsApp</span></a>
       <div class="social-row">
         <span class="social-label"><span class="ar">تابعنا:</span><span class="en">Follow us:</span></span>
-        <a href="https://wa.me/962786170080" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener"><img src="sig/whatsapp-c.png" width="46" height="46" alt="WhatsApp" loading="lazy"></a>
-        <a href="https://m.me/106012450928313" class="social-btn" aria-label="Messenger" target="_blank" rel="noopener"><img src="sig/messenger.png" width="46" height="46" alt="Messenger" loading="lazy"></a>
-        <a href="https://www.facebook.com/azrar.systems/" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener"><img src="sig/facebook.png" width="46" height="46" alt="Facebook" loading="lazy"></a>
+        <a href="https://wa.me/962786170080" class="social-btn wa" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" fill="#fff" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.2-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+        <a href="https://m.me/106012450928313" class="social-btn msg" aria-label="Messenger" target="_blank" rel="noopener"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#fff" aria-hidden="true"><path d="M256.55 8C116.52 8 8 110.34 8 248.57c0 72.3 29.71 134.78 78.07 177.94 8.35 7.51 6.63 11.86 8.05 58.23A19.92 19.92 0 0 0 122 502.31c52.91-23.3 53.59-25.14 62.56-22.7C337.85 521.8 504 421.82 504 248.57 504 110.34 396.59 8 256.55 8zm149.24 185.13l-73 115.57a37.37 37.37 0 0 1-53.91 9.93l-58.08-43.47a15 15 0 0 0-18 0l-78.37 59.44c-10.46 7.93-24.16-4.6-17.11-15.67l73-115.57a37.36 37.36 0 0 1 53.91-9.93l58.06 43.46a15 15 0 0 0 18 0l78.41-59.42c10.44-7.94 24.14 4.6 17.09 15.66z"/></svg></a>
+        <a href="https://www.facebook.com/azrar.systems/" class="social-btn fb" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg" fill="#fff" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
       </div>
       <div class="contact-grid">
         <div class="contact-item"><div class="contact-label">WHATSAPP 1</div><div class="contact-val"><a href="https://wa.me/962786170080">+962 786 170 080</a></div></div>
@@ -707,8 +711,11 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
         <div class="contact-item"><div class="contact-label">EMAIL</div><div class="contact-val"><a href="mailto:info@azrar-systems.com">info@azrar-systems.com</a></div></div>
       </div>
       <div class="fb-follow">
-        <div class="fb-follow-title"><span class="ar">تابعنا على فيسبوك</span><span class="en">Follow us on Facebook</span></div>
-        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fazrar.systems%2F&tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" width="340" height="130" style="border:none;overflow:hidden;border-radius:12px;background:#fff;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy" title="AZRAR Facebook"></iframe>
+        <div class="fb-follow-title">📘 <span class="ar">صفحتنا على فيسبوك</span><span class="en">Our Facebook Page</span></div>
+        <div class="fb-card">
+          <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fazrar.systems%2F&tabs&width=360&height=190&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" width="360" height="190" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy" title="AZRAR Facebook Page"></iframe>
+        </div>
+        <a href="https://www.facebook.com/azrar.systems/" target="_blank" rel="noopener" class="fb-follow-btn"><span class="ar">زيارة الصفحة ومتابعتنا</span><span class="en">Visit &amp; Follow our Page</span></a>
       </div>
     </div>
   </div>
