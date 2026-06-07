@@ -608,6 +608,12 @@ footer {
 .footer-links2{display:flex;gap:1rem;} .footer-links2 a{font-size:.71rem;color:var(--muted);text-decoration:none;} .footer-links2 a:hover{color:var(--accent);}
 @media(max-width:768px){.footer-inner{grid-template-columns:1fr 1fr;gap:2rem;}.footer-brand-block{grid-column:1/-1;}}
 @media(max-width:480px){.footer-inner{grid-template-columns:1fr;}}
+
+/* === REAL-ESTATE BACKGROUND PHOTO === */
+.bg-photo{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.bg-photo::before{content:"";position:absolute;inset:0;background:url("bg-city.jpg") center 42% / cover no-repeat;opacity:.30;filter:saturate(1.05);}
+.bg-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,7,26,.86) 0%,rgba(8,7,26,.52) 32%,rgba(8,7,26,.55) 60%,rgba(8,7,26,.9) 100%);}
+@media(max-width:640px){.bg-photo::before{opacity:.22;background-position:center 38%;}}
 </style>
 
 <script type="application/ld+json">
@@ -616,6 +622,7 @@ footer {
 </head>
 <body>
 
+<div class="bg-photo" aria-hidden="true"></div>
 <canvas id="bg-canvas"></canvas>
 
 <!-- NAV -->
@@ -1037,8 +1044,6 @@ const radii  = orbs.map(() => 0.05 + Math.random() * 0.09);
 function draw() {
   t += 0.004;
   ctx.clearRect(0, 0, W, H);
-  ctx.fillStyle = '#08071a';
-  ctx.fillRect(0, 0, W, H);
 
   orbs.forEach((orb, i) => {
     angles[i] += speeds[i];
