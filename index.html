@@ -308,10 +308,16 @@ footer{border-top:1px solid var(--navy3);padding:2.25rem 2.5rem;display:flex;ali
 }
 .wa-float,.scroll-top{transition:opacity .3s ease,transform .3s ease,visibility .3s;}
 body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;transform:translateY(14px);pointer-events:none;}
+
+.social-row{display:flex;align-items:center;justify-content:center;gap:0.85rem;margin-top:0.4rem;position:relative;flex-wrap:wrap;}
+.social-label{font-size:0.88rem;color:#bcccea;font-weight:700;margin-inline-end:0.3rem;}
+.social-btn{display:inline-flex;transition:transform .2s;}
+.social-btn img{width:46px;height:46px;display:block;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,.28);}
+.social-btn:hover{transform:translateY(-3px);}
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AZRAR - نظام أزرار","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","url":"https://azrar-systems.com/","offers":[{"@type":"Offer","name":"Solo","price":"99","priceCurrency":"USD"},{"@type":"Offer","name":"Office","price":"169","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"239","priceCurrency":"USD"}]},{"@type":"Organization","name":"AZRAR System","url":"https://azrar-systems.com/","contactPoint":{"@type":"ContactPoint","telephone":"+962786170080","contactType":"customer support"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل يعمل بدون إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يعمل بشكل كامل offline باستخدام SQLite."}},{"@type":"Question","name":"كم مدة التجربة؟","acceptedAnswer":{"@type":"Answer","text":"30 يوماً بكل المزايا بدون بطاقة ائتمان."}},{"@type":"Question","name":"ما نظام التشغيل المدعوم؟","acceptedAnswer":{"@type":"Answer","text":"Windows 10 وWindows 11 (64-bit)."}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AZRAR - نظام أزرار","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","url":"https://azrar-systems.com/","offers":[{"@type":"Offer","name":"Solo","price":"99","priceCurrency":"USD"},{"@type":"Offer","name":"Office","price":"169","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"239","priceCurrency":"USD"}]},{"@type":"Organization","name":"AZRAR System","url":"https://azrar-systems.com/","sameAs":["https://www.facebook.com/azrar.systems/"],"contactPoint":{"@type":"ContactPoint","telephone":"+962786170080","contactType":"customer support"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل يعمل بدون إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يعمل بشكل كامل offline باستخدام SQLite."}},{"@type":"Question","name":"كم مدة التجربة؟","acceptedAnswer":{"@type":"Answer","text":"30 يوماً بكل المزايا بدون بطاقة ائتمان."}},{"@type":"Question","name":"ما نظام التشغيل المدعوم؟","acceptedAnswer":{"@type":"Answer","text":"Windows 10 وWindows 11 (64-bit)."}}]}]}
 </script>
 </head>
 <body>
@@ -482,6 +488,9 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
       <div class="market-item"><img class="market-flag" src="flags/ps.png" width="46" height="31" alt="Palestine" loading="lazy"><div class="market-name ar">فلسطين</div><div class="market-name en">Palestine</div><div class="market-sub">ILS</div></div>
       <div class="market-item"><img class="market-flag" src="flags/lb.png" width="46" height="31" alt="Lebanon" loading="lazy"><div class="market-name ar">لبنان</div><div class="market-name en">Lebanon</div><div class="market-sub">LBP</div></div>
       <div class="market-item"><img class="market-flag" src="flags/ma.png" width="46" height="31" alt="Morocco" loading="lazy"><div class="market-name ar">المغرب</div><div class="market-name en">Morocco</div><div class="market-sub">MAD</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/sd.png" width="46" height="31" alt="Sudan" loading="lazy"><div class="market-name ar">السودان</div><div class="market-name en">Sudan</div><div class="market-sub">SDG</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/dz.png" width="46" height="31" alt="Algeria" loading="lazy"><div class="market-name ar">الجزائر</div><div class="market-name en">Algeria</div><div class="market-sub">DZD</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/tn.png" width="46" height="31" alt="Tunisia" loading="lazy"><div class="market-name ar">تونس</div><div class="market-name en">Tunisia</div><div class="market-sub">TND</div></div>
       <div class="market-item"><span class="market-flag-emoji">🌍</span><div class="market-name ar">وأكثر</div><div class="market-name en">&amp; More</div><div class="market-sub ar">دول عربية</div><div class="market-sub en">Arab markets</div></div>
     </div>
   </div>
@@ -671,6 +680,12 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
       <h2><span class="ar">جاهز لتنظيم مكتبك؟</span><span class="en">Ready to Organize Your Office?</span></h2>
       <p><span class="ar">30 يوم تجربة مجانية — كل المزايا، بدون بطاقة ائتمان، إعداد في 15 دقيقة.</span><span class="en">30-day free trial — all features, no credit card, setup in 15 minutes.</span></p>
       <a href="https://wa.me/962786170080?text=أريد%20تجربة%20نظام%20أزرار%20مجاناً" class="wa-btn">💬 <span class="ar">تواصل عبر واتساب</span><span class="en">Contact via WhatsApp</span></a>
+      <div class="social-row">
+        <span class="social-label"><span class="ar">تابعنا:</span><span class="en">Follow us:</span></span>
+        <a href="https://wa.me/962786170080" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener"><img src="sig/whatsapp-c.png" width="46" height="46" alt="WhatsApp" loading="lazy"></a>
+        <a href="https://m.me/106012450928313" class="social-btn" aria-label="Messenger" target="_blank" rel="noopener"><img src="sig/messenger.png" width="46" height="46" alt="Messenger" loading="lazy"></a>
+        <a href="https://www.facebook.com/azrar.systems/" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener"><img src="sig/facebook.png" width="46" height="46" alt="Facebook" loading="lazy"></a>
+      </div>
       <div class="contact-grid">
         <div class="contact-item"><div class="contact-label">WHATSAPP 1</div><div class="contact-val"><a href="https://wa.me/962786170080">+962 786 170 080</a></div></div>
         <div class="contact-item"><div class="contact-label">WHATSAPP 2</div><div class="contact-val"><a href="https://wa.me/962798986465">+962 798 986 465</a></div></div>
@@ -692,6 +707,8 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
     <a href="#modules"><span class="ar">الأنظمة</span><span class="en">Modules</span></a>
     <a href="#pricing"><span class="ar">الأسعار</span><span class="en">Pricing</span></a>
     <a href="https://wa.me/962786170080">WhatsApp</a>
+    <a href="https://www.facebook.com/azrar.systems/" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://m.me/106012450928313" target="_blank" rel="noopener">Messenger</a>
     <a href="privacy.html"><span class="ar">الخصوصية</span><span class="en">Privacy</span></a>
     <a href="terms.html"><span class="ar">الشروط</span><span class="en">Terms</span></a>
   </div>
