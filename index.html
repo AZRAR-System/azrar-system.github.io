@@ -673,7 +673,7 @@ footer {
       </div>
     </div>
 
-    <div class="hero-badge">v3.3.98 · 685 <span class="ar">اختبار آلي</span><span class="en">automated tests</span> · Production Ready</div>
+    <div class="hero-badge">v3.11.7 · 3,500+ <span class="ar">اختبار آلي</span><span class="en">automated tests</span> · Production Ready</div>
 
     <h1>
       <span class="ar"><span class="white">نظام عقاري</span><br><span class="hl">احترافي بالكامل</span><br><span class="dm">للسوق العربي</span></span>
@@ -698,7 +698,7 @@ footer {
 
     <div class="hero-stats">
       <div class="stat"><span class="stat-val">+30</span><div class="stat-label ar">صفحة متكاملة</div><div class="stat-label en">Full pages</div></div>
-      <div class="stat"><span class="stat-val">685</span><div class="stat-label ar">اختبار آلي</div><div class="stat-label en">Auto tests</div></div>
+      <div class="stat"><span class="stat-val">3,500+</span><div class="stat-label ar">اختبار آلي</div><div class="stat-label en">Auto tests</div></div>
       <div class="stat"><span class="stat-val">81%+</span><div class="stat-label ar">تغطية الكود</div><div class="stat-label en">Code coverage</div></div>
       <div class="stat"><span class="stat-val">12</span><div class="stat-label ar">نظام فرعي</div><div class="stat-label en">Sub-systems</div></div>
     </div>
@@ -818,7 +818,7 @@ footer {
       <div class="feat"><div class="feat-icon">🔄</div><h3><span class="ar">دورة حياة العقد الكاملة</span><span class="en">Full Contract Lifecycle</span></h3><p><span class="ar">إنشاء → تجديد → فسخ → أرشفة تلقائية. نظام تحصيل متكامل وترحيل أرصدة.</span><span class="en">Create → Renew → Terminate → Auto-archive. Full collection system and balance rollover.</span></p></div>
       <div class="feat"><div class="feat-icon">🔐</div><h3><span class="ar">توقيع رقمي Ed25519</span><span class="en">Ed25519 Digital Signature</span></h3><p><span class="ar">ترخيص مربوط بجهازك بتوقيع رقمي لا يمكن تزويره. فحص سلامة عند كل إقلاع.</span><span class="en">License bound to your device with unforgeable digital signature. Integrity check on every launch.</span></p></div>
       <div class="feat"><div class="feat-icon">🌐</div><h3><span class="ar">مزامنة SQL متقدمة</span><span class="en">Advanced SQL Sync</span></h3><p><span class="ar">دعم SQL Server للمكاتب الكبيرة — مزامنة تدريجية بين أجهزة متعددة مع حل تعارضات ذكي.</span><span class="en">SQL Server support for large offices — incremental sync across devices with smart conflict resolution.</span></p></div>
-      <div class="feat"><div class="feat-icon">🧪</div><h3><span class="ar">جودة مؤسسية مثبتة</span><span class="en">Proven Enterprise Quality</span></h3><p><span class="ar">685 اختبار آلي بتغطية 81%+ — كل إصدار مُتحقَّق منه بـ CI/CD تلقائي.</span><span class="en">685 automated tests with 81%+ coverage — every release verified by automated CI/CD pipeline.</span></p></div>
+      <div class="feat"><div class="feat-icon">🧪</div><h3><span class="ar">جودة مؤسسية مثبتة</span><span class="en">Proven Enterprise Quality</span></h3><p><span class="ar">3,500+ اختبار آلي بتغطية 81%+ — كل إصدار مُتحقَّق منه بـ CI/CD تلقائي.</span><span class="en">3,500+ automated tests with 81%+ coverage — every release verified by automated CI/CD pipeline.</span></p></div>
     </div>
   </div>
 </section>
@@ -1073,6 +1073,13 @@ const obs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// AZRAR interactive functions
+function toggleMenu(){const b=document.getElementById("hamburger"),m=document.getElementById("mobile-menu");if(b)b.classList.toggle("open");if(m)m.classList.toggle("open");}
+function closeMenu(){const b=document.getElementById("hamburger"),m=document.getElementById("mobile-menu");if(b)b.classList.remove("open");if(m)m.classList.remove("open");}
+function toggleFaq(el){const it=el.closest(".faq-item"),op=it.classList.contains("open");document.querySelectorAll(".faq-item.open").forEach(i=>i.classList.remove("open"));if(!op)it.classList.add("open");}
+var _sb=document.getElementById("scroll-top");if(_sb)window.addEventListener("scroll",function(){_sb.classList.toggle("vis",window.scrollY>600);});
+(function(){try{var p=new URLSearchParams(window.location.search).get("lang");if((p==="en"||p==="ar")&&typeof setLang==="function")setLang(p);}catch(e){}})();
 </script>
 </body>
 </html>
