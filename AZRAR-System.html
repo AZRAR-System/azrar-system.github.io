@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AZRAR · أزرار — نظام إدارة العقارات</title>
+<meta name="description" content="نظام أزرار لإدارة العقارات — للسوق العربي. AZRAR Real Estate Management System.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --royal:   #3730a3;
+  --royal-l: #4f46e5;
+  --accent:  #818cf8;
+  --gold:    #c9a84c;
+  --muted:   #6b7a9e;
+  --text:    #e8eaf6;
+  --danger:  #f87171;
+  --green:   #6ee7b7;
+  --panel:   rgba(15,14,40,0.78);
+  --panel-s: rgba(19,19,52,0.85);
+  --border:  rgba(99,102,241,0.2);
+  --font-ar: 'Tajawal', sans-serif;
+  --font-en: 'Inter', sans-serif;
+  --mono:    'IBM Plex Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-ar);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.7;
+  background: #08071a;
+}
+
+/* English mode */
+[data-lang="en"] .ar { display: none !important; }
+[data-lang="ar"] .en { display: none !important; }
+[data-lang="en"] { direction: ltr; font-family: var(--font-en); }
+[data-lang="en"] body { direction: ltr; font-family: var(--font-en); }
+[data-lang="en"] nav { flex-direction: row; }
+[data-lang="en"] .hero { direction: ltr; }
+[data-lang="en"] .hero-left { align-items: flex-start; text-align: left; }
+[data-lang="en"] .hero-stats { justify-content: flex-start; }
+[data-lang="en"] footer { flex-direction: row; }
+
+#bg-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(99,102,241,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,102,241,0.055) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 0%, transparent 78%);
+}
+
+nav, .hero, section, footer { position: relative; z-index: 2; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; right: 0; left: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.85rem 2.5rem;
+  background: rgba(8,7,26,0.8);
+  backdrop-filter: blur(20px) saturate(1.5);
+  border-bottom: 1px solid var(--border);
+}
+.nav-brand { display: flex; align-items: center; gap: 0.75rem; }
+.nav-logo-img { width: 36px; height: 36px; border-radius: 8px; }
+.nav-name { font-size: 1.1rem; font-weight: 900; color: #fff; letter-spacing: 0.04em; font-family: var(--font-en); }
+.nav-name span { color: var(--accent); }
+.nav-links { display: flex; gap: 1.6rem; align-items: center; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+
+/* Language switcher */
+.lang-switcher {
+  display: flex; align-items: center;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden;
+}
+.lang-btn {
+  padding: 0.35rem 0.75rem; font-size: 0.75rem; font-weight: 700;
+  cursor: pointer; border: none; background: transparent;
+  color: var(--muted); transition: all 0.2s; font-family: var(--font-en);
+  letter-spacing: 0.05em;
+}
+.lang-btn.active { background: var(--royal-l); color: #fff; }
+.lang-btn:hover:not(.active) { color: var(--accent); }
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--royal), var(--royal-l));
+  color: #fff; padding: 0.48rem 1.25rem; border-radius: 7px;
+  font-weight: 700; font-size: 0.83rem; text-decoration: none;
+  border: 1px solid rgba(99,102,241,0.4); transition: all 0.2s;
+}
+.nav-cta:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(99,102,241,0.4); }
+
+/* ── COMING SOON BANNER ── */
+.coming-soon-bar {
+  position: relative; z-index: 3;
+  margin-top: 65px;
+  background: linear-gradient(90deg, rgba(55,48,163,0.4) 0%, rgba(99,102,241,0.25) 50%, rgba(55,48,163,0.4) 100%);
+  border-bottom: 1px solid rgba(99,102,241,0.25);
+  padding: 0.5rem 2rem;
+  text-align: center; font-size: 0.78rem;
+  backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+}
+.coming-soon-bar .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+.coming-soon-bar .ar { color: var(--text); }
+.coming-soon-bar .en { color: var(--text); }
+.coming-soon-bar strong { color: var(--gold); }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+
+/* ── HERO ── */
+.hero {
+  min-height: calc(100vh - 65px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem 2.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-left { display: flex; flex-direction: column; align-items: flex-start; }
+.hero-logo-wrap {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.6s ease both;
+}
+.hero-logo {
+  width: 72px; height: 72px; border-radius: 18px;
+  box-shadow: 0 0 60px rgba(99,102,241,0.5), 0 0 120px rgba(67,56,202,0.22);
+}
+.hero-logo-text { display: flex; flex-direction: column; }
+.hero-logo-name { font-size: 1.6rem; font-weight: 900; color: #fff; font-family: var(--font-en); letter-spacing: 0.06em; line-height: 1; }
+.hero-logo-sub { font-size: 0.75rem; color: var(--muted); font-family: var(--mono); margin-top: 0.3rem; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.32);
+  padding: 0.3rem 0.9rem; border-radius: 100px;
+  font-size: 0.72rem; color: var(--accent); font-family: var(--mono);
+  margin-bottom: 1.5rem; letter-spacing: 0.05em;
+  animation: fadeUp 0.6s 0.06s ease both;
+  backdrop-filter: blur(8px);
+}
+.hero-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--accent); animation: pulse 2s infinite; }
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 900; line-height: 1.15; margin-bottom: 1.25rem;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+[data-lang="en"] .hero h1 { font-family: var(--font-en); font-size: clamp(2rem,4vw,3.4rem); }
+.hero h1 .hl { color: var(--accent); }
+.hero h1 .dm { color: var(--muted); }
+.hero h1 .white { color: #fff; }
+
+.hero-sub {
+  font-size: 1rem; color: var(--muted);
+  max-width: 480px; margin-bottom: 2rem;
+  animation: fadeUp 0.6s 0.14s ease both; line-height: 1.8;
+}
+[data-lang="en"] .hero-sub { font-family: var(--font-en); font-size: 0.95rem; }
+
+.hero-actions {
+  display: flex; gap: 0.85rem; flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.18s ease both; margin-bottom: 2.5rem;
+}
+.btn-main {
+  background: linear-gradient(135deg, var(--royal), var(--royal-l));
+  color: #fff; padding: 0.82rem 2rem; border-radius: 9px;
+  font-weight: 800; font-size: 0.93rem; text-decoration: none;
+  transition: all 0.2s; border: 1px solid rgba(99,102,241,0.35);
+}
+.btn-main:hover { opacity:0.9; transform:translateY(-2px); box-shadow:0 10px 32px rgba(99,102,241,0.45); }
+.btn-ghost {
+  background: rgba(255,255,255,0.05);
+  color: var(--text); padding: 0.82rem 2rem; border-radius: 9px;
+  font-weight: 600; font-size: 0.93rem; text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.14); transition: all 0.2s;
+  backdrop-filter: blur(6px);
+}
+.btn-ghost:hover { border-color:var(--accent); color:var(--accent); }
+
+/* Hero stats row */
+.hero-stats {
+  display: flex; gap: 1.75rem; flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.22s ease both;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.stat { display: flex; flex-direction: column; }
+.stat-val { font-size: 1.6rem; font-weight: 900; color: var(--accent); font-family: var(--mono); line-height: 1; }
+.stat-label { font-size: 0.7rem; color: var(--muted); margin-top: 0.2rem; }
+
+/* Hero right — visual card */
+.hero-right {
+  animation: fadeUp 0.6s 0.08s ease both;
+}
+.hero-card {
+  background: rgba(15,14,40,0.75);
+  backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid var(--border);
+  border-radius: 20px; padding: 1.75rem;
+  position: relative; overflow: hidden;
+}
+.hero-card::before {
+  content: '';
+  position: absolute; top: -60px; left: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-card-title { font-size: 0.7rem; color: var(--muted); font-family: var(--mono); letter-spacing: 0.12em; margin-bottom: 1.25rem; }
+.kpi-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 1.25rem;
+}
+.kpi {
+  background: rgba(99,102,241,0.08);
+  border: 1px solid rgba(99,102,241,0.15);
+  border-radius: 12px; padding: 1rem;
+}
+.kpi-val { font-size: 1.5rem; font-weight: 900; color: var(--accent); font-family: var(--mono); }
+.kpi-label { font-size: 0.72rem; color: var(--muted); margin-top: 0.2rem; }
+.kpi.green .kpi-val { color: var(--green); }
+.kpi.gold .kpi-val { color: var(--gold); }
+.kpi.white .kpi-val { color: #fff; }
+
+.notification-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.notif {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: rgba(99,102,241,0.07);
+  border: 1px solid rgba(99,102,241,0.12);
+  border-radius: 10px; padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+}
+.notif-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.notif-dot.red { background: var(--danger); }
+.notif-dot.green { background: var(--green); }
+.notif-dot.gold { background: var(--gold); }
+.notif-text { color: var(--text); flex: 1; }
+.notif-time { color: var(--muted); font-family: var(--mono); font-size: 0.68rem; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── SECTIONS ── */
+section { padding: 5rem 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+.sec-label { font-family:var(--mono); font-size:0.68rem; color:var(--accent); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.55rem; }
+.sec-title { font-size:clamp(1.55rem,3vw,2.3rem); font-weight:800; margin-bottom:0.6rem; line-height:1.2; }
+[data-lang="en"] .sec-title { font-family: var(--font-en); }
+.sec-sub { font-size:0.92rem; color:var(--muted); max-width:520px; margin-bottom:2.25rem; line-height:1.75; }
+.divider { border:none; border-top:1px solid var(--border); position:relative; z-index:2; }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(20px); transition:opacity 0.55s ease,transform 0.55s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@media (max-width:900px) {
+  .hero { grid-template-columns:1fr; padding:4.5rem 1.5rem 3rem; min-height:auto; }
+  .hero-right { display:none; }
+  .hero-left { align-items:center; text-align:center; }
+  .hero-sub { max-width:100%; }
+}
+@media (max-width:640px) {
+  nav { padding:0.8rem 1.25rem; }
+  .nav-links { display:none; }
+  section { padding:3.25rem 1.25rem; }
+  footer { padding:1.5rem 1.25rem; flex-direction:column; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-name">AZRAR <span>·</span> أزرار</div>
+  </div>
+  <div class="nav-links">
+    <a href="#home"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+    <a href="#about"><span class="ar">عن النظام</span><span class="en">About</span></a>
+    <a href="#contact"><span class="ar">التواصل</span><span class="en">Contact</span></a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btn-ar" onclick="setLang('ar')">AR</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="https://wa.me/962786170080" class="nav-cta">
+      <span class="ar">ابدأ مجاناً</span>
+      <span class="en">Start Free</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" style="margin-top:0;padding-top:4.5rem;" id="home">
+  <div class="hero-left">
+    <div class="hero-logo-wrap">
+      <div class="hero-logo-text">
+        <div class="hero-logo-name">AZRAR</div>
+        <div class="hero-logo-sub">Real Estate Management</div>
+      </div>
+    </div>
+
+    <div class="hero-badge">v3.3.98 · <span class="ar">نظام احترافي</span><span class="en">Professional System</span></div>
+
+    <h1>
+      <span class="ar"><span class="white">نظام عقاري</span><br><span class="hl">احترافي بالكامل</span><br><span class="dm">للسوق العربي</span></span>
+      <span class="en"><span class="white">Professional</span><br><span class="hl">Real Estate</span><br><span class="dm">Management System</span></span>
+    </h1>
+
+    <p class="hero-sub">
+      <span class="ar">أزرار — نظام متكامل لإدارة العقارات والعقود والأقساط والعمولات، مصمم خصيصاً للسوق العربي.</span>
+      <span class="en">AZRAR — integrated system for real estate management, contracts, installments, and commissions, designed for the Arab market.</span>
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://wa.me/962786170080" class="btn-main">
+        <span class="ar">جرّب 30 يوم مجاناً</span>
+        <span class="en">Try Free for 30 Days</span>
+      </a>
+      <a href="#about" class="btn-ghost">
+        <span class="ar">اكتشف المزيد ↓</span>
+        <span class="en">Learn More ↓</span>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-val">+30</span><div class="stat-label ar">صفحة متكاملة</div><div class="stat-label en">Full Pages</div></div>
+      <div class="stat"><span class="stat-val">685</span><div class="stat-label ar">اختبار آلي</div><div class="stat-label en">Auto Tests</div></div>
+      <div class="stat"><span class="stat-val">81%+</span><div class="stat-label ar">تغطية الكود</div><div class="stat-label en">Code Coverage</div></div>
+      <div class="stat"><span class="stat-val">12</span><div class="stat-label ar">نظام فرعي</div><div class="stat-label en">Sub-systems</div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="sec-label reveal">
+      <span class="ar">عن النظام</span><span class="en">About AZRAR</span>
+    </div>
+    <h2 class="sec-title reveal">
+      <span class="ar">حل شامل لإدارة العقارات</span>
+      <span class="en">Comprehensive Real Estate Management Solution</span>
+    </h2>
+    <p class="sec-sub reveal">
+      <span class="ar">نظام أزرار يوفر جميع الأدوات اللازمة لإدارة مكتبك العقاري بكفاءة واحترافية.</span>
+      <span class="en">AZRAR provides all the tools necessary to manage your real estate office efficiently and professionally.</span>
+    </p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-label reveal">
+      <span class="ar">التواصل</span><span class="en">Contact Us</span>
+    </div>
+    <h2 class="sec-title reveal">
+      <span class="ar">تواصل معنا الآن</span>
+      <span class="en">Get in Touch</span>
+    </h2>
+    <p class="sec-sub reveal">
+      <span class="ar">تواصل معنا عبر الواتساب للحصول على استشارة مجانية وبدء تجربتك.</span>
+      <span class="en">Contact us via WhatsApp for a free consultation and start your trial.</span>
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">
+    <div class="foot-name">AZRAR · ��زرار</div>
+  </div>
+  <div class="foot-copy">© 2026 خبرني للخدمات العقارية — Mahmoud Qattoush</div>
+  <div class="foot-links">
+    <a href="#home"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+    <a href="#about"><span class="ar">عن النظام</span><span class="en">About</span></a>
+    <a href="https://wa.me/962786170080">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+// ── LANGUAGE SWITCHER ────────────────────────────────────────────
+function setLang(lang) {
+  const html = document.documentElement;
+  html.setAttribute('data-lang', lang);
+  html.setAttribute('lang', lang);
+  html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+  document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  try { localStorage.setItem('azrar_lang', lang); } catch(e) {};
+}
+// Restore saved language
+try { const saved = localStorage.getItem('azrar_lang'); if (saved) setLang(saved); } catch(e) {}
+
+// ── ANIMATED MESH GRADIENT ───────────────────────────────────────
+const canvas = document.getElementById('bg-canvas');
+const ctx    = canvas.getContext('2d');
+let W, H, t  = 0;
+
+function resize() {
+  W = canvas.width  = window.innerWidth;
+  H = canvas.height = Math.max(document.body.scrollHeight, window.innerHeight);
+}
+resize();
+window.addEventListener('resize', () => { resize(); });
+
+const orbs = [
+  { x:0.12, y:0.06, c:[55,48,163],  r:0.52 },
+  { x:0.82, y:0.10, c:[79,70,229],  r:0.48 },
+  { x:0.48, y:0.30, c:[30,27,107],  r:0.58 },
+  { x:0.08, y:0.52, c:[99,102,241], r:0.44 },
+  { x:0.88, y:0.48, c:[67,56,202],  r:0.46 },
+  { x:0.38, y:0.72, c:[49,46,129],  r:0.50 },
+  { x:0.72, y:0.85, c:[79,70,229],  r:0.42 },
+];
+const angles = orbs.map(() => Math.random() * Math.PI * 2);
+const speeds = orbs.map(() => 0.00025 + Math.random() * 0.00035);
+const radii  = orbs.map(() => 0.05 + Math.random() * 0.09);
+
+function draw() {
+  t += 0.004;
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = '#08071a';
+  ctx.fillRect(0, 0, W, H);
+
+  orbs.forEach((orb, i) => {
+    angles[i] += speeds[i];
+    const cx = (orb.x + Math.cos(angles[i]) * radii[i]) * W;
+    const cy = (orb.y + Math.sin(angles[i] * 0.65) * radii[i] * 0.55) * H;
+    const r  = orb.r * Math.min(W, H * 0.38);
+    const pulse = 1 + 0.07 * Math.sin(t * 1.2 + i * 1.05);
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r * pulse);
+    const [rr,gg,bb] = orb.c;
+    const a = 0.16 + 0.055 * Math.sin(t * 0.85 + i * 0.65);
+    g.addColorStop(0, `rgba(${rr},${gg},${bb},${a})`);
+    g.addColorStop(0.5, `rgba(${rr},${gg},${bb},${a*0.38})`);
+    g.addColorStop(1, `rgba(${rr},${gg},${bb},0)`);
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+  });
+
+  // Bottom fade
+  const fade = ctx.createLinearGradient(0, H*0.85, 0, H);
+  fade.addColorStop(0, 'rgba(8,7,26,0)');
+  fade.addColorStop(1, 'rgba(8,7,26,0.5)');
+  ctx.fillStyle = fade;
+  ctx.fillRect(0, 0, W, H);
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+// ── SCROLL REVEAL ────────────────────────────────────────────────
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
