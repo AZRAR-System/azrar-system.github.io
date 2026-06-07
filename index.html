@@ -356,6 +356,22 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
 .cmp-table tbody td:first-child{text-align:start;color:var(--head);font-weight:600;}
 .cmp-table tr:last-child td{border-bottom:none;}
 .cmp-table td:not(:first-child){color:var(--green);font-weight:800;}
+
+/* SCREENSHOTS */
+.shots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;}
+.shot{margin:0;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;cursor:pointer;box-shadow:0 6px 22px rgba(15,27,51,.07);transition:transform .2s,box-shadow .2s;}
+.shot:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(15,27,51,.16);}
+.shot img{width:100%;height:auto;display:block;background:#0f1b33;}
+.shot.wide{grid-column:1/-1;}
+.shot.wide img{max-height:440px;object-fit:cover;object-position:top;}
+.shot figcaption{padding:.7rem 1rem;font-size:.82rem;font-weight:700;color:var(--head);text-align:center;border-top:1px solid var(--border);}
+[data-lang="en"] .shot figcaption{font-family:var(--font-en);}
+@media(max-width:760px){.shots-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:460px){.shots-grid{grid-template-columns:1fr;}}
+.lightbox{position:fixed;inset:0;z-index:9999;background:rgba(8,12,26,.92);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:95%;max-height:92vh;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,.5);}
+.lightbox-x{position:absolute;top:1rem;right:1.4rem;color:#fff;font-size:2.4rem;line-height:1;font-weight:300;}
 </style>
 
 <script type="application/ld+json">
@@ -661,6 +677,39 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
 
 <hr class="divider">
 
+<!-- SCREENSHOTS -->
+<section id="screenshots">
+  <div class="container">
+    <div class="sec-label reveal"><span class="ar">لقطات من النظام</span><span class="en">Screenshots</span></div>
+    <h2 class="sec-title reveal"><span class="ar">شاهد النظام من الداخل</span><span class="en">See AZRAR in Action</span></h2>
+    <p class="sec-sub reveal"><span class="ar">واجهة احترافية وبيانات واضحة — اضغط أي صورة لتكبيرها.</span><span class="en">A professional interface with clear data — click any image to enlarge.</span></p>
+    <div class="shots-grid reveal">
+      <figure class="shot wide" onclick="openShot('shots/dashboard.png')">
+        <img src="shots/dashboard.png" width="1100" height="580" loading="lazy" alt="AZRAR reports dashboard">
+        <figcaption><span class="ar">التقارير الشاملة ولوحة المعلومات</span><span class="en">Reports &amp; Dashboard</span></figcaption>
+      </figure>
+      <figure class="shot" onclick="openShot('shots/contracts.png')">
+        <img src="shots/contracts.png" width="754" height="1255" loading="lazy" alt="AZRAR contracts and collection">
+        <figcaption><span class="ar">العقود والتحصيل</span><span class="en">Contracts &amp; Collection</span></figcaption>
+      </figure>
+      <figure class="shot" onclick="openShot('shots/commissions.png')">
+        <img src="shots/commissions.png" width="700" height="1605" loading="lazy" alt="AZRAR commissions">
+        <figcaption><span class="ar">العمولات والإيرادات</span><span class="en">Commissions &amp; Revenue</span></figcaption>
+      </figure>
+      <figure class="shot" onclick="openShot('shots/login.png')">
+        <img src="shots/login.png" width="760" height="1161" loading="lazy" alt="AZRAR login">
+        <figcaption><span class="ar">تسجيل الدخول</span><span class="en">Login</span></figcaption>
+      </figure>
+      <figure class="shot" onclick="openShot('shots/menu.png')">
+        <img src="shots/menu.png" width="283" height="1850" loading="lazy" alt="AZRAR modules menu">
+        <figcaption><span class="ar">قائمة الأنظمة الـ 12</span><span class="en">12 Modules Menu</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
 <!-- PRICING -->
 <section id="pricing">
   <div class="container">
@@ -831,6 +880,8 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
 </div>
 <button class="scroll-top" id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="top">&#9650;</button>
 
+<div class="lightbox" id="lightbox" onclick="closeShot()"><span class="lightbox-x">&times;</span><img id="lightbox-img" src="" alt="AZRAR screenshot"></div>
+
 <script>
 // ── LANGUAGE SWITCHER ────────────────────────────────────────────
 function setLang(lang) {
@@ -942,6 +993,10 @@ var _sb=document.getElementById("scroll-top");if(_sb)window.addEventListener("sc
     stats.forEach(function(s){io.observe(s);});
   } else { stats.forEach(run); }
 })();
+
+function openShot(src){var l=document.getElementById('lightbox');document.getElementById('lightbox-img').src=src;l.classList.add('open');document.body.style.overflow='hidden';}
+function closeShot(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeShot();});
 </script>
 </body>
 </html>
