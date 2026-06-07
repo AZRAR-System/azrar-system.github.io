@@ -84,7 +84,7 @@ nav{position:fixed;top:0;right:0;left:0;z-index:100;display:flex;align-items:cen
 .nav-links a:hover{color:var(--blue);}
 .nav-right{display:flex;align-items:center;gap:0.75rem;}
 .lang-switcher{display:flex;align-items:center;background:#eef2f9;border:1px solid var(--border);border-radius:9px;overflow:hidden;}
-.lang-btn{padding:0.36rem 0.78rem;font-size:0.74rem;font-weight:800;cursor:pointer;border:none;background:transparent;color:#64748b;transition:all 0.2s;font-family:var(--font-en);letter-spacing:0.05em;}
+.lang-btn{padding:0.36rem 0.78rem;font-size:0.74rem;font-weight:800;cursor:pointer;border:none;background:transparent;color:#334155;transition:all 0.2s;font-family:var(--font-en);letter-spacing:0.05em;}
 .lang-btn.active{background:var(--blue);color:#fff;}
 .lang-btn:hover:not(.active){color:var(--blue);}
 .nav-cta{background:linear-gradient(135deg,var(--blue),var(--blue-l));color:#fff;padding:0.5rem 1.3rem;border-radius:8px;font-weight:800;font-size:0.84rem;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 14px rgba(37,99,235,0.28);}
@@ -167,8 +167,8 @@ section{padding:6rem 2rem;}
 .module-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.35rem 1.45rem;transition:all 0.22s;display:flex;flex-direction:column;gap:0.4rem;box-shadow:0 4px 16px rgba(15,27,51,0.05);}
 .module-card:hover{border-color:var(--blue-l);transform:translateY(-3px);box-shadow:0 14px 32px rgba(37,99,235,0.14);}
 .module-num{font-family:var(--mono);font-size:0.64rem;color:var(--blue);font-weight:600;}
-.module-card h4{font-size:1.02rem;font-weight:800;color:var(--head);}
-[data-lang="en"] .module-card h4{font-family:var(--font-en);font-size:0.9rem;}
+.module-card h3{font-size:1.02rem;font-weight:800;color:var(--head);}
+[data-lang="en"] .module-card h3{font-family:var(--font-en);font-size:0.9rem;}
 .module-card p{font-size:0.82rem;color:var(--muted);line-height:1.7;}
 
 /* ── FEATURES ── */
@@ -185,8 +185,8 @@ section{padding:6rem 2rem;}
 .sec-card{background:var(--card);padding:1.7rem;display:flex;flex-direction:column;gap:0.7rem;transition:background 0.2s;}
 .sec-card:hover{background:#f5f9ff;}
 .sec-card-icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#eef3ff,#e3ecff);border:1px solid #d6e2ff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
-.sec-card h4{font-size:1.06rem;font-weight:800;color:var(--head);}
-[data-lang="en"] .sec-card h4{font-family:var(--font-en);font-size:0.9rem;}
+.sec-card h3{font-size:1.06rem;font-weight:800;color:var(--head);}
+[data-lang="en"] .sec-card h3{font-family:var(--font-en);font-size:0.9rem;}
 .sec-card p{font-size:0.84rem;color:var(--muted);line-height:1.75;}
 
 /* ── COMING SOON SECTION ── */
@@ -424,6 +424,7 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
   <a href="https://wa.me/962786170080" class="mm-cta" onclick="closeMenu()"><span class="ar">ابدأ مجاناً</span><span class="en">Start Free</span></a>
 </div>
 
+<main>
 <!-- COMING SOON BAR -->
 <div class="coming-soon-bar">
   <div class="dot"></div>
@@ -597,18 +598,18 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
     <h2 class="sec-title reveal"><span class="ar">12 نظاماً فرعياً — في تطبيق واحد</span><span class="en">12 Sub-Systems — One Application</span></h2>
     <p class="sec-sub reveal"><span class="ar">كل ما تحتاجه لإدارة مكتبك العقاري — من العقد حتى التقرير.</span><span class="en">Everything you need to manage your real estate office — from contract to report.</span></p>
     <div class="modules-grid reveal">
-      <div class="module-card"><div class="module-num">01 · CONTRACTS</div><h4><span class="ar">إدارة العقود الكاملة</span><span class="en">Full Contract Management</span></h4><p><span class="ar">إنشاء عقود احترافية، حساب أقساط تلقائي، دعم كل أنواع الدفع، دورة حياة كاملة من الإنشاء حتى الأرشفة.</span><span class="en">Professional contracts, auto installment calculation, all payment types, full lifecycle from creation to archiving.</span></p></div>
-      <div class="module-card"><div class="module-num">02 · PAYMENTS</div><h4><span class="ar">محرك الدفعات والأقساط</span><span class="en">Payments Engine</span></h4><p><span class="ar">فرقية الأيام الفعلية، غرامات التأخير بثلاثة أنواع، دفع جزئي، عكس الدفعات، وسجل مالي كامل.</span><span class="en">Actual day difference, 3 types of late fees, partial payments, payment reversal, and full financial records.</span></p></div>
-      <div class="module-card"><div class="module-num">03 · PROPERTIES</div><h4><span class="ar">المحفظة العقارية</span><span class="en">Property Portfolio</span></h4><p><span class="ar">تسجيل الوحدات، تتبع الحالة، سجل الملكية والتفتيش، ومرفقات وصور لكل عقار.</span><span class="en">Unit registration, status tracking, ownership history, inspections, and attachments for each property.</span></p></div>
-      <div class="module-card"><div class="module-num">04 · PEOPLE</div><h4><span class="ar">قاعدة بيانات العملاء</span><span class="en">Client Database</span></h4><p><span class="ar">سجل شامل للمستأجرين والملاك والوسطاء، قائمة سوداء، وسجل التفاعلات والمتابعات.</span><span class="en">Comprehensive records for tenants, owners, and brokers, blacklist, and interaction history.</span></p></div>
-      <div class="module-card"><div class="module-num">05 · SALES</div><h4><span class="ar">نظام المبيعات</span><span class="en">Sales System</span></h4><p><span class="ar">إدارة عروض البيع واتفاقيات الشراء، تتبع الوحدات المعروضة، وسجل كامل للمفاوضات.</span><span class="en">Manage sale offers and purchase agreements, track listed units, full negotiation records.</span></p></div>
-      <div class="module-card"><div class="module-num">06 · COMMISSIONS</div><h4><span class="ar">العمولات الآلية</span><span class="en">Auto Commissions</span></h4><p><span class="ar">احتساب تلقائي لعمولات البيع والإيجار، عمولات خارجية، وتقارير تفصيلية لكل وسيط.</span><span class="en">Auto-calculate sale and rental commissions, external commissions, detailed reports per broker.</span></p></div>
-      <div class="module-card"><div class="module-num">07 · ALERTS</div><h4><span class="ar">التنبيهات الذكية</span><span class="en">Smart Alerts</span></h4><p><span class="ar">تنبيهات تجديد العقود قبل 30 يوم، إشعارات المتأخرات، تذكيرات الصيانة — كلها تلقائية.</span><span class="en">Contract renewal alerts 30 days ahead, overdue notifications, maintenance reminders — all automatic.</span></p></div>
-      <div class="module-card"><div class="module-num">08 · REPORTS</div><h4><span class="ar">التقارير الفورية</span><span class="en">Instant Reports</span></h4><p><span class="ar">تقرير المالك، الدخل الشهري، المتأخرات، العمولات، وبراءة الذمة — بضغطة زر.</span><span class="en">Owner report, monthly income, overdue, commissions, and clearance — with one click.</span></p></div>
-      <div class="module-card"><div class="module-num">09 · MAINTENANCE</div><h4><span class="ar">إدارة الصيانة</span><span class="en">Maintenance Management</span></h4><p><span class="ar">طلبات الصيانة بالأولوية، تتبع الحالة، تكاليف الصيانة، وسجل كامل لكل وحدة.</span><span class="en">Priority maintenance requests, status tracking, costs, and full unit maintenance history.</span></p></div>
-      <div class="module-card"><div class="module-num">10 · WHATSAPP</div><h4><span class="ar">واتساب جماعي مدمج</span><span class="en">Bulk WhatsApp</span></h4><p><span class="ar">رسائل مخصصة لكل مستأجريك دفعة واحدة — تذكير بالأقساط، إشعار بالتجديد، قوالب جاهزة.</span><span class="en">Custom messages to all tenants at once — payment reminders, renewal notices, ready templates.</span></p></div>
-      <div class="module-card"><div class="module-num">11 · LEGAL</div><h4><span class="ar">المركز القانوني</span><span class="en">Legal Center</span></h4><p><span class="ar">قوالب عقود Word احترافية، توليد مستندات بالبيانات الفعلية، وأرشيف قانوني كامل.</span><span class="en">Professional Word contract templates, auto-generate documents with actual data, legal archive.</span></p></div>
-      <div class="module-card"><div class="module-num">12 · DASHBOARD</div><h4><span class="ar">لوحة المعلومات</span><span class="en">Dashboard</span></h4><p><span class="ar">KPI فوري، ملخص يومي، أداء مالي بالرسوم البيانية، وتنبيهات قابلة للتصرف الفوري.</span><span class="en">Instant KPIs, daily summary, financial performance charts, and actionable alerts.</span></p></div>
+      <div class="module-card"><div class="module-num">01 · CONTRACTS</div><h3 class="card-h"><span class="ar">إدارة العقود الكاملة</span><span class="en">Full Contract Management</span></h3><p><span class="ar">إنشاء عقود احترافية، حساب أقساط تلقائي، دعم كل أنواع الدفع، دورة حياة كاملة من الإنشاء حتى الأرشفة.</span><span class="en">Professional contracts, auto installment calculation, all payment types, full lifecycle from creation to archiving.</span></p></div>
+      <div class="module-card"><div class="module-num">02 · PAYMENTS</div><h3 class="card-h"><span class="ar">محرك الدفعات والأقساط</span><span class="en">Payments Engine</span></h3><p><span class="ar">فرقية الأيام الفعلية، غرامات التأخير بثلاثة أنواع، دفع جزئي، عكس الدفعات، وسجل مالي كامل.</span><span class="en">Actual day difference, 3 types of late fees, partial payments, payment reversal, and full financial records.</span></p></div>
+      <div class="module-card"><div class="module-num">03 · PROPERTIES</div><h3 class="card-h"><span class="ar">المحفظة العقارية</span><span class="en">Property Portfolio</span></h3><p><span class="ar">تسجيل الوحدات، تتبع الحالة، سجل الملكية والتفتيش، ومرفقات وصور لكل عقار.</span><span class="en">Unit registration, status tracking, ownership history, inspections, and attachments for each property.</span></p></div>
+      <div class="module-card"><div class="module-num">04 · PEOPLE</div><h3 class="card-h"><span class="ar">قاعدة بيانات العملاء</span><span class="en">Client Database</span></h3><p><span class="ar">سجل شامل للمستأجرين والملاك والوسطاء، قائمة سوداء، وسجل التفاعلات والمتابعات.</span><span class="en">Comprehensive records for tenants, owners, and brokers, blacklist, and interaction history.</span></p></div>
+      <div class="module-card"><div class="module-num">05 · SALES</div><h3 class="card-h"><span class="ar">نظام المبيعات</span><span class="en">Sales System</span></h3><p><span class="ar">إدارة عروض البيع واتفاقيات الشراء، تتبع الوحدات المعروضة، وسجل كامل للمفاوضات.</span><span class="en">Manage sale offers and purchase agreements, track listed units, full negotiation records.</span></p></div>
+      <div class="module-card"><div class="module-num">06 · COMMISSIONS</div><h3 class="card-h"><span class="ar">العمولات الآلية</span><span class="en">Auto Commissions</span></h3><p><span class="ar">احتساب تلقائي لعمولات البيع والإيجار، عمولات خارجية، وتقارير تفصيلية لكل وسيط.</span><span class="en">Auto-calculate sale and rental commissions, external commissions, detailed reports per broker.</span></p></div>
+      <div class="module-card"><div class="module-num">07 · ALERTS</div><h3 class="card-h"><span class="ar">التنبيهات الذكية</span><span class="en">Smart Alerts</span></h3><p><span class="ar">تنبيهات تجديد العقود قبل 30 يوم، إشعارات المتأخرات، تذكيرات الصيانة — كلها تلقائية.</span><span class="en">Contract renewal alerts 30 days ahead, overdue notifications, maintenance reminders — all automatic.</span></p></div>
+      <div class="module-card"><div class="module-num">08 · REPORTS</div><h3 class="card-h"><span class="ar">التقارير الفورية</span><span class="en">Instant Reports</span></h3><p><span class="ar">تقرير المالك، الدخل الشهري، المتأخرات، العمولات، وبراءة الذمة — بضغطة زر.</span><span class="en">Owner report, monthly income, overdue, commissions, and clearance — with one click.</span></p></div>
+      <div class="module-card"><div class="module-num">09 · MAINTENANCE</div><h3 class="card-h"><span class="ar">إدارة الصيانة</span><span class="en">Maintenance Management</span></h3><p><span class="ar">طلبات الصيانة بالأولوية، تتبع الحالة، تكاليف الصيانة، وسجل كامل لكل وحدة.</span><span class="en">Priority maintenance requests, status tracking, costs, and full unit maintenance history.</span></p></div>
+      <div class="module-card"><div class="module-num">10 · WHATSAPP</div><h3 class="card-h"><span class="ar">واتساب جماعي مدمج</span><span class="en">Bulk WhatsApp</span></h3><p><span class="ar">رسائل مخصصة لكل مستأجريك دفعة واحدة — تذكير بالأقساط، إشعار بالتجديد، قوالب جاهزة.</span><span class="en">Custom messages to all tenants at once — payment reminders, renewal notices, ready templates.</span></p></div>
+      <div class="module-card"><div class="module-num">11 · LEGAL</div><h3 class="card-h"><span class="ar">المركز القانوني</span><span class="en">Legal Center</span></h3><p><span class="ar">قوالب عقود Word احترافية، توليد مستندات بالبيانات الفعلية، وأرشيف قانوني كامل.</span><span class="en">Professional Word contract templates, auto-generate documents with actual data, legal archive.</span></p></div>
+      <div class="module-card"><div class="module-num">12 · DASHBOARD</div><h3 class="card-h"><span class="ar">لوحة المعلومات</span><span class="en">Dashboard</span></h3><p><span class="ar">KPI فوري، ملخص يومي، أداء مالي بالرسوم البيانية، وتنبيهات قابلة للتصرف الفوري.</span><span class="en">Instant KPIs, daily summary, financial performance charts, and actionable alerts.</span></p></div>
     </div>
   </div>
 </section>
@@ -640,12 +641,12 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
     <h2 class="sec-title reveal"><span class="ar">بياناتك ملكك وحدك</span><span class="en">Your Data, Your Control</span></h2>
     <p class="sec-sub reveal"><span class="ar">معمارية الأمان في أزرار مبنية من الأساس لحماية بيانات مكتبك.</span><span class="en">AZRAR's security architecture is built from the ground up to protect your office data.</span></p>
     <div class="security-grid reveal">
-      <div class="sec-card"><div class="sec-card-icon">🔒</div><h4><span class="ar">تخزين محلي 100%</span><span class="en">100% Local Storage</span></h4><p><span class="ar">SQLite محلي — لا شيء يغادر جهازك أبداً. لا سيرفر، لا cloud، لا مخاطر تسرّب.</span><span class="en">Local SQLite — nothing ever leaves your device. No server, no cloud, no leak risks.</span></p></div>
-      <div class="sec-card"><div class="sec-card-icon">✍️</div><h4><span class="ar">توقيع رقمي Ed25519</span><span class="en">Ed25519 Signature</span></h4><p><span class="ar">ترخيص لا يمكن تزويره — مربوط بجهازك عبر بصمة Hardware ID فريدة.</span><span class="en">Unforgeable license — bound to your device via unique Hardware ID fingerprint.</span></p></div>
-      <div class="sec-card"><div class="sec-card-icon">🛡️</div><h4><span class="ar">فحص سلامة الملفات</span><span class="en">File Integrity Check</span></h4><p><span class="ar">SHA-256 manifest عند كل إقلاع — يُغلق فوراً عند اكتشاف أي عبث بالملفات.</span><span class="en">SHA-256 manifest on every launch — shuts down immediately if file tampering is detected.</span></p></div>
-      <div class="sec-card"><div class="sec-card-icon">👥</div><h4><span class="ar">صلاحيات RBAC</span><span class="en">RBAC Permissions</span></h4><p><span class="ar">4 مستويات صلاحية — SuperAdmin / Admin / Manager / Staff. كل مستخدم يرى ما يسمح له فقط.</span><span class="en">4 permission levels — SuperAdmin / Admin / Manager / Staff. Each user sees only what's allowed.</span></p></div>
-      <div class="sec-card"><div class="sec-card-icon">🔑</div><h4><span class="ar">جلسة آمنة</span><span class="en">Secure Session</span></h4><p><span class="ar">sessionStorage — بيانات الدخول تُمحى تلقائياً عند إغلاق التطبيق. لا بقايا.</span><span class="en">sessionStorage — login data auto-erased on app close. Zero residual data on device.</span></p></div>
-      <div class="sec-card"><div class="sec-card-icon">💾</div><h4><span class="ar">نسخ احتياطي تلقائي</span><span class="en">Auto Backup</span></h4><p><span class="ar">نظام نسخ احتياطي مدمج مع استرجاع فوري — بياناتك محمية حتى عند عطل الجهاز.</span><span class="en">Built-in backup system with instant recovery — data protected even on full device failure.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon">🔒</div><h3 class="card-h"><span class="ar">تخزين محلي 100%</span><span class="en">100% Local Storage</span></h3><p><span class="ar">SQLite محلي — لا شيء يغادر جهازك أبداً. لا سيرفر، لا cloud، لا مخاطر تسرّب.</span><span class="en">Local SQLite — nothing ever leaves your device. No server, no cloud, no leak risks.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon">✍️</div><h3 class="card-h"><span class="ar">توقيع رقمي Ed25519</span><span class="en">Ed25519 Signature</span></h3><p><span class="ar">ترخيص لا يمكن تزويره — مربوط بجهازك عبر بصمة Hardware ID فريدة.</span><span class="en">Unforgeable license — bound to your device via unique Hardware ID fingerprint.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon">🛡️</div><h3 class="card-h"><span class="ar">فحص سلامة الملفات</span><span class="en">File Integrity Check</span></h3><p><span class="ar">SHA-256 manifest عند كل إقلاع — يُغلق فوراً عند اكتشاف أي عبث بالملفات.</span><span class="en">SHA-256 manifest on every launch — shuts down immediately if file tampering is detected.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon">👥</div><h3 class="card-h"><span class="ar">صلاحيات RBAC</span><span class="en">RBAC Permissions</span></h3><p><span class="ar">4 مستويات صلاحية — SuperAdmin / Admin / Manager / Staff. كل مستخدم يرى ما يسمح له فقط.</span><span class="en">4 permission levels — SuperAdmin / Admin / Manager / Staff. Each user sees only what's allowed.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon">🔑</div><h3 class="card-h"><span class="ar">جلسة آمنة</span><span class="en">Secure Session</span></h3><p><span class="ar">sessionStorage — بيانات الدخول تُمحى تلقائياً عند إغلاق التطبيق. لا بقايا.</span><span class="en">sessionStorage — login data auto-erased on app close. Zero residual data on device.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon">💾</div><h3 class="card-h"><span class="ar">نسخ احتياطي تلقائي</span><span class="en">Auto Backup</span></h3><p><span class="ar">نظام نسخ احتياطي مدمج مع استرجاع فوري — بياناتك محمية حتى عند عطل الجهاز.</span><span class="en">Built-in backup system with instant recovery — data protected even on full device failure.</span></p></div>
     </div>
   </div>
 </section>
@@ -730,7 +731,7 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
           <li><span class="ar">تحديثات مجانية سنة كاملة</span><span class="en">Free updates for 1 year</span></li>
           <li><span class="ar">دعم واتساب مباشر</span><span class="en">Direct WhatsApp support</span></li>
         </ul>
-        <a href="https://wa.me/962786170080?text=Solo%20Plan" class="plan-cta plan-cta-ghost"><span class="ar">ابدأ مجاناً 30 يوم</span><span class="en">Start Free 30 Days</span></a>
+        <a href="https://wa.me/962786170080?text=Solo%20Plan" class="plan-cta plan-cta-ghost" aria-label="ابدأ تجربة باقة Solo مجاناً 30 يوم"><span class="ar">ابدأ مجاناً 30 يوم</span><span class="en">Start Free 30 Days</span></a>
       </div>
       <div class="plan hot">
         <div class="plan-badge"><span class="ar">الأكثر طلباً</span><span class="en">Most Popular</span></div>
@@ -747,7 +748,7 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
           <li><span class="ar">دعم واتساب أولوية</span><span class="en">Priority WhatsApp support</span></li>
           <li><span class="ar">جلسة إعداد مجانية</span><span class="en">Free setup session</span></li>
         </ul>
-        <a href="https://wa.me/962786170080?text=Office%20Plan" class="plan-cta plan-cta-main"><span class="ar">ابدأ مجاناً 30 يوم</span><span class="en">Start Free 30 Days</span></a>
+        <a href="https://wa.me/962786170080?text=Office%20Plan" class="plan-cta plan-cta-main" aria-label="ابدأ تجربة باقة Office مجاناً 30 يوم"><span class="ar">ابدأ مجاناً 30 يوم</span><span class="en">Start Free 30 Days</span></a>
       </div>
       <div class="plan">
         <div class="plan-name">PRO</div>
@@ -763,7 +764,7 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
           <li><span class="ar">دعم واتساب أولوية قصوى</span><span class="en">Top priority WhatsApp support</span></li>
           <li><span class="ar">إعداد + تدريب الفريق</span><span class="en">Setup + team training</span></li>
         </ul>
-        <a href="https://wa.me/962786170080?text=Pro%20Plan" class="plan-cta plan-cta-ghost"><span class="ar">ابدأ مجاناً 30 يوم</span><span class="en">Start Free 30 Days</span></a>
+        <a href="https://wa.me/962786170080?text=Pro%20Plan" class="plan-cta plan-cta-ghost" aria-label="ابدأ تجربة باقة Pro مجاناً 30 يوم"><span class="ar">ابدأ مجاناً 30 يوم</span><span class="en">Start Free 30 Days</span></a>
       </div>
     </div>
     <div class="enterprise-box reveal">
@@ -849,6 +850,8 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
