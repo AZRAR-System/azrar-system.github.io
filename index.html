@@ -142,15 +142,13 @@ section{padding:6rem 2rem;}
 .divider{border:none;border-top:1px solid var(--border);position:relative;z-index:2;}
 
 /* ── MARKETS ── */
-.markets-strip{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--card);box-shadow:0 8px 30px rgba(15,27,51,0.06);}
-.market-item{background:var(--card);padding:1.2rem 0.75rem;text-align:center;border-left:1px solid var(--border);transition:background 0.22s;}
-.market-item:last-child{border-left:none;}
-[data-lang="en"] .market-item{border-left:none;border-right:1px solid var(--border);}
-[data-lang="en"] .market-item:last-child{border-right:none;}
+.markets-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--border);box-shadow:0 8px 30px rgba(15,27,51,0.06);}
+.market-item{background:var(--card);padding:1.4rem 0.75rem;text-align:center;transition:background 0.22s;}
 .market-item:hover{background:#f0f5ff;}
-.market-flag{font-size:1.55rem;display:block;margin-bottom:0.35rem;}
-.market-name{font-size:0.8rem;font-weight:700;color:var(--head);}
-.market-sub{font-size:0.68rem;color:var(--muted);margin-top:0.12rem;}
+.market-flag{width:46px;height:31px;border-radius:5px;margin:0 auto 0.55rem;display:block;object-fit:cover;box-shadow:0 2px 8px rgba(15,27,51,0.2);}
+.market-flag-emoji{font-size:1.8rem;display:block;margin-bottom:0.5rem;line-height:31px;}
+.market-name{font-size:0.86rem;font-weight:800;color:var(--head);}
+.market-sub{font-size:0.7rem;color:var(--muted);margin-top:0.15rem;}
 
 /* ── MODULES ── */
 .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem;}
@@ -472,13 +470,19 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
       <span class="en">AZRAR supports multiple currencies and rental systems — from Jordan to the Gulf and across Arab markets.</span>
     </p>
     <div class="markets-strip reveal">
-      <div class="market-item"><span class="market-flag">🇯🇴</span><div class="market-name ar">الأردن</div><div class="market-name en">Jordan</div><div class="market-sub">JOD</div></div>
-      <div class="market-item"><span class="market-flag">🇸🇦</span><div class="market-name ar">السعودية</div><div class="market-name en">Saudi Arabia</div><div class="market-sub">SAR · إيجار</div></div>
-      <div class="market-item"><span class="market-flag">🇦🇪</span><div class="market-name ar">الإمارات</div><div class="market-name en">UAE</div><div class="market-sub">AED · RERA</div></div>
-      <div class="market-item"><span class="market-flag">🇰🇼</span><div class="market-name ar">الكويت</div><div class="market-name en">Kuwait</div><div class="market-sub">KWD</div></div>
-      <div class="market-item"><span class="market-flag">🇶🇦</span><div class="market-name ar">قطر</div><div class="market-name en">Qatar</div><div class="market-sub">QAR</div></div>
-      <div class="market-item"><span class="market-flag">🇮🇶</span><div class="market-name ar">العراق</div><div class="market-name en">Iraq</div><div class="market-sub">IQD</div></div>
-      <div class="market-item"><span class="market-flag">🌍</span><div class="market-name ar">وأكثر</div><div class="market-name en">& More</div><div class="market-sub ar">دول عربية</div><div class="market-sub en">Arab markets</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/jo.png" width="46" height="31" alt="Jordan" loading="lazy"><div class="market-name ar">الأردن</div><div class="market-name en">Jordan</div><div class="market-sub">JOD</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/sa.png" width="46" height="31" alt="Saudi Arabia" loading="lazy"><div class="market-name ar">السعودية</div><div class="market-name en">Saudi Arabia</div><div class="market-sub">SAR · إيجار</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/ae.png" width="46" height="31" alt="UAE" loading="lazy"><div class="market-name ar">الإمارات</div><div class="market-name en">UAE</div><div class="market-sub">AED · RERA</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/kw.png" width="46" height="31" alt="Kuwait" loading="lazy"><div class="market-name ar">الكويت</div><div class="market-name en">Kuwait</div><div class="market-sub">KWD</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/qa.png" width="46" height="31" alt="Qatar" loading="lazy"><div class="market-name ar">قطر</div><div class="market-name en">Qatar</div><div class="market-sub">QAR</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/om.png" width="46" height="31" alt="Oman" loading="lazy"><div class="market-name ar">عُمان</div><div class="market-name en">Oman</div><div class="market-sub">OMR</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/bh.png" width="46" height="31" alt="Bahrain" loading="lazy"><div class="market-name ar">البحرين</div><div class="market-name en">Bahrain</div><div class="market-sub">BHD</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/iq.png" width="46" height="31" alt="Iraq" loading="lazy"><div class="market-name ar">العراق</div><div class="market-name en">Iraq</div><div class="market-sub">IQD</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/eg.png" width="46" height="31" alt="Egypt" loading="lazy"><div class="market-name ar">مصر</div><div class="market-name en">Egypt</div><div class="market-sub">EGP</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/ps.png" width="46" height="31" alt="Palestine" loading="lazy"><div class="market-name ar">فلسطين</div><div class="market-name en">Palestine</div><div class="market-sub">ILS</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/lb.png" width="46" height="31" alt="Lebanon" loading="lazy"><div class="market-name ar">لبنان</div><div class="market-name en">Lebanon</div><div class="market-sub">LBP</div></div>
+      <div class="market-item"><img class="market-flag" src="flags/ma.png" width="46" height="31" alt="Morocco" loading="lazy"><div class="market-name ar">المغرب</div><div class="market-name en">Morocco</div><div class="market-sub">MAD</div></div>
+      <div class="market-item"><span class="market-flag-emoji">🌍</span><div class="market-name ar">وأكثر</div><div class="market-name en">&amp; More</div><div class="market-sub ar">دول عربية</div><div class="market-sub en">Arab markets</div></div>
     </div>
   </div>
 </section>
