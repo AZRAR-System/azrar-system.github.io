@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AZRAR — Official Email Signature</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="logo.png">
+<style>
+  body{background:#eef0f6;font-family:'Segoe UI',Arial,sans-serif;color:#1f2433;margin:0;padding:2rem 1rem;}
+  .page{max-width:680px;margin:0 auto;}
+  h1{font-size:1.4rem;margin:0 0 .25rem;color:#1e1b4b;}
+  .lead{color:#6b7280;font-size:.9rem;margin:0 0 1.75rem;}
+  .card{background:#fff;border:1px solid #e3e6ef;border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:1.5rem;box-shadow:0 2px 10px rgba(30,27,75,.05);}
+  .card h2{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#4f46e5;margin:0 0 1.1rem;}
+  .copybar{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;padding-top:1rem;border-top:1px dashed #e3e6ef;}
+  .copybar small{color:#9aa3b8;}
+  button{background:#4f46e5;color:#fff;border:none;border-radius:8px;padding:.55rem 1.3rem;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;}
+  button:hover{background:#4338ca;}
+  .instructions{background:#fff;border:1px solid #e3e6ef;border-radius:14px;padding:1.25rem 1.75rem;font-size:.88rem;line-height:1.8;}
+  .instructions h2{font-size:1rem;color:#1e1b4b;margin:0 0 .6rem;}
+  .instructions ol{margin:.3rem 0;padding-inline-start:1.3rem;}
+  .instructions code{background:#f1f2f7;padding:.1rem .4rem;border-radius:4px;font-size:.85em;}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>AZRAR — Official Email Signature</h1>
+  <p class="lead">One unified signature for all mailboxes (info · sales · support). Click “Copy signature”, then paste into Outlook.</p>
+
+  <div class="card">
+    <h2>Official signature</h2>
+    <div id="sig">
+      <!-- SIGNATURE START -->
+      <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;color:#1f2433;border-collapse:collapse;">
+        <tr>
+          <td style="vertical-align:top;padding-right:18px;border-right:3px solid #4f46e5;">
+            <img src="https://azrar-systems.com/logo.png" alt="AZRAR" width="64" height="64" style="display:block;border:0;border-radius:12px;">
+          </td>
+          <td style="vertical-align:top;padding-left:18px;">
+            <div style="font-size:19px;font-weight:bold;color:#1e1b4b;letter-spacing:.5px;">AZRAR System</div>
+            <div style="font-size:12px;color:#6b7280;padding:3px 0 9px;">Real Estate Management System &nbsp;·&nbsp; <span dir="rtl">نظام إدارة العقارات</span></div>
+            <div style="font-size:12px;color:#374151;line-height:1.85;">
+              <span style="color:#9aa3b8;width:14px;display:inline-block;">🌐</span> <a href="https://azrar-systems.com" style="color:#4f46e5;text-decoration:none;font-weight:bold;">azrar-systems.com</a><br>
+              <span style="color:#9aa3b8;width:14px;display:inline-block;">✉</span> <a href="mailto:info@azrar-systems.com" style="color:#374151;text-decoration:none;">info@azrar-systems.com</a><br>
+              <span style="color:#9aa3b8;width:14px;display:inline-block;">☏</span> <a href="https://wa.me/962786170080" style="color:#374151;text-decoration:none;">+962 78 617 0080</a> &nbsp;<span style="color:#25d366;font-weight:bold;">WhatsApp</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="padding-top:12px;">
+            <div style="font-size:10px;color:#aab0c0;line-height:1.5;border-top:1px solid #eef0f6;padding-top:8px;">
+              This message and any attachments are confidential and intended for the named recipient only.<br>
+              <span dir="rtl">هذه الرسالة ومرفقاتها سرّية ومخصّصة للمستلم المقصود فقط.</span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <!-- SIGNATURE END -->
+    </div>
+    <div class="copybar"><small>Use this for info@, sales@ and support@</small><button onclick="copySig()">Copy signature</button></div>
+  </div>
+
+  <div class="instructions">
+    <h2>📋 How to add it in Outlook</h2>
+    <strong>Outlook on the web (outlook.com / Microsoft 365):</strong>
+    <ol>
+      <li>Sign in to the mailbox.</li>
+      <li>Settings ⚙️ → <code>Mail</code> → <code>Compose and reply</code> → <code>Email signature</code>.</li>
+      <li>Click “Copy signature” above, click inside the box, and paste (Ctrl+V).</li>
+      <li>Tick “new messages” + “replies/forwards” → <code>Save</code>.</li>
+      <li>Repeat for each shared mailbox (open it via your photo → <code>Open another mailbox</code>).</li>
+    </ol>
+    <strong>Outlook desktop (Windows):</strong>
+    <ol>
+      <li>File → Options → Mail → <code>Signatures…</code></li>
+      <li>New → name it “AZRAR” → paste the signature → set as default → Save.</li>
+    </ol>
+    <p style="color:#9aa3b8;margin:.6rem 0 0;">The logo loads from <code>azrar-systems.com/logo.png</code> and appears once images are allowed (standard for all email logos).</p>
+  </div>
+</div>
+
+<script>
+function copySig(){
+  const el = document.getElementById('sig');
+  const range = document.createRange();
+  range.selectNode(el);
+  const sel = window.getSelection();
+  sel.removeAllRanges(); sel.addRange(range);
+  try{ document.execCommand('copy'); alert('Signature copied! Paste it into your Outlook signature box.'); }
+  catch(e){ alert('Press Ctrl+C to copy the selected signature.'); }
+  sel.removeAllRanges();
+}
+</script>
+</body>
+</html>
