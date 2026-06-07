@@ -333,6 +333,28 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
 .fb-card iframe{max-width:100%;border-radius:8px;}
 .fb-follow-btn{display:inline-flex;align-items:center;gap:.4rem;background:#1877f2;color:#fff;padding:.7rem 1.6rem;border-radius:10px;font-weight:800;font-size:.9rem;text-decoration:none;transition:all .2s;box-shadow:0 6px 18px rgba(24,119,242,.4);}
 .fb-follow-btn:hover{background:#1467d6;transform:translateY(-2px);}
+
+/* HOW IT WORKS */
+.how-grid{display:flex;align-items:stretch;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.how-step{flex:1;min-width:220px;max-width:300px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.8rem 1.6rem;text-align:center;box-shadow:0 6px 22px rgba(15,27,51,.06);transition:transform .2s;}
+.how-step:hover{transform:translateY(-4px);}
+.how-num{width:52px;height:52px;margin:0 auto 1rem;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;font-family:var(--font-en);font-weight:800;font-size:1.4rem;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(15,27,51,.2);}
+.how-step h3{font-size:1.15rem;color:var(--head);font-weight:800;margin-bottom:.5rem;}
+[data-lang="en"] .how-step h3{font-family:var(--font-en);}
+.how-step p{font-size:.9rem;color:var(--muted);line-height:1.8;}
+.how-arrow{display:flex;align-items:center;color:var(--gold);font-size:1.8rem;font-weight:800;}
+[data-lang="ar"] .how-arrow{transform:scaleX(-1);}
+@media(max-width:760px){.how-arrow{transform:rotate(90deg);}[data-lang="ar"] .how-arrow{transform:rotate(90deg);}.how-step{max-width:100%;}}
+/* COMPARISON TABLE */
+.cmp-wrap{margin-top:2rem;overflow-x:auto;border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 30px rgba(15,27,51,.06);}
+.cmp-table{width:100%;border-collapse:collapse;min-width:600px;background:var(--card);}
+.cmp-table th{padding:1rem .9rem;text-align:center;font-size:.92rem;font-weight:800;color:var(--head);background:#f1f5fc;border-bottom:2px solid var(--border);}
+.cmp-table th.hot{color:var(--gold);background:#fffaf0;}
+.cmp-table td{padding:.8rem .9rem;text-align:center;font-size:.88rem;color:#3b465f;border-bottom:1px solid var(--border);}
+.cmp-table td.hot{background:#fffdf7;font-weight:700;}
+.cmp-table tbody td:first-child{text-align:start;color:var(--head);font-weight:600;}
+.cmp-table tr:last-child td{border-bottom:none;}
+.cmp-table td:not(:first-child){color:var(--green);font-weight:800;}
 </style>
 
 <script type="application/ld+json">
@@ -427,10 +449,10 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
     </div>
 
     <div class="hero-stats">
-      <div class="stat"><span class="stat-val">+30</span><div class="stat-label ar">صفحة متكاملة</div><div class="stat-label en">Full pages</div></div>
-      <div class="stat"><span class="stat-val">3,500+</span><div class="stat-label ar">اختبار آلي</div><div class="stat-label en">Auto tests</div></div>
-      <div class="stat"><span class="stat-val">81%+</span><div class="stat-label ar">تغطية الكود</div><div class="stat-label en">Code coverage</div></div>
-      <div class="stat"><span class="stat-val">12</span><div class="stat-label ar">نظام فرعي</div><div class="stat-label en">Sub-systems</div></div>
+      <div class="stat"><span class="stat-val" data-count="30" data-prefix="+">+30</span><div class="stat-label ar">صفحة متكاملة</div><div class="stat-label en">Full pages</div></div>
+      <div class="stat"><span class="stat-val" data-count="3500" data-suffix="+" data-comma="1">3,500+</span><div class="stat-label ar">اختبار آلي</div><div class="stat-label en">Auto tests</div></div>
+      <div class="stat"><span class="stat-val" data-count="81" data-suffix="%+">81%+</span><div class="stat-label ar">تغطية الكود</div><div class="stat-label en">Code coverage</div></div>
+      <div class="stat"><span class="stat-val" data-count="12">12</span><div class="stat-label ar">نظام فرعي</div><div class="stat-label en">Sub-systems</div></div>
     </div>
   </div>
 
@@ -481,6 +503,36 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
     </div>
   </div>
 </div>
+
+<hr class="divider">
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <div class="sec-label reveal"><span class="ar">البداية</span><span class="en">Getting Started</span></div>
+    <h2 class="sec-title reveal"><span class="ar">ابدأ في 3 خطوات بسيطة</span><span class="en">Start in 3 Simple Steps</span></h2>
+    <p class="sec-sub reveal"><span class="ar">من التنزيل حتى أول عقد — دقائق معدودة.</span><span class="en">From download to your first contract — just minutes.</span></p>
+    <div class="how-grid reveal">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <h3><span class="ar">حمّل وثبّت</span><span class="en">Download &amp; Install</span></h3>
+        <p><span class="ar">نزّل النظام على Windows وثبّته كأي برنامج — بدون إنترنت.</span><span class="en">Download AZRAR on Windows and install it like any app — offline.</span></p>
+      </div>
+      <div class="how-arrow">→</div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <h3><span class="ar">فعّل أو جرّب</span><span class="en">Activate or Try</span></h3>
+        <p><span class="ar">ابدأ تجربة 30 يوماً مجاناً، أو فعّل ترخيصك ببصمة جهازك.</span><span class="en">Start a 30-day free trial, or activate your license with your device ID.</span></p>
+      </div>
+      <div class="how-arrow">→</div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <h3><span class="ar">ابدأ الإدارة</span><span class="en">Start Managing</span></h3>
+        <p><span class="ar">أضف عقاراتك وأنشئ أول عقد — وتُحسب الأقساط تلقائياً.</span><span class="en">Add properties, create your first contract — installments auto-calculated.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <hr class="divider">
 
@@ -673,6 +725,29 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
         <span class="ar">تواصل للسعر</span><span class="en">Contact for Pricing</span>
       </a>
     </div>
+
+    <div class="cmp-wrap reveal">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th><span class="ar">المقارنة</span><span class="en">Compare</span></th>
+            <th>Solo</th><th class="hot">Office</th><th>Pro</th><th>Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="ar">السعر سنوياً</span><span class="en">Annual price</span></td><td>$99</td><td class="hot">$169</td><td>$239</td><td><span class="ar">حسب الطلب</span><span class="en">Custom</span></td></tr>
+          <tr><td><span class="ar">عدد الأجهزة</span><span class="en">Devices</span></td><td>1</td><td class="hot">2</td><td>3</td><td>∞</td></tr>
+          <tr><td><span class="ar">الأنظمة الـ 12</span><span class="en">All 12 modules</span></td><td>✓</td><td class="hot">✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td><span class="ar">عقود وأقساط غير محدودة</span><span class="en">Unlimited contracts</span></td><td>✓</td><td class="hot">✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td><span class="ar">واتساب جماعي</span><span class="en">Bulk WhatsApp</span></td><td>✓</td><td class="hot">✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td><span class="ar">تحديثات سنة كاملة</span><span class="en">1-year updates</span></td><td>✓</td><td class="hot">✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td><span class="ar">جلسة إعداد مجانية</span><span class="en">Free setup session</span></td><td>—</td><td class="hot">✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td><span class="ar">دعم بأولوية</span><span class="en">Priority support</span></td><td>—</td><td class="hot">✓</td><td>✓</td><td>✓</td></tr>
+          <tr><td><span class="ar">تدريب الفريق</span><span class="en">Team training</span></td><td>—</td><td class="hot">—</td><td>✓</td><td>✓</td></tr>
+          <tr><td><span class="ar">مزامنة SQL Server</span><span class="en">SQL Server sync</span></td><td>—</td><td class="hot">—</td><td>✓</td><td>✓</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
@@ -850,6 +925,22 @@ function toggleFaq(el){const it=el.closest(".faq-item"),op=it.classList.contains
 var _sb=document.getElementById("scroll-top");if(_sb)window.addEventListener("scroll",function(){_sb.classList.toggle("vis",window.scrollY>600);});
 (function(){try{var p=new URLSearchParams(window.location.search).get("lang");if((p==="en"||p==="ar")&&typeof setLang==="function")setLang(p);}catch(e){}})();
 (function(){var f=document.querySelector('footer');if(f&&'IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){document.body.classList.toggle('at-footer',e.isIntersecting);});},{threshold:0.01}).observe(f);}})();
+
+(function(){
+  function fmt(n,comma){var s=Math.round(n).toString();return comma?s.replace(/\B(?=(\d{3})+(?!\d))/g,','):s;}
+  function run(el){
+    var target=parseFloat(el.getAttribute('data-count'))||0;
+    var pre=el.getAttribute('data-prefix')||'';var suf=el.getAttribute('data-suffix')||'';var comma=el.getAttribute('data-comma');
+    var dur=1300,start=null;
+    function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);var e=1-Math.pow(1-p,3);el.textContent=pre+fmt(target*e,comma)+suf;if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  var stats=document.querySelectorAll('.stat-val[data-count]');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run(e.target);io.unobserve(e.target);}});},{threshold:.4});
+    stats.forEach(function(s){io.observe(s);});
+  } else { stats.forEach(run); }
+})();
 </script>
 </body>
 </html>
