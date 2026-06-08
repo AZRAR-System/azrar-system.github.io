@@ -357,10 +357,14 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
 .cmp-table tr:last-child td{border-bottom:none;}
 .cmp-table td:not(:first-child){color:var(--green);font-weight:800;}
 
+
+.old-price{text-decoration:line-through;color:var(--muted);font-size:1.15rem;font-weight:600;margin-inline-end:.5rem;}
+.launch-banner{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#fff4d6,#ffe9b0);border:1px solid var(--gold);color:#8a6a16;font-weight:800;font-size:.95rem;padding:.55rem 1.3rem;border-radius:100px;margin-bottom:2rem;box-shadow:0 6px 18px rgba(197,151,42,.2);}
+[data-lang="en"] .launch-banner{font-family:var(--font-en);}
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AZRAR - نظام أزرار","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","url":"https://azrar-systems.com/","offers":[{"@type":"Offer","name":"Solo","price":"99","priceCurrency":"USD"},{"@type":"Offer","name":"Office","price":"169","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"239","priceCurrency":"USD"}]},{"@type":"Organization","name":"AZRAR System","url":"https://azrar-systems.com/","sameAs":["https://www.facebook.com/azrar.systems/"],"contactPoint":{"@type":"ContactPoint","telephone":"+962786170080","contactType":"customer support"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل يعمل بدون إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يعمل بشكل كامل offline باستخدام SQLite."}},{"@type":"Question","name":"كم مدة التجربة؟","acceptedAnswer":{"@type":"Answer","text":"30 يوماً بكل المزايا بدون بطاقة ائتمان."}},{"@type":"Question","name":"ما نظام التشغيل المدعوم؟","acceptedAnswer":{"@type":"Answer","text":"Windows 10 وWindows 11 (64-bit)."}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AZRAR - نظام أزرار","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","url":"https://azrar-systems.com/","offers":[{"@type":"Offer","name":"Solo","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Office","price":"79","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"119","priceCurrency":"USD"}]},{"@type":"Organization","name":"AZRAR System","url":"https://azrar-systems.com/","sameAs":["https://www.facebook.com/azrar.systems/"],"contactPoint":{"@type":"ContactPoint","telephone":"+962786170080","contactType":"customer support"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل يعمل بدون إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يعمل بشكل كامل offline باستخدام SQLite."}},{"@type":"Question","name":"كم مدة التجربة؟","acceptedAnswer":{"@type":"Answer","text":"30 يوماً بكل المزايا بدون بطاقة ائتمان."}},{"@type":"Question","name":"ما نظام التشغيل المدعوم؟","acceptedAnswer":{"@type":"Answer","text":"Windows 10 وWindows 11 (64-bit)."}}]}]}
 </script>
 </head>
 <body>
@@ -671,10 +675,11 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
     <div class="sec-label reveal"><span class="ar">الأسعار</span><span class="en">Pricing</span></div>
     <h2 class="sec-title reveal"><span class="ar">بسيط وشفاف — دفعة واحدة سنوياً</span><span class="en">Simple & Transparent — One Annual Fee</span></h2>
     <p class="sec-sub reveal"><span class="ar">لا رسوم شهرية، لا مفاجآت. تجربة 30 يوم مجانية.</span><span class="en">No monthly fees, no surprises. 30-day free trial, no card required.</span></p>
+    <div class="launch-banner reveal">🎉 <span class="ar">عرض الإطلاق — خصم 50% لفترة محدودة</span><span class="en">Launch Offer — 50% OFF for a limited time</span></div>
     <div class="pricing-grid reveal">
       <div class="plan">
         <div class="plan-name">SOLO</div>
-        <div class="plan-price"><sup>$</sup>99 <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
+        <div class="plan-price"><span class="old-price">$99</span><sup>$</sup>49 <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
         <div class="plan-desc"><span class="ar">جهاز واحد — لصاحب المكتب منفرداً</span><span class="en">1 device — for solo office owners</span></div>
         <hr class="plan-hr">
         <ul class="plan-feats">
@@ -690,7 +695,7 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
       <div class="plan hot">
         <div class="plan-badge"><span class="ar">الأكثر طلباً</span><span class="en">Most Popular</span></div>
         <div class="plan-name">OFFICE</div>
-        <div class="plan-price"><sup>$</sup>169 <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
+        <div class="plan-price"><span class="old-price">$169</span><sup>$</sup>79 <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
         <div class="plan-desc"><span class="ar">جهازان — للابتوب والديسكتوب معاً</span><span class="en">2 devices — laptop + desktop</span></div>
         <hr class="plan-hr">
         <ul class="plan-feats">
@@ -706,7 +711,7 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
       </div>
       <div class="plan">
         <div class="plan-name">PRO</div>
-        <div class="plan-price"><sup>$</sup>239 <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
+        <div class="plan-price"><span class="old-price">$239</span><sup>$</sup>119 <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
         <div class="plan-desc"><span class="ar">3 أجهزة — مع موظف أو موظفين</span><span class="en">3 devices — with 1-2 staff members</span></div>
         <hr class="plan-hr">
         <ul class="plan-feats">
@@ -740,7 +745,7 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
           </tr>
         </thead>
         <tbody>
-          <tr><td><span class="ar">السعر سنوياً</span><span class="en">Annual price</span></td><td>$99</td><td class="hot">$169</td><td>$239</td><td><span class="ar">حسب الطلب</span><span class="en">Custom</span></td></tr>
+          <tr><td><span class="ar">السعر سنوياً</span><span class="en">Annual price</span></td><td><s>$99</s> $49</td><td class="hot"><s>$169</s> $79</td><td><s>$239</s> $119</td><td><span class="ar">حسب الطلب</span><span class="en">Custom</span></td></tr>
           <tr><td><span class="ar">عدد الأجهزة</span><span class="en">Devices</span></td><td>1</td><td class="hot">2</td><td>3</td><td>∞</td></tr>
           <tr><td><span class="ar">الأنظمة الـ 12</span><span class="en">All 12 modules</span></td><td>✓</td><td class="hot">✓</td><td>✓</td><td>✓</td></tr>
           <tr><td><span class="ar">عقود وأقساط غير محدودة</span><span class="en">Unlimited contracts</span></td><td>✓</td><td class="hot">✓</td><td>✓</td><td>✓</td></tr>
