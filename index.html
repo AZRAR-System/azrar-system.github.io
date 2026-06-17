@@ -272,6 +272,11 @@ footer{border-top:1px solid var(--navy3);padding:2.25rem 2.5rem;display:flex;ali
 .foot-links{display:flex;gap:1.2rem;flex-wrap:wrap;}
 .foot-links a{font-size:0.76rem;color:#aebdd2;text-decoration:none;transition:color 0.2s;}
 .foot-links a:hover{color:var(--gold-l);}
+.foot-sitemap{flex-basis:100%;display:flex;flex-wrap:wrap;gap:1.4rem 2.6rem;margin-top:1.4rem;padding-top:1.4rem;border-top:1px solid var(--navy3);}
+.foot-col{display:flex;flex-direction:column;gap:0.4rem;}
+.foot-col-h{font-size:0.7rem;color:#6f86a8;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.2rem;font-weight:700;}
+.foot-col a{font-size:0.76rem;color:#aebdd2;text-decoration:none;transition:color 0.2s;}
+.foot-col a:hover{color:var(--gold-l);}
 
 /* ── REVEAL ── */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease;}
@@ -846,6 +851,29 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
     <a href="privacy.html"><span class="ar">الخصوصية</span><span class="en">Privacy</span></a>
     <a href="terms.html"><span class="ar">الشروط</span><span class="en">Terms</span></a>
   </div>
+  <nav class="foot-sitemap" aria-label="Site map">
+    <div class="foot-col">
+      <span class="foot-col-h"><span class="ar">مقالات</span><span class="en">Articles</span></span>
+      <a href="article-rental-management.html"><span class="ar">إدارة عقود الإيجار</span><span class="en">Managing Lease Contracts</span></a>
+      <a href="article-late-fees.html"><span class="ar">حساب غرامة التأخير</span><span class="en">Calculating Late Fees</span></a>
+      <a href="article-choosing-software.html"><span class="ar">اختيار برنامج عقاري</span><span class="en">Choosing Software</span></a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-col-h">English Pages</span>
+      <a href="guide-en.html" hreflang="en">Guide</a>
+      <a href="faq-en.html" hreflang="en">FAQ</a>
+      <a href="use-cases-en.html" hreflang="en">Use Cases</a>
+      <a href="articles-en.html" hreflang="en">Blog</a>
+      <a href="videos-en.html" hreflang="en">Videos</a>
+      <a href="screenshots-en.html" hreflang="en">Screenshots</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-col-h">English Articles</span>
+      <a href="article-rental-management-en.html" hreflang="en">Managing Lease Contracts</a>
+      <a href="article-late-fees-en.html" hreflang="en">Calculating Late Fees</a>
+      <a href="article-choosing-software-en.html" hreflang="en">Choosing Software</a>
+    </div>
+  </nav>
 </footer>
 
 <div class="wa-float">
