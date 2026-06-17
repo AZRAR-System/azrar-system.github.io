@@ -10,13 +10,15 @@
 <meta name="description" content="سياسة الحماية الفكرية وحقوق الملكية لنظام أزرار: ملكية البرمجيات والعلامة التجارية، شروط الترخيص، والاستخدامات الممنوعة. Intellectual Property & Copyright policy for AZRAR.">
 <link rel="canonical" href="https://azrar-systems.com/intellectual-property.html">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0f1e3d">
+<meta name="theme-color" content="#181341">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 <style>
-:root{--navy:#0f1e3d;--navy3:#1e3a5f;--blue:#2563eb;--blue-l:#3b82f6;--gold:#c5972a;--gold-l:#d8b24a;--ink:#27324a;--head:#0f1b33;--muted:#64748b;--bg:#f4f7fc;--card:#fff;--border:#e4e9f2;--font-ar:'Tajawal',sans-serif;--font-en:'Inter',sans-serif;}
+@font-face{font-family:'Adobe Arabic';src:url('fonts/AdobeArabic-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap;}
+
+:root{--navy:#181341;--navy3:#2a2460;--blue:#4f46e5;--blue-l:#6366f1;--gold:#cda434;--gold-l:#e6c55c;--ink:#27324a;--head:#0f1b33;--muted:#64748b;--bg:#f4f7fc;--card:#fff;--border:#e4e9f2;--font-ar:'Adobe Arabic','Tajawal',sans-serif;--font-en:'Inter',sans-serif;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-ar);line-height:1.9;font-size:16px;}
@@ -76,7 +78,7 @@ footer a{color:var(--gold-l);text-decoration:none;}
 @media(max-width:460px){.sf-inner{grid-template-columns:1fr;}.sf-bottom{justify-content:center;text-align:center;}}
 
 /* === AZRAR motion system === */
-.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#4f46e5,#3b82f6,#d8b24a);box-shadow:0 0 8px rgba(79,70,229,.4);transition:width .12s ease-out;}
+.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#4f46e5,#6366f1,#e6c55c);box-shadow:0 0 8px rgba(79,70,229,.4);transition:width .12s ease-out;}
 .az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q){opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1);}
 .az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q).in{opacity:1;transform:none;}
 :is(.card,.step,.vid){transition:transform .25s ease,box-shadow .25s ease;}

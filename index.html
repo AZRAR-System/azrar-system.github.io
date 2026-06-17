@@ -18,7 +18,7 @@
 <meta name="language" content="Arabic, English">
 <meta name="rating" content="general">
 <link rel="image_src" href="https://azrar-systems.com/og-image.png?v=3">
-<meta name="theme-color" content="#0f1e3d">
+<meta name="theme-color" content="#181341">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
@@ -50,14 +50,16 @@
 <link rel="preload" as="image" href="bg-city.jpg" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <style>
+@font-face{font-family:'Adobe Arabic';src:url('fonts/AdobeArabic-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap;}
+
 :root{
-  --navy:#0f1e3d; --navy2:#13284b; --navy3:#1e3a5f;
-  --blue:#2563eb; --blue-l:#3b82f6; --blue-d:#1d4ed8;
-  --gold:#c5972a; --gold-l:#d8b24a;
+  --navy:#181341; --navy2:#221c55; --navy3:#2a2460;
+  --blue:#4f46e5; --blue-l:#6366f1; --blue-d:#1d4ed8;
+  --gold:#cda434; --gold-l:#e6c55c;
   --ink:#27324a; --head:#0f1b33; --muted:#64748b; --muted2:#93a1b8;
   --bg:#f4f7fc; --card:#ffffff; --border:#e4e9f2; --border2:#eef2f8;
   --green:#16a34a; --danger:#dc2626;
-  --font-ar:'Tajawal',sans-serif; --font-en:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
+  --font-ar:'Adobe Arabic','Tajawal',sans-serif; --font-en:'Inter',sans-serif; --mono:'IBM Plex Mono',monospace;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -96,8 +98,8 @@ nav{position:fixed;top:0;right:0;left:0;z-index:100;display:flex;align-items:cen
 .lang-btn{padding:0.36rem 0.78rem;font-size:0.74rem;font-weight:800;cursor:pointer;border:none;background:transparent;color:#334155;transition:all 0.2s;font-family:var(--font-en);letter-spacing:0.05em;}
 .lang-btn.active{background:var(--blue);color:#fff;}
 .lang-btn:hover:not(.active){color:var(--blue);}
-.nav-cta{background:linear-gradient(135deg,var(--blue),var(--blue-l));color:#fff;padding:0.5rem 1.3rem;border-radius:8px;font-weight:800;font-size:0.84rem;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 14px rgba(37,99,235,0.28);}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(37,99,235,0.4);}
+.nav-cta{background:linear-gradient(135deg,var(--blue),var(--blue-l));color:#fff;padding:0.5rem 1.3rem;border-radius:8px;font-weight:800;font-size:0.84rem;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 14px rgba(79,70,229,0.28);}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(79,70,229,0.4);}
 
 /* ── COMING SOON BAR (navy) ── */
 .coming-soon-bar{position:relative;z-index:3;margin-top:64px;background:var(--navy);border-bottom:1px solid rgba(255,255,255,0.08);
@@ -174,7 +176,7 @@ section{padding:6rem 2rem;}
 /* ── MODULES ── */
 .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem;}
 .module-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.35rem 1.45rem;transition:all 0.22s;display:flex;flex-direction:column;gap:0.4rem;box-shadow:0 4px 16px rgba(15,27,51,0.05);}
-.module-card:hover{border-color:var(--blue-l);transform:translateY(-3px);box-shadow:0 14px 32px rgba(37,99,235,0.14);}
+.module-card:hover{border-color:var(--blue-l);transform:translateY(-3px);box-shadow:0 14px 32px rgba(79,70,229,0.14);}
 .module-num{font-family:var(--mono);font-size:0.64rem;color:var(--blue);font-weight:600;}
 .module-card h3{font-size:1.02rem;font-weight:800;color:var(--head);}
 [data-lang="en"] .module-card h3{font-family:var(--font-en);font-size:0.9rem;}
@@ -239,7 +241,7 @@ section{padding:6rem 2rem;}
 /* ── FAQ ── */
 .faq-list{display:flex;flex-direction:column;gap:0.8rem;}
 .faq-item{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all 0.2s;box-shadow:0 3px 12px rgba(15,27,51,0.04);}
-.faq-item.open{border-color:var(--blue-l);box-shadow:0 10px 26px rgba(37,99,235,0.1);}
+.faq-item.open{border-color:var(--blue-l);box-shadow:0 10px 26px rgba(79,70,229,0.1);}
 .faq-q{padding:1.2rem 1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-weight:700;font-size:0.96rem;color:var(--head);user-select:none;transition:color 0.2s;}
 .faq-q:hover{color:var(--blue);}
 .faq-chevron{width:24px;height:24px;flex-shrink:0;background:#eef3ff;border:1px solid #d6e2ff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:var(--blue);transition:transform 0.3s;}
@@ -376,7 +378,7 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
 .launch-banner{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#fff4d6,#ffe9b0);border:1px solid var(--gold);color:#8a6a16;font-weight:800;font-size:.95rem;padding:.55rem 1.3rem;border-radius:100px;margin-bottom:2rem;box-shadow:0 6px 18px rgba(197,151,42,.2);}
 [data-lang="en"] .launch-banner{font-family:var(--font-en);}
 
-.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#4f46e5,#3b82f6,#d8b24a);box-shadow:0 0 8px rgba(79,70,229,.4);transition:width .12s ease-out;}
+.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#4f46e5,#6366f1,#e6c55c);box-shadow:0 0 8px rgba(79,70,229,.4);transition:width .12s ease-out;}
 @media(prefers-reduced-motion:reduce){.az-progress{display:none;}}
 </style>
 
