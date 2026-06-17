@@ -996,5 +996,20 @@ var _sb=document.getElementById("scroll-top");if(_sb)window.addEventListener("sc
 })();
 
 </script>
+<script id="azrar-ga-events">
+// GA4 conversion tracking: fire named events on WhatsApp / trial / contact clicks
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a'); if(!a) return;
+  var href=a.getAttribute('href')||'';
+  if(typeof gtag!=='function') return;
+  if(href.indexOf('wa.me')>-1||href.indexOf('api.whatsapp')>-1){
+    var t=decodeURIComponent(href);
+    var isTrial=/تجرب|مجان|trial|free/i.test(t);
+    gtag('event', isTrial?'trial_lead':'whatsapp_click', {transport_type:'beacon', link_url:href});
+  } else if(href.indexOf('mailto:')===0){
+    gtag('event','email_click',{transport_type:'beacon'});
+  }
+},true);
+</script>
 </body>
 </html>
