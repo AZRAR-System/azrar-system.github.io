@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>دليل استخدام نظام أزرار العقاري — شرح كامل خطوة بخطوة | AZRAR Guide</title>
-<meta name="description" content="دليل شامل لتعلّم نظام أزرار لإدارة العقارات: التثبيت والتفعيل، إنشاء العقود والأقساط، التحصيل، العمولات، واتساب الجماعي، والتقارير — شرح عملي خطوة بخطوة.">
-<meta name="keywords" content="شرح نظام أزرار, دليل استخدام برنامج عقاري, كيفية إنشاء عقد إيجار, طريقة حساب الأقساط, تعليم برنامج إدارة عقارات, AZRAR guide, كورس نظام عقاري, شرح برنامج عقارات, إدارة عقود الإيجار, واتساب جماعي عقاري">
+<meta name="description" content="دليل شامل لتعلّم نظام أزرار لإدارة العقارات: التثبيت والتفعيل، قاعدة البيانات والمزامنة، العقارات والعملاء، إنشاء العقود والأقساط، التحصيل والغرامات، العمولات، واتساب الجماعي، التقارير، الصيانة، والنسخ الاحتياطي — شرح عملي مفصّل خطوة بخطوة.">
+<meta name="keywords" content="شرح نظام أزرار, دليل استخدام برنامج عقاري, كيفية إنشاء عقد إيجار, طريقة حساب الأقساط, تعليم برنامج إدارة عقارات, AZRAR guide, كورس نظام عقاري, شرح برنامج عقارات, إدارة عقود الإيجار, واتساب جماعي عقاري, مزامنة SQL Server, النسخ الاحتياطي العقاري">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Mahmoud Qattoush">
 <meta name="theme-color" content="#0f1e3d">
@@ -19,7 +19,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://azrar-systems.com/guide.html">
 <meta property="og:title" content="دليل استخدام نظام أزرار العقاري — شرح كامل خطوة بخطوة">
-<meta property="og:description" content="تعلّم نظام أزرار من الصفر: التفعيل، العقود، الأقساط، التحصيل، العمولات، واتساب، والتقارير.">
+<meta property="og:description" content="تعلّم نظام أزرار من الصفر حتى الاحتراف: التفعيل، قاعدة البيانات، العقود، الأقساط، التحصيل، العمولات، واتساب، والتقارير.">
 <meta property="og:image" content="https://azrar-systems.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +45,9 @@ a{color:var(--blue);}
 .guide-hero{background:linear-gradient(160deg,var(--navy),var(--navy3));color:#fff;padding:3.5rem 1.5rem;text-align:center;}
 .guide-hero .eyebrow{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#d8b24a;font-family:var(--font-en);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:.35rem 1rem;border-radius:100px;margin-bottom:1.1rem;font-weight:700;}
 .guide-hero h1{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;margin-bottom:.8rem;line-height:1.25;}
-.guide-hero p{color:#c4d2ea;max-width:620px;margin:0 auto;font-size:1.05rem;}
+.guide-hero p{color:#c4d2ea;max-width:640px;margin:0 auto;font-size:1.05rem;}
+.guide-hero .meta{margin-top:1.2rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;}
+.guide-hero .meta span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:.3rem .9rem;font-size:.8rem;color:#dbe6f7;}
 .wrap{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem 4rem;}
 /* TOC */
 .toc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.75rem;margin-bottom:2.5rem;box-shadow:0 6px 22px rgba(15,27,51,.05);}
@@ -61,12 +63,17 @@ a{color:var(--blue);}
 .step-num{background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;font-family:var(--font-en);font-weight:800;font-size:1rem;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .step h2{font-size:1.3rem;color:var(--head);font-weight:800;line-height:1.3;}
 .step h2 .en{display:block;font-size:.8rem;color:var(--muted);font-family:var(--font-en);font-weight:600;margin-top:2px;}
+.step h3{font-size:1.02rem;color:var(--head);font-weight:800;margin:1.25rem 0 .45rem;display:flex;align-items:center;gap:.45rem;}
+.step h3::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;}
 .step p{color:var(--ink);margin-bottom:.75rem;}
 .step ul,.step ol{margin:.5rem 1.4rem .75rem;}
 .step li{margin-bottom:.5rem;color:#3b465f;}
 .step .tip{background:#fff8e8;border:1px solid #ecd9a8;border-radius:10px;padding:.85rem 1.1rem;font-size:.9rem;color:#7a6420;margin-top:.85rem;}
 .step .tip b{color:#a87d1a;}
 .step .note{background:#eef3ff;border:1px solid #d6e2ff;border-radius:10px;padding:.85rem 1.1rem;font-size:.9rem;color:#345; margin-top:.85rem;}
+.step .warn{background:#fef2f2;border:1px solid #fccaca;border-radius:10px;padding:.85rem 1.1rem;font-size:.9rem;color:#9b2c2c;margin-top:.85rem;}
+.step .warn b{color:#7f1d1d;}
+.path{background:#0f1b33;color:#fff;border-radius:6px;padding:.12rem .55rem;font-family:var(--font-en);font-size:.8rem;white-space:nowrap;}
 kbd{background:#0f1b33;color:#fff;border-radius:5px;padding:.1rem .5rem;font-family:var(--font-en);font-size:.82rem;}
 /* cta */
 .guide-cta{background:linear-gradient(135deg,var(--navy),var(--navy3));border-radius:20px;padding:2.5rem 1.5rem;text-align:center;color:#fff;margin-top:2.5rem;}
@@ -78,7 +85,7 @@ footer a{color:#d8b24a;text-decoration:none;}
 @media(max-width:600px){.toc ol{grid-template-columns:1fr;}.step{padding:1.4rem 1.25rem;}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HowTo","name":"كيفية استخدام نظام أزرار لإدارة العقارات","description":"دليل شامل لتعلّم نظام أزرار: التفعيل، العقود، الأقساط، التحصيل، العمولات، واتساب، والتقارير.","totalTime":"PT30M","image":"https://azrar-systems.com/og-image.png","step":[{"@type":"HowToStep","name":"التثبيت والتفعيل","text":"ثبّت النظام على Windows وفعّل الترخيص أو ابدأ التجربة المجانية 30 يوماً.","url":"https://azrar-systems.com/guide.html#install"},{"@type":"HowToStep","name":"الإعداد الأولي","text":"أضف بيانات مكتبك والمستخدمين والصلاحيات.","url":"https://azrar-systems.com/guide.html#setup"},{"@type":"HowToStep","name":"إضافة العقارات","text":"سجّل وحداتك العقارية وحالتها ومرفقاتها.","url":"https://azrar-systems.com/guide.html#properties"},{"@type":"HowToStep","name":"إنشاء العقود والأقساط","text":"أنشئ عقد إيجار واحسب الأقساط تلقائياً.","url":"https://azrar-systems.com/guide.html#contracts"},{"@type":"HowToStep","name":"التحصيل والدفعات","text":"سجّل الدفعات وتابع المتأخرات والغرامات.","url":"https://azrar-systems.com/guide.html#payments"},{"@type":"HowToStep","name":"واتساب الجماعي والتقارير","text":"أرسل تذكيرات واتساب جماعية واستخرج التقارير.","url":"https://azrar-systems.com/guide.html#reports"}]}
+{"@context":"https://schema.org","@type":"HowTo","name":"كيفية استخدام نظام أزرار لإدارة العقارات","description":"دليل شامل خطوة بخطوة لتعلّم نظام أزرار: التفعيل، قاعدة البيانات والمزامنة، العقارات والعملاء، العقود والأقساط، التحصيل والغرامات، العمولات، واتساب الجماعي، التقارير، الصيانة، والنسخ الاحتياطي.","totalTime":"PT45M","image":"https://azrar-systems.com/og-image.png","step":[{"@type":"HowToStep","name":"التثبيت والتفعيل","text":"ثبّت النظام على Windows وفعّل الترخيص أو ابدأ التجربة المجانية 30 يوماً.","url":"https://azrar-systems.com/guide.html#install"},{"@type":"HowToStep","name":"الإعداد الأولي والمستخدمون","text":"أضف بيانات مكتبك والمستخدمين والصلاحيات والإعدادات الافتراضية.","url":"https://azrar-systems.com/guide.html#setup"},{"@type":"HowToStep","name":"قاعدة البيانات والمزامنة","text":"اعمل محلياً بلا إنترنت، أو اربط عدة أجهزة عبر SQL Server.","url":"https://azrar-systems.com/guide.html#database"},{"@type":"HowToStep","name":"لوحة المعلومات","text":"تابع نسبة الإشغال والأقساط المستحقة والمتأخرات في لمحة.","url":"https://azrar-systems.com/guide.html#dashboard"},{"@type":"HowToStep","name":"إضافة العقارات","text":"سجّل وحداتك العقارية وحالتها ومرفقاتها.","url":"https://azrar-systems.com/guide.html#properties"},{"@type":"HowToStep","name":"العملاء والملاك","text":"ابنِ قاعدة بيانات المستأجرين والملاك والوسطاء.","url":"https://azrar-systems.com/guide.html#people"},{"@type":"HowToStep","name":"إنشاء العقود والأقساط","text":"أنشئ عقد إيجار واحسب الأقساط تلقائياً بفرقية الأيام الفعلية.","url":"https://azrar-systems.com/guide.html#contracts"},{"@type":"HowToStep","name":"التحصيل والدفعات","text":"سجّل الدفعات الكاملة والجزئية وتابع المتأخرات والغرامات.","url":"https://azrar-systems.com/guide.html#payments"},{"@type":"HowToStep","name":"العمولات","text":"احتسب عمولات الوسطاء والموظفين تلقائياً.","url":"https://azrar-systems.com/guide.html#commissions"},{"@type":"HowToStep","name":"واتساب الجماعي","text":"أرسل تذكيرات واتساب جماعية مخصّصة.","url":"https://azrar-systems.com/guide.html#whatsapp"},{"@type":"HowToStep","name":"التقارير","text":"استخرج تقارير المالك والدخل والمتأخرات وبراءة الذمة.","url":"https://azrar-systems.com/guide.html#reports"},{"@type":"HowToStep","name":"النسخ الاحتياطي","text":"النسخ التلقائي اليومي والاستعادة الفورية.","url":"https://azrar-systems.com/guide.html#backup"}]}
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://azrar-systems.com/"}, {"@type": "ListItem", "position": 2, "name": "دليل الاستخدام", "item": "https://azrar-systems.com/guide.html"}]}</script>
 </head>
@@ -91,7 +98,8 @@ footer a{color:#d8b24a;text-decoration:none;}
 <section class="guide-hero">
   <span class="eyebrow">USER GUIDE · دليل المستخدم</span>
   <h1>دليل استخدام نظام أزرار العقاري</h1>
-  <p>تعلّم النظام من الصفر حتى الاحتراف — شرح عملي خطوة بخطوة لكل ما تحتاجه لإدارة مكتبك العقاري: من التفعيل حتى التقارير.</p>
+  <p>دليل عملي مفصّل من الصفر حتى الاحتراف — يشرح كل ما تحتاجه لإدارة مكتبك العقاري: من التثبيت والتفعيل، مروراً بإنشاء العقود وحساب الأقساط والتحصيل، حتى التقارير والنسخ الاحتياطي.</p>
+  <div class="meta"><span>⏱️ قراءة ~15 دقيقة</span><span>📚 14 قسماً</span><span>🪟 Windows 10/11</span><span>📶 يعمل بدون إنترنت</span></div>
 </section>
 
 <div class="wrap">
@@ -100,6 +108,8 @@ footer a{color:#d8b24a;text-decoration:none;}
     <ol>
       <li><a href="#install">التثبيت والتفعيل</a></li>
       <li><a href="#setup">الإعداد الأولي والمستخدمون</a></li>
+      <li><a href="#database">قاعدة البيانات والمزامنة</a></li>
+      <li><a href="#dashboard">لوحة المعلومات</a></li>
       <li><a href="#properties">إضافة العقارات</a></li>
       <li><a href="#people">العملاء والملاك</a></li>
       <li><a href="#contracts">إنشاء العقود والأقساط</a></li>
@@ -108,141 +118,204 @@ footer a{color:#d8b24a;text-decoration:none;}
       <li><a href="#whatsapp">واتساب الجماعي</a></li>
       <li><a href="#reports">التقارير</a></li>
       <li><a href="#maintenance">الصيانة</a></li>
-      <li><a href="#backup">النسخ الاحتياطي</a></li>
+      <li><a href="#backup">النسخ الاحتياطي والتحديثات</a></li>
       <li><a href="#tips">نصائح وأسئلة شائعة</a></li>
     </ol>
   </nav>
 
   <article class="step" id="install">
     <div class="step-head"><div class="step-num">1</div><h2>التثبيت والتفعيل <span class="en">Installation &amp; Activation</span></h2></div>
-    <p>ابدأ بتنزيل النظام وتثبيته على جهاز Windows، ثم فعّل الترخيص أو ابدأ تجربتك المجانية.</p>
+    <p>تحتاج إلى جهاز يعمل بنظام Windows فقط — لا خوادم ولا اشتراكات سحابية. خطوات البدء:</p>
+    <h3>التنزيل والتثبيت</h3>
     <ol>
-      <li>نزّل أحدث إصدار من النظام (ملف <kbd>.exe</kbd>) وثبّته كأي برنامج Windows.</li>
-      <li>عند أول تشغيل تبدأ <b>التجربة المجانية 30 يوماً</b> تلقائياً بكل المزايا ودون بطاقة ائتمان.</li>
-      <li>لشراء الترخيص: من شاشة التفعيل انسخ <b>بصمة الجهاز</b> وأرسلها لنا عبر واتساب أو البريد، وسنرسل لك ملف التفعيل.</li>
-      <li>حمّل ملف التفعيل من شاشة «التفعيل» → سيعمل النظام بكامل مزاياه.</li>
+      <li>نزّل أحدث إصدار من النظام (ملف <kbd>AZRAR-Setup.exe</kbd>) من الرابط الذي نرسله لك.</li>
+      <li>شغّل ملف التثبيت. قد يظهر تحذير <b>«Windows protected your PC»</b> — هذا طبيعي للبرامج الجديدة؛ اضغط <b>More info</b> ثم <b>Run anyway</b>. البرنامج موقّع وآمن.</li>
+      <li>أكمل التثبيت كأي برنامج Windows، وسيُنشأ اختصار على سطح المكتب.</li>
     </ol>
-    <div class="note"><b>متطلبات التشغيل:</b> Windows 10 أو 11 (64-bit). النظام يعمل بدون إنترنت تماماً.</div>
+    <h3>أول تشغيل والتجربة المجانية</h3>
+    <ol>
+      <li>عند أول تشغيل، اقرأ ووافق على <b>اتفاقية الاستخدام (EULA)</b>.</li>
+      <li>تبدأ تلقائياً <b>فترة تجريبية مجانية 30 يوماً</b> بكل المزايا، دون بطاقة ائتمان.</li>
+    </ol>
+    <h3>التفعيل الدائم</h3>
+    <ol>
+      <li>افتح شاشة <b>«التفعيل»</b> وانسخ <b>بصمة الجهاز (Device Fingerprint)</b>.</li>
+      <li>أرسل البصمة لنا عبر واتساب أو البريد، وسنرسل لك <b>ملف الترخيص</b>.</li>
+      <li>من شاشة التفعيل، حمّل ملف الترخيص → يعمل النظام بكامل مزاياه دائماً.</li>
+    </ol>
+    <div class="note"><b>متطلبات التشغيل:</b> Windows 10 أو 11 (64-bit). النظام يعمل <b>بدون إنترنت تماماً</b> في الوضع المحلي. الترخيص مرتبط ببصمة الجهاز — لنقله لجهاز آخر تواصل مع الدعم.</div>
   </article>
 
   <article class="step" id="setup">
     <div class="step-head"><div class="step-num">2</div><h2>الإعداد الأولي والمستخدمون <span class="en">Initial Setup &amp; Users</span></h2></div>
-    <p>قبل البدء، اضبط بيانات مكتبك وأنشئ حسابات الموظفين بصلاحياتهم.</p>
+    <p>قبل إدخال أي عقد، اضبط هوية مكتبك وأنشئ حسابات الموظفين بصلاحياتهم — هذا يوفّر وقتاً كبيراً لاحقاً.</p>
+    <h3>بيانات المكتب</h3>
     <ul>
-      <li>من <b>الإعدادات</b> أدخل اسم المكتب وشعاره وبيانات التواصل (تظهر على العقود والتقارير).</li>
-      <li>أنشئ المستخدمين وحدّد صلاحية كل واحد: <b>SuperAdmin / Admin / Manager / Staff</b>.</li>
-      <li>اضبط العملة وإعدادات الغرامات والعمولات الافتراضية لتسريع إدخال العقود لاحقاً.</li>
+      <li>من <b>الإعدادات</b> أدخل <b>اسم المكتب وشعاره وبيانات التواصل</b> — تظهر تلقائياً على العقود المطبوعة والتقارير والفواتير.</li>
+      <li>اضبط <b>العملة</b> و<b>إعدادات الغرامات والعمولات الافتراضية</b> لتسريع إدخال العقود لاحقاً.</li>
     </ul>
-    <div class="tip"><b>نصيحة:</b> امنح كل موظف أقل صلاحية تكفي عمله — هذا يحمي بياناتك (نظام RBAC بأربع مستويات).</div>
+    <h3>المستخدمون والصلاحيات (RBAC)</h3>
+    <p>أنشئ حساباً لكل موظف وحدّد صلاحيته من أربعة مستويات:</p>
+    <ul>
+      <li><b>SuperAdmin</b> — صلاحية كاملة على النظام والإعدادات والمستخدمين.</li>
+      <li><b>Admin</b> — إدارة كاملة للبيانات والتقارير دون إعدادات النظام الحسّاسة.</li>
+      <li><b>Manager</b> — متابعة العقود والتحصيل والتقارير.</li>
+      <li><b>Staff</b> — إدخال يومي محدود حسب ما تمنحه.</li>
+    </ul>
+    <div class="tip"><b>نصيحة أمان:</b> امنح كل موظف <b>أقل صلاحية تكفي عمله</b> — هذا يحمي بياناتك. كل إجراء يُسجَّل في <b>سجل التدقيق (Audit Log)</b> مع اسم المستخدم والوقت.</div>
+  </article>
+
+  <article class="step" id="database">
+    <div class="step-head"><div class="step-num">3</div><h2>قاعدة البيانات والمزامنة <span class="en">Database &amp; Sync</span></h2></div>
+    <p>لديك خياران لتخزين البيانات — اختر ما يناسب حجم مكتبك:</p>
+    <h3>الوضع الافتراضي (محلي)</h3>
+    <p>يعمل النظام مباشرةً بقاعدة بيانات محلية (<b>SQLite</b>) على جهازك — <b>بلا أي إعداد، وبلا إنترنت</b>. كل بياناتك محفوظة محلياً وتُنسخ احتياطياً تلقائياً. هذا الخيار مثالي للمكتب ذي الجهاز الواحد.</p>
+    <h3>المزامنة بين عدة أجهزة (SQL Server) — اختياري</h3>
+    <p>إذا أردت مشاركة نفس البيانات بين أكثر من جهاز في المكتب:</p>
+    <ol>
+      <li>ثبّت <b>SQL Server Express</b> (يُعرض أثناء التثبيت، أو ثبّته لاحقاً). يُنشئ قاعدة بيانات ويحفظ بيانات الاتصال في <span class="path">ProgramData\AZRAR\sql-local-credentials.json</span>.</li>
+      <li>افتح <b>«إعدادات السيرفر والربط»</b> من القائمة الجانبية.</li>
+      <li>أدخل بيانات الاتصال: <b>الخادم (Server)</b>، <b>اسم القاعدة</b>، <b>المستخدم</b>، <b>كلمة المرور</b> — أو استخدم زر <b>الاستيراد التلقائي</b> من ملف التثبيت.</li>
+      <li>اضغط <b>حفظ</b> ثم <b>اتصال</b>، وتأكّد من ظهور حالة <b>«متصل» ✅</b>.</li>
+    </ol>
+    <div class="warn"><b>تنبيه:</b> المزامنة عبر SQL Server تحتاج شبكة/إنترنت عند الإعداد. أمّا <b>الوضع المحلي فيعمل دائماً بلا إنترنت</b>. مع المزامنة تُحَل التعارضات تلقائياً بين الأجهزة المرتبطة بالخادم نفسه.</div>
+  </article>
+
+  <article class="step" id="dashboard">
+    <div class="step-head"><div class="step-num">4</div><h2>لوحة المعلومات <span class="en">Dashboard</span></h2></div>
+    <p>هي نقطة انطلاقك اليومية — تعرض حالة مكتبك في لمحة فور تسجيل الدخول:</p>
+    <ul>
+      <li><b>نسبة الإشغال</b> — كم وحدة مؤجَّرة مقابل الشاغرة.</li>
+      <li><b>أقساط مستحقة اليوم</b> — لتعرف من تطالبه الآن.</li>
+      <li><b>متأخرات التحصيل</b> — المبالغ المتأخرة التي تحتاج متابعة.</li>
+      <li><b>أحدث التنبيهات</b> — عقود تنتهي قريباً، أقساط متأخرة، وتذكيرات ذكية.</li>
+    </ul>
+    <div class="tip"><b>نصيحة:</b> ابدأ يومك من لوحة المعلومات ثم انتقل إلى <b>واتساب الجماعي</b> لإرسال تذكيرات المتأخرين بنقرة.</div>
   </article>
 
   <article class="step" id="properties">
-    <div class="step-head"><div class="step-num">3</div><h2>إضافة العقارات <span class="en">Properties</span></h2></div>
-    <p>سجّل محفظتك العقارية لتربط بها العقود والصيانة لاحقاً.</p>
+    <div class="step-head"><div class="step-num">5</div><h2>إضافة العقارات <span class="en">Properties</span></h2></div>
+    <p>سجّل محفظتك العقارية أولاً لتربط بها العقود والصيانة والتقارير لاحقاً.</p>
     <ol>
-      <li>افتح قسم <b>العقارات</b> → <b>عقار جديد</b>.</li>
-      <li>أدخل بيانات الوحدة: النوع، الموقع، المساحة، المالك، والحالة (متاح / مؤجَّر / مباع).</li>
-      <li>أرفق الصور والمستندات (صك، مخطط) لكل وحدة.</li>
+      <li>افتح قسم <b>العقارات</b> ← <b>عقار جديد</b>.</li>
+      <li>أدخل بيانات الوحدة: <b>الكود الداخلي</b> (يُولَّد تلقائياً)، <b>النوع</b>، <b>الموقع</b>، <b>المساحة</b>، <b>المالك</b>، و<b>الحالة</b> (متاح / مؤجَّر / مباع / شاغر).</li>
+      <li>أرفق <b>الصور والمستندات</b> (صك، مخطط) لكل وحدة لسهولة الرجوع إليها.</li>
+      <li>احفظ — وستنعكس الوحدة فوراً في نسبة الإشغال بلوحة المعلومات.</li>
     </ol>
+    <div class="tip"><b>نصيحة:</b> أدخل كل وحدة مرة واحدة بدقّة؛ بعدها يربطها النظام تلقائياً بكل عقد وصيانة وتقرير دون إعادة إدخال.</div>
   </article>
 
   <article class="step" id="people">
-    <div class="step-head"><div class="step-num">4</div><h2>العملاء والملاك <span class="en">Clients &amp; Owners</span></h2></div>
-    <p>ابنِ قاعدة بيانات للمستأجرين والملاك والوسطاء.</p>
-    <ul>
-      <li>من قسم <b>العملاء</b> أضف المستأجر/المالك ببياناته الكاملة ووسيلة تواصله.</li>
-      <li>استخدم <b>القائمة السوداء</b> لتمييز العملاء غير الملتزمين.</li>
-      <li>كل عميل له سجل كامل بعقوده ودفعاته وتفاعلاته.</li>
-    </ul>
+    <div class="step-head"><div class="step-num">6</div><h2>العملاء والملاك <span class="en">Clients &amp; Owners</span></h2></div>
+    <p>ابنِ قاعدة بيانات موحّدة للمستأجرين والملاك والوسطاء — كل شخص له ملف وسجل كامل.</p>
+    <ol>
+      <li>من قسم <b>الأشخاص</b> اضغط <b>إضافة</b>، وحدّد النوع (مستأجر / مالك / وسيط).</li>
+      <li>أدخل البيانات الكاملة: <b>الاسم، الهاتف، الرقم الوطني</b>، ووسيلة التواصل.</li>
+      <li>استخدم <b>القائمة السوداء</b> لتمييز العملاء غير الملتزمين والتنبّه عند التعامل معهم.</li>
+    </ol>
+    <div class="note">لكل شخص <b>سجل كامل</b> بعقوده ودفعاته وتفاعلاته — يظهر بفتح ملفه مباشرة.</div>
   </article>
 
   <article class="step" id="contracts">
-    <div class="step-head"><div class="step-num">5</div><h2>إنشاء العقود والأقساط <span class="en">Contracts &amp; Installments</span></h2></div>
-    <p>قلب النظام — أنشئ عقد إيجار احترافي واحصل على جدول أقساط دقيق تلقائياً.</p>
+    <div class="step-head"><div class="step-num">7</div><h2>إنشاء العقود والأقساط <span class="en">Contracts &amp; Installments</span></h2></div>
+    <p>قلب النظام — يربط العقد العقارَ بالمستأجر ويولّد جدول أقساط دقيقاً تلقائياً.</p>
     <ol>
-      <li>افتح <b>العقود</b> → <b>عقد جديد</b>، واختر العقار والمستأجر.</li>
-      <li>أدخل قيمة الإيجار، تاريخ البداية، ومدة العقد وعدد الدفعات.</li>
-      <li>يحسب النظام <b>الأقساط تلقائياً بفرقية الأيام الفعلية</b> (28/29/30/31) لدقة مالية كاملة.</li>
-      <li>اختر نوع الدفع (شهري/ربعي/سنوي) ونوع الكمبيالات إن وُجدت.</li>
-      <li>احفظ العقد → يصبح جاهزاً للطباعة وتوليد المستند القانوني.</li>
+      <li>افتح <b>العقود</b> ← <b>عقد جديد</b>، واختر <b>العقار</b> و<b>المستأجر</b> من قاعدتك.</li>
+      <li>أدخل <b>قيمة الإيجار السنوية</b>، <b>تاريخ البداية</b>، و<b>مدة العقد</b> وعدد الدفعات.</li>
+      <li>اختر <b>دورية الدفع</b> (شهري / ربعي / سنوي).</li>
+      <li>يحسب النظام <b>الأقساط تلقائياً بفرقية الأيام الفعلية</b> (28/29/30/31 يوماً) — دقة مالية كاملة تحمي حقّك وحقّ العميل.</li>
+      <li>احفظ العقد → يصبح جاهزاً للطباعة وتوليد المستند القانوني وتصديره <b>PDF</b>، وتُولَّد <b>الكمبيالات (الدفعات)</b> تلقائياً.</li>
     </ol>
-    <div class="tip"><b>نصيحة:</b> يمكنك تعديل قيمة أي قسط أو تاريخه لاحقاً من بطاقة العقد المالية — النظام يعيد ضبط الأرصدة تلقائياً.</div>
+    <div class="tip"><b>نصيحة:</b> يمكنك تعديل قيمة أي قسط أو تاريخه لاحقاً من <b>البطاقة المالية للعقد</b> — والنظام يعيد ضبط الأرصدة تلقائياً.</div>
   </article>
 
   <article class="step" id="payments">
-    <div class="step-head"><div class="step-num">6</div><h2>التحصيل والدفعات <span class="en">Collection &amp; Payments</span></h2></div>
-    <p>تابع تحصيل الأقساط، الدفعات الجزئية، والغرامات.</p>
+    <div class="step-head"><div class="step-num">8</div><h2>التحصيل والدفعات <span class="en">Collection &amp; Payments</span></h2></div>
+    <p>تابع الأقساط المستحقة والمتأخرة، وسجّل الدفعات بسرعة دون مغادرة الصفحة.</p>
+    <h3>تسجيل دفعة</h3>
+    <ol>
+      <li>من <b>البطاقة المالية للعقد</b> أو صفحة <b>الدفعات</b>، افتح الكمبيالة (القسط) المستحقة.</li>
+      <li>اضغط <b>«سداد»</b> وأدخل المبلغ — <b>كامل أو جزئي</b>. يتحدّث الرصيد فوراً دون إغلاق الصفحة.</li>
+    </ol>
+    <h3>الغرامات والتصحيح</h3>
     <ul>
-      <li>من بطاقة العقد، اضغط على القسط المستحق → <b>تسجيل دفعة</b> (كاملة أو جزئية).</li>
-      <li>يدعم النظام <b>غرامات التأخير بثلاثة أنواع</b> وحسابها تلقائياً حسب الأيام.</li>
-      <li>يمكنك <b>عكس أي دفعة</b> خاطئة مع بقاء سجل مالي كامل.</li>
-      <li>تابع المتأخرات من <b>لوحة المعلومات</b> أو تقرير المتأخرات.</li>
+      <li>يحسب النظام <b>غرامات التأخير بثلاثة أنواع</b> تلقائياً حسب عدد أيام التأخير الفعلية.</li>
+      <li>يمكنك <b>عكس أي دفعة خاطئة</b> مع بقاء سجل مالي كامل في سجل التدقيق.</li>
+      <li>تابع المتأخرات من <b>لوحة المعلومات</b> أو من <b>تقرير المتأخرات</b>.</li>
     </ul>
   </article>
 
   <article class="step" id="commissions">
-    <div class="step-head"><div class="step-num">7</div><h2>العمولات <span class="en">Commissions</span></h2></div>
-    <p>احتساب آلي لعمولات البيع والإيجار لكل وسيط أو موظف.</p>
-    <ul>
-      <li>اضبط نسبة العمولة على مستوى العقد أو الموظف.</li>
-      <li>يحسب النظام العمولة تلقائياً عند إتمام الصفقة.</li>
-      <li>استخرج تقرير عمولات تفصيلي لكل وسيط.</li>
-    </ul>
+    <div class="step-head"><div class="step-num">9</div><h2>العمولات <span class="en">Commissions</span></h2></div>
+    <p>احتساب آلي لعمولات البيع والإيجار لكل وسيط أو موظف مرتبط بالعقد.</p>
+    <ol>
+      <li>اضبط <b>نسبة العمولة</b> على مستوى العقد أو الموظف.</li>
+      <li>يحسب النظام العمولة <b>تلقائياً</b> عند إتمام الصفقة أو تحصيل الدفعة.</li>
+      <li>استخرج <b>تقرير عمولات تفصيلي</b> لكل وسيط وصدّره عند الحاجة.</li>
+    </ol>
   </article>
 
   <article class="step" id="whatsapp">
-    <div class="step-head"><div class="step-num">8</div><h2>واتساب الجماعي <span class="en">Bulk WhatsApp</span></h2></div>
-    <p>أرسل رسائل مخصّصة لكل مستأجريك دفعة واحدة — أقوى أدوات المتابعة.</p>
+    <div class="step-head"><div class="step-num">10</div><h2>واتساب الجماعي <span class="en">Bulk WhatsApp</span></h2></div>
+    <p>أرسل رسائل مخصّصة لمستأجريك دفعة واحدة — أقوى أدوات المتابعة ورفع التحصيل.</p>
     <ol>
-      <li>افتح قسم <b>واتساب الجماعي</b> واختر الفئة (متأخرون / عقود تنتهي قريباً / الكل).</li>
-      <li>اختر قالباً جاهزاً (تذكير قسط، إشعار تجديد) أو اكتب رسالتك.</li>
-      <li>يدرج النظام اسم كل عميل ومبلغه تلقائياً في الرسالة.</li>
-      <li>أرسل → تُفتح المحادثات تباعاً للإرسال.</li>
+      <li>افتح قسم <b>واتساب الجماعي</b> واختر الفئة (<b>متأخرون</b> / <b>عقود تنتهي قريباً</b> / <b>الكل</b>).</li>
+      <li>اختر <b>قالباً جاهزاً</b> (تذكير قسط، إشعار تجديد) أو اكتب رسالتك.</li>
+      <li>يدرج النظام <b>اسم كل عميل ومبلغه تلقائياً</b> في الرسالة.</li>
+      <li>أرسل → تُفتح المحادثات تباعاً للإرسال من رقمك.</li>
     </ol>
-    <div class="tip"><b>نصيحة:</b> فعّل التذكيرات قبل استحقاق القسط بأيام لرفع نسبة التحصيل.</div>
+    <div class="tip"><b>نصيحة:</b> أرسل التذكير <b>قبل</b> استحقاق القسط بأيام — هذا يرفع نسبة السداد في موعده بشكل ملحوظ.</div>
   </article>
 
   <article class="step" id="reports">
-    <div class="step-head"><div class="step-num">9</div><h2>التقارير <span class="en">Reports</span></h2></div>
-    <p>قرارات مبنية على أرقام — تقارير فورية بضغطة زر.</p>
+    <div class="step-head"><div class="step-num">11</div><h2>التقارير <span class="en">Reports</span></h2></div>
+    <p>قرارات مبنية على أرقام — من <b>التقارير الشاملة</b> تستخرج تقارير فورية وتصدّرها <b>Excel / PDF</b>:</p>
     <ul>
-      <li><b>تقرير المالك:</b> دخل ومصروفات كل عقار لمالكه.</li>
+      <li><b>تقرير المالك:</b> دخل ومصروفات كل عقار منسوبةً لمالكه.</li>
       <li><b>الدخل الشهري</b> و<b>المتأخرات</b> و<b>العمولات</b>.</li>
       <li><b>براءة الذمة</b> للمستأجرين عند انتهاء العقد.</li>
-      <li>صدّر أي تقرير إلى Excel أو PDF.</li>
+      <li>تقارير تشغيلية عن الإشغال والصيانة.</li>
     </ul>
   </article>
 
   <article class="step" id="maintenance">
-    <div class="step-head"><div class="step-num">10</div><h2>الصيانة <span class="en">Maintenance</span></h2></div>
-    <p>نظّم طلبات الصيانة وتكاليفها لكل وحدة.</p>
-    <ul>
-      <li>سجّل طلب صيانة بأولوية (عاجل/عادي) واربطه بالوحدة.</li>
-      <li>تابع الحالة (جديد / قيد التنفيذ / مكتمل) والتكلفة.</li>
-      <li>كل وحدة لها سجل صيانة كامل.</li>
-    </ul>
+    <div class="step-head"><div class="step-num">12</div><h2>الصيانة <span class="en">Maintenance</span></h2></div>
+    <p>نظّم طلبات الصيانة وتكاليفها لكل وحدة عقارية.</p>
+    <ol>
+      <li>سجّل <b>طلب صيانة</b> بأولوية (عاجل / عادي) واربطه بالوحدة المعنيّة.</li>
+      <li>تابع <b>الحالة</b> (جديد / قيد التنفيذ / مكتمل) و<b>التكلفة</b>.</li>
+      <li>كل وحدة تحتفظ بـ<b>سجل صيانة كامل</b> يظهر في ملفها وفي تقرير المالك.</li>
+    </ol>
   </article>
 
   <article class="step" id="backup">
-    <div class="step-head"><div class="step-num">11</div><h2>النسخ الاحتياطي <span class="en">Backup</span></h2></div>
-    <p>بياناتك محلية على جهازك — أنت مسؤول عن حمايتها، والنظام يسهّل ذلك.</p>
+    <div class="step-head"><div class="step-num">13</div><h2>النسخ الاحتياطي والتحديثات <span class="en">Backup &amp; Updates</span></h2></div>
+    <h3>النسخ الاحتياطي والاستعادة</h3>
     <ul>
-      <li>من <b>الإعدادات → النسخ الاحتياطي</b> أنشئ نسخة بضغطة زر.</li>
-      <li>احفظ النسخ على قرص خارجي أو سحابة شخصية بانتظام.</li>
-      <li>الاسترجاع فوري عند الحاجة — حتى لو تعطّل الجهاز.</li>
+      <li>النسخ الاحتياطي اليومي <b>مُفعّل تلقائياً</b> لحماية بياناتك.</li>
+      <li>من صفحة <b>«النسخ الاحتياطي»</b> يمكنك إنشاء <b>نسخة فورية</b>، أو ضبط مجلد الحفظ، أو <b>الاستعادة</b> من نسخة سابقة.</li>
+      <li>احتفظ بنسخة على <b>قرص خارجي أو سحابة شخصية</b> دورياً لأمان مضاعف.</li>
     </ul>
-    <div class="tip"><b>مهم:</b> اجعل النسخ الاحتياطي عادة أسبوعية على الأقل.</div>
+    <div class="warn"><b>مهم:</b> بياناتك المالية والعقود <b>لا تُعوَّض</b> — تأكّد من سلامة مجلد النسخ الاحتياطي ومن وجود نسخة خارجية حديثة.</div>
+    <h3>التحديثات والدعم</h3>
+    <ul>
+      <li>عند توفّر إصدار جديد، يعرض النظام <b>شاشة تحديث</b> توضّح «ما الجديد» وتتيح التنزيل والتثبيت بنقرة.</li>
+      <li>لإرسال اقتراح أو ملاحظة، استخدم صفحة <b>«الاقتراحات والملاحظات»</b>.</li>
+    </ul>
   </article>
 
   <article class="step" id="tips">
-    <div class="step-head"><div class="step-num">12</div><h2>نصائح وأسئلة شائعة <span class="en">Tips &amp; FAQ</span></h2></div>
+    <div class="step-head"><div class="step-num">14</div><h2>نصائح وأسئلة شائعة <span class="en">Tips &amp; FAQ</span></h2></div>
     <ul>
-      <li><b>هل يعمل بدون إنترنت؟</b> نعم، بالكامل — البيانات محلية بـ SQLite.</li>
-      <li><b>كم جهازاً؟</b> Solo: جهاز، Office: جهازان، Pro: 3 أجهزة.</li>
-      <li><b>هل بياناتي آمنة؟</b> توقيع Ed25519 وفحص سلامة عند كل إقلاع.</li>
+      <li><b>يظهر «Windows protected your PC» عند التثبيت؟</b> طبيعي للبرامج الجديدة — اضغط <b>More info</b> ثم <b>Run anyway</b>. البرنامج آمن.</li>
+      <li><b>هل يعمل بدون إنترنت؟</b> نعم بالكامل في الوضع المحلي (SQLite). المزامنة عبر SQL Server وحدها تحتاج شبكة.</li>
+      <li><b>كم جهازاً مسموح؟</b> Solo: جهاز واحد، Office: جهازان، Pro: 3 أجهزة.</li>
+      <li><b>كيف أنقل الترخيص لجهاز آخر؟</b> الترخيص مرتبط ببصمة الجهاز — تواصل مع الدعم لإصدار ترخيص للجهاز الجديد.</li>
+      <li><b>هل بياناتي آمنة؟</b> توقيع رقمي <b>Ed25519</b> وفحص سلامة عند كل إقلاع، وكل إجراء مسجَّل في سجل التدقيق.</li>
+      <li><b>اختصارات لوحة المفاتيح:</b> <kbd>F2</kbd> تركيز البحث · <kbd>F5</kbd> تحديث · <kbd>F6</kbd> تنقّل بين الصفحات · <kbd>F9</kbd> إضافة · <kbd>F12</kbd> حفظ.</li>
       <li><b>كيف أحصل على الدعم؟</b> عبر واتساب أو <a href="mailto:support@azrar-systems.com">support@azrar-systems.com</a>.</li>
     </ul>
-    <div class="note">لمزيد من الأسئلة، راجع قسم الأسئلة الشائعة في <a href="index.html#faq">الصفحة الرئيسية</a>.</div>
+    <div class="note">لمزيد من الأسئلة، راجع قسم الأسئلة الشائعة في <a href="faq.html">صفحة الأسئلة الشائعة</a> أو <a href="index.html#faq">الصفحة الرئيسية</a>.</div>
   </article>
 
   <div class="guide-cta">
@@ -254,7 +327,7 @@ footer a{color:#d8b24a;text-decoration:none;}
 
 <footer>
   &copy; 2026 خبرني للخدمات العقارية — محمود قطوش ·
-  <a href="index.html">الرئيسية</a> · <a href="index.html#pricing">الأسعار</a> · <a href="index.html#faq">الأسئلة الشائعة</a>
+  <a href="index.html">الرئيسية</a> · <a href="index.html#pricing">الأسعار</a> · <a href="faq.html">الأسئلة الشائعة</a>
 </footer>
 </body>
 </html>
