@@ -103,11 +103,20 @@ footer a{color:#d8b24a;text-decoration:none;}
 .sf-bottom a{color:#8093b3;}
 @media(max-width:760px){.sf-inner{grid-template-columns:1fr 1fr;}}
 @media(max-width:460px){.sf-inner{grid-template-columns:1fr;}.sf-bottom{justify-content:center;text-align:center;}}
+
+/* === AZRAR motion system === */
+.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#4f46e5,#3b82f6,#d8b24a);box-shadow:0 0 8px rgba(79,70,229,.4);transition:width .12s ease-out;}
+.az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q){opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1);}
+.az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q).in{opacity:1;transform:none;}
+:is(.card,.step,.vid){transition:transform .25s ease,box-shadow .25s ease;}
+:is(.card,.step,.vid):hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(15,27,51,.10);}
+@media(prefers-reduced-motion:reduce){.az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q){opacity:1!important;transform:none!important;transition:none;}.az-progress{display:none;}:is(.card,.step,.vid):hover{transform:none;}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"كيفية استخدام نظام أزرار لإدارة العقارات","description":"دليل شامل خطوة بخطوة لتعلّم نظام أزرار: التفعيل، قاعدة البيانات والمزامنة، العقارات والعملاء، العقود والأقساط، التحصيل والغرامات، العمولات، واتساب الجماعي، التقارير، الصيانة، والنسخ الاحتياطي.","totalTime":"PT45M","image":"https://azrar-systems.com/og-image.png","step":[{"@type":"HowToStep","name":"التثبيت والتفعيل","text":"ثبّت النظام على Windows وفعّل الترخيص أو ابدأ التجربة المجانية 30 يوماً.","url":"https://azrar-systems.com/guide.html#install"},{"@type":"HowToStep","name":"الإعداد الأولي والمستخدمون","text":"أضف بيانات مكتبك والمستخدمين والصلاحيات والإعدادات الافتراضية.","url":"https://azrar-systems.com/guide.html#setup"},{"@type":"HowToStep","name":"قاعدة البيانات والمزامنة","text":"اعمل محلياً بلا إنترنت، أو اربط عدة أجهزة عبر SQL Server.","url":"https://azrar-systems.com/guide.html#database"},{"@type":"HowToStep","name":"لوحة المعلومات","text":"تابع نسبة الإشغال والأقساط المستحقة والمتأخرات في لمحة.","url":"https://azrar-systems.com/guide.html#dashboard"},{"@type":"HowToStep","name":"إضافة العقارات","text":"سجّل وحداتك العقارية وحالتها ومرفقاتها.","url":"https://azrar-systems.com/guide.html#properties"},{"@type":"HowToStep","name":"العملاء والملاك","text":"ابنِ قاعدة بيانات المستأجرين والملاك والوسطاء.","url":"https://azrar-systems.com/guide.html#people"},{"@type":"HowToStep","name":"إنشاء العقود والأقساط","text":"أنشئ عقد إيجار واحسب الأقساط تلقائياً بفرقية الأيام الفعلية.","url":"https://azrar-systems.com/guide.html#contracts"},{"@type":"HowToStep","name":"التحصيل والدفعات","text":"سجّل الدفعات الكاملة والجزئية وتابع المتأخرات والغرامات.","url":"https://azrar-systems.com/guide.html#payments"},{"@type":"HowToStep","name":"العمولات","text":"احتسب عمولات الوسطاء والموظفين تلقائياً.","url":"https://azrar-systems.com/guide.html#commissions"},{"@type":"HowToStep","name":"واتساب الجماعي","text":"أرسل تذكيرات واتساب جماعية مخصّصة.","url":"https://azrar-systems.com/guide.html#whatsapp"},{"@type":"HowToStep","name":"التقارير","text":"استخرج تقارير المالك والدخل والمتأخرات وبراءة الذمة.","url":"https://azrar-systems.com/guide.html#reports"},{"@type":"HowToStep","name":"النسخ الاحتياطي","text":"النسخ التلقائي اليومي والاستعادة الفورية.","url":"https://azrar-systems.com/guide.html#backup"}]}
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://azrar-systems.com/"}, {"@type": "ListItem", "position": 2, "name": "دليل الاستخدام", "item": "https://azrar-systems.com/guide.html"}]}</script>
+<script>document.documentElement.className+=" az-anim";</script>
 </head>
 <body>
 <div class="topbar">
@@ -382,5 +391,17 @@ footer a{color:#d8b24a;text-decoration:none;}
     <span class="sf-badge">v3.12.1 · Production Ready</span>
   </div>
 </footer>
+<script>
+(function(){
+ var bar=document.createElement('div');bar.className='az-progress';document.body.appendChild(bar);
+ function p(){var h=document.documentElement,s=h.scrollTop||document.body.scrollTop,m=(h.scrollHeight-h.clientHeight)||1;bar.style.width=(s/m*100)+'%';}
+ addEventListener('scroll',p,{passive:true});addEventListener('resize',p);p();
+ var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var els=document.querySelectorAll('.card,.step,.acard,.vid,.toc,.highlight,.faq-q');
+ if(rm||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+ var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+ els.forEach(function(e){io.observe(e);});
+})();
+</script>
 </body>
 </html>

@@ -375,6 +375,9 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
 .old-price{text-decoration:line-through;color:var(--muted);font-size:1.15rem;font-weight:600;margin-inline-end:.5rem;}
 .launch-banner{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#fff4d6,#ffe9b0);border:1px solid var(--gold);color:#8a6a16;font-weight:800;font-size:.95rem;padding:.55rem 1.3rem;border-radius:100px;margin-bottom:2rem;box-shadow:0 6px 18px rgba(197,151,42,.2);}
 [data-lang="en"] .launch-banner{font-family:var(--font-en);}
+
+.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#4f46e5,#3b82f6,#d8b24a);box-shadow:0 0 8px rgba(79,70,229,.4);transition:width .12s ease-out;}
+@media(prefers-reduced-motion:reduce){.az-progress{display:none;}}
 </style>
 
 <script type="application/ld+json">
@@ -1011,6 +1014,11 @@ document.addEventListener('click',function(e){
     gtag('event','email_click',{transport_type:'beacon'});
   }
 },true);
+</script>
+<script>
+(function(){var bar=document.createElement('div');bar.className='az-progress';document.body.appendChild(bar);
+ function p(){var h=document.documentElement,s=h.scrollTop||document.body.scrollTop,m=(h.scrollHeight-h.clientHeight)||1;bar.style.width=(s/m*100)+'%';}
+ addEventListener('scroll',p,{passive:true});addEventListener('resize',p);p();})();
 </script>
 </body>
 </html>
