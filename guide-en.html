@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AZRAR User Guide — Real Estate Management Step by Step</title>
-<meta name="description" content="Complete guide to AZRAR real estate software: installation & activation, contracts & installments, collection, commissions, bulk WhatsApp, and reports.">
-<meta name="keywords" content="AZRAR guide, real estate software tutorial, how to create lease contract, installment calculation, property management tutorial, real estate course">
+<meta name="description" content="Complete step-by-step guide to AZRAR real estate software: installation & activation, database & multi-device sync, properties & clients, contracts & installments, collection & late fees, commissions, bulk WhatsApp, reports, maintenance and backup.">
+<meta name="keywords" content="AZRAR guide, real estate software tutorial, how to create lease contract, installment calculation, property management tutorial, real estate course, SQL Server sync, real estate backup">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Mahmoud Qattoush">
 <meta name="theme-color" content="#0f1e3d">
@@ -16,10 +16,10 @@
 <link rel="alternate" hreflang="ar" href="https://azrar-systems.com/guide.html">
 <link rel="alternate" hreflang="en" href="https://azrar-systems.com/guide-en.html">
 <link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/guide.html">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://azrar-systems.com/guide-en.html">
 <meta property="og:title" content="AZRAR User Guide — Real Estate Management Step by Step">
-<meta property="og:description" content="Complete guide to AZRAR real estate software: installation & activation, contracts & installments, collection, commissions, bulk WhatsApp, and reports.">
+<meta property="og:description" content="Learn AZRAR from zero to pro: activation, database, contracts, installments, collection, commissions, WhatsApp, and reports.">
 <meta property="og:image" content="https://azrar-systems.com/og-image.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:site_name" content="AZRAR System"><meta property="og:locale" content="en_US">
@@ -42,24 +42,21 @@ a{color:var(--blue);}
 .phero .eyebrow{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:var(--gold-l);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:.35rem 1rem;border-radius:100px;margin-bottom:1.1rem;font-weight:700;}
 .phero h1{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;margin-bottom:.8rem;line-height:1.25;}
 .phero p{color:#c4d2ea;max-width:640px;margin:0 auto;font-size:1.05rem;}
+.phero .meta-row{margin-top:1.2rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;}
+.phero .meta-row span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:.3rem .9rem;font-size:.8rem;color:#dbe6f7;}
 .wrap{max-width:880px;margin:0 auto;padding:2.5rem 1.5rem 4rem;}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.6rem 1.9rem;margin-bottom:1.4rem;box-shadow:0 4px 16px rgba(15,27,51,.05);}
-.card h2{font-size:1.35rem;color:var(--head);font-weight:800;margin-bottom:.7rem;line-height:1.35;}
-.card h3{font-size:1.08rem;color:var(--head);font-weight:800;margin:1.1rem 0 .5rem;}
-.card p{margin-bottom:.8rem;}.card ul,.card ol{margin:.4rem 1.5rem .9rem;}.card li{margin-bottom:.5rem;color:#3b465f;}
-.meta{font-size:.82rem;color:var(--muted);margin-bottom:1rem;}
 .tip{background:#fff8e8;border:1px solid #ecd9a8;border-radius:10px;padding:.85rem 1.1rem;font-size:.92rem;color:#7a6420;margin:.9rem 0;}.tip b{color:#a87d1a;}
 .note{background:#eef3ff;border:1px solid #d6e2ff;border-radius:10px;padding:.85rem 1.1rem;font-size:.92rem;color:#33415c;margin:.9rem 0;}
-.alist{display:grid;gap:1.1rem;}
-.acard{display:block;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.7rem;text-decoration:none;color:inherit;transition:all .2s;box-shadow:0 4px 16px rgba(15,27,51,.05);}
-.acard:hover{transform:translateY(-3px);border-color:var(--blue-l);box-shadow:0 14px 32px rgba(37,99,235,.13);}
-.acard .tag{display:inline-block;background:#eef3ff;color:var(--blue);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;margin-bottom:.7rem;}
-.acard h2{font-size:1.2rem;color:var(--head);margin-bottom:.45rem;}.acard p{color:var(--muted);font-size:.92rem;margin:0;}
-.acard .more{color:var(--blue);font-weight:800;font-size:.85rem;margin-top:.7rem;display:inline-block;}
+.warn{background:#fef2f2;border:1px solid #fccaca;border-radius:10px;padding:.85rem 1.1rem;font-size:.92rem;color:#9b2c2c;margin:.9rem 0;}.warn b{color:#7f1d1d;}
+.path{background:#0f1b33;color:#fff;border-radius:6px;padding:.12rem .55rem;font-size:.8rem;white-space:nowrap;}
+kbd{background:#0f1b33;color:#fff;border-radius:5px;padding:.1rem .5rem;font-size:.82rem;}
 .step{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.6rem 1.9rem;margin-bottom:1.3rem;box-shadow:0 4px 16px rgba(15,27,51,.04);scroll-margin-top:80px;}
 .step-head{display:flex;align-items:center;gap:.9rem;margin-bottom:1rem;}
 .step-num{background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;font-weight:800;font-size:1rem;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .step h2{font-size:1.25rem;color:var(--head);font-weight:800;}
+.step h3{font-size:1.05rem;color:var(--head);font-weight:800;margin:1.15rem 0 .45rem;display:flex;align-items:center;gap:.45rem;}
+.step h3::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+.step p{margin-bottom:.8rem;}.step ul,.step ol{margin:.4rem 1.5rem .9rem;}.step li{margin-bottom:.5rem;color:#3b465f;}
 .toc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.75rem;margin-bottom:2.5rem;box-shadow:0 6px 22px rgba(15,27,51,.05);}
 .toc h2{font-size:1.05rem;color:var(--head);margin-bottom:1rem;}
 .toc ol{list-style:none;counter-reset:t;display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem;}
@@ -67,20 +64,15 @@ a{color:var(--blue);}
 .toc a{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:600;padding:.4rem .2rem;border-radius:6px;}
 .toc a:hover{color:var(--blue);}
 .toc a::before{content:counter(t);background:#eef3ff;color:var(--blue);font-weight:800;font-size:.72rem;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.faq-q{font-size:1.05rem;color:var(--head);font-weight:800;margin:1.3rem 0 .4rem;}.faq-q:first-child{margin-top:0;}
-.vid{display:flex;align-items:center;gap:1rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.3rem;margin-bottom:.9rem;box-shadow:0 3px 12px rgba(15,27,51,.04);}
-.vid .vnum{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;}
-.vid .vtxt{flex:1;}.vid .vtxt b{color:var(--head);font-size:1rem;}.vid .vtxt span{display:block;color:var(--muted);font-size:.85rem;}
-.vid .soon{background:#fdf3da;color:#a87d1a;font-size:.7rem;font-weight:800;padding:.25rem .7rem;border-radius:100px;white-space:nowrap;}
 .cta{background:linear-gradient(135deg,var(--navy),var(--navy3));border-radius:20px;padding:2.4rem 1.5rem;text-align:center;color:#fff;margin-top:2.5rem;}
 .cta h2{font-size:1.45rem;font-weight:900;margin-bottom:.6rem;}.cta p{color:#c4d2ea;margin-bottom:1.3rem;}
 .cta a{display:inline-flex;align-items:center;gap:.5rem;background:#25d366;color:#fff;padding:.85rem 2rem;border-radius:11px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.35);}
 footer{background:var(--navy);color:#aebdd2;text-align:center;padding:1.9rem 1.5rem;font-size:.8rem;line-height:2;}
 footer a{color:var(--gold-l);text-decoration:none;}
-@media(max-width:600px){.toc ol{grid-template-columns:1fr;}}
+@media(max-width:600px){.toc ol{grid-template-columns:1fr;}.step{padding:1.4rem 1.25rem;}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HowTo","name":"How to use AZRAR Real Estate System","description":"Complete step-by-step guide to AZRAR.","image":"https://azrar-systems.com/og-image.png"}
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use AZRAR Real Estate System","description":"Complete step-by-step guide to AZRAR: activation, database & sync, properties & clients, contracts & installments, collection & late fees, commissions, bulk WhatsApp, reports, maintenance and backup.","totalTime":"PT45M","image":"https://azrar-systems.com/og-image.png","step":[{"@type":"HowToStep","name":"Installation & Activation","text":"Install AZRAR on Windows and activate or start the 30-day free trial.","url":"https://azrar-systems.com/guide-en.html#install"},{"@type":"HowToStep","name":"Initial Setup & Users","text":"Set your office details, users and default settings.","url":"https://azrar-systems.com/guide-en.html#setup"},{"@type":"HowToStep","name":"Database & Sync","text":"Work locally offline, or sync several devices via SQL Server.","url":"https://azrar-systems.com/guide-en.html#database"},{"@type":"HowToStep","name":"Dashboard","text":"See occupancy, due installments and overdue at a glance.","url":"https://azrar-systems.com/guide-en.html#dashboard"},{"@type":"HowToStep","name":"Properties","text":"Register your units, status and attachments.","url":"https://azrar-systems.com/guide-en.html#properties"},{"@type":"HowToStep","name":"Clients & Owners","text":"Build a database of tenants, owners and brokers.","url":"https://azrar-systems.com/guide-en.html#people"},{"@type":"HowToStep","name":"Contracts & Installments","text":"Create a lease and auto-calculate installments by actual days.","url":"https://azrar-systems.com/guide-en.html#contracts"},{"@type":"HowToStep","name":"Collection & Payments","text":"Record full/partial payments and track overdue and late fees.","url":"https://azrar-systems.com/guide-en.html#payments"},{"@type":"HowToStep","name":"Commissions","text":"Auto-calculate broker and employee commissions.","url":"https://azrar-systems.com/guide-en.html#commissions"},{"@type":"HowToStep","name":"Bulk WhatsApp","text":"Send personalized WhatsApp reminders in bulk.","url":"https://azrar-systems.com/guide-en.html#whatsapp"},{"@type":"HowToStep","name":"Reports","text":"Owner, income, overdue and clearance reports.","url":"https://azrar-systems.com/guide-en.html#reports"},{"@type":"HowToStep","name":"Backup","text":"Automatic daily backup and instant restore.","url":"https://azrar-systems.com/guide-en.html#backup"}]}
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://azrar-systems.com/"}, {"@type": "ListItem", "position": 2, "name": "User Guide", "item": "https://azrar-systems.com/guide-en.html"}]}</script>
 </head>
@@ -89,21 +81,210 @@ footer a{color:var(--gold-l);text-decoration:none;}
   <a href="index.html" class="brand"><img src="logo.png" alt="AZRAR"><span>AZRAR<small>USER GUIDE</small></span></a>
   <div class="tb-right"><a href="guide.html" class="lang-link">العربية</a><a href="index.html?lang=en" class="home-link">Home →</a></div>
 </div>
-<section class="phero"><span class="eyebrow">USER GUIDE</span><h1>AZRAR User Guide</h1><p>Learn the system from zero to pro — a practical, step-by-step guide for everything you need to run your real estate office.</p></section>
+<section class="phero">
+  <span class="eyebrow">USER GUIDE</span>
+  <h1>AZRAR User Guide</h1>
+  <p>A practical, detailed guide from zero to pro — everything you need to run your real estate office: from installation and activation, through creating contracts and collecting installments, to reports and backups.</p>
+  <div class="meta-row"><span>⏱️ ~15 min read</span><span>📚 14 sections</span><span>🪟 Windows 10/11</span><span>📶 Works offline</span></div>
+</section>
 <div class="wrap">
-<nav class="toc"><h2>Guide Contents</h2><ol><li><a href="#">Installation & Activation</a></li><li><a href="#">Initial Setup & Users</a></li><li><a href="#">Properties</a></li><li><a href="#">Clients & Owners</a></li><li><a href="#">Contracts & Installments</a></li><li><a href="#">Collection & Payments</a></li><li><a href="#">Commissions</a></li><li><a href="#">Bulk WhatsApp</a></li><li><a href="#">Reports</a></li><li><a href="#">Maintenance</a></li><li><a href="#">Backup</a></li><li><a href="#">Tips & FAQ</a></li></ol></nav>
-<article class="step"><div class="step-head"><div class="step-num">1</div><h2>Installation & Activation</h2></div><p>Download AZRAR and install it on Windows, then activate your license or start the free trial.</p><ul><li>Download the latest version (an <kbd>.exe</kbd> file) and install it like any Windows app.</li><li>On first launch, the <b>30-day free trial</b> starts automatically with all features — no credit card.</li><li>To buy a license: copy your <b>Device ID</b> from the activation screen and send it to us via WhatsApp or email; we'll send your license file.</li><li>Load the license file from the Activation screen — the system unlocks fully.</li></ul></article>
-<article class="step"><div class="step-head"><div class="step-num">2</div><h2>Initial Setup & Users</h2></div><p>Configure your office details and create staff accounts with permissions.</p><ul><li>From <b>Settings</b>, enter your office name, logo and contact info (shown on contracts and reports).</li><li>Create users and assign each a role: <b>SuperAdmin / Admin / Manager / Staff</b>.</li><li>Set default currency, late-fee and commission settings to speed up data entry later.</li></ul></article>
-<article class="step"><div class="step-head"><div class="step-num">3</div><h2>Properties</h2></div><p>Register your portfolio so you can link contracts and maintenance later.</p><ul><li>Open <b>Properties</b> → <b>New Property</b>.</li><li>Enter unit details: type, location, area, owner and status (available / rented / sold).</li><li>Attach photos and documents (deed, floor plan) to each unit.</li></ul></article>
-<article class="step"><div class="step-head"><div class="step-num">4</div><h2>Clients & Owners</h2></div><p>Build a database of tenants, owners and brokers.</p><ul><li>From <b>People</b>, add the tenant/owner with full details and contact method.</li><li>Use the <b>blacklist</b> to flag non-compliant clients.</li><li>Each client has a full history of contracts, payments and interactions.</li></ul></article>
-<article class="step"><div class="step-head"><div class="step-num">5</div><h2>Contracts & Installments</h2></div><p>The heart of the system — create a professional lease and get an accurate installment schedule automatically.</p><ul><li>Open <b>Contracts</b> → <b>New Contract</b>, choose the property and tenant.</li><li>Enter rent value, start date, duration and number of payments.</li><li>The system calculates <b>installments automatically using actual days</b> (28/29/30/31) for full financial accuracy.</li><li>Choose payment type (monthly/quarterly/yearly).</li><li>Save the contract — ready to print and generate the legal document.</li></ul></article>
-<article class="step"><div class="step-head"><div class="step-num">6</div><h2>Collection & Payments</h2></div><p>Track installment collection, partial payments and late fees.</p><ul><li>From the contract card, click a due installment → <b>Record Payment</b> (full or partial).</li><li>The system supports <b>three types of late fees</b>, calculated automatically by days.</li><li>You can <b>reverse</b> any wrong payment with a full audit trail.</li><li>Track overdue items from the <b>Dashboard</b> or the overdue report.</li></ul></article>
-<article class="step"><div class="step-head"><div class="step-num">7</div><h2>Commissions</h2></div><p>Automatic sale and rental commission calculation per broker or employee.</p><ul><li>Set the commission rate at the contract or employee level.</li><li>The system calculates commission automatically when a deal closes.</li><li>Export a detailed commission report per broker.</li></ul></article>
-<article class="step"><div class="step-head"><div class="step-num">8</div><h2>Bulk WhatsApp</h2></div><p>Send custom messages to all your tenants at once — your most powerful follow-up tool.</p><ul><li>Open <b>Bulk WhatsApp</b> and pick a segment (overdue / expiring soon / all).</li><li>Pick a ready template (payment reminder, renewal notice) or write your own.</li><li>The system inserts each client's name and amount automatically.</li><li>Send → chats open one by one for sending.</li></ul></article>
-<article class="step"><div class="step-head"><div class="step-num">9</div><h2>Reports</h2></div><p>Decisions backed by numbers — instant reports with one click.</p><ul><li><b>Owner report:</b> income and expenses per property for its owner.</li><li><b>Monthly income</b>, <b>overdue</b> and <b>commissions</b>.</li><li><b>Clearance</b> for tenants at contract end.</li><li>Export any report to Excel or PDF.</li></ul></article>
-<article class="step"><div class="step-head"><div class="step-num">10</div><h2>Maintenance</h2></div><p>Organize maintenance requests and costs per unit.</p><ul><li>Log a maintenance request with priority (urgent/normal) linked to the unit.</li><li>Track status (new / in progress / done) and cost.</li><li>Each unit has a full maintenance history.</li></ul></article>
-<article class="step"><div class="step-head"><div class="step-num">11</div><h2>Backup</h2></div><p>Your data is local on your device — you protect it, and the system makes it easy.</p><ul><li>From <b>Settings → Backup</b>, create a backup with one click.</li><li>Save backups to an external drive or personal cloud regularly.</li><li>Instant restore when needed — even after device failure.</li></ul></article>
-<article class="step"><div class="step-head"><div class="step-num">12</div><h2>Tips & FAQ</h2></div><ul><li><b>Does it work offline?</b> Yes, fully — data is local via SQLite.</li><li><b>How many devices?</b> Solo: 1, Office: 2, Pro: 3.</li><li><b>Is my data secure?</b> Ed25519 signature and integrity check on every launch.</li><li><b>Support?</b> Via WhatsApp or <a href='mailto:support@azrar-systems.com'>support@azrar-systems.com</a>.</li></ul></article>
+<nav class="toc"><h2>Guide Contents</h2><ol>
+  <li><a href="#install">Installation &amp; Activation</a></li>
+  <li><a href="#setup">Initial Setup &amp; Users</a></li>
+  <li><a href="#database">Database &amp; Sync</a></li>
+  <li><a href="#dashboard">Dashboard</a></li>
+  <li><a href="#properties">Properties</a></li>
+  <li><a href="#people">Clients &amp; Owners</a></li>
+  <li><a href="#contracts">Contracts &amp; Installments</a></li>
+  <li><a href="#payments">Collection &amp; Payments</a></li>
+  <li><a href="#commissions">Commissions</a></li>
+  <li><a href="#whatsapp">Bulk WhatsApp</a></li>
+  <li><a href="#reports">Reports</a></li>
+  <li><a href="#maintenance">Maintenance</a></li>
+  <li><a href="#backup">Backup &amp; Updates</a></li>
+  <li><a href="#tips">Tips &amp; FAQ</a></li>
+</ol></nav>
+
+<article class="step" id="install"><div class="step-head"><div class="step-num">1</div><h2>Installation &amp; Activation</h2></div>
+<p>You only need a Windows PC — no servers, no cloud subscriptions. Getting started:</p>
+<h3>Download &amp; install</h3>
+<ol>
+  <li>Download the latest version (<kbd>AZRAR-Setup.exe</kbd>) from the link we send you.</li>
+  <li>Run the installer. Windows may show <b>“Windows protected your PC”</b> — this is normal for new apps; click <b>More info</b> then <b>Run anyway</b>. The app is signed and safe.</li>
+  <li>Finish installation like any Windows app; a desktop shortcut is created.</li>
+</ol>
+<h3>First launch &amp; free trial</h3>
+<ol>
+  <li>On first launch, read and accept the <b>End-User License Agreement (EULA)</b>.</li>
+  <li>A <b>30-day free trial</b> starts automatically with all features — no credit card.</li>
+</ol>
+<h3>Permanent activation</h3>
+<ol>
+  <li>Open the <b>Activation</b> screen and copy your <b>Device Fingerprint</b>.</li>
+  <li>Send it to us via WhatsApp or email; we'll send back your <b>license file</b>.</li>
+  <li>Load the license file from the Activation screen — the system unlocks fully, forever.</li>
+</ol>
+<div class="note"><b>Requirements:</b> Windows 10 or 11 (64-bit). The system runs <b>fully offline</b> in local mode. The license is bound to the device fingerprint — to move it to another PC, contact support.</div>
+</article>
+
+<article class="step" id="setup"><div class="step-head"><div class="step-num">2</div><h2>Initial Setup &amp; Users</h2></div>
+<p>Before entering any contract, set your office identity and create staff accounts — it saves a lot of time later.</p>
+<h3>Office details</h3>
+<ul>
+  <li>From <b>Settings</b>, enter your <b>office name, logo and contact info</b> — they appear automatically on printed contracts, reports and invoices.</li>
+  <li>Set the <b>currency</b> and <b>default late-fee and commission settings</b> to speed up contract entry later.</li>
+</ul>
+<h3>Users &amp; roles (RBAC)</h3>
+<p>Create an account for each employee and assign one of four roles:</p>
+<ul>
+  <li><b>SuperAdmin</b> — full control of the system, settings and users.</li>
+  <li><b>Admin</b> — full data and report management, without sensitive system settings.</li>
+  <li><b>Manager</b> — follow up contracts, collection and reports.</li>
+  <li><b>Staff</b> — limited daily entry based on what you grant.</li>
+</ul>
+<div class="tip"><b>Security tip:</b> grant each employee the <b>least privilege needed</b> for their job. Every action is recorded in the <b>Audit Log</b> with username and timestamp.</div>
+</article>
+
+<article class="step" id="database"><div class="step-head"><div class="step-num">3</div><h2>Database &amp; Sync</h2></div>
+<p>You have two ways to store data — pick what fits your office size:</p>
+<h3>Default mode (local)</h3>
+<p>The system runs directly on a local database (<b>SQLite</b>) on your PC — with <b>no setup and no internet</b>. All your data is stored locally and backed up automatically. Ideal for a single-PC office.</p>
+<h3>Multi-device sync (SQL Server) — optional</h3>
+<p>If you want to share the same data across several PCs in the office:</p>
+<ol>
+  <li>Install <b>SQL Server Express</b> (offered during installation, or install it later). It creates a database and stores connection details in <span class="path">ProgramData\AZRAR\sql-local-credentials.json</span>.</li>
+  <li>Open <b>“Server &amp; Connection Settings”</b> from the side menu.</li>
+  <li>Enter the connection details: <b>Server</b>, <b>Database name</b>, <b>User</b>, <b>Password</b> — or use the <b>auto-import</b> button from the install file.</li>
+  <li>Click <b>Save</b> then <b>Connect</b>, and confirm the status shows <b>“Connected” ✅</b>.</li>
+</ol>
+<div class="warn"><b>Note:</b> SQL Server sync needs a network/internet during setup. <b>Local mode always works offline.</b> With sync, conflicts are resolved automatically between devices on the same server.</div>
+</article>
+
+<article class="step" id="dashboard"><div class="step-head"><div class="step-num">4</div><h2>Dashboard</h2></div>
+<p>This is your daily starting point — it shows your office status at a glance right after you log in:</p>
+<ul>
+  <li><b>Occupancy rate</b> — how many units are rented vs. vacant.</li>
+  <li><b>Installments due today</b> — so you know who to follow up now.</li>
+  <li><b>Collection overdue</b> — late amounts that need attention.</li>
+  <li><b>Latest alerts</b> — contracts expiring soon, overdue installments and smart reminders.</li>
+</ul>
+<div class="tip"><b>Tip:</b> start your day from the Dashboard, then jump to <b>Bulk WhatsApp</b> to remind overdue tenants in one click.</div>
+</article>
+
+<article class="step" id="properties"><div class="step-head"><div class="step-num">5</div><h2>Properties</h2></div>
+<p>Register your portfolio first so you can link contracts, maintenance and reports later.</p>
+<ol>
+  <li>Open <b>Properties</b> → <b>New Property</b>.</li>
+  <li>Enter unit details: <b>internal code</b> (auto-generated), <b>type</b>, <b>location</b>, <b>area</b>, <b>owner</b> and <b>status</b> (available / rented / sold / vacant).</li>
+  <li>Attach <b>photos and documents</b> (deed, floor plan) to each unit for easy reference.</li>
+  <li>Save — the unit instantly reflects in the occupancy rate on the Dashboard.</li>
+</ol>
+<div class="tip"><b>Tip:</b> enter each unit once, accurately; the system then links it automatically to every contract, maintenance request and report.</div>
+</article>
+
+<article class="step" id="people"><div class="step-head"><div class="step-num">6</div><h2>Clients &amp; Owners</h2></div>
+<p>Build one unified database of tenants, owners and brokers — each person gets a full profile and history.</p>
+<ol>
+  <li>From <b>People</b>, click <b>Add</b> and choose the type (tenant / owner / broker).</li>
+  <li>Enter the full details: <b>name, phone, national ID</b> and contact method.</li>
+  <li>Use the <b>blacklist</b> to flag non-compliant clients and get alerted when dealing with them.</li>
+</ol>
+<div class="note">Each person has a <b>complete history</b> of contracts, payments and interactions — shown the moment you open their profile.</div>
+</article>
+
+<article class="step" id="contracts"><div class="step-head"><div class="step-num">7</div><h2>Contracts &amp; Installments</h2></div>
+<p>The heart of the system — a contract links a property to a tenant and auto-generates an accurate installment schedule.</p>
+<ol>
+  <li>Open <b>Contracts</b> → <b>New Contract</b>, and choose the <b>property</b> and <b>tenant</b> from your database.</li>
+  <li>Enter the <b>annual rent value</b>, <b>start date</b>, <b>duration</b> and number of payments.</li>
+  <li>Choose the <b>payment frequency</b> (monthly / quarterly / yearly).</li>
+  <li>The system calculates <b>installments automatically using actual days</b> (28/29/30/31) — full financial accuracy that protects both you and the client.</li>
+  <li>Save the contract → it's ready to print, generate the legal document and export as <b>PDF</b>, and the <b>installments (promissory notes)</b> are generated automatically.</li>
+</ol>
+<div class="tip"><b>Tip:</b> you can edit any installment's amount or date later from the contract's <b>financial card</b> — the system re-balances everything automatically.</div>
+</article>
+
+<article class="step" id="payments"><div class="step-head"><div class="step-num">8</div><h2>Collection &amp; Payments</h2></div>
+<p>Track due and overdue installments, and record payments quickly without leaving the page.</p>
+<h3>Recording a payment</h3>
+<ol>
+  <li>From the contract's <b>financial card</b> or the <b>Payments</b> page, open the due installment.</li>
+  <li>Click <b>“Pay”</b> and enter the amount — <b>full or partial</b>. The balance updates instantly without closing the page.</li>
+</ol>
+<h3>Late fees &amp; corrections</h3>
+<ul>
+  <li>The system calculates <b>three types of late fees</b> automatically based on actual days overdue.</li>
+  <li>You can <b>reverse any wrong payment</b> with a full record kept in the Audit Log.</li>
+  <li>Track overdue items from the <b>Dashboard</b> or the <b>overdue report</b>.</li>
+</ul>
+</article>
+
+<article class="step" id="commissions"><div class="step-head"><div class="step-num">9</div><h2>Commissions</h2></div>
+<p>Automatic sale and rental commission calculation for each broker or employee linked to a contract.</p>
+<ol>
+  <li>Set the <b>commission rate</b> at the contract or employee level.</li>
+  <li>The system calculates the commission <b>automatically</b> when a deal closes or a payment is collected.</li>
+  <li>Export a <b>detailed commission report</b> per broker whenever needed.</li>
+</ol>
+</article>
+
+<article class="step" id="whatsapp"><div class="step-head"><div class="step-num">10</div><h2>Bulk WhatsApp</h2></div>
+<p>Send personalized messages to your tenants in bulk — your most powerful follow-up and collection tool.</p>
+<ol>
+  <li>Open <b>Bulk WhatsApp</b> and pick a segment (<b>overdue</b> / <b>expiring soon</b> / <b>all</b>).</li>
+  <li>Pick a <b>ready template</b> (payment reminder, renewal notice) or write your own.</li>
+  <li>The system inserts <b>each client's name and amount automatically</b>.</li>
+  <li>Send → chats open one by one for sending from your number.</li>
+</ol>
+<div class="tip"><b>Tip:</b> send the reminder <b>before</b> the installment due date — it noticeably raises on-time payment.</div>
+</article>
+
+<article class="step" id="reports"><div class="step-head"><div class="step-num">11</div><h2>Reports</h2></div>
+<p>Decisions backed by numbers — from <b>Comprehensive Reports</b> you generate instant reports and export them to <b>Excel / PDF</b>:</p>
+<ul>
+  <li><b>Owner report:</b> income and expenses per property attributed to its owner.</li>
+  <li><b>Monthly income</b>, <b>overdue</b> and <b>commissions</b>.</li>
+  <li><b>Clearance</b> for tenants at contract end.</li>
+  <li>Operational reports on occupancy and maintenance.</li>
+</ul>
+</article>
+
+<article class="step" id="maintenance"><div class="step-head"><div class="step-num">12</div><h2>Maintenance</h2></div>
+<p>Organize maintenance requests and costs per unit.</p>
+<ol>
+  <li>Log a <b>maintenance request</b> with priority (urgent / normal) linked to the relevant unit.</li>
+  <li>Track the <b>status</b> (new / in progress / done) and <b>cost</b>.</li>
+  <li>Each unit keeps a <b>full maintenance history</b>, shown in its profile and the owner report.</li>
+</ol>
+</article>
+
+<article class="step" id="backup"><div class="step-head"><div class="step-num">13</div><h2>Backup &amp; Updates</h2></div>
+<h3>Backup &amp; restore</h3>
+<ul>
+  <li>Daily backup is <b>enabled automatically</b> to protect your data.</li>
+  <li>From the <b>Backup</b> page you can create an <b>instant backup</b>, set the save folder, or <b>restore</b> from a previous backup.</li>
+  <li>Keep a copy on an <b>external drive or personal cloud</b> regularly for extra safety.</li>
+</ul>
+<div class="warn"><b>Important:</b> your financial data and contracts are <b>irreplaceable</b> — make sure the backup folder is safe and a recent external copy exists.</div>
+<h3>Updates &amp; support</h3>
+<ul>
+  <li>When a new version is available, the system shows an <b>update screen</b> with “what's new” and one-click download &amp; install.</li>
+  <li>To send a suggestion or note, use the <b>“Feedback &amp; Suggestions”</b> page.</li>
+</ul>
+</article>
+
+<article class="step" id="tips"><div class="step-head"><div class="step-num">14</div><h2>Tips &amp; FAQ</h2></div>
+<ul>
+  <li><b>“Windows protected your PC” on install?</b> Normal for new apps — click <b>More info</b> then <b>Run anyway</b>. The app is safe.</li>
+  <li><b>Does it work offline?</b> Yes, fully in local mode (SQLite). Only SQL Server sync needs a network.</li>
+  <li><b>How many devices?</b> Solo: 1, Office: 2, Pro: 3.</li>
+  <li><b>How do I move the license to another PC?</b> The license is bound to the device fingerprint — contact support to issue a license for the new device.</li>
+  <li><b>Is my data secure?</b> <b>Ed25519</b> digital signature and an integrity check on every launch, plus every action logged in the Audit Log.</li>
+  <li><b>Keyboard shortcuts:</b> <kbd>F2</kbd> focus search · <kbd>F5</kbd> refresh · <kbd>F6</kbd> navigate pages · <kbd>F9</kbd> add · <kbd>F12</kbd> save.</li>
+  <li><b>How do I get support?</b> Via WhatsApp or <a href="mailto:support@azrar-systems.com">support@azrar-systems.com</a>.</li>
+</ul>
+<div class="note">For more questions, see the <a href="faq-en.html">FAQ page</a> or the <a href="index.html?lang=en">homepage</a>.</div>
+</article>
 
   <div class="cta"><h2>Try AZRAR Free</h2><p>30 days, all features — no credit card.</p>
   <a href="https://wa.me/962786170080?text=I%20want%20to%20try%20AZRAR%20free" target="_blank" rel="noopener">Contact via WhatsApp</a></div>
