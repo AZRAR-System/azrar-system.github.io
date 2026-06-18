@@ -83,20 +83,21 @@ nav,.hero,section,footer{position:relative;z-index:2;}
 
 /* ── NAV (light) ── */
 nav{position:fixed;top:0;right:0;left:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-  padding:0.8rem 2.5rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(18px) saturate(1.4);
-  border-bottom:1px solid var(--border);box-shadow:0 1px 14px rgba(15,27,51,0.05);}
+  padding:0.8rem 2.5rem;background:rgba(20,16,56,0.82);backdrop-filter:blur(18px) saturate(1.4);
+  border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 20px rgba(0,0,0,0.28);}
 .nav-brand{display:flex;align-items:center;gap:0.7rem;}
 .nav-logo-img{width:36px;height:36px;border-radius:9px;}
 .nav-name{font-size:1.1rem;font-weight:900;color:var(--head);letter-spacing:0.03em;font-family:var(--font-en);}
 .nav-name span{color:var(--blue);}
+.nav-wordmark{height:32px;width:auto;display:block;}
 .nav-links{display:flex;gap:1.7rem;align-items:center;}
-.nav-links a{color:#475569;text-decoration:none;font-size:0.88rem;font-weight:600;transition:color 0.2s;}
-.nav-links a:hover{color:var(--blue);}
+.nav-links a{color:#cdd5e8;text-decoration:none;font-size:0.88rem;font-weight:600;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold-l);}
 .nav-right{display:flex;align-items:center;gap:0.75rem;}
-.lang-switcher{display:flex;align-items:center;background:#eef2f9;border:1px solid var(--border);border-radius:9px;overflow:hidden;}
-.lang-btn{padding:0.36rem 0.78rem;font-size:0.74rem;font-weight:800;cursor:pointer;border:none;background:transparent;color:#334155;transition:all 0.2s;font-family:var(--font-en);letter-spacing:0.05em;}
+.lang-switcher{display:flex;align-items:center;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:9px;overflow:hidden;}
+.lang-btn{padding:0.36rem 0.78rem;font-size:0.74rem;font-weight:800;cursor:pointer;border:none;background:transparent;color:#cdd5e8;transition:all 0.2s;font-family:var(--font-en);letter-spacing:0.05em;}
 .lang-btn.active{background:var(--blue);color:#fff;}
-.lang-btn:hover:not(.active){color:var(--blue);}
+.lang-btn:hover:not(.active){color:var(--gold-l);}
 .nav-cta{background:linear-gradient(135deg,var(--blue),var(--blue-l));color:#fff;padding:0.5rem 1.3rem;border-radius:8px;font-weight:800;font-size:0.84rem;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 14px rgba(79,70,229,0.28);}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(79,70,229,0.4);}
 
@@ -286,7 +287,7 @@ footer{border-top:1px solid var(--navy3);padding:2.25rem 2.5rem;display:flex;ali
 
 /* ── ADDITIONS ── */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;border-radius:6px;border:none;background:transparent;}
-.hamburger span{display:block;width:23px;height:2px;background:var(--head);border-radius:2px;transition:all .3s;}
+.hamburger span{display:block;width:23px;height:2px;background:#e7eefb;border-radius:2px;transition:all .3s;}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
@@ -395,7 +396,7 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
 <nav>
   <div class="nav-brand">
     <img src="logo.png" alt="AZRAR" class="nav-logo-img" width="34" height="34" decoding="async">
-    <div class="nav-name">AZRAR <span>·</span> أزرار</div>
+    <img src="logo-wordmark.png" alt="أزرار · AZRAR" class="nav-wordmark" height="30" decoding="async">
   </div>
   <div class="nav-links">
     <a href="#markets"><span class="ar">أسواقنا</span><span class="en">Markets</span></a>
