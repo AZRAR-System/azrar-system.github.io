@@ -89,11 +89,8 @@ nav{position:fixed;top:0;right:0;left:0;z-index:100;display:flex;align-items:cen
 .nav-logo-img{width:36px;height:36px;border-radius:9px;}
 .nav-name{font-size:1.1rem;font-weight:900;color:var(--head);letter-spacing:0.03em;font-family:var(--font-en);}
 .nav-name span{color:var(--blue);}
-.nav-brand{display:flex;align-items:center;gap:.45rem;text-decoration:none;}
-.wm-ar,.wm-en{line-height:1;font-weight:900;background:linear-gradient(168deg,#f7dd8a 0%,#e7c45f 42%,#c89a30 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-.wm-ar{font-family:'IBM Plex Sans Arabic','Tajawal',sans-serif;font-size:1.65rem;}
-.wm-en{font-family:var(--font-en);font-size:1.4rem;letter-spacing:.1em;}
-.wm-sep{color:#e7c45f;font-size:1.2rem;opacity:.65;font-weight:400;}
+.nav-brand{display:flex;align-items:center;text-decoration:none;}
+.nav-wordmark{height:60px;width:auto;display:block;}
 .nav-links{display:flex;gap:1.7rem;align-items:center;}
 .nav-links a{color:#cdd5e8;text-decoration:none;font-size:0.88rem;font-weight:600;transition:color 0.2s;}
 .nav-links a:hover{color:var(--gold-l);}
@@ -399,7 +396,7 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-brand" aria-label="AZRAR">
-    <span class="wm-ar">أزرار</span><span class="wm-sep">·</span><span class="wm-en">AZRAR</span>
+    <img src="logo-wordmark.png?v=2" alt="أزرار · AZRAR" class="nav-wordmark" decoding="async">
   </a>
   <div class="nav-links">
     <a href="#markets"><span class="ar">أسواقنا</span><span class="en">Markets</span></a>
