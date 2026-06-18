@@ -99,6 +99,16 @@ footer a{color:var(--gold-l);text-decoration:none;}
 :is(.card,.step,.vid){transition:transform .25s ease,box-shadow .25s ease;}
 :is(.card,.step,.vid):hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(15,27,51,.10);}
 @media(prefers-reduced-motion:reduce){.az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q){opacity:1!important;transform:none!important;transition:none;}.az-progress{display:none;}:is(.card,.step,.vid):hover{transform:none;}}
+
+/* === unified dark header (AZRAR identity) === */
+.topbar{background:rgba(20,16,56,0.85)!important;border-bottom:1px solid rgba(255,255,255,0.08)!important;box-shadow:0 4px 20px rgba(0,0,0,0.28)!important;}
+.brand{gap:.55rem!important;color:#fff!important;}
+.az-mark{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}
+.az-txt{display:flex;flex-direction:column;line-height:1;}
+.az-txt b{font-family:'Inter',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:.04em;background:linear-gradient(168deg,#f7dd8a 0%,#e7c45f 45%,#c89a30 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.az-txt small{font-family:'Inter',sans-serif;font-size:.54rem;letter-spacing:.3em;color:#cdd5e8;font-weight:700;margin-top:3px;}
+.lang-btn,.lang-link{color:#e7eefb!important;background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.16)!important;}
+.lang-btn.active{background:var(--blue)!important;color:#fff!important;}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to use AZRAR Real Estate System","description":"Complete step-by-step guide to AZRAR: activation, database & sync, properties & clients, contracts & installments, collection & late fees, commissions, bulk WhatsApp, reports, maintenance and backup.","totalTime":"PT45M","image":"https://azrar-systems.com/og-image.png?v=3","step":[{"@type":"HowToStep","name":"Installation & Activation","text":"Install AZRAR on Windows and activate or start the 30-day free trial.","url":"https://azrar-systems.com/guide-en.html#install"},{"@type":"HowToStep","name":"Initial Setup & Users","text":"Set your office details, users and default settings.","url":"https://azrar-systems.com/guide-en.html#setup"},{"@type":"HowToStep","name":"Database & Sync","text":"Work locally offline, or sync several devices via SQL Server.","url":"https://azrar-systems.com/guide-en.html#database"},{"@type":"HowToStep","name":"Dashboard","text":"See occupancy, due installments and overdue at a glance.","url":"https://azrar-systems.com/guide-en.html#dashboard"},{"@type":"HowToStep","name":"Properties","text":"Register your units, status and attachments.","url":"https://azrar-systems.com/guide-en.html#properties"},{"@type":"HowToStep","name":"Clients & Owners","text":"Build a database of tenants, owners and brokers.","url":"https://azrar-systems.com/guide-en.html#people"},{"@type":"HowToStep","name":"Contracts & Installments","text":"Create a lease and auto-calculate installments by actual days.","url":"https://azrar-systems.com/guide-en.html#contracts"},{"@type":"HowToStep","name":"Collection & Payments","text":"Record full/partial payments and track overdue and late fees.","url":"https://azrar-systems.com/guide-en.html#payments"},{"@type":"HowToStep","name":"Commissions","text":"Auto-calculate broker and employee commissions.","url":"https://azrar-systems.com/guide-en.html#commissions"},{"@type":"HowToStep","name":"Bulk WhatsApp","text":"Send personalized WhatsApp reminders in bulk.","url":"https://azrar-systems.com/guide-en.html#whatsapp"},{"@type":"HowToStep","name":"Reports","text":"Owner, income, overdue and clearance reports.","url":"https://azrar-systems.com/guide-en.html#reports"},{"@type":"HowToStep","name":"Backup","text":"Automatic daily backup and instant restore.","url":"https://azrar-systems.com/guide-en.html#backup"}]}
@@ -109,7 +119,7 @@ footer a{color:var(--gold-l);text-decoration:none;}
 </head>
 <body>
 <div class="topbar">
-  <a href="index.html" class="brand"><img src="logo.png" alt="AZRAR"><span>AZRAR<small>USER GUIDE</small></span></a>
+  <a href="index.html" class="brand"><img src="logo.png" alt="AZRAR" class="az-mark" decoding="async"><span class="az-txt"><b>AZRAR</b><small>SYSTEMS</small></span></a>
   <div class="tb-right"><a href="guide.html" class="lang-link">العربية</a><a href="index.html?lang=en" class="home-link">Home →</a></div>
 </div>
 <section class="phero">

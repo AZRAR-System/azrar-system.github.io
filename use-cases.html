@@ -96,6 +96,16 @@ footer a{color:var(--gold-l);text-decoration:none;}
 :is(.card,.step,.vid){transition:transform .25s ease,box-shadow .25s ease;}
 :is(.card,.step,.vid):hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(15,27,51,.10);}
 @media(prefers-reduced-motion:reduce){.az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q){opacity:1!important;transform:none!important;transition:none;}.az-progress{display:none;}:is(.card,.step,.vid):hover{transform:none;}}
+
+/* === unified dark header (AZRAR identity) === */
+.topbar{background:rgba(20,16,56,0.85)!important;border-bottom:1px solid rgba(255,255,255,0.08)!important;box-shadow:0 4px 20px rgba(0,0,0,0.28)!important;}
+.brand{gap:.55rem!important;color:#fff!important;}
+.az-mark{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}
+.az-txt{display:flex;flex-direction:column;line-height:1;}
+.az-txt b{font-family:'Inter',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:.04em;background:linear-gradient(168deg,#f7dd8a 0%,#e7c45f 45%,#c89a30 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.az-txt small{font-family:'Inter',sans-serif;font-size:.54rem;letter-spacing:.3em;color:#cdd5e8;font-weight:700;margin-top:3px;}
+.lang-btn,.lang-link{color:#e7eefb!important;background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.16)!important;}
+.lang-btn.active{background:var(--blue)!important;color:#fff!important;}
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://azrar-systems.com/"}, {"@type": "ListItem", "position": 2, "name": "حالات الاستخدام", "item": "https://azrar-systems.com/use-cases.html"}]}</script>
@@ -104,7 +114,7 @@ footer a{color:var(--gold-l);text-decoration:none;}
 </head>
 <body>
 <div class="topbar">
-  <a href="index.html" class="brand"><img src="logo.png" alt="AZRAR"><span>AZRAR<small>حالات الاستخدام</small></span></a>
+  <a href="index.html" class="brand"><img src="logo.png" alt="AZRAR" class="az-mark" decoding="async"><span class="az-txt"><b>AZRAR</b><small>SYSTEMS</small></span></a>
   <span style="display:flex;gap:.5rem;align-items:center;"><a href="use-cases-en.html" class="lang-link-en" style="border:1px solid var(--border);background:#eef2f9;color:#475569;padding:.45rem .9rem;border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none;">English</a><a href="index.html" class="home-link">→ الرئيسية</a></span>
 </div>
 <section class="phero">

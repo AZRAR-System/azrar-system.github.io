@@ -96,6 +96,16 @@ footer a{color:var(--gold-l);text-decoration:none;}
 :is(.card,.step,.vid){transition:transform .25s ease,box-shadow .25s ease;}
 :is(.card,.step,.vid):hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(15,27,51,.10);}
 @media(prefers-reduced-motion:reduce){.az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q){opacity:1!important;transform:none!important;transition:none;}.az-progress{display:none;}:is(.card,.step,.vid):hover{transform:none;}}
+
+/* === unified dark header (AZRAR identity) === */
+.topbar{background:rgba(20,16,56,0.85)!important;border-bottom:1px solid rgba(255,255,255,0.08)!important;box-shadow:0 4px 20px rgba(0,0,0,0.28)!important;}
+.brand{gap:.55rem!important;color:#fff!important;}
+.az-mark{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}
+.az-txt{display:flex;flex-direction:column;line-height:1;}
+.az-txt b{font-family:'Inter',sans-serif;font-weight:900;font-size:1.1rem;letter-spacing:.04em;background:linear-gradient(168deg,#f7dd8a 0%,#e7c45f 45%,#c89a30 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.az-txt small{font-family:'Inter',sans-serif;font-size:.54rem;letter-spacing:.3em;color:#cdd5e8;font-weight:700;margin-top:3px;}
+.lang-btn,.lang-link{color:#e7eefb!important;background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.16)!important;}
+.lang-btn.active{background:var(--blue)!important;color:#fff!important;}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل يعمل نظام أزرار بدون إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يعمل بشكل كامل offline. البيانات تُخزَّن محلياً على جهازك باستخدام SQLite — لا سيرفر خارجي ولا حاجة لاتصال دائم."}},{"@type":"Question","name":"ما أنظمة التشغيل المدعومة؟","acceptedAnswer":{"@type":"Answer","text":"Windows 10 و Windows 11 (بنسخة 64-bit). لا يدعم macOS أو Linux حالياً."}},{"@type":"Question","name":"كم مدة التجربة المجانية؟","acceptedAnswer":{"@type":"Answer","text":"30 يوماً كاملة بكل المزايا والأنظمة الـ 12، دون بطاقة ائتمان."}},{"@type":"Question","name":"كم جهازاً يدعم الترخيص؟","acceptedAnswer":{"@type":"Answer","text":"Solo: جهاز واحد، Office: جهازان، Pro: 3 أجهزة. وتتوفّر باقة Enterprise لأجهزة غير محدودة."}},{"@type":"Question","name":"كيف يحمي النظام بياناتي؟","acceptedAnswer":{"@type":"Answer","text":"توقيع رقمي Ed25519 مربوط ببصمة جهازك، فحص سلامة الملفات SHA-256 عند كل إقلاع، وصلاحيات RBAC بأربعة مستويات."}},{"@type":"Question","name":"هل أستطيع نقل الترخيص لجهاز آخر؟","acceptedAnswer":{"@type":"Answer","text":"نعم، عبر التواصل مع الدعم وتقديم إيصال تعطيل الجهاز القديم — لضمان عدم تجاوز عدد الأجهزة المرخّصة."}},{"@type":"Question","name":"كيف تتم التحديثات؟","acceptedAnswer":{"@type":"Answer","text":"التحديثات مجانية طوال سنة الترخيص، وتحافظ على بياناتك بالكامل عند التحديث."}},{"@type":"Question","name":"هل يدعم أكثر من عملة؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يدعم عملات متعددة (دينار، ريال، درهم...) ليناسب الأردن والخليج وبقية الدول العربية."}},{"@type":"Question","name":"هل يحسب الأقساط والغرامات تلقائياً؟","acceptedAnswer":{"@type":"Answer","text":"نعم، بفرقية الأيام الفعلية (28/29/30/31)، مع دعم الدفعات الجزئية وثلاثة أنواع للغرامات."}},{"@type":"Question","name":"هل يمكن إرسال رسائل واتساب للمستأجرين؟","acceptedAnswer":{"@type":"Answer","text":"نعم، عبر ميزة واتساب الجماعي المدمجة — رسائل مخصّصة لكل عميل دفعة واحدة مع قوالب جاهزة."}},{"@type":"Question","name":"ماذا يحدث لبياناتي إذا تعطّل الجهاز؟","acceptedAnswer":{"@type":"Answer","text":"إن كان لديك نسخة احتياطية (والنظام يوفّر أداة نسخ مدمجة) فالاسترجاع فوري على أي جهاز."}},{"@type":"Question","name":"كيف أحصل على الدعم؟","acceptedAnswer":{"@type":"Answer","text":"عبر واتساب أو البريد support@azrar-systems.com — ودعم بأولوية لباقتي Office و Pro."}},{"@type":"Question","name":"هل الأسعار شاملة أم شهرية؟","acceptedAnswer":{"@type":"Answer","text":"الأسعار سنوية (دفعة واحدة) وتشمل التحديثات والدعم — لا رسوم شهرية مخفية."}}]}
@@ -106,7 +116,7 @@ footer a{color:var(--gold-l);text-decoration:none;}
 </head>
 <body>
 <div class="topbar">
-  <a href="index.html" class="brand"><img src="logo.png" alt="AZRAR"><span>AZRAR<small>الأسئلة الشائعة</small></span></a>
+  <a href="index.html" class="brand"><img src="logo.png" alt="AZRAR" class="az-mark" decoding="async"><span class="az-txt"><b>AZRAR</b><small>SYSTEMS</small></span></a>
   <span style="display:flex;gap:.5rem;align-items:center;"><a href="faq-en.html" class="lang-link-en" style="border:1px solid var(--border);background:#eef2f9;color:#475569;padding:.45rem .9rem;border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none;">English</a><a href="index.html" class="home-link">→ الرئيسية</a></span>
 </div>
 <section class="phero">
