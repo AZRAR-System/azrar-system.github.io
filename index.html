@@ -311,6 +311,65 @@
   </div>
 </section>
 
+<section id="tour-interactive" class="reveal">
+  <div class="container">
+    <div class="sec-label"><span class="ar">جولة تفاعلية</span><span class="en">Interactive Tour</span></div>
+    <h2 class="sec-title"><span class="ar">شاهد نظام أزرار أثناء العمل</span><span class="en">See AZRAR in Action</span></h2>
+    
+    <div class="tour-grid">
+      <div class="tour-tabs">
+        <div class="tour-tab active" onclick="switchTourTab(0, 'shots/dashboard.webp')">
+          <div class="tour-tab-title">
+            <span class="ar">📈 لوحة التحكم الفورية</span>
+            <span class="en">📈 Interactive Dashboard</span>
+          </div>
+          <div class="tour-tab-desc">
+            <span class="ar">مراقبة المؤشرات المالية، ونسب الإشغال، والتحصيل اليومي والتنبيهات الهامة في واجهة موحدة.</span>
+            <span class="en">Monitor financial KPIs, occupancy rates, daily collections, and critical alerts in a unified view.</span>
+          </div>
+        </div>
+        
+        <div class="tour-tab" onclick="switchTourTab(1, 'shots/contracts.webp')">
+          <div class="tour-tab-title">
+            <span class="ar">📄 محرك العقود الذكي</span>
+            <span class="en">📄 Smart Contracts</span>
+          </div>
+          <div class="tour-tab-desc">
+            <span class="ar">إدارة وتوثيق عقود الإيجار، توليد الأقساط بدقة، والتجديد التلقائي بضغطة زر واحدة.</span>
+            <span class="en">Manage and document rental contracts, generate installments accurately, and auto-renew with one click.</span>
+          </div>
+        </div>
+        
+        <div class="tour-tab" onclick="switchTourTab(2, 'shots/installments.webp')">
+          <div class="tour-tab-title">
+            <span class="ar">💰 التحصيل المالي والأقساط</span>
+            <span class="en">💰 Installments & Collection</span>
+          </div>
+          <div class="tour-tab-desc">
+            <span class="ar">جدولة الدفعات، إصدار سندات القبض والصرف، وتتبع المتأخرات مع نظام تنبيهات ذكي.</span>
+            <span class="en">Schedule payments, issue collection and payment vouchers, and track arrears with a smart alert system.</span>
+          </div>
+        </div>
+        
+        <div class="tour-tab" onclick="switchTourTab(3, 'shots/reports.webp')">
+          <div class="tour-tab-title">
+            <span class="ar">📊 مركز التقارير الشامل</span>
+            <span class="en">📊 Comprehensive Reports</span>
+          </div>
+          <div class="tour-tab-desc">
+            <span class="ar">استخراج تقارير الأرباح والعمولات وبراءة الذمة وكشوفات الحساب الشاملة بنقرة واحدة.</span>
+            <span class="en">Export profit, commission, clearance reports, and comprehensive statements in a single click.</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tour-showcase">
+        <img id="tour-main-img" class="tour-img" src="shots/dashboard.webp" alt="AZRAR Dashboard Mockup">
+      </div>
+    </div>
+  </div>
+</section>
+
 <hr class="divider">
 
 <!-- FEATURES -->
@@ -470,6 +529,53 @@
   </div>
 </section>
 
+<section id="roi-calculator" class="reveal">
+  <div class="container">
+    <div class="sec-label"><span class="ar">حاسبة العائد المالي</span><span class="en">ROI Calculator</span></div>
+    <h2 class="sec-title"><span class="ar">احسب قيمة ما ستوفره مع أزرار</span><span class="en">Calculate Your Savings with AZRAR</span></h2>
+    
+    <div class="calc-grid">
+      <div class="calc-panel">
+        <div class="calc-inputs">
+          <div class="calc-input-group">
+            <div class="calc-label-row">
+              <span class="calc-label"><span class="ar">عدد الوحدات العقارية</span><span class="en">Number of Rental Units</span></span>
+              <span class="calc-val" id="val-units">30</span>
+            </div>
+            <input type="range" id="roi-units" min="5" max="300" step="5" value="30" class="calc-slider">
+          </div>
+          
+          <div class="calc-input-group">
+            <div class="calc-label-row">
+              <span class="calc-label"><span class="ar">متوسط الإيجار الشهري للوحدة</span><span class="en">Average Monthly Rent per Unit</span></span>
+              <span class="calc-val" id="val-rent">2,500 ر.س</span>
+            </div>
+            <input type="range" id="roi-rent" min="500" max="15000" step="500" value="2500" class="calc-slider">
+          </div>
+        </div>
+      </div>
+      
+      <div class="calc-results">
+        <div class="calc-card blue">
+          <span class="calc-card-num" id="out-hours">75</span>
+          <span class="calc-card-label">
+            <span class="ar">ساعة عمل موفرة شهرياً ⏱️</span>
+            <span class="en">Hours Saved Monthly ⏱️</span>
+          </span>
+        </div>
+        
+        <div class="calc-card">
+          <span class="calc-card-num" id="out-savings">18,500 ر.س</span>
+          <span class="calc-card-label">
+            <span class="ar">العائد والوفر المالي السنوي المقدر 💰</span>
+            <span class="en">Estimated Annual Value Created 💰</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <hr class="divider">
 
 <section id="faq">
@@ -586,6 +692,7 @@ function setLang(lang) {
   document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   try { localStorage.setItem('azrar_lang', lang); } catch(e) {};
+  if (typeof calculateROI === 'function') calculateROI();
 }
 // Restore saved language
 try { const saved = localStorage.getItem('azrar_lang'); if (saved) setLang(saved); } catch(e) {}
@@ -703,6 +810,62 @@ function toggleHeroVideoFullscreen() {
     else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
     else if (v.msRequestFullscreen) v.msRequestFullscreen();
   }
+}
+
+function switchTourTab(index, imgSrc) {
+  const tabs = document.querySelectorAll('.tour-tab');
+  tabs.forEach((tab, idx) => {
+    tab.classList.toggle('active', idx === index);
+  });
+  const img = document.getElementById('tour-main-img');
+  if (img && img.getAttribute('src') !== imgSrc) {
+    img.classList.add('fade-out');
+    setTimeout(() => {
+      img.src = imgSrc;
+      img.onload = () => {
+        img.classList.remove('fade-out');
+      };
+    }, 280);
+  }
+}
+
+function calculateROI() {
+  const unitsSlider = document.getElementById('roi-units');
+  const rentSlider = document.getElementById('roi-rent');
+  if (!unitsSlider || !rentSlider) return;
+
+  const units = parseInt(unitsSlider.value) || 0;
+  const rent = parseInt(rentSlider.value) || 0;
+
+  // Update slider displays
+  const isAr = document.documentElement.getAttribute('data-lang') === 'ar';
+  document.getElementById('val-units').textContent = units.toLocaleString(isAr ? 'ar-EG' : 'en-US');
+  document.getElementById('val-rent').textContent = rent.toLocaleString(isAr ? 'ar-EG' : 'en-US') + (isAr ? ' ر.س' : ' SAR');
+
+  // ROI calculations
+  const hoursSaved = Math.round(units * 2.5);
+  // Monthly financial saving: 60 SAR per hour saved + 2.5% recovery rate from automation of rent
+  const monthlySavings = (hoursSaved * 60) + (units * rent * 0.025);
+  const annualSavings = Math.round(monthlySavings * 12);
+
+  document.getElementById('out-hours').textContent = hoursSaved.toLocaleString(isAr ? 'ar-EG' : 'en-US');
+  document.getElementById('out-savings').textContent = annualSavings.toLocaleString(isAr ? 'ar-EG' : 'en-US') + (isAr ? ' ر.س' : ' SAR');
+}
+
+// Attach event listeners for ROI Calculator
+function initROI() {
+  const su = document.getElementById('roi-units');
+  const sr = document.getElementById('roi-rent');
+  if (su && sr) {
+    su.addEventListener('input', calculateROI);
+    sr.addEventListener('input', calculateROI);
+    calculateROI();
+  }
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initROI);
+} else {
+  initROI();
 }
 </script>
 <script id="azrar-ga-events">

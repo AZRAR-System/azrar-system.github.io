@@ -331,3 +331,197 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
 [data-lang="en"] .launch-banner{font-family:var(--font-en);}
 
 .az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#4f46e5,#6366f1,#e6c55c);box-shadow:0 0 8px rgba(79,70,229,.4);transition:width .12s ease-out;}
+
+/* ── PRODUCT TOUR ── */
+.tour-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.tour-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.tour-tab {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.25rem 1.45rem;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  text-align: right;
+}
+[data-lang="en"] .tour-tab {
+  text-align: left;
+}
+.tour-tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+.tour-tab.active {
+  background: rgba(205, 164, 52, 0.08);
+  border-color: var(--gold);
+  box-shadow: 0 8px 24px rgba(197, 151, 42, 0.12);
+}
+.tour-tab-title {
+  font-size: 1.06rem;
+  font-weight: 800;
+  color: var(--head);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+[data-lang="ar"] .tour-tab-title {
+  flex-direction: row;
+}
+[data-lang="en"] .tour-tab-title {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.tour-tab-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.35rem;
+  line-height: 1.6;
+}
+.tour-showcase {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  background: #0d0c1d;
+  aspect-ratio: 16/10.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tour-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: opacity 0.28s ease;
+  opacity: 1;
+}
+.tour-img.fade-out {
+  opacity: 0;
+}
+
+@media(max-width: 900px) {
+  .tour-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+}
+
+/* ── ROI CALCULATOR ── */
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+.calc-panel {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.calc-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.calc-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.calc-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.calc-label {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--head);
+}
+.calc-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gold-l);
+  font-family: var(--mono);
+}
+.calc-slider {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  accent-color: var(--gold);
+  transition: background 0.15s ease;
+}
+.calc-slider:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+.calc-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.calc-card {
+  background: linear-gradient(135deg, rgba(205, 164, 52, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(205, 164, 52, 0.18);
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow: 0 10px 24px rgba(197, 151, 42, 0.04);
+  transition: transform 0.2s;
+}
+.calc-card:hover {
+  transform: translateY(-2px);
+}
+.calc-card.blue {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border-color: rgba(79, 70, 229, 0.18);
+}
+.calc-card-num {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: var(--gold-l);
+  font-family: var(--mono);
+  line-height: 1.1;
+}
+[data-lang="en"] .calc-card-num {
+  font-family: var(--font-en);
+}
+.calc-card.blue .calc-card-num {
+  color: var(--blue-l);
+}
+.calc-card-label {
+  font-size: 0.86rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+@media(max-width: 900px) {
+  .calc-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+}
+
