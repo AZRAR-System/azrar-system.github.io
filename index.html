@@ -205,7 +205,7 @@
         <span class="badge" style="background: rgba(205,164,52,0.12); color: var(--gold-l); font-size: 0.62rem; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(205,164,52,0.22); font-family: var(--mono); font-weight: bold; letter-spacing: 0.04em;">DEMO TOUR</span>
       </div>
       <div class="video-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.4); background: #000; aspect-ratio: 16/9;">
-        <video id="hero-tour-video" src="videos/tour.webm" autoplay muted loop playsinline style="width: 100%; height: 100%; display: block; object-fit: cover;"></video>
+        <video id="hero-tour-video" poster="shots/dashboard.webp" preload="none" muted loop playsinline style="width: 100%; height: 100%; display: block; object-fit: cover;"></video>
         <div class="video-controls" style="position: absolute; bottom: 8px; right: 8px; display: flex; gap: 6px; z-index: 5; direction: ltr;">
           <button id="hero-mute-btn" onclick="toggleHeroVideoMute()" style="background: rgba(7,5,24,0.72); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; font-size: 0.85rem;" title="كتم/تشغيل الصوت">
             🔇
@@ -862,10 +862,31 @@ function initROI() {
     calculateROI();
   }
 }
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initROI);
-} else {
+
+// Dynamically load and play hero video only on desktop to save mobile bandwidth
+function initHeroVideo() {
+  const video = document.getElementById('hero-tour-video');
+  if (!video) return;
+  const isMobile = window.innerWidth <= 768;
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  if (!isMobile && !prefersReducedMotion) {
+    video.src = "videos/tour.webm";
+    video.preload = "auto";
+    video.load();
+    video.play().catch(e => console.log("Hero video autoplay failed:", e));
+  }
+}
+
+function initPageFeatures() {
   initROI();
+  initHeroVideo();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPageFeatures);
+} else {
+  initPageFeatures();
 }
 </script>
 <script id="azrar-ga-events">
