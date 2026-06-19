@@ -525,3 +525,9 @@ body.at-footer .wa-float,body.at-footer .scroll-top{opacity:0;visibility:hidden;
   }
 }
 
+@media(max-width: 768px) {
+  #bg-canvas {
+    display: none !important;
+  }
+}
+

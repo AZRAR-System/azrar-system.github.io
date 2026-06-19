@@ -6,7 +6,8 @@
   if (!ctx) return;
 
   let W, H, t = 0;
-  const _rmq = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobileDevice = window.innerWidth <= 768;
+  const _rmq = isMobileDevice || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   function resize() {
     W = canvas.width  = window.innerWidth;
@@ -33,6 +34,7 @@
   const radii  = orbs.map(() => 0.05 + Math.random() * 0.09);
 
   function draw() {
+    if (isMobileDevice) return;
     t += 0.004;
     ctx.clearRect(0, 0, W, H);
 

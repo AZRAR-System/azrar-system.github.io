@@ -132,3 +132,9 @@
 .az-progress {
   background: linear-gradient(90deg, var(--blue), var(--blue-l), var(--gold-l)) !important;
 }
+
+@media(max-width: 768px) {
+  #bg-canvas {
+    display: none !important;
+  }
+}
