@@ -882,7 +882,6 @@ function initHeroVideo() {
 
 function initPageFeatures() {
   initROI();
-  initHeroVideo();
 }
 
 if (document.readyState === 'loading') {
@@ -890,6 +889,11 @@ if (document.readyState === 'loading') {
 } else {
   initPageFeatures();
 }
+
+// Load and play the 6.4MB hero video only after the entire page has fully loaded
+window.addEventListener('load', () => {
+  setTimeout(initHeroVideo, 300);
+});
 </script>
 <script id="azrar-ga-events">
 // GA4 conversion tracking: fire named events on WhatsApp / trial / contact clicks
