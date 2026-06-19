@@ -130,17 +130,132 @@ footer a{color:var(--gold-l);text-decoration:none;}
 </div>
 <section class="phero"><span class="eyebrow">VIDEOS</span><h1>Video Tutorials</h1><p>A visual series to master the system — the written guide is available now.</p></section>
 <div class="wrap">
-  <article class="card" style="margin-bottom: 2rem; overflow: hidden; padding: 0;">
+  <style>
+    .vid { cursor: pointer; transition: all 0.25s ease; }
+    .vid.active-vid {
+      border-color: var(--blue);
+      background: #f1f5f9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(79,70,229,0.12);
+    }
+    .vid.active-vid .vnum {
+      background: linear-gradient(135deg, var(--blue), var(--blue-l));
+    }
+    .vid.active-vid .watch-btn {
+      background: var(--blue) !important;
+      color: #fff !important;
+    }
+    .watch-btn {
+      background: #eef3ff;
+      color: var(--blue);
+      font-size: .75rem;
+      font-weight: 800;
+      padding: .35rem .9rem;
+      border-radius: 100px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .vid:hover .watch-btn {
+      background: var(--blue-l);
+      color: #fff;
+    }
+  </style>
+
+  <article id="main-video-section" class="card" style="margin-bottom: 2rem; overflow: hidden; padding: 0; scroll-margin-top: 100px;">
     <div style="background: var(--navy3); padding: 1.5rem 1.5rem 1.2rem; color: #fff; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.08);">
-      <h3 style="font-weight: 900; margin-bottom: 0.5rem; font-size: 1.25rem;">System Quick Tour (Video Walkthrough)</h3>
-      <p style="color: #c4d2ea; font-size: 0.88rem;">Watch the real system interface, navigation, and smart financial dashboards.</p>
+      <h3 id="main-video-title" style="font-weight: 900; margin-bottom: 0.5rem; font-size: 1.25rem;">System Quick Tour (Video Walkthrough)</h3>
+      <p id="main-video-desc" style="color: #c4d2ea; font-size: 0.88rem;">Watch the real system interface, navigation, and smart financial dashboards.</p>
     </div>
     <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #080c1a;">
-      <video src="videos/tour.webm" controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" poster="shots/dashboard.webp"></video>
+      <video id="main-video-player" src="videos/tour.webm" controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" poster="shots/dashboard.webp"></video>
     </div>
   </article>
 
-  <article class="card"><p>We are producing a series of video tutorials covering every part of the system. Until they are published, follow the detailed <a href="guide-en.html">written guide</a>.</p></article><div class="vid"><div class="vnum">▶</div><div class="vtxt"><b>1. Installation & Activation</b><span>Download, activate and start the free trial.</span></div><span class="soon">Soon</span></div><div class="vid"><div class="vnum">▶</div><div class="vtxt"><b>2. Creating your first lease</b><span>Step by step to create a contract with auto installments.</span></div><span class="soon">Soon</span></div><div class="vid"><div class="vnum">▶</div><div class="vtxt"><b>3. Collection & payments</b><span>Record payments, track overdue and late fees.</span></div><span class="soon">Soon</span></div><div class="vid"><div class="vnum">▶</div><div class="vtxt"><b>4. Bulk WhatsApp</b><span>Send installment reminders to all tenants at once.</span></div><span class="soon">Soon</span></div><div class="vid"><div class="vnum">▶</div><div class="vtxt"><b>5. Financial reports</b><span>Owner report, monthly income and overdue.</span></div><span class="soon">Soon</span></div><div class="vid"><div class="vnum">▶</div><div class="vtxt"><b>6. Backup & restore</b><span>Protect and recover your data easily.</span></div><span class="soon">Soon</span></div>
+  <article class="card">
+    <p>Choose one of the video tutorials from the list below to play it in the main player, or read the detailed <a href="guide-en.html">written guide</a>.</p>
+  </article>
+
+  <div class="vid active-vid" onclick="playTutorial('tour', 'System Quick Tour (Video Walkthrough)', 'Watch the real system interface, navigation, and smart financial dashboards.', 'shots/dashboard.webp')">
+    <div class="vnum">★</div>
+    <div class="vtxt"><b>System Quick Tour</b><span>Overview of the interface, fluid navigation, and financial dashboards.</span></div>
+    <span class="watch-btn">Watch Now</span>
+  </div>
+
+  <div class="vid" onclick="playTutorial('v1', '1. Installation & Activation', 'Download, activate and start the 30-day free trial.', 'shots/login.webp')">
+    <div class="vnum">▶</div>
+    <div class="vtxt"><b>1. Installation & Activation</b><span>Download, activate and start the free trial.</span></div>
+    <span class="watch-btn">Watch Now</span>
+  </div>
+
+  <div class="vid" onclick="playTutorial('v2', '2. Creating your first lease', 'Step by step to create a contract with auto-calculated installments.', 'shots/properties.webp')">
+    <div class="vnum">▶</div>
+    <div class="vtxt"><b>2. Creating your first lease</b><span>Step by step to create a contract with auto installments.</span></div>
+    <span class="watch-btn">Watch Now</span>
+  </div>
+
+  <div class="vid" onclick="playTutorial('v3', '3. Collection & payments', 'Record payments, track overdue, penalties and owner commissions.', 'shots/installments.webp')">
+    <div class="vnum">▶</div>
+    <div class="vtxt"><b>3. Collection & payments</b><span>Record payments, track overdue and late fees.</span></div>
+    <span class="watch-btn">Watch Now</span>
+  </div>
+
+  <div class="vid" onclick="playTutorial('v4', '4. Bulk WhatsApp', 'Send installment reminders to all tenants at once in a single click via WhatsApp.', 'shots/alerts.webp')">
+    <div class="vnum">▶</div>
+    <div class="vtxt"><b>4. Bulk WhatsApp</b><span>Send installment reminders to all tenants at once.</span></div>
+    <span class="watch-btn">Watch Now</span>
+  </div>
+
+  <div class="vid" onclick="playTutorial('v5', '5. Financial reports', 'Export detailed owner reports, monthly income and overdue analytics.', 'shots/reports.webp')">
+    <div class="vnum">▶</div>
+    <div class="vtxt"><b>5. Financial reports</b><span>Owner report, monthly income and overdue.</span></div>
+    <span class="watch-btn">Watch Now</span>
+  </div>
+
+  <div class="vid" onclick="playTutorial('v6', '6. Backup & restore', 'Easily backup, protect, and restore your database from the settings dashboard.', 'shots/settings.webp')">
+    <div class="vnum">▶</div>
+    <div class="vtxt"><b>6. Backup & restore</b><span>Protect and recover your data easily.</span></div>
+    <span class="watch-btn">Watch Now</span>
+  </div>
+
+  <script>
+    function playTutorial(id, title, desc, poster) {
+      var videoPlayer = document.getElementById('main-video-player');
+      var videoTitle = document.getElementById('main-video-title');
+      var videoDesc = document.getElementById('main-video-desc');
+      
+      if (videoPlayer && videoTitle && videoDesc) {
+        // Highlight active row
+        document.querySelectorAll('.vid').forEach(function(el) {
+          el.classList.remove('active-vid');
+        });
+        
+        var activeRow = event.currentTarget;
+        if (activeRow) {
+          activeRow.classList.add('active-vid');
+        }
+        
+        // Set sources
+        videoPlayer.src = 'videos/' + id + '.webm';
+        videoPlayer.poster = poster;
+        
+        // Set titles
+        videoTitle.textContent = title;
+        videoDesc.textContent = desc;
+        
+        // Load & Play
+        videoPlayer.load();
+        videoPlayer.play().catch(function(e) {
+          console.log("Playback interaction required:", e);
+        });
+        
+        // Scroll
+        var playerSection = document.getElementById('main-video-section');
+        if (playerSection) {
+          playerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+  </script>
   <div class="cta"><h2>Try AZRAR Free</h2><p>30 days, all features — no credit card.</p>
   <a href="https://wa.me/962786170080?text=I%20want%20to%20try%20AZRAR%20free" target="_blank" rel="noopener">Contact via WhatsApp</a></div>
 </div>
