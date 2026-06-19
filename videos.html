@@ -222,7 +222,8 @@ footer a{color:var(--gold-l);text-decoration:none;}
           el.classList.remove('active-vid');
         });
         
-        var activeRow = event.currentTarget;
+        var ev = window.event || (typeof event !== 'undefined' ? event : null);
+        var activeRow = ev && ev.target ? ev.target.closest('.vid') : null;
         if (activeRow) {
           activeRow.classList.add('active-vid');
         }
