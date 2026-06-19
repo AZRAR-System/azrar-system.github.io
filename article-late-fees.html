@@ -30,7 +30,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;600;700&display=swap"><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
 <style>
 
-:root{--navy:#181341;--navy3:#2a2460;--blue:#4f46e5;--blue-l:#6366f1;--gold:#cda434;--gold-l:#e6c55c;--ink:#27324a;--head:#0f1b33;--muted:#64748b;--bg:#f4f7fc;--card:#fff;--border:#e4e9f2;--green:#16a34a;--font-ar:'Tajawal',sans-serif;--font-en:'Inter',sans-serif;}
+:root {
+  --navy: #181341; --navy2: #221c55; --navy3: #2a2460;
+  --blue: #4f46e5; --blue-l: #6366f1; --blue-d: #1d4ed8;
+  --gold: #cda434; --gold-l: #e6c55c;
+  --ink: #cdd5e8; --head: #ffffff; --muted: #8ea5c8; --muted2: #63799b;
+  --bg: #070518; --card: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.04);
+  --green: #22c55e; --danger: #ef4444;
+  --font-ar: 'Tajawal', sans-serif; --font-en: 'Inter', sans-serif; --mono: 'IBM Plex Mono', monospace;
+}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-ar);line-height:1.95;font-size:16px;}
 a{color:var(--blue);}
@@ -113,8 +121,11 @@ footer a{color:var(--gold-l);text-decoration:none;}
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://azrar-systems.com/"}, {"@type": "ListItem", "position": 2, "name": "المدونة", "item": "https://azrar-systems.com/articles.html"}, {"@type": "ListItem", "position": 3, "name": "حساب غرامة تأخير الإيجار", "item": "https://azrar-systems.com/article-late-fees.html"}]}</script>
 <script>document.documentElement.className+=" az-anim";</script>
+<link rel="stylesheet" href="shared-dark.css">
 </head>
 <body>
+<div class="bg-photo" aria-hidden="true"></div>
+<canvas id="bg-canvas"></canvas>
 <div class="topbar">
   <a href="index.html" class="brand"><img src="logo.png" alt="AZRAR" class="az-mark" decoding="async"><span class="az-txt"><b>AZRAR</b><small>SYSTEMS</small></span></a>
   <span style="display:flex;gap:.5rem;align-items:center;"><a href="article-late-fees-en.html" class="lang-link-en" style="border:1px solid var(--border);background:#eef2f9;color:#475569;padding:.45rem .9rem;border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none;">English</a><a href="index.html" class="home-link">→ الرئيسية</a></span>
@@ -195,5 +206,6 @@ footer a{color:var(--gold-l);text-decoration:none;}
  els.forEach(function(e){io.observe(e);});
 })();
 </script>
+<script src="bg-animation.js" defer></script>
 </body>
 </html>
