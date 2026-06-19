@@ -318,7 +318,7 @@
     
     <div class="tour-grid">
       <div class="tour-tabs">
-        <div class="tour-tab active" onclick="switchTourTab(0, 'shots/dashboard.webp')">
+        <div class="tour-tab active" role="button" tabindex="0" onclick="switchTourTab(0, 'shots/dashboard.webp')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
           <div class="tour-tab-title">
             <span class="ar">📈 لوحة التحكم الفورية</span>
             <span class="en">📈 Interactive Dashboard</span>
@@ -329,7 +329,7 @@
           </div>
         </div>
         
-        <div class="tour-tab" onclick="switchTourTab(1, 'shots/contracts.webp')">
+        <div class="tour-tab" role="button" tabindex="0" onclick="switchTourTab(1, 'shots/contracts.webp')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
           <div class="tour-tab-title">
             <span class="ar">📄 محرك العقود الذكي</span>
             <span class="en">📄 Smart Contracts</span>
@@ -340,7 +340,7 @@
           </div>
         </div>
         
-        <div class="tour-tab" onclick="switchTourTab(2, 'shots/installments.webp')">
+        <div class="tour-tab" role="button" tabindex="0" onclick="switchTourTab(2, 'shots/installments.webp')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
           <div class="tour-tab-title">
             <span class="ar">💰 التحصيل المالي والأقساط</span>
             <span class="en">💰 Installments & Collection</span>
@@ -351,7 +351,7 @@
           </div>
         </div>
         
-        <div class="tour-tab" onclick="switchTourTab(3, 'shots/reports.webp')">
+        <div class="tour-tab" role="button" tabindex="0" onclick="switchTourTab(3, 'shots/reports.webp')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
           <div class="tour-tab-title">
             <span class="ar">📊 مركز التقارير الشامل</span>
             <span class="en">📊 Comprehensive Reports</span>
@@ -539,7 +539,7 @@
         <div class="calc-inputs">
           <div class="calc-input-group">
             <div class="calc-label-row">
-              <span class="calc-label"><span class="ar">عدد الوحدات العقارية</span><span class="en">Number of Rental Units</span></span>
+              <label for="roi-units" class="calc-label"><span class="ar">عدد الوحدات العقارية</span><span class="en">Number of Rental Units</span></label>
               <span class="calc-val" id="val-units">30</span>
             </div>
             <input type="range" id="roi-units" min="5" max="300" step="5" value="30" class="calc-slider">
@@ -547,7 +547,7 @@
           
           <div class="calc-input-group">
             <div class="calc-label-row">
-              <span class="calc-label"><span class="ar">متوسط الإيجار الشهري للوحدة</span><span class="en">Average Monthly Rent per Unit</span></span>
+              <label for="roi-rent" class="calc-label"><span class="ar">متوسط الإيجار الشهري للوحدة</span><span class="en">Average Monthly Rent per Unit</span></label>
               <span class="calc-val" id="val-rent">2,500 ر.س</span>
             </div>
             <input type="range" id="roi-rent" min="500" max="15000" step="500" value="2500" class="calc-slider">
