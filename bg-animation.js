@@ -51,15 +51,18 @@
       g.addColorStop(0.5, `rgba(${rr},${gg},${bb},${a*0.38})`);
       g.addColorStop(1, `rgba(${rr},${gg},${bb},0)`);
       ctx.fillStyle = g;
-      ctx.fillRect(0, 0, W, H);
+      
+      // OPTIMIZATION: Render only the bounding box of the orb rather than the entire canvas
+      const size = r * pulse;
+      ctx.fillRect(cx - size, cy - size, size * 2, size * 2);
     });
 
-    // Bottom fade
-    const fade = ctx.createLinearGradient(0, H*0.85, 0, H);
+    // OPTIMIZATION: Render bottom fade gradient only where it's visible, not the entire screen
+    const fade = ctx.createLinearGradient(0, H * 0.85, 0, H);
     fade.addColorStop(0, 'rgba(8,7,26,0)');
     fade.addColorStop(1, 'rgba(8,7,26,0.5)');
     ctx.fillStyle = fade;
-    ctx.fillRect(0, 0, W, H);
+    ctx.fillRect(0, H * 0.85, W, H * 0.15);
   }
 
   let _last = 0, _paused = false;
@@ -69,11 +72,15 @@
     requestAnimationFrame(loop);
   }
 
-  if (!_rmq) {
-    requestAnimationFrame(loop);
-  } else {
-    draw();
-  }
+  // Draw initial frame statically
+  draw();
+
+  // Start continuous loop only after window has fully loaded to avoid blocking page load
+  window.addEventListener('load', () => {
+    if (!_rmq) {
+      requestAnimationFrame(loop);
+    }
+  });
 
   document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
