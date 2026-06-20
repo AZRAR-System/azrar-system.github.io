@@ -6,8 +6,9 @@
     <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/"/>
   </url>
   <url>
     <loc>https://azrar-systems.com/privacy.html</loc>

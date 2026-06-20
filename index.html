@@ -716,6 +716,24 @@ function setLang(lang) {
   html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
   document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  
+  // Update page SEO metadata dynamically
+  const metaDesc = document.querySelector('meta[name="description"]');
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  
+  if (lang === 'ar') {
+    document.title = "AZRAR · أزرار — نظام إدارة العقارات";
+    if (metaDesc) metaDesc.setAttribute('content', "نظام أزرار: البرنامج الأشمل لإدارة المكاتب العقارية في الأردن والخليج — عقود، أقساط، مبيعات، عمولات وتنبيهات ذكية. يعمل بدون إنترنت، جرّب 30 يوماً مجاناً.");
+    if (ogTitle) ogTitle.setAttribute('content', "AZRAR — نظام إدارة العقارات الأكثر تكاملاً");
+    if (ogDesc) ogDesc.setAttribute('content', "نظام أزرار: 12 نظاماً في تطبيق واحد. بيانات محلية 100% بدون إنترنت. تجربة 30 يوم مجانية.");
+  } else {
+    document.title = "AZRAR · Property Management System";
+    if (metaDesc) metaDesc.setAttribute('content', "AZRAR: The most complete property management software in Jordan and the Gulf. Manage contracts, installments, commissions, and smart alerts offline. Try 30 days free.");
+    if (ogTitle) ogTitle.setAttribute('content', "AZRAR — Real Estate Management System");
+    if (ogDesc) ogDesc.setAttribute('content', "AZRAR: 12 modules in one application. 100% local database works offline. Free 30-day trial.");
+  }
+  
   try { localStorage.setItem('azrar_lang', lang); } catch(e) {};
   if (typeof calculateROI === 'function') calculateROI();
   if (typeof resetChatLanguage === 'function') resetChatLanguage();
