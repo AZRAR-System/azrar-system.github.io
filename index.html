@@ -56,6 +56,12 @@ window.addEventListener('load',function(){
 <link rel="preload" as="image" href="bg-city.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="style.css">
+<style>
+.currency-selector { display: flex; gap: 0.5rem; margin-top: 0.4rem; margin-bottom: 0.4rem; }
+.curr-btn { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); color: #cdd5e8; padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; font-family: inherit; }
+.curr-btn:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2); color: #fff; }
+.curr-btn.active { background: var(--gold); border-color: transparent; color: #1a1304; box-shadow: 0 4px 12px rgba(197, 151, 42, 0.3); }
+</style>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AZRAR - نظام أزرار","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"3.12.7","datePublished":"2026-06-19","url":"https://azrar-systems.com/","offers":[{"@type":"Offer","name":"Solo","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Office","price":"79","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"119","priceCurrency":"USD"}]},{"@type":"Organization","name":"AZRAR SYSTEMS","url":"https://azrar-systems.com/","sameAs":["https://www.facebook.com/azrar.systems/"],"contactPoint":{"@type":"ContactPoint","telephone":"+962786170080","contactType":"customer support"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل يعمل بدون إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يعمل بشكل كامل offline باستخدام SQLite."}},{"@type":"Question","name":"كم مدة التجربة؟","acceptedAnswer":{"@type":"Answer","text":"30 يوماً بكل المزايا بدون بطاقة ائتمان."}},{"@type":"Question","name":"ما نظام التشغيل المدعوم؟","acceptedAnswer":{"@type":"Answer","text":"Windows 10 وWindows 11 (64-bit)."}}]}]}
@@ -543,7 +549,17 @@ window.addEventListener('load',function(){
     
     <div class="calc-grid">
       <div class="calc-panel">
-        <div class="calc-inputs">
+<div class="calc-inputs">
+          <div class="calc-input-group">
+            <label class="calc-label"><span class="ar">العملة</span><span class="en">Currency</span></label>
+            <div class="currency-selector">
+              <button type="button" class="curr-btn active" data-curr="SAR" onclick="setCurrency('SAR')">SAR (ر.س)</button>
+              <button type="button" class="curr-btn" data-curr="USD" onclick="setCurrency('USD')">USD ($)</button>
+              <button type="button" class="curr-btn" data-curr="JOD" onclick="setCurrency('JOD')">JOD (د.أ)</button>
+              <button type="button" class="curr-btn" data-curr="AED" onclick="setCurrency('AED')">AED (د.إ)</button>
+            </div>
+          </div>
+          
           <div class="calc-input-group">
             <div class="calc-label-row">
               <label for="roi-units" class="calc-label"><span class="ar">عدد الوحدات العقارية</span><span class="en">Number of Rental Units</span></label>
@@ -818,6 +834,34 @@ function switchTourTab(index, imgSrc) {
   }
 }
 
+let currentCurrency = 'SAR';
+const currencyConfig = {
+  SAR: { symbolAr: 'ر.س', symbolEn: 'SAR', minRent: 500, maxRent: 15000, stepRent: 500, defaultRent: 2500, ratePerHour: 60 },
+  USD: { symbolAr: '$', symbolEn: '$', minRent: 100, maxRent: 5000, stepRent: 100, defaultRent: 800, ratePerHour: 20 },
+  JOD: { symbolAr: 'د.أ', symbolEn: 'JOD', minRent: 50, maxRent: 2500, stepRent: 50, defaultRent: 300, ratePerHour: 12 },
+  AED: { symbolAr: 'د.إ', symbolEn: 'AED', minRent: 500, maxRent: 15000, stepRent: 500, defaultRent: 2500, ratePerHour: 60 }
+};
+
+function setCurrency(curr) {
+  if (!currencyConfig[curr]) return;
+  currentCurrency = curr;
+  
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-curr') === curr);
+  });
+  
+  const rentSlider = document.getElementById('roi-rent');
+  if (rentSlider) {
+    const config = currencyConfig[curr];
+    rentSlider.min = config.minRent;
+    rentSlider.max = config.maxRent;
+    rentSlider.step = config.stepRent;
+    rentSlider.value = config.defaultRent;
+  }
+  
+  calculateROI();
+}
+
 function calculateROI() {
   const unitsSlider = document.getElementById('roi-units');
   const rentSlider = document.getElementById('roi-rent');
@@ -826,22 +870,35 @@ function calculateROI() {
   const units = parseInt(unitsSlider.value) || 0;
   const rent = parseInt(rentSlider.value) || 0;
 
-  // Update slider displays
   const isAr = document.documentElement.getAttribute('data-lang') === 'ar';
-  document.getElementById('val-units').textContent = units.toLocaleString(isAr ? 'ar-EG' : 'en-US');
-  document.getElementById('val-rent').textContent = rent.toLocaleString(isAr ? 'ar-EG' : 'en-US') + (isAr ? ' ر.س' : ' SAR');
+  const config = currencyConfig[currentCurrency];
+  const symbol = isAr ? config.symbolAr : config.symbolEn;
 
-  // ROI calculations
+  document.getElementById('val-units').textContent = units.toLocaleString(isAr ? 'ar-EG' : 'en-US');
+  
+  let rentText = '';
+  if (currentCurrency === 'USD') {
+    rentText = symbol + rent.toLocaleString(isAr ? 'ar-EG' : 'en-US');
+  } else {
+    rentText = rent.toLocaleString(isAr ? 'ar-EG' : 'en-US') + ' ' + symbol;
+  }
+  document.getElementById('val-rent').textContent = rentText;
+
   const hoursSaved = Math.round(units * 2.5);
-  // Monthly financial saving: 60 SAR per hour saved + 2.5% recovery rate from automation of rent
-  const monthlySavings = (hoursSaved * 60) + (units * rent * 0.025);
+  const monthlySavings = (hoursSaved * config.ratePerHour) + (units * rent * 0.025);
   const annualSavings = Math.round(monthlySavings * 12);
 
   document.getElementById('out-hours').textContent = hoursSaved.toLocaleString(isAr ? 'ar-EG' : 'en-US');
-  document.getElementById('out-savings').textContent = annualSavings.toLocaleString(isAr ? 'ar-EG' : 'en-US') + (isAr ? ' ر.س' : ' SAR');
+  
+  let savingsText = '';
+  if (currentCurrency === 'USD') {
+    savingsText = symbol + annualSavings.toLocaleString(isAr ? 'ar-EG' : 'en-US');
+  } else {
+    savingsText = annualSavings.toLocaleString(isAr ? 'ar-EG' : 'en-US') + ' ' + symbol;
+  }
+  document.getElementById('out-savings').textContent = savingsText;
 }
 
-// Attach event listeners for ROI Calculator
 function initROI() {
   const su = document.getElementById('roi-units');
   const sr = document.getElementById('roi-rent');
