@@ -239,5 +239,9 @@ footer a{color:var(--gold-l);text-decoration:none;}
 })();
 </script>
 <script src="bg-animation.js" defer></script>
+
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(e){console.log('SW error:',e);});});}
+</script>
 </body>
 </html>

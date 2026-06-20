@@ -498,5 +498,9 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
+
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(e){console.log('SW error:',e);});});}
+</script>
 </body>
 </html>
