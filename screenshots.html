@@ -2,8 +2,15 @@
 <html lang="ar" dir="rtl">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5RLNK6WR4C"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5RLNK6WR4C');</script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5RLNK6WR4C');
+window.addEventListener('load',function(){
+  setTimeout(function(){
+    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-5RLNK6WR4C';
+    document.head.appendChild(s);
+  },1500);
+});
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="fb:app_id" content="1012284064548522">
@@ -26,7 +33,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://azrar-systems.com/og-image.png?v=4">
 <link rel="icon" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&family=Inter:wght@400;700;800;900&display=swap"><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet"></noscript>
 <style>
 
 :root {
@@ -65,7 +72,7 @@ a{color:var(--blue);}
 .lightbox{position:fixed;inset:0;z-index:9999;background:rgba(8,12,26,.92);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out;}
 .lightbox.open{display:flex;}
 .lightbox img{max-width:95%;max-height:92vh;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,.5);}
-.lightbox-x{position:absolute;top:1rem;right:1.4rem;color:#fff;font-size:2.4rem;font-weight:300;}
+.lightbox-x{position:absolute;top:1rem;right:1.4rem;color:#fff;font-size:2.4rem;font-weight:400;}
 .cta{background:linear-gradient(135deg,var(--navy),var(--navy3));border-radius:20px;padding:2.4rem 1.5rem;text-align:center;color:#fff;margin-top:2.5rem;}
 .cta h2{font-size:1.45rem;font-weight:900;margin-bottom:.6rem;}.cta p{color:#c4d2ea;margin-bottom:1.3rem;}
 .cta a{display:inline-flex;gap:.5rem;background:#25d366;color:#fff;padding:.85rem 2rem;border-radius:11px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.35);}
