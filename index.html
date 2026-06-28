@@ -1,23 +1,66 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" data-lang="ar">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WXHDB8R');</script>
-<!-- End Google Tag Manager -->
 <meta name="facebook-domain-verification" content="y7izcnv560bmb3ihkwxosnbay6v8iu"/>
-<!-- Google tag (gtag.js) -->
+<!-- Performance Optimization: Delayed Unified Trackers (GTM, GA4, Meta Pixel) -->
 <script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2559V4GJ25');
-window.addEventListener('load',function(){
-  setTimeout(function(){
-    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-2559V4GJ25';
-    document.head.appendChild(s);
-  },1500);
-});
+(function() {
+  var scriptsLoaded = false;
+  function loadTrackingScripts() {
+    if (scriptsLoaded) return;
+    scriptsLoaded = true;
+    
+    // 1. Google Tag Manager
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WXHDB8R');
+    
+    // 2. Google Analytics (gtag.js)
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){dataLayer.push(arguments);}
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-2559V4GJ25');
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-2559V4GJ25';
+    document.head.appendChild(gaScript);
+    
+    // 3. Meta (Facebook) Pixel
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', '1318471933825544');
+    window.fbq('track', 'PageView');
+    
+    removeListeners();
+  }
+  function triggerLoad() {
+    requestAnimationFrame(function() {
+      setTimeout(loadTrackingScripts, 50);
+    });
+  }
+  var events = ['scroll', 'mousemove', 'touchstart', 'click', 'keydown'];
+  function addListeners() {
+    events.forEach(function(e) {
+      window.addEventListener(e, triggerLoad, { passive: true, once: true });
+    });
+  }
+  function removeListeners() {
+    events.forEach(function(e) {
+      window.removeEventListener(e, triggerLoad);
+    });
+  }
+  addListeners();
+  // Safe fallback timeout of 3.5 seconds
+  setTimeout(loadTrackingScripts, 3500);
+})();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,23 +117,10 @@ window.addEventListener('load',function(){
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AZRAR - نظام أزرار","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"3.12.28","datePublished":"2026-06-28","url":"https://azrar-systems.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"148"},"offers":[{"@type":"Offer","name":"Solo","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Office","price":"79","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"119","priceCurrency":"USD"}]},{"@type":"Organization","name":"AZRAR SYSTEMS","url":"https://azrar-systems.com/","sameAs":["https://www.facebook.com/azrar.systems/"],"contactPoint":{"@type":"ContactPoint","telephone":"+962786170080","contactType":"customer support"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل يعمل بدون إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يعمل بشكل كامل offline باستخدام SQLite."}},{"@type":"Question","name":"كم مدة التجربة؟","acceptedAnswer":{"@type":"Answer","text":"30 يوماً بكل المزايا بدون بطاقة ائتمان."}},{"@type":"Question","name":"ما نظام التشغيل المدعوم؟","acceptedAnswer":{"@type":"Answer","text":"Windows 10 وWindows 11 (64-bit)."}}]}]}
 </script>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1318471933825544');
-fbq('track', 'PageView');
-</script>
+<!-- Meta Pixel Code noscript fallback -->
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -406,7 +436,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       
       <div class="tour-showcase">
-        <img id="tour-main-img" class="tour-img" src="shots/dashboard.webp" alt="AZRAR Dashboard Mockup">
+        <img id="tour-main-img" class="tour-img" src="shots/dashboard.webp" alt="AZRAR Dashboard Mockup" loading="lazy">
       </div>
     </div>
   </div>
