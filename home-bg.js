@@ -64,11 +64,9 @@ function loop(ts){
   requestAnimationFrame(loop);
 }
 
-// Draw initial frame statically
-draw();
-
-// Start continuous loop only after window has fully loaded to avoid blocking page load
+// Start drawing and continuous loop only after window has fully loaded to avoid blocking page load
 window.addEventListener('load', () => {
+  draw();
   if (!_rmq) {
     requestAnimationFrame(loop);
   }

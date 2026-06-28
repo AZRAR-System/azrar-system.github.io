@@ -982,7 +982,13 @@ function initHeroVideo() {
 }
 
 function initPageFeatures() {
-  initROI();
+  if (typeof requestIdleCallback === 'function') {
+    requestIdleCallback(function() {
+      initROI();
+    });
+  } else {
+    setTimeout(initROI, 50);
+  }
 }
 
 if (document.readyState === 'loading') {
