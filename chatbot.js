@@ -12,11 +12,11 @@ const chatData = {
     ],
     ans_what: {
       text: "نظام <b>أزرار</b> هو برنامج إدارة عقارات متكامل موجه للمكاتب والشركات العقارية. يقوم بإدارة العقود، الأقساط، العمولات، الصيانة، الصادر والوارد، إصدار سندات الصرف والقبض، وله مساعد ذكي مدمج ويدعم واتساب جماعي لإرسال تذكيرات الدفع والرسائل التلقائية لعملائك بنقرة واحدة.",
-      options: ["price", "offline", "trial", "back"]
+      options: ["price", "offline", "trial", "human", "back"]
     },
     ans_offline: {
       text: "<b>نعم، وبشكل كامل!</b> نظام أزرار مصمم ليعمل بدون إنترنت تماماً (Offline 100%) لحماية خصوصية بياناتك. يتم حفظ قاعدة البيانات محلياً على جهازك وتشفيرها، مما يمنحك سرعة فائقة في معالجة آلاف العقود دون أي بطء أو انقطاع.",
-      options: ["what", "trial", "back"]
+      options: ["what", "trial", "human", "back"]
     },
     ans_price: {
       text: "لدينا 3 باقات سنوية تناسب احتياجاتك:<br><br>• <b>Solo:</b> جهاز واحد بسعر $49/سنة.<br>• <b>Office (الأكثر طلباً):</b> جهازان بسعر $79/سنة.<br>• <b>Pro:</b> 3 أجهزة بسعر $119/سنة.<br><br>جميع الباقات تشمل كافة الأنظمة الـ 12 والتحديثات مجانية طوال فترة الترخيص.",
@@ -24,7 +24,7 @@ const chatData = {
     },
     ans_reqs: {
       text: "يعمل نظام أزرار على أجهزة الكمبيوتر واللابتوب التي تعمل بنظام تشغيل <b>Windows 10</b> أو <b>Windows 11</b> (بمعمارية 64-bit). لا يتطلب مواصفات عالية ويعمل بكفاءة على الأجهزة المتوسطة.",
-      options: ["what", "trial", "back"]
+      options: ["what", "trial", "human", "back"]
     },
     ans_trial: {
       text: "تستطيع تجربة نظام أزرار بكامل ميزاته مجاناً ولمدة **30 يوماً** بدون الحاجة لبطاقة ائتمانية. يتوفر التجربة بنسخة تجريبية كاملة. يمكنك طلب النسخة التجريبية مباشرة بالضغط على الزر أسفله للتواصل معنا عبر واتساب وسنرسل لك رابط التحميل فوراً 🚀",
@@ -49,11 +49,11 @@ const chatData = {
     ],
     ans_what: {
       text: "<b>AZRAR</b> is an offline real estate management system. It handles contracts, installments, receipts, payments, commissions, maintenance, WhatsApp reminders, and has a built-in AI assistant. It manages everything on your local device without needing cloud servers.",
-      options: ["price", "offline", "trial", "back"]
+      options: ["price", "offline", "trial", "human", "back"]
     },
     ans_offline: {
       text: "<b>Yes, 100%!</b> AZRAR works completely offline. Your database is stored locally on your device, ensuring maximum privacy, zero downtime, and extremely fast search and processing of contracts.",
-      options: ["what", "trial", "back"]
+      options: ["what", "trial", "human", "back"]
     },
     ans_price: {
       text: "We offer 3 yearly subscription plans:<br><br>• <b>Solo:</b> 1 device for $49/year.<br>• <b>Office (Popular):</b> 2 devices for $79/year.<br>• <b>Pro:</b> 3 devices for $119/year.<br><br>All plans include all 12 modules and free updates.",
@@ -61,7 +61,7 @@ const chatData = {
     },
     ans_reqs: {
       text: "AZRAR runs on laptops or desktop PCs running <b>Windows 10</b> or <b>Windows 11</b> (64-bit). It is lightweight and works smoothly on standard computers.",
-      options: ["what", "trial", "back"]
+      options: ["what", "trial", "human", "back"]
     },
     ans_trial: {
       text: "You can try AZRAR completely free with all features for **30 days** without a credit card. Press the button below to get the download link instantly via WhatsApp! 🚀",

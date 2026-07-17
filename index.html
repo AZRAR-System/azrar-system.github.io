@@ -115,7 +115,7 @@
 </style>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AZRAR - نظام أزرار","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"3.12.29","datePublished":"2026-06-28","url":"https://azrar-systems.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"148"},"offers":[{"@type":"Offer","name":"Solo","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Office","price":"79","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"119","priceCurrency":"USD"}]},{"@type":"Organization","name":"AZRAR SYSTEMS","url":"https://azrar-systems.com/","sameAs":["https://www.facebook.com/azrar.systems/"],"contactPoint":{"@type":"ContactPoint","telephone":"+962798986465","contactType":"customer support"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل يعمل بدون إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يعمل بشكل كامل offline باستخدام SQLite."}},{"@type":"Question","name":"كم مدة التجربة؟","acceptedAnswer":{"@type":"Answer","text":"30 يوماً بكل المزايا بدون بطاقة ائتمان."}},{"@type":"Question","name":"ما نظام التشغيل المدعوم؟","acceptedAnswer":{"@type":"Answer","text":"Windows 10 وWindows 11 (64-bit)."}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AZRAR - نظام أزرار","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"3.12.29","datePublished":"2026-06-28","url":"https://azrar-systems.com/","offers":[{"@type":"Offer","name":"Solo","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Office","price":"79","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"119","priceCurrency":"USD"}]},{"@type":"Organization","name":"AZRAR SYSTEMS","url":"https://azrar-systems.com/","sameAs":["https://www.facebook.com/azrar.systems/"],"contactPoint":{"@type":"ContactPoint","telephone":"+962798986465","contactType":"customer support"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل يعمل بدون إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"نعم، يعمل بشكل كامل offline باستخدام SQLite."}},{"@type":"Question","name":"كم مدة التجربة؟","acceptedAnswer":{"@type":"Answer","text":"30 يوماً بكل المزايا بدون بطاقة ائتمان."}},{"@type":"Question","name":"ما نظام التشغيل المدعوم؟","acceptedAnswer":{"@type":"Answer","text":"Windows 10 وWindows 11 (64-bit)."}}]}]}
 </script>
 <!-- Meta Pixel Code noscript fallback -->
 <noscript><img height="1" width="1" style="display:none"
@@ -278,7 +278,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="video-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.4); background: #000; aspect-ratio: 16/9;">
         <video id="hero-tour-video" poster="shots/dashboard.webp" preload="none" muted loop playsinline style="width: 100%; height: 100%; display: block; object-fit: cover;"></video>
-        <div class="video-controls" style="position: absolute; bottom: 8px; right: 8px; display: flex; gap: 6px; z-index: 5; direction: ltr;">
+        <button id="hero-play-overlay" onclick="playHeroVideo()" aria-label="تشغيل الفيديو" title="تشغيل الفيديو" style="position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); border: none; cursor: pointer; z-index: 6; padding: 0;">
+          <span style="width: 60px; height: 60px; border-radius: 50%; background: rgba(7,5,24,0.72); border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">▶</span>
+        </button>
+        <div class="video-controls" id="hero-video-controls" style="position: absolute; bottom: 8px; right: 8px; display: none; gap: 6px; z-index: 5; direction: ltr;">
           <button id="hero-mute-btn" onclick="toggleHeroVideoMute()" style="background: rgba(7,5,24,0.72); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; font-size: 0.85rem;" title="كتم/تشغيل الصوت">
             🔇
           </button>
@@ -515,7 +518,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sec-label reveal"><span class="ar">الأسعار</span><span class="en">Pricing</span></div>
     <h2 class="sec-title reveal"><span class="ar">بسيط وشفاف — دفعة واحدة سنوياً</span><span class="en">Simple & Transparent — One Annual Fee</span></h2>
     <p class="sec-sub reveal"><span class="ar">لا رسوم شهرية، لا مفاجآت. تجربة 30 يوم مجانية.</span><span class="en">No monthly fees, no surprises. 30-day free trial, no card required.</span></p>
-    <div class="launch-banner reveal">🎉 <span class="ar">عرض الإطلاق — خصم 50% لفترة محدودة</span><span class="en">Launch Offer — 50% OFF for a limited time</span></div>
+    <div class="launch-banner reveal">🎉 <span class="ar">عرض الإطلاق — خصم 50%</span><span class="en">Launch Offer — 50% OFF</span></div>
     <div class="pricing-grid reveal">
       <div class="plan">
         <div class="plan-name">SOLO</div>
@@ -967,18 +970,29 @@ function initROI() {
   }
 }
 
-// Dynamically load and play hero video only on desktop to save mobile bandwidth
-function initHeroVideo() {
+// Hero video only loads once the visitor explicitly taps play — avoids the
+// autoplay-blocked-to-save-power failure and any unwanted bandwidth use.
+function playHeroVideo() {
   const video = document.getElementById('hero-tour-video');
+  const overlay = document.getElementById('hero-play-overlay');
+  const controls = document.getElementById('hero-video-controls');
   if (!video) return;
-  const isMobile = window.innerWidth <= 768;
-  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
-  if (!isMobile && !prefersReducedMotion) {
+  if (!video.src) {
     video.src = "videos/tour.webm";
     video.preload = "auto";
     video.load();
-    video.play().catch(e => console.log("Hero video autoplay failed:", e));
+  }
+  video.play().then(() => {
+    if (overlay) overlay.style.display = 'none';
+    if (controls) controls.style.display = 'flex';
+  }).catch(e => console.log("Hero video play failed:", e));
+}
+
+function initHeroVideo() {
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    const overlay = document.getElementById('hero-play-overlay');
+    if (overlay) overlay.style.display = 'none';
   }
 }
 
@@ -998,7 +1012,7 @@ if (document.readyState === 'loading') {
   initPageFeatures();
 }
 
-// Load and play the 6.4MB hero video only after the entire page has fully loaded
+// Hide the play button for reduced-motion visitors once the page has settled
 window.addEventListener('load', () => {
   setTimeout(initHeroVideo, 300);
 });
