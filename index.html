@@ -1020,46 +1020,6 @@ document.addEventListener('click',function(e){
   }
 },true);
 </script>
-<script id="azrar-lead-notify">
-// إشعار فوري (تيليجرام) لكل نقرة على زر واتساب — يصل قبل أن يغادر الزائر الصفحة أصلاً.
-(function(){
-  // بعد إنشاء بوت Telegram عبر @BotFather وأخذ الـtoken، والحصول على chat_id،
-  // ضع القيمتين هنا. طالما تركتهما فارغتين، الإشعار معطّل بصمت (لا يؤثر على تجربة الزائر أبداً).
-  var TELEGRAM_BOT_TOKEN = '';
-  var TELEGRAM_CHAT_ID = '';
-
-  if(!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
-
-  document.addEventListener('click', function(e){
-    var a = e.target.closest && e.target.closest('a'); if(!a) return;
-    var href = a.getAttribute('href') || '';
-    if(href.indexOf('wa.me') === -1 && href.indexOf('api.whatsapp') === -1) return;
-
-    var label = (a.textContent || '').replace(/\s+/g, ' ').trim() || '(بدون نص)';
-    var qIdx = href.indexOf('?text=');
-    var wanted = qIdx > -1 ? decodeURIComponent(href.slice(qIdx + 6)) : '(بدون رسالة محددة)';
-    var pageTitle = document.title || location.pathname;
-    var now = new Date().toLocaleString('ar-JO', { hour12: true });
-
-    var text = '🟢 عميل جديد ضغط واتساب من الموقع\n'
-      + 'الزر: ' + label + '\n'
-      + 'يريد: ' + wanted + '\n'
-      + 'الصفحة: ' + pageTitle + '\n'
-      + 'الرابط: ' + location.href + '\n'
-      + 'الوقت: ' + now;
-
-    var url = 'https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage'
-      + '?chat_id=' + encodeURIComponent(TELEGRAM_CHAT_ID)
-      + '&text=' + encodeURIComponent(text);
-
-    try {
-      // sendBeacon يضمن وصول الطلب حتى لو غادر الزائر الصفحة فوراً (بعض الأزرار بلا target=_blank).
-      if (navigator.sendBeacon) navigator.sendBeacon(url);
-      else fetch(url, { mode: 'no-cors', keepalive: true }).catch(function(){});
-    } catch (err) { /* لا نمنع فتح واتساب أبداً بسبب فشل الإشعار */ }
-  }, true);
-})();
-</script>
 <script>
 (function(){var bar=document.createElement('div');bar.className='az-progress';document.body.appendChild(bar);
  function p(){var h=document.documentElement,s=h.scrollTop||document.body.scrollTop,m=(h.scrollHeight-h.clientHeight)||1;bar.style.width=(s/m*100)+'%';}
