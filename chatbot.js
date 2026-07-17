@@ -28,12 +28,12 @@ const chatData = {
     },
     ans_trial: {
       text: "تستطيع تجربة نظام أزرار بكامل ميزاته مجاناً ولمدة **30 يوماً** بدون الحاجة لبطاقة ائتمانية. يتوفر التجربة بنسخة تجريبية كاملة. يمكنك طلب النسخة التجريبية مباشرة بالضغط على الزر أسفله للتواصل معنا عبر واتساب وسنرسل لك رابط التحميل فوراً 🚀",
-      cta: { text: "📲 اطلب التجربة المجانية عبر واتساب", url: "https://wa.me/962786170080?text=أريد%20تجربة%20نظام%20أزرار%20مجاناً" },
+      cta: { text: "📲 اطلب التجربة المجانية عبر واتساب", url: "https://wa.me/962798986465?text=أريد%20تجربة%20نظام%20أزرار%20مجاناً" },
       options: ["price", "human", "back"]
     },
     ans_human: {
       text: "يسعدنا خدمتك والإجابة على أي استفسارات خاصة بالنظام أو طريقة الشراء. يمكنك الضغط على الزر أسفله لفتح محادثة مباشرة مع الدعم الفني عبر واتساب 📞",
-      cta: { text: "💬 تحدث مع الدعم الفني الآن", url: "https://wa.me/962786170080" },
+      cta: { text: "💬 تحدث مع الدعم الفني الآن", url: "https://wa.me/962798986465" },
       options: ["trial", "price", "back"]
     }
   },
@@ -65,12 +65,12 @@ const chatData = {
     },
     ans_trial: {
       text: "You can try AZRAR completely free with all features for **30 days** without a credit card. Press the button below to get the download link instantly via WhatsApp! 🚀",
-      cta: { text: "📲 Get Free Trial on WhatsApp", url: "https://wa.me/962786170080?text=I%20want%20to%20try%20AZRAR%20Free" },
+      cta: { text: "📲 Get Free Trial on WhatsApp", url: "https://wa.me/962798986465?text=I%20want%20to%20try%20AZRAR%20Free" },
       options: ["price", "human", "back"]
     },
     ans_human: {
       text: "We are happy to help! Press the button below to start a live WhatsApp chat with our technical support team 📞",
-      cta: { text: "💬 Chat with Live Support", url: "https://wa.me/962786170080" },
+      cta: { text: "💬 Chat with Live Support", url: "https://wa.me/962798986465" },
       options: ["trial", "price", "back"]
     }
   }
