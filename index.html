@@ -518,11 +518,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sec-label reveal"><span class="ar">الأسعار</span><span class="en">Pricing</span></div>
     <h2 class="sec-title reveal"><span class="ar">بسيط وشفاف — دفعة واحدة سنوياً</span><span class="en">Simple & Transparent — One Annual Fee</span></h2>
     <p class="sec-sub reveal"><span class="ar">لا رسوم شهرية، لا مفاجآت. تجربة 30 يوم مجانية.</span><span class="en">No monthly fees, no surprises. 30-day free trial, no card required.</span></p>
-    <div class="launch-banner reveal">🎉 <span class="ar">عرض الإطلاق — خصم 50%</span><span class="en">Launch Offer — 50% OFF</span></div>
+    <div class="launch-banner reveal" id="launch-banner">🎉 <span class="ar">عرض الإطلاق — خصم 50% حتى 31 ديسمبر 2026 · <span id="offer-countdown-ar"></span> متبقية</span><span class="en">Launch Offer — 50% OFF until Dec 31, 2026 · <span id="offer-countdown-en"></span> left</span></div>
     <div class="pricing-grid reveal">
       <div class="plan">
         <div class="plan-name">SOLO</div>
-        <div class="plan-price"><span class="old-price">$99</span><sup>$</sup>49 <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
+        <div class="plan-price"><span class="old-price">$99</span><sup>$</sup><span class="price-num">49</span> <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
         <div class="plan-desc"><span class="ar">جهاز واحد — لصاحب المكتب منفرداً</span><span class="en">1 device — for solo office owners</span></div>
         <hr class="plan-hr">
         <ul class="plan-feats">
@@ -538,7 +538,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="plan hot">
         <div class="plan-badge"><span class="ar">الأكثر طلباً</span><span class="en">Most Popular</span></div>
         <div class="plan-name">OFFICE</div>
-        <div class="plan-price"><span class="old-price">$169</span><sup>$</sup>79 <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
+        <div class="plan-price"><span class="old-price">$169</span><sup>$</sup><span class="price-num">79</span> <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
         <div class="plan-desc"><span class="ar">جهازان — للابتوب والديسكتوب معاً</span><span class="en">2 devices — laptop + desktop</span></div>
         <hr class="plan-hr">
         <ul class="plan-feats">
@@ -554,7 +554,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="plan">
         <div class="plan-name">PRO</div>
-        <div class="plan-price"><span class="old-price">$239</span><sup>$</sup>119 <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
+        <div class="plan-price"><span class="old-price">$239</span><sup>$</sup><span class="price-num">119</span> <span>/ <span class="ar">سنة</span><span class="en">year</span></span></div>
         <div class="plan-desc"><span class="ar">3 أجهزة — مع موظف أو موظفين</span><span class="en">3 devices — with 1-2 staff members</span></div>
         <hr class="plan-hr">
         <ul class="plan-feats">
@@ -794,6 +794,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="home-bg.js" defer></script>
 <script src="chatbot.js" defer></script>
 <script>
+// ── LAUNCH OFFER COUNTDOWN ───────────────────────────────────────
+// Real deadline: end of day Dec 31, 2026, Amman time (UTC+3). After this
+// moment the banner is removed and all discounted prices revert to their
+// original values — evaluated fresh on every page load, no manual edits
+// needed once the date passes.
+(function(){
+  var OFFER_END = new Date('2027-01-01T00:00:00+03:00').getTime();
+
+  function revertOffer() {
+    var banner = document.getElementById('launch-banner');
+    if (banner) banner.remove();
+    document.querySelectorAll('.plan-price .old-price').forEach(function(oldEl){
+      var numEl = oldEl.parentElement.querySelector('.price-num');
+      if (numEl) numEl.textContent = oldEl.textContent.replace('$', '');
+      oldEl.remove();
+    });
+    document.querySelectorAll('.cmp-table s').forEach(function(sEl){
+      sEl.parentElement.textContent = sEl.textContent;
+    });
+  }
+
+  function tick() {
+    var diff = OFFER_END - Date.now();
+    if (diff <= 0) { revertOffer(); return; }
+    var days = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    var ar = document.getElementById('offer-countdown-ar');
+    var en = document.getElementById('offer-countdown-en');
+    if (ar) ar.textContent = days + ' يوم ' + hours + ' ساعة';
+    if (en) en.textContent = days + 'd ' + hours + 'h';
+  }
+
+  tick();
+  setInterval(tick, 60000);
+})();
+
 // ── LANGUAGE SWITCHER ────────────────────────────────────────────
 function setLang(lang) {
   const html = document.documentElement;
