@@ -158,7 +158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="en">Start Free</span>
     </a>
   </div>
-  <button class="hamburger" id="hamburger" aria-label="menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="menu" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
@@ -874,8 +874,8 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 // AZRAR interactive functions
-function toggleMenu(){const b=document.getElementById("hamburger"),m=document.getElementById("mobile-menu");if(b)b.classList.toggle("open");if(m)m.classList.toggle("open");}
-function closeMenu(){const b=document.getElementById("hamburger"),m=document.getElementById("mobile-menu");if(b)b.classList.remove("open");if(m)m.classList.remove("open");}
+function toggleMenu(){const b=document.getElementById("hamburger"),m=document.getElementById("mobile-menu");if(b){b.classList.toggle("open");b.setAttribute("aria-expanded",b.classList.contains("open"));}if(m)m.classList.toggle("open");}
+function closeMenu(){const b=document.getElementById("hamburger"),m=document.getElementById("mobile-menu");if(b){b.classList.remove("open");b.setAttribute("aria-expanded","false");}if(m)m.classList.remove("open");}
 function toggleFaq(el){const it=el.closest(".faq-item"),op=it.classList.contains("open");document.querySelectorAll(".faq-item.open").forEach(i=>i.classList.remove("open"));if(!op)it.classList.add("open");}
 var _sb=document.getElementById("scroll-top");if(_sb)window.addEventListener("scroll",function(){_sb.classList.toggle("vis",window.scrollY>600);});
 (function(){try{var p=new URLSearchParams(window.location.search).get("lang");if((p==="en"||p==="ar")&&typeof setLang==="function")setLang(p);}catch(e){}})();
