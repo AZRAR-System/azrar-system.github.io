@@ -75,26 +75,39 @@
   z-index: 2;
 }
 
-/* Alert panels / callouts in guide.html */
-.step .tip {
+/* Alert panels / callouts - used both inside guide.html's .step blocks and
+   standalone in article/FAQ/legal pages. Base rules were authored light-mode
+   (white/pale card backgrounds with dark text) and only .step-scoped variants
+   were ever overridden for the dark theme - the standalone .tip/.note/.warn/
+   .highlight instances (used directly in faq.html, article-choosing-software.html,
+   intellectual-property.html) stayed light, floating oddly on the dark page. */
+.step .tip, .tip {
   background: rgba(185,138,61, 0.08) !important;
   border: 1px solid rgba(185,138,61, 0.25) !important;
   color: var(--gold-l) !important;
 }
-.step .tip b {
+.step .tip b, .tip b {
   color: #fff !important;
 }
-.step .note {
+.step .note, .note {
   background: rgba(13,125,99, 0.08) !important;
   border: 1px solid rgba(13,125,99, 0.25) !important;
   color: #cdd5e8 !important;
 }
-.step .warn {
+.step .warn, .warn {
   background: rgba(239, 68, 68, 0.08) !important;
   border: 1px solid rgba(239, 68, 68, 0.25) !important;
   color: #fca5a5 !important;
 }
-.step .warn b {
+.step .warn b, .warn b {
+  color: #fff !important;
+}
+.highlight {
+  background: rgba(185,138,61, 0.08) !important;
+  border: 1px solid rgba(185,138,61, 0.25) !important;
+  color: #cdd5e8 !important;
+}
+.highlight strong {
   color: #fff !important;
 }
 
