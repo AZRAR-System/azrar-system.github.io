@@ -1,14 +1,23 @@
 // ── CUSTOM AI FAQ CHATBOT ─────────────────────────────────────────
+const chatIcons = {
+  what: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11.25 11.5H12v5.5h.75"/></svg>',
+  offline: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-4M9 20v-8M14 20V8M19 20V4"/></svg>',
+  price: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6.5" width="18" height="11" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6.5 9.5h.01M17.5 14.5h.01"/></svg>',
+  reqs: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5l8-1.1v7.1H3z"/><path d="M12.3 5.2L21 4v8.4l-8.7.1z"/><path d="M3 13.4h8v7.1l-8-1.1z"/><path d="M12.3 13.6l8.7.1V20l-8.7-1.2z"/></svg>',
+  trial: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c2 2 3 5 3 8 0 2-.5 3.5-1.5 5l-1.5 2-1.5-2C9.5 13.5 9 12 9 10c0-3 1-6 3-8z"/><circle cx="12" cy="9" r="1.3" fill="currentColor" stroke="none"/><path d="M9 15l-2 3M15 15l2 3"/></svg>',
+  human: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2C10.5 19 5 13.5 5 6a2 2 0 0 1 1-2z"/></svg>'
+};
+
 const chatData = {
   ar: {
-    welcome: "مرحباً بك! أنا مساعد أزرار الذكي 🤖. كيف يمكنني مساعدتك اليوم؟",
+    welcome: "مرحباً بك! أنا مساعد أزرار الذكي. كيف يمكنني مساعدتك اليوم؟",
     options: [
-      { id: "what", text: "🏗️ ما هو نظام أزرار؟", next: "ans_what" },
-      { id: "offline", text: "🔌 هل يعمل بدون إنترنت؟", next: "ans_offline" },
-      { id: "price", text: "💰 ما هي الباقات والأسعار؟", next: "ans_price" },
-      { id: "reqs", text: "💻 ما هي متطلبات التشغيل؟", next: "ans_reqs" },
-      { id: "trial", text: "🚀 كيف أقوم بتجربة النظام؟", next: "ans_trial" },
-      { id: "human", text: "📞 أريد التحدث مع الدعم الفني", next: "ans_human" }
+      { id: "what", text: "ما هو نظام أزرار؟", next: "ans_what" },
+      { id: "offline", text: "هل يعمل بدون إنترنت؟", next: "ans_offline" },
+      { id: "price", text: "ما هي الباقات والأسعار؟", next: "ans_price" },
+      { id: "reqs", text: "ما هي متطلبات التشغيل؟", next: "ans_reqs" },
+      { id: "trial", text: "كيف أقوم بتجربة النظام؟", next: "ans_trial" },
+      { id: "human", text: "أريد التحدث مع الدعم الفني", next: "ans_human" }
     ],
     ans_what: {
       text: "نظام <b>أزرار</b> هو برنامج إدارة عقارات متكامل موجه للمكاتب والشركات العقارية. يقوم بإدارة العقود، الأقساط، العمولات، الصيانة، الصادر والوارد، إصدار سندات الصرف والقبض، وله مساعد ذكي مدمج ويدعم واتساب جماعي لإرسال تذكيرات الدفع والرسائل التلقائية لعملائك بنقرة واحدة.",
@@ -19,7 +28,7 @@ const chatData = {
       options: ["what", "trial", "human", "back"]
     },
     ans_price: {
-      text: "لدينا 3 باقات سنوية تناسب احتياجاتك:<br><br>• <b>Solo:</b> جهاز واحد بسعر $49/سنة.<br>• <b>Office (الأكثر طلباً):</b> جهازان بسعر $79/سنة.<br>• <b>Pro:</b> 3 أجهزة بسعر $119/سنة.<br><br>جميع الباقات تشمل كافة الأنظمة الـ 12 والتحديثات مجانية طوال فترة الترخيص.",
+      text: "لدينا 3 باقات سنوية تناسب احتياجاتك:<br><br>• <b>Solo:</b> جهاز واحد بسعر $49/سنة.<br>• <b>Office (الأكثر طلباً):</b> جهازان بسعر $79/سنة.<br>• <b>Pro:</b> 3 أجهزة بسعر $119/سنة.<br><br>جميع الباقات تشمل كافة الأنظمة الـ 17 والتحديثات مجانية طوال فترة الترخيص.",
       options: ["trial", "human", "back"]
     },
     ans_reqs: {
@@ -27,25 +36,25 @@ const chatData = {
       options: ["what", "trial", "human", "back"]
     },
     ans_trial: {
-      text: "تستطيع تجربة نظام أزرار بكامل ميزاته مجاناً ولمدة **30 يوماً** بدون الحاجة لبطاقة ائتمانية. يتوفر التجربة بنسخة تجريبية كاملة. يمكنك طلب النسخة التجريبية مباشرة بالضغط على الزر أسفله للتواصل معنا عبر واتساب وسنرسل لك رابط التحميل فوراً 🚀",
-      cta: { text: "📲 اطلب التجربة المجانية عبر واتساب", url: "https://wa.me/962798986465?text=أريد%20تجربة%20نظام%20أزرار%20مجاناً" },
+      text: "تستطيع تجربة نظام أزرار بكامل ميزاته مجاناً ولمدة **30 يوماً** بدون الحاجة لبطاقة ائتمانية. يتوفر التجربة بنسخة تجريبية كاملة. يمكنك طلب النسخة التجريبية مباشرة بالضغط على الزر أسفله للتواصل معنا عبر واتساب وسنرسل لك رابط التحميل فوراً.",
+      cta: { text: "اطلب التجربة المجانية عبر واتساب", url: "https://wa.me/962798986465?text=أريد%20تجربة%20نظام%20أزرار%20مجاناً" },
       options: ["price", "human", "back"]
     },
     ans_human: {
-      text: "يسعدنا خدمتك والإجابة على أي استفسارات خاصة بالنظام أو طريقة الشراء. يمكنك الضغط على الزر أسفله لفتح محادثة مباشرة مع الدعم الفني عبر واتساب 📞",
-      cta: { text: "💬 تحدث مع الدعم الفني الآن", url: "https://wa.me/962798986465" },
+      text: "يسعدنا خدمتك والإجابة على أي استفسارات خاصة بالنظام أو طريقة الشراء. يمكنك الضغط على الزر أسفله لفتح محادثة مباشرة مع الدعم الفني عبر واتساب.",
+      cta: { text: "تحدث مع الدعم الفني الآن", url: "https://wa.me/962798986465" },
       options: ["trial", "price", "back"]
     }
   },
   en: {
-    welcome: "Welcome! I am the AZRAR Assistant 🤖. How can I help you today?",
+    welcome: "Welcome! I am the AZRAR Assistant. How can I help you today?",
     options: [
-      { id: "what", text: "🏗️ What is AZRAR?", next: "ans_what" },
-      { id: "offline", text: "🔌 Does it work offline?", next: "ans_offline" },
-      { id: "price", text: "💰 Plans & Pricing?", next: "ans_price" },
-      { id: "reqs", text: "💻 System Requirements?", next: "ans_reqs" },
-      { id: "trial", text: "🚀 How to start a free trial?", next: "ans_trial" },
-      { id: "human", text: "📞 Contact Support", next: "ans_human" }
+      { id: "what", text: "What is AZRAR?", next: "ans_what" },
+      { id: "offline", text: "Does it work offline?", next: "ans_offline" },
+      { id: "price", text: "Plans & Pricing?", next: "ans_price" },
+      { id: "reqs", text: "System Requirements?", next: "ans_reqs" },
+      { id: "trial", text: "How to start a free trial?", next: "ans_trial" },
+      { id: "human", text: "Contact Support", next: "ans_human" }
     ],
     ans_what: {
       text: "<b>AZRAR</b> is an offline real estate management system. It handles contracts, installments, receipts, payments, commissions, maintenance, WhatsApp reminders, and has a built-in AI assistant. It manages everything on your local device without needing cloud servers.",
@@ -56,7 +65,7 @@ const chatData = {
       options: ["what", "trial", "human", "back"]
     },
     ans_price: {
-      text: "We offer 3 yearly subscription plans:<br><br>• <b>Solo:</b> 1 device for $49/year.<br>• <b>Office (Popular):</b> 2 devices for $79/year.<br>• <b>Pro:</b> 3 devices for $119/year.<br><br>All plans include all 12 modules and free updates.",
+      text: "We offer 3 yearly subscription plans:<br><br>• <b>Solo:</b> 1 device for $49/year.<br>• <b>Office (Popular):</b> 2 devices for $79/year.<br>• <b>Pro:</b> 3 devices for $119/year.<br><br>All plans include all 17 modules and free updates.",
       options: ["trial", "human", "back"]
     },
     ans_reqs: {
@@ -64,13 +73,13 @@ const chatData = {
       options: ["what", "trial", "human", "back"]
     },
     ans_trial: {
-      text: "You can try AZRAR completely free with all features for **30 days** without a credit card. Press the button below to get the download link instantly via WhatsApp! 🚀",
-      cta: { text: "📲 Get Free Trial on WhatsApp", url: "https://wa.me/962798986465?text=I%20want%20to%20try%20AZRAR%20Free" },
+      text: "You can try AZRAR completely free with all features for **30 days** without a credit card. Press the button below to get the download link instantly via WhatsApp!",
+      cta: { text: "Get Free Trial on WhatsApp", url: "https://wa.me/962798986465?text=I%20want%20to%20try%20AZRAR%20Free" },
       options: ["price", "human", "back"]
     },
     ans_human: {
-      text: "We are happy to help! Press the button below to start a live WhatsApp chat with our technical support team 📞",
-      cta: { text: "💬 Chat with Live Support", url: "https://wa.me/962798986465" },
+      text: "We are happy to help! Press the button below to start a live WhatsApp chat with our technical support team.",
+      cta: { text: "Chat with Live Support", url: "https://wa.me/962798986465" },
       options: ["trial", "price", "back"]
     }
   }
@@ -149,11 +158,12 @@ function showOptions(options) {
   const lang = getChatLang();
   options.forEach(opt => {
     let optText = '';
+    let optIcon = '';
     let action = null;
-    
+
     if (typeof opt === 'string') {
       if (opt === 'back') {
-        optText = lang === 'en' ? "↩️ Back to main menu" : "↩️ العودة للقائمة الرئيسية";
+        optText = lang === 'en' ? "Back to main menu" : "العودة للقائمة الرئيسية";
         action = () => {
           addMessage(optText, 'user');
           showTyping(() => showWelcomeMessage());
@@ -162,18 +172,20 @@ function showOptions(options) {
         const optionData = chatData[lang].options.find(o => o.id === opt);
         if (optionData) {
           optText = optionData.text;
+          optIcon = chatIcons[optionData.id] || '';
           action = () => selectOption(optionData);
         }
       }
     } else {
       optText = opt.text;
+      optIcon = chatIcons[opt.id] || '';
       action = () => selectOption(opt);
     }
-    
+
     if (optText && action) {
       const btn = document.createElement('button');
       btn.className = 'chat-opt';
-      btn.textContent = optText;
+      btn.innerHTML = optIcon + '<span>' + optText + '</span>';
       btn.addEventListener('click', action);
       chatOptionsContainer.appendChild(btn);
     }
@@ -184,7 +196,7 @@ function selectOption(opt) {
   const lang = getChatLang();
   addMessage(opt.text, 'user');
   if (chatOptionsContainer) chatOptionsContainer.innerHTML = '';
-  
+
   showTyping(() => {
     const ans = chatData[lang][opt.next];
     if (ans.cta) {
