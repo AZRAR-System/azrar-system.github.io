@@ -160,13 +160,3 @@
   margin-inline-end: 0.4rem;
   color: var(--gold-l);
 }
-
-/* Full-page screenshots (Owner Portal, Company Finance, etc.) are tall scrolling
-   captures, not pre-cropped landscape shots like the rest of the gallery - crop
-   to the top (header/hero) so the grid stays visually uniform; full image still
-   opens in the lightbox on click. */
-.shot.tall img {
-  aspect-ratio: 1100 / 687;
-  object-fit: cover;
-  object-position: top;
-}
