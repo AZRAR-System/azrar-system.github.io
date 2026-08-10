@@ -1,8 +1,8 @@
 /* Shared Dark Theme variables and background styling for AZRAR sub-pages */
 :root {
   --navy: #181341; --navy2: #221c55; --navy3: #2a2460;
-  --blue: #4f46e5; --blue-l: #6366f1; --blue-d: #1d4ed8;
-  --gold: #cda434; --gold-l: #e6c55c;
+  --blue: #0d7d63; --blue-l: #14a37f; --blue-d: #0a5c48;
+  --gold: #b98a3d; --gold-l: #dcb15f;
   --ink: #cdd5e8; --head: #ffffff; --muted: #8ea5c8; --muted2: #63799b;
   --bg: #070518; --card: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.04);
   --green: #22c55e; --danger: #ef4444;
@@ -25,7 +25,7 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-  background: radial-gradient(circle at 12% 15%, rgba(79,70,229,0.18) 0%, transparent 60%), radial-gradient(circle at 85% 70%, rgba(205,164,52,0.1) 0%, transparent 55%);
+  background: radial-gradient(circle at 12% 15%, rgba(13,125,99,0.18) 0%, transparent 60%), radial-gradient(circle at 85% 70%, rgba(185,138,61,0.1) 0%, transparent 55%);
   pointer-events: none;
   display: block !important;
 }
@@ -77,16 +77,16 @@
 
 /* Alert panels / callouts in guide.html */
 .step .tip {
-  background: rgba(205, 164, 52, 0.08) !important;
-  border: 1px solid rgba(205, 164, 52, 0.25) !important;
+  background: rgba(185,138,61, 0.08) !important;
+  border: 1px solid rgba(185,138,61, 0.25) !important;
   color: var(--gold-l) !important;
 }
 .step .tip b {
   color: #fff !important;
 }
 .step .note {
-  background: rgba(79, 70, 229, 0.08) !important;
-  border: 1px solid rgba(79, 70, 229, 0.25) !important;
+  background: rgba(13,125,99, 0.08) !important;
+  border: 1px solid rgba(13,125,99, 0.25) !important;
   color: #cdd5e8 !important;
 }
 .step .warn {
@@ -103,15 +103,15 @@
   background: rgba(255, 255, 255, 0.04) !important;
 }
 .cmp-table th.hot {
-  background: rgba(205, 164, 52, 0.12) !important;
+  background: rgba(185,138,61, 0.12) !important;
 }
 .cmp-table td {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 .cmp-table td.hot {
-  background: rgba(205, 164, 52, 0.03) !important;
-  border-left: 1px solid rgba(205, 164, 52, 0.1) !important;
-  border-right: 1px solid rgba(205, 164, 52, 0.1) !important;
+  background: rgba(185,138,61, 0.03) !important;
+  border-left: 1px solid rgba(185,138,61, 0.1) !important;
+  border-right: 1px solid rgba(185,138,61, 0.1) !important;
 }
 .cmp-table tbody td:first-child {
   color: #fff !important;
@@ -137,4 +137,13 @@
   #bg-canvas {
     display: none !important;
   }
+}
+
+/* Inline line-icon system (replaces emoji-as-icon on guide/use-cases pages) */
+.meta span svg, .meta-row span svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.14em;
+  margin-inline-end: 0.4rem;
+  color: var(--gold-l);
 }

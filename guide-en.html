@@ -73,8 +73,8 @@ window.addEventListener('load',function(){
 
 :root {
   --navy: #181341; --navy2: #221c55; --navy3: #2a2460;
-  --blue: #4f46e5; --blue-l: #6366f1; --blue-d: #1d4ed8;
-  --gold: #cda434; --gold-l: #e6c55c;
+  --blue: #0d7d63; --blue-l: #14a37f; --blue-d: #0a5c48;
+  --gold: #b98a3d; --gold-l: #dcb15f;
   --ink: #cdd5e8; --head: #ffffff; --muted: #8ea5c8; --muted2: #63799b;
   --bg: #070518; --card: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.04);
   --green: #22c55e; --danger: #ef4444;
@@ -88,7 +88,7 @@ a{color:var(--blue);}
 .brand img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}.brand small{display:block;font-size:.66rem;color:var(--muted);font-weight:600;}
 .tb-right{display:flex;align-items:center;gap:.6rem;}
 .lang-link{border:1px solid var(--border);background:#eef2f9;color:#475569;padding:.45rem .9rem;border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none;}
-.home-link{background:var(--blue);color:#fff;padding:.5rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:800;text-decoration:none;box-shadow:0 4px 12px rgba(79,70,229,.28);}
+.home-link{background:var(--blue);color:#fff;padding:.5rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:800;text-decoration:none;box-shadow:0 4px 12px rgba(13,125,99,.28);}
 .phero{background:linear-gradient(160deg,var(--navy),var(--navy3));color:#fff;padding:3.5rem 1.5rem;text-align:center;}
 .phero .eyebrow{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:var(--gold-l);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:.35rem 1rem;border-radius:100px;margin-bottom:1.1rem;font-weight:700;}
 .phero h1{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;margin-bottom:.8rem;line-height:1.25;}
@@ -128,14 +128,14 @@ footer a{color:var(--gold-l);text-decoration:none;}
 .sf-logo img{width:38px;height:38px;}
 .sf-logo .wm{display:flex;flex-direction:column;line-height:1;font-family:var(--font-en,'Inter',sans-serif);}
 .sf-logo .wm b{font-weight:900;font-size:1.1rem;letter-spacing:.05em;color:#fff;}
-.sf-logo .wm small{font-size:.55rem;letter-spacing:.34em;color:var(--gold-l,#e6c55c);font-weight:700;margin-top:3px;}
+.sf-logo .wm small{font-size:.55rem;letter-spacing:.34em;color:var(--gold-l,#dcb15f);font-weight:700;margin-top:3px;}
 .sf-tag{color:#8ea3c4;margin:.9rem 0 1rem;max-width:310px;line-height:1.75;font-size:.85rem;}
 .sf-social{display:flex;gap:.5rem;}
 .sf-social a{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#cdd9ec;text-decoration:none;transition:.2s;}
-.sf-social a:hover{background:var(--gold,#cda434);color:#1a1205;border-color:transparent;}
+.sf-social a:hover{background:var(--gold,#b98a3d);color:#1a1205;border-color:transparent;}
 .sf-col h4{color:#fff;font-size:.9rem;margin-bottom:.85rem;font-weight:800;}
 .sf-col a{display:block;color:#9fb0cc;text-decoration:none;padding:.26rem 0;font-size:.85rem;transition:.15s;}
-.sf-col a:hover{color:var(--gold-l,#e6c55c);}
+.sf-col a:hover{color:var(--gold-l,#dcb15f);}
 .sf-bottom{max-width:1080px;margin:2rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;color:#8093b3;font-size:.78rem;}
 .sf-badge{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.25rem .85rem;color:#aebdd2;}
 .sf-bottom a{color:#8093b3;}
@@ -143,7 +143,7 @@ footer a{color:var(--gold-l);text-decoration:none;}
 @media(max-width:460px){.sf-inner{grid-template-columns:1fr;}.sf-bottom{justify-content:center;text-align:center;}}
 
 /* === AZRAR motion system === */
-.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#4f46e5,#6366f1,#e6c55c);box-shadow:0 0 8px rgba(79,70,229,.4);transition:width .12s ease-out;}
+.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#0d7d63,#14a37f,#dcb15f);box-shadow:0 0 8px rgba(13,125,99,.4);transition:width .12s ease-out;}
 .az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q){opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1);}
 .az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q).in{opacity:1;transform:none;}
 :is(.card,.step,.vid){transition:transform .25s ease,box-shadow .25s ease;}
@@ -199,7 +199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="eyebrow">USER GUIDE</span>
   <h1>AZRAR User Guide</h1>
   <p>A practical, detailed guide from zero to pro — everything you need to run your real estate office: from installation and activation, through creating contracts and collecting installments, to reports and backups.</p>
-  <div class="meta-row"><span>⏱️ ~15 min read</span><span>📚 14 sections</span><span>🪟 Windows 10/11</span><span>📶 Works offline</span></div>
+  <div class="meta-row"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>~15 min read</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2 2 0 0 1 6 4h13v14H6a2 2 0 0 0-2 2z"/><path d="M4 19.5V5.5"/><path d="M8 8h7M8 11h7"/></svg>14 sections</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5l8-1.1v7.1H3z"/><path d="M12.3 5.2L21 4v8.4l-8.7.1z"/><path d="M3 13.4h8v7.1l-8-1.1z"/><path d="M12.3 13.6l8.7.1V20l-8.7-1.2z"/></svg>Windows 10/11</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-4M9 20v-8M14 20V8M19 20V4"/></svg>Works offline</span></div>
 </section>
 <div class="wrap">
 <nav class="toc"><h2>Guide Contents</h2><ol>
@@ -269,7 +269,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <li>Install <b>SQL Server Express</b> (offered during installation, or install it later). It creates a database and stores connection details in <span class="path">ProgramData\AZRAR\sql-local-credentials.json</span>.</li>
   <li>Open <b>“Server &amp; Connection Settings”</b> from the side menu.</li>
   <li>Enter the connection details: <b>Server</b>, <b>Database name</b>, <b>User</b>, <b>Password</b> — or use the <b>auto-import</b> button from the install file.</li>
-  <li>Click <b>Save</b> then <b>Connect</b>, and confirm the status shows <b>“Connected” ✅</b>.</li>
+  <li>Click <b>Save</b> then <b>Connect</b>, and confirm the status shows <b>“Connected” ✓</b>.</li>
 </ol>
 <div class="warn"><b>Note:</b> SQL Server sync needs a network/internet during setup. <b>Local mode always works offline.</b> With sync, conflicts are resolved automatically between devices on the same server.</div>
 </article>
@@ -427,6 +427,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="faq-en.html">FAQ</a>
       <a href="articles-en.html">Blog</a>
       <a href="use-cases-en.html">Use Cases</a>
+      <a href="videos-en.html">Videos</a>
     </div>
     <div class="sf-col">
       <h4>Legal</h4>

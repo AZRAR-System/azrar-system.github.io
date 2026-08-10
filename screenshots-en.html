@@ -46,8 +46,8 @@ window.addEventListener('load',function(){
 
 :root {
   --navy: #181341; --navy2: #221c55; --navy3: #2a2460;
-  --blue: #4f46e5; --blue-l: #6366f1; --blue-d: #1d4ed8;
-  --gold: #cda434; --gold-l: #e6c55c;
+  --blue: #0d7d63; --blue-l: #14a37f; --blue-d: #0a5c48;
+  --gold: #b98a3d; --gold-l: #dcb15f;
   --ink: #cdd5e8; --head: #ffffff; --muted: #8ea5c8; --muted2: #63799b;
   --bg: #070518; --card: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.04);
   --green: #22c55e; --danger: #ef4444;
@@ -61,7 +61,7 @@ a{color:var(--blue);}
 .brand img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}.brand small{display:block;font-size:.66rem;color:var(--muted);font-weight:600;}
 .tb-right{display:flex;gap:.5rem;align-items:center;}
 .lang-link{border:1px solid var(--border);background:#eef2f9;color:#334155;padding:.45rem .9rem;border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none;}
-.home-link{background:var(--blue);color:#fff;padding:.5rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:800;text-decoration:none;box-shadow:0 4px 12px rgba(79,70,229,.28);}
+.home-link{background:var(--blue);color:#fff;padding:.5rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:800;text-decoration:none;box-shadow:0 4px 12px rgba(13,125,99,.28);}
 .phero{background:linear-gradient(160deg,var(--navy),var(--navy3));color:#fff;padding:3.5rem 1.5rem;text-align:center;}
 .phero .eyebrow{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:var(--gold-l);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:.35rem 1rem;border-radius:100px;margin-bottom:1.1rem;font-weight:700;}
 .phero h1{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;margin-bottom:.8rem;line-height:1.25;}
@@ -93,14 +93,14 @@ footer a{color:var(--gold-l);text-decoration:none;}
 .sf-logo img{width:38px;height:38px;}
 .sf-logo .wm{display:flex;flex-direction:column;line-height:1;font-family:var(--font-en,'Inter',sans-serif);}
 .sf-logo .wm b{font-weight:900;font-size:1.1rem;letter-spacing:.05em;color:#fff;}
-.sf-logo .wm small{font-size:.55rem;letter-spacing:.34em;color:var(--gold-l,#e6c55c);font-weight:700;margin-top:3px;}
+.sf-logo .wm small{font-size:.55rem;letter-spacing:.34em;color:var(--gold-l,#dcb15f);font-weight:700;margin-top:3px;}
 .sf-tag{color:#8ea3c4;margin:.9rem 0 1rem;max-width:310px;line-height:1.75;font-size:.85rem;}
 .sf-social{display:flex;gap:.5rem;}
 .sf-social a{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#cdd9ec;text-decoration:none;transition:.2s;}
-.sf-social a:hover{background:var(--gold,#cda434);color:#1a1205;border-color:transparent;}
+.sf-social a:hover{background:var(--gold,#b98a3d);color:#1a1205;border-color:transparent;}
 .sf-col h4{color:#fff;font-size:.9rem;margin-bottom:.85rem;font-weight:800;}
 .sf-col a{display:block;color:#9fb0cc;text-decoration:none;padding:.26rem 0;font-size:.85rem;transition:.15s;}
-.sf-col a:hover{color:var(--gold-l,#e6c55c);}
+.sf-col a:hover{color:var(--gold-l,#dcb15f);}
 .sf-bottom{max-width:1080px;margin:2rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;color:#8093b3;font-size:.78rem;}
 .sf-badge{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.25rem .85rem;color:#aebdd2;}
 .sf-bottom a{color:#8093b3;}
@@ -108,7 +108,7 @@ footer a{color:var(--gold-l);text-decoration:none;}
 @media(max-width:460px){.sf-inner{grid-template-columns:1fr;}.sf-bottom{justify-content:center;text-align:center;}}
 
 /* === AZRAR motion system === */
-.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#4f46e5,#6366f1,#e6c55c);box-shadow:0 0 8px rgba(79,70,229,.4);transition:width .12s ease-out;}
+.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#0d7d63,#14a37f,#dcb15f);box-shadow:0 0 8px rgba(13,125,99,.4);transition:width .12s ease-out;}
 .az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q){opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1);}
 .az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q).in{opacity:1;transform:none;}
 :is(.card,.step,.vid){transition:transform .25s ease,box-shadow .25s ease;}
@@ -125,6 +125,7 @@ footer a{color:var(--gold-l);text-decoration:none;}
 .lang-btn,.lang-link{color:#e7eefb!important;background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.16)!important;}
 .lang-btn.active{background:var(--blue)!important;color:#fff!important;}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ImageGallery","name":"AZRAR Real Estate System Screenshots","url":"https://azrar-systems.com/screenshots-en.html","image":[{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/dashboard.webp","name":"AZRAR Reports & Dashboard","caption":"Reports & Dashboard"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/properties.webp","name":"AZRAR Properties","caption":"Properties & Units Management"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/people.webp","name":"AZRAR People","caption":"Tenants & Owners Management"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/contracts.webp","name":"AZRAR Contracts","caption":"Lease Contracts & Billing"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/installments.webp","name":"AZRAR Installments","caption":"Installments Schedule & Payments"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/commissions.webp","name":"AZRAR Commissions","caption":"Commissions & Revenue Tracking"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/reports.webp","name":"AZRAR Financial Reports","caption":"Advanced Financial Reports"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/legal.webp","name":"AZRAR Legal Affairs","caption":"Legal & Arbitration Cases"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/alerts.webp","name":"AZRAR Notifications","caption":"WhatsApp Notifications Center"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/smart_tools.webp","name":"AZRAR Smart Tools","caption":"Smart Tools & Integrations"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/settings.webp","name":"AZRAR Settings","caption":"System Settings & Backups"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/help.webp","name":"AZRAR Help & Documentation","caption":"Help Center & Guides"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/login.webp","name":"AZRAR Login","caption":"Login Screen"},{"@type":"ImageObject","contentUrl":"https://azrar-systems.com/shots/menu.webp","name":"AZRAR 12 Modules Menu","caption":"12 Sub-Systems Menu"}]}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://azrar-systems.com/"}, {"@type": "ListItem", "position": 2, "name": "Screenshots", "item": "https://azrar-systems.com/screenshots-en.html"}]}</script>
 <script>document.documentElement.className+=" az-anim";</script>
 <link rel="stylesheet" href="shared-dark.css">
@@ -175,7 +176,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <figure class="shot" onclick="openShot('shots/login.webp')"><img src="shots/login.webp" width="760" height="475" loading="lazy" alt="AZRAR Login"><figcaption>Login Screen</figcaption></figure>
       <figure class="shot" onclick="openShot('shots/menu.webp')"><img src="shots/menu.webp" width="288" height="800" loading="lazy" alt="AZRAR 12 Modules Menu"><figcaption>12 Sub-Systems Menu</figcaption></figure>
   </div>
-  <div class="note">🔒 Note: client names in the contracts shot are blurred for privacy.</div>
+  <div class="note">Note: client names in the contracts shot are blurred for privacy.</div>
   <div class="cta"><h2>Try AZRAR Free</h2><p>30 days, all features — no credit card.</p><a href="https://wa.me/962786170080?text=I%20want%20to%20try%20AZRAR%20free" target="_blank" rel="noopener">Contact via WhatsApp</a></div>
 </main>
 <div class="lightbox" id="lightbox" onclick="closeShot()"><span class="lightbox-x">&times;</span><img id="lightbox-img" src="" alt="AZRAR screenshot"></div>
@@ -203,6 +204,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="faq-en.html">FAQ</a>
       <a href="articles-en.html">Blog</a>
       <a href="use-cases-en.html">Use Cases</a>
+      <a href="videos-en.html">Videos</a>
     </div>
     <div class="sf-col">
       <h4>Legal</h4>

@@ -109,7 +109,11 @@
 .currency-selector { display: flex; gap: 0.5rem; margin-top: 0.4rem; margin-bottom: 0.4rem; }
 .curr-btn { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); color: #cdd5e8; padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; font-family: inherit; }
 .curr-btn:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2); color: #fff; }
-.curr-btn.active { background: var(--gold); border-color: transparent; color: #1a1304; box-shadow: 0 4px 12px rgba(197, 151, 42, 0.3); }
+.curr-btn.active { background: var(--gold); border-color: transparent; color: #1a1304; box-shadow: 0 4px 12px rgba(158, 113, 43, 0.3); }
+.feat-icon svg, .sec-card-icon svg { width: 22px; height: 22px; color: var(--gold-l); }
+.tour-tab-icon { width: 20px; height: 20px; color: var(--gold-l); flex-shrink: 0; }
+.cs-icon svg { width: 2.1rem; height: 2.1rem; }
+.chat-icon svg, .chat-avatar svg { width: 1.3em; height: 1.3em; display: block; }
 </style>
 
 <script type="application/ld+json">
@@ -176,8 +180,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- COMING SOON BAR -->
 <div class="coming-soon-bar">
   <div class="dot"></div>
-  <span class="ar">🌐 جديد — النظام الآن متوفر <strong>باللغة الإنجليزية</strong> بواجهة ثنائية اللغة لخدمة أسواق الخليج والأسواق الدولية</span>
-  <span class="en">🌐 New — AZRAR is now available in <strong>English</strong> with a bilingual interface for Gulf & international markets</span>
+  <span class="ar">جديد — النظام الآن متوفر <strong>باللغة الإنجليزية</strong> بواجهة ثنائية اللغة لخدمة أسواق الخليج والأسواق الدولية</span>
+  <span class="en">New — AZRAR is now available in <strong>English</strong> with a bilingual interface for Gulf & international markets</span>
 </div>
 
 <!-- HERO -->
@@ -272,7 +276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-card" style="padding: 1.25rem;">
       <div class="hero-card-title" style="margin-bottom: 0.85rem; display: flex; justify-content: space-between; align-items: center;">
         <span><span class="ar">شاهد النظام عملياً (فيديو 1 دقيقة)</span><span class="en">Watch System in Action (1 Min Video)</span></span>
-        <span class="badge" style="background: rgba(205,164,52,0.12); color: var(--gold-l); font-size: 0.62rem; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(205,164,52,0.22); font-family: var(--mono); font-weight: bold; letter-spacing: 0.04em;">DEMO TOUR</span>
+        <span class="badge" style="background: rgba(185,138,61,0.12); color: var(--gold-l); font-size: 0.62rem; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(185,138,61,0.22); font-family: var(--mono); font-weight: bold; letter-spacing: 0.04em;">DEMO TOUR</span>
       </div>
       <div class="video-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.4); background: #000; aspect-ratio: 16/9;">
         <video id="hero-tour-video" poster="shots/dashboard.webp" preload="none" muted loop playsinline style="width: 100%; height: 100%; display: block; object-fit: cover;"></video>
@@ -390,8 +394,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="tour-tabs">
         <div class="tour-tab active" role="button" tabindex="0" onclick="switchTourTab(0, 'shots/dashboard.webp')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
           <div class="tour-tab-title">
-            <span class="ar">📈 لوحة التحكم الفورية</span>
-            <span class="en">📈 Interactive Dashboard</span>
+            <svg class="tour-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="M7.5 15.5l3-4 3 2 4-6"/></svg>
+            <span class="ar">لوحة التحكم الفورية</span>
+            <span class="en">Interactive Dashboard</span>
           </div>
           <div class="tour-tab-desc">
             <span class="ar">مراقبة المؤشرات المالية، ونسب الإشغال، والتحصيل اليومي والتنبيهات الهامة في واجهة موحدة.</span>
@@ -401,8 +406,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div class="tour-tab" role="button" tabindex="0" onclick="switchTourTab(1, 'shots/contracts.webp')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
           <div class="tour-tab-title">
-            <span class="ar">📄 محرك العقود الذكي</span>
-            <span class="en">📄 Smart Contracts</span>
+            <svg class="tour-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 12h5M9.5 15.3h5M9.5 8.7h2"/></svg>
+            <span class="ar">محرك العقود الذكي</span>
+            <span class="en">Smart Contracts</span>
           </div>
           <div class="tour-tab-desc">
             <span class="ar">إدارة وتوثيق عقود الإيجار، توليد الأقساط بدقة، والتجديد التلقائي بضغطة زر واحدة.</span>
@@ -412,8 +418,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div class="tour-tab" role="button" tabindex="0" onclick="switchTourTab(2, 'shots/installments.webp')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
           <div class="tour-tab-title">
-            <span class="ar">💰 التحصيل المالي والأقساط</span>
-            <span class="en">💰 Installments & Collection</span>
+            <svg class="tour-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6.5" width="18" height="11" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6.5 9.5h.01M17.5 14.5h.01"/></svg>
+            <span class="ar">التحصيل المالي والأقساط</span>
+            <span class="en">Installments & Collection</span>
           </div>
           <div class="tour-tab-desc">
             <span class="ar">جدولة الدفعات، إصدار سندات القبض والصرف، وتتبع المتأخرات مع نظام تنبيهات ذكي.</span>
@@ -423,8 +430,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         <div class="tour-tab" role="button" tabindex="0" onclick="switchTourTab(3, 'shots/reports.webp')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
           <div class="tour-tab-title">
-            <span class="ar">📊 مركز التقارير الشامل</span>
-            <span class="en">📊 Comprehensive Reports</span>
+            <svg class="tour-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4M4 20h16"/><rect x="7.2" y="13" width="2.4" height="5" rx=".4"/><rect x="11.4" y="9" width="2.4" height="9" rx=".4"/><rect x="15.6" y="6" width="2.4" height="12" rx=".4"/></svg>
+            <span class="ar">مركز التقارير الشامل</span>
+            <span class="en">Comprehensive Reports</span>
           </div>
           <div class="tour-tab-desc">
             <span class="ar">استخراج تقارير الأرباح والعمولات وبراءة الذمة وكشوفات الحساب الشاملة بنقرة واحدة.</span>
@@ -448,15 +456,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sec-label reveal"><span class="ar">ما يميّز أزرار</span><span class="en">What Sets AZRAR Apart</span></div>
     <h2 class="sec-title reveal"><span class="ar">مزايا لا تجدها في أي نظام آخر</span><span class="en">Features You Won't Find Elsewhere</span></h2>
     <div class="feat-grid reveal">
-      <div class="feat"><div class="feat-icon">🏗️</div><h3><span class="ar">بيانات محلية 100%</span><span class="en">100% Local Data</span></h3><p><span class="ar">بياناتك على جهازك — لا سيرفر خارجي، لا cloud. يعمل بدون إنترنت تماماً.</span><span class="en">Your data stays on your device — no external server, no cloud. Works completely offline.</span></p></div>
-      <div class="feat"><div class="feat-icon">⚡</div><h3><span class="ar">فرقية الأيام الفعلية</span><span class="en">Actual Day Calculation</span></h3><p><span class="ar">الحساب بأيام الشهر الفعلية (28/29/30/31) — دقة مالية تحمي حقوقك وعملائك.</span><span class="en">Calculated using actual days per month (28/29/30/31) — financial accuracy that protects everyone.</span></p></div>
-      <div class="feat"><div class="feat-icon">🔄</div><h3><span class="ar">دورة حياة العقد الكاملة</span><span class="en">Full Contract Lifecycle</span></h3><p><span class="ar">إنشاء → تجديد → فسخ → أرشفة تلقائية. نظام تحصيل متكامل وترحيل أرصدة.</span><span class="en">Create → Renew → Terminate → Auto-archive. Full collection system and balance rollover.</span></p></div>
-      <div class="feat"><div class="feat-icon">🔐</div><h3><span class="ar">توقيع رقمي Ed25519</span><span class="en">Ed25519 Digital Signature</span></h3><p><span class="ar">ترخيص مربوط بجهازك بتوقيع رقمي لا يمكن تزويره. فحص سلامة عند كل إقلاع.</span><span class="en">License bound to your device with unforgeable digital signature. Integrity check on every launch.</span></p></div>
-      <div class="feat"><div class="feat-icon">🌐</div><h3><span class="ar">مزامنة SQL متقدمة</span><span class="en">Advanced SQL Sync</span></h3><p><span class="ar">دعم SQL Server للمكاتب الكبيرة — مزامنة تدريجية بين أجهزة متعددة مع حل تعارضات ذكي.</span><span class="en">SQL Server support for large offices — incremental sync across devices with smart conflict resolution.</span></p></div>
-      <div class="feat"><div class="feat-icon">🧪</div><h3><span class="ar">جودة مؤسسية مثبتة</span><span class="en">Proven Enterprise Quality</span></h3><p><span class="ar">أكثر من 4,000 اختبار آلي بتغطية عالية — كل إصدار مُتحقَّق منه قبل الإطلاق.</span><span class="en">4,000+ automated tests with high coverage — every release verified before launch.</span></p></div>
-      <div class="feat"><div class="feat-icon">🤖</div><h3><span class="ar">مساعد ذكي مدمج</span><span class="en">Built-in AI Assistant</span></h3><p><span class="ar">مساعد بالذكاء الاصطناعي (Groq / Gemini) يجيب عن أسئلتك ويحلّ مشاكل النظام — مجاناً بمفتاحك الخاص.</span><span class="en">AI assistant (Groq / Gemini) answers your questions and resolves system issues — free, with your own API key.</span></p></div>
-      <div class="feat"><div class="feat-icon">⌨️</div><h3><span class="ar">اختصارات لوحة مفاتيح شاملة</span><span class="en">Full Keyboard Shortcuts</span></h3><p><span class="ar">F2 للتركيز، F5 للتحديث، F6 للتنقّل بين الصفحات، F9 للإضافة، F12 للحفظ — إنجاز أسرع دون فأرة.</span><span class="en">F2 focus, F5 refresh, F6 page navigation, F9 add, F12 save — get more done without the mouse.</span></p></div>
-      <div class="feat"><div class="feat-icon">🌍</div><h3><span class="ar">واجهة ثنائية اللغة</span><span class="en">Bilingual Interface</span></h3><p><span class="ar">عربي وإنجليزي بالكامل — بدّل اللغة بنقرة واحدة مع قلب تلقائي للاتجاه (RTL↔LTR) وتنسيق الأرقام والتواريخ حسب لغتك.</span><span class="en">Full Arabic & English — switch language with one click, with automatic RTL↔LTR direction and locale-aware number/date formatting.</span></p></div>
+      <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><circle cx="7" cy="6" r=".6" fill="currentColor" stroke="none"/></svg></div><h3><span class="ar">بيانات محلية 100%</span><span class="en">100% Local Data</span></h3><p><span class="ar">بياناتك على جهازك — لا سيرفر خارجي، لا cloud. يعمل بدون إنترنت تماماً.</span><span class="en">Your data stays on your device — no external server, no cloud. Works completely offline.</span></p></div>
+      <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h2M8 17h2M14 14h2M14 17h2"/></svg></div><h3><span class="ar">فرقية الأيام الفعلية</span><span class="en">Actual Day Calculation</span></h3><p><span class="ar">الحساب بأيام الشهر الفعلية (28/29/30/31) — دقة مالية تحمي حقوقك وعملائك.</span><span class="en">Calculated using actual days per month (28/29/30/31) — financial accuracy that protects everyone.</span></p></div>
+      <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.6-4.6M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.6 4.6M20 20v-4h-4"/></svg></div><h3><span class="ar">دورة حياة العقد الكاملة</span><span class="en">Full Contract Lifecycle</span></h3><p><span class="ar">إنشاء → تجديد → فسخ → أرشفة تلقائية. نظام تحصيل متكامل وترحيل أرصدة.</span><span class="en">Create → Renew → Terminate → Auto-archive. Full collection system and balance rollover.</span></p></div>
+      <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><path d="M9.5 16l1.8 1.8L15 14.2"/></svg></div><h3><span class="ar">توقيع رقمي Ed25519</span><span class="en">Ed25519 Digital Signature</span></h3><p><span class="ar">ترخيص مربوط بجهازك بتوقيع رقمي لا يمكن تزويره. فحص سلامة عند كل إقلاع.</span><span class="en">License bound to your device with unforgeable digital signature. Integrity check on every launch.</span></p></div>
+      <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2.2"/><circle cx="19" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M6.8 7.6L11 15.5M17.2 7.6L13 15.5M7.2 6h9.6"/></svg></div><h3><span class="ar">مزامنة SQL متقدمة</span><span class="en">Advanced SQL Sync</span></h3><p><span class="ar">دعم SQL Server للمكاتب الكبيرة — مزامنة تدريجية بين أجهزة متعددة مع حل تعارضات ذكي.</span><span class="en">SQL Server support for large offices — incremental sync across devices with smart conflict resolution.</span></p></div>
+      <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="10" r="7"/><path d="M9 10l2 2 4-4"/><path d="M8.5 16.5L7 21l5-2 5 2-1.5-4.5"/></svg></div><h3><span class="ar">جودة مؤسسية مثبتة</span><span class="en">Proven Enterprise Quality</span></h3><p><span class="ar">أكثر من 4,000 اختبار آلي بتغطية عالية — كل إصدار مُتحقَّق منه قبل الإطلاق.</span><span class="en">4,000+ automated tests with high coverage — every release verified before launch.</span></p></div>
+      <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H9l-4 4v-4H4z"/><path d="M12 8.2l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z" fill="currentColor" stroke="none"/></svg></div><h3><span class="ar">مساعد ذكي مدمج</span><span class="en">Built-in AI Assistant</span></h3><p><span class="ar">مساعد بالذكاء الاصطناعي (Groq / Gemini) يجيب عن أسئلتك ويحلّ مشاكل النظام — مجاناً بمفتاحك الخاص.</span><span class="en">AI assistant (Groq / Gemini) answers your questions and resolves system issues — free, with your own API key.</span></p></div>
+      <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M9.5 10h.01M13 10h.01M16.5 10h.01M6 13.5h12"/></svg></div><h3><span class="ar">اختصارات لوحة مفاتيح شاملة</span><span class="en">Full Keyboard Shortcuts</span></h3><p><span class="ar">F2 للتركيز، F5 للتحديث، F6 للتنقّل بين الصفحات، F9 للإضافة، F12 للحفظ — إنجاز أسرع دون فأرة.</span><span class="en">F2 focus, F5 refresh, F6 page navigation, F9 add, F12 save — get more done without the mouse.</span></p></div>
+      <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg></div><h3><span class="ar">واجهة ثنائية اللغة</span><span class="en">Bilingual Interface</span></h3><p><span class="ar">عربي وإنجليزي بالكامل — بدّل اللغة بنقرة واحدة مع قلب تلقائي للاتجاه (RTL↔LTR) وتنسيق الأرقام والتواريخ حسب لغتك.</span><span class="en">Full Arabic & English — switch language with one click, with automatic RTL↔LTR direction and locale-aware number/date formatting.</span></p></div>
     </div>
   </div>
 </section>
@@ -470,12 +478,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="sec-title reveal"><span class="ar">بياناتك ملكك وحدك</span><span class="en">Your Data, Your Control</span></h2>
     <p class="sec-sub reveal"><span class="ar">معمارية الأمان في أزرار مبنية من الأساس لحماية بيانات مكتبك.</span><span class="en">AZRAR's security architecture is built from the ground up to protect your office data.</span></p>
     <div class="security-grid reveal">
-      <div class="sec-card"><div class="sec-card-icon">🔒</div><h3 class="card-h"><span class="ar">تخزين محلي 100%</span><span class="en">100% Local Storage</span></h3><p><span class="ar">SQLite محلي — لا شيء يغادر جهازك أبداً. لا سيرفر، لا cloud، لا مخاطر تسرّب.</span><span class="en">Local SQLite — nothing ever leaves your device. No server, no cloud, no leak risks.</span></p></div>
-      <div class="sec-card"><div class="sec-card-icon">✍️</div><h3 class="card-h"><span class="ar">توقيع رقمي Ed25519</span><span class="en">Ed25519 Signature</span></h3><p><span class="ar">ترخيص لا يمكن تزويره — مربوط بجهازك عبر بصمة Hardware ID فريدة.</span><span class="en">Unforgeable license — bound to your device via unique Hardware ID fingerprint.</span></p></div>
-      <div class="sec-card"><div class="sec-card-icon">🛡️</div><h3 class="card-h"><span class="ar">فحص سلامة الملفات</span><span class="en">File Integrity Check</span></h3><p><span class="ar">SHA-256 manifest عند كل إقلاع — يُغلق فوراً عند اكتشاف أي عبث بالملفات.</span><span class="en">SHA-256 manifest on every launch — shuts down immediately if file tampering is detected.</span></p></div>
-      <div class="sec-card"><div class="sec-card-icon">👥</div><h3 class="card-h"><span class="ar">صلاحيات RBAC</span><span class="en">RBAC Permissions</span></h3><p><span class="ar">4 مستويات صلاحية — SuperAdmin / Admin / Manager / Staff. كل مستخدم يرى ما يسمح له فقط.</span><span class="en">4 permission levels — SuperAdmin / Admin / Manager / Staff. Each user sees only what's allowed.</span></p></div>
-      <div class="sec-card"><div class="sec-card-icon">🔑</div><h3 class="card-h"><span class="ar">جلسة آمنة</span><span class="en">Secure Session</span></h3><p><span class="ar">sessionStorage — بيانات الدخول تُمحى تلقائياً عند إغلاق التطبيق. لا بقايا.</span><span class="en">sessionStorage — login data auto-erased on app close. Zero residual data on device.</span></p></div>
-      <div class="sec-card"><div class="sec-card-icon">💾</div><h3 class="card-h"><span class="ar">نسخ احتياطي تلقائي</span><span class="en">Auto Backup</span></h3><p><span class="ar">نظام نسخ احتياطي مدمج مع استرجاع فوري — بياناتك محمية حتى عند عطل الجهاز.</span><span class="en">Built-in backup system with instant recovery — data protected even on full device failure.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="11" width="15" height="9.5" rx="2"/><path d="M8 11V7.5a4 4 0 0 1 8 0V11"/></svg></div><h3 class="card-h"><span class="ar">تخزين محلي 100%</span><span class="en">100% Local Storage</span></h3><p><span class="ar">SQLite محلي — لا شيء يغادر جهازك أبداً. لا سيرفر، لا cloud، لا مخاطر تسرّب.</span><span class="en">Local SQLite — nothing ever leaves your device. No server, no cloud, no leak risks.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l4 4-11 11H6v-4L17 3z"/><path d="M3 21c3-4 5-2 8 0"/></svg></div><h3 class="card-h"><span class="ar">توقيع رقمي Ed25519</span><span class="en">Ed25519 Signature</span></h3><p><span class="ar">ترخيص لا يمكن تزويره — مربوط بجهازك عبر بصمة Hardware ID فريدة.</span><span class="en">Unforgeable license — bound to your device via unique Hardware ID fingerprint.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4.5"/></svg></div><h3 class="card-h"><span class="ar">فحص سلامة الملفات</span><span class="en">File Integrity Check</span></h3><p><span class="ar">SHA-256 manifest عند كل إقلاع — يُغلق فوراً عند اكتشاف أي عبث بالملفات.</span><span class="en">SHA-256 manifest on every launch — shuts down immediately if file tampering is detected.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c.5-3.5 3-5.5 5.5-5.5s5 2 5.5 5.5"/><circle cx="17.5" cy="9" r="2.3"/><path d="M15.8 14.3c2 .2 3.6 1.9 4 5"/></svg></div><h3 class="card-h"><span class="ar">صلاحيات RBAC</span><span class="en">RBAC Permissions</span></h3><p><span class="ar">4 مستويات صلاحية — SuperAdmin / Admin / Manager / Staff. كل مستخدم يرى ما يسمح له فقط.</span><span class="en">4 permission levels — SuperAdmin / Admin / Manager / Staff. Each user sees only what's allowed.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l2 2M14 9l2 2"/></svg></div><h3 class="card-h"><span class="ar">جلسة آمنة</span><span class="en">Secure Session</span></h3><p><span class="ar">sessionStorage — بيانات الدخول تُمحى تلقائياً عند إغلاق التطبيق. لا بقايا.</span><span class="en">sessionStorage — login data auto-erased on app close. Zero residual data on device.</span></p></div>
+      <div class="sec-card"><div class="sec-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17a4 4 0 0 1 .5-8 5.5 5.5 0 0 1 10.6 1.6A3.5 3.5 0 0 1 17.5 17H7z"/><path d="M12 11v6M9.5 14.5L12 17l2.5-2.5"/></svg></div><h3 class="card-h"><span class="ar">نسخ احتياطي تلقائي</span><span class="en">Auto Backup</span></h3><p><span class="ar">نظام نسخ احتياطي مدمج مع استرجاع فوري — بياناتك محمية حتى عند عطل الجهاز.</span><span class="en">Built-in backup system with instant recovery — data protected even on full device failure.</span></p></div>
     </div>
   </div>
 </section>
@@ -486,7 +494,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section>
   <div class="container">
     <div class="coming-soon-section reveal">
-      <div class="cs-icon">🌐</div>
+      <div class="cs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg></div>
       <div class="cs-content">
         <h3>
           <span class="ar">متاح الآن — دعم اللغة الإنجليزية الكامل</span>
@@ -513,7 +521,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sec-label reveal"><span class="ar">الأسعار</span><span class="en">Pricing</span></div>
     <h2 class="sec-title reveal"><span class="ar">بسيط وشفاف — دفعة واحدة سنوياً</span><span class="en">Simple & Transparent — One Annual Fee</span></h2>
     <p class="sec-sub reveal"><span class="ar">لا رسوم شهرية، لا مفاجآت. تجربة 30 يوم مجانية.</span><span class="en">No monthly fees, no surprises. 30-day free trial, no card required.</span></p>
-    <div class="launch-banner reveal">🎉 <span class="ar">عرض الإطلاق — خصم 50% لفترة محدودة</span><span class="en">Launch Offer — 50% OFF for a limited time</span></div>
+    <div class="launch-banner reveal"><span class="ar">عرض الإطلاق — خصم 50% لفترة محدودة</span><span class="en">Launch Offer — 50% OFF for a limited time</span></div>
     <div class="pricing-grid reveal">
       <div class="plan">
         <div class="plan-name">SOLO</div>
@@ -566,7 +574,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="enterprise-box reveal">
       <div>
-        <h3>🏢 Enterprise</h3>
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:1em;height:1em;vertical-align:-0.12em;margin-inline-end:.4rem;"><rect x="5" y="3" width="10" height="18" rx="1"/><path d="M9 7h.01M12 7h.01M9 10.3h.01M12 10.3h.01M9 13.6h.01M12 13.6h.01M9 17h.01M12 17h.01"/><path d="M15 11h4v10h-4"/></svg>Enterprise</h3>
         <p><span class="ar">للشركات العقارية الكبيرة — أجهزة غير محدودة، SQL Server، تدريب الفريق، ودعم مخصص.</span><span class="en">For large real estate companies — unlimited devices, SQL Server sync, team training, and dedicated support.</span></p>
       </div>
       <a href="https://wa.me/962786170080?text=Enterprise%20Plan" class="btn-main" style="white-space:nowrap;flex-shrink:0;">
@@ -639,16 +647,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="calc-card blue">
           <span class="calc-card-num" id="out-hours">75</span>
           <span class="calc-card-label">
-            <span class="ar">ساعة عمل موفرة شهرياً ⏱️</span>
-            <span class="en">Hours Saved Monthly ⏱️</span>
+            <span class="ar">ساعة عمل موفرة شهرياً</span>
+            <span class="en">Hours Saved Monthly</span>
           </span>
         </div>
         
         <div class="calc-card">
           <span class="calc-card-num" id="out-savings">18,500 ر.س</span>
           <span class="calc-card-label">
-            <span class="ar">العائد والوفر المالي السنوي المقدر 💰</span>
-            <span class="en">Estimated Annual Value Created 💰</span>
+            <span class="ar">العائد والوفر المالي السنوي المقدر</span>
+            <span class="en">Estimated Annual Value Created</span>
           </span>
         </div>
       </div>
@@ -695,7 +703,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="contact-item"><div class="contact-label">EMAIL</div><div class="contact-val"><a href="mailto:info@azrar-systems.com">info@azrar-systems.com</a></div></div>
       </div>
       <div class="fb-follow">
-        <div class="fb-follow-title">📘 <span class="ar">صفحتنا على فيسبوك</span><span class="en">Our Facebook Page</span></div>
+        <div class="fb-follow-title"><span class="ar">صفحتنا على فيسبوك</span><span class="en">Our Facebook Page</span></div>
         <div class="fb-card">
           <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fazrar.systems%2F&tabs&width=360&height=190&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" width="360" height="190" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy" title="AZRAR Facebook Page"></iframe>
         </div>
@@ -764,14 +772,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- AI Chatbot Widget -->
 <div class="chat-widget" id="chat-widget">
   <button class="chat-trigger" id="chat-trigger" aria-label="Open Chat Assistant" title="مساعد أزرار الذكي">
-    <span class="chat-icon">🤖</span>
+    <span class="chat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H9l-4 4v-4H4z"/><path d="M12 8.2l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z" fill="currentColor" stroke="none"/></svg></span>
     <span class="chat-badge">1</span>
   </button>
   
   <div class="chat-window" id="chat-window">
     <div class="chat-header">
       <div class="chat-header-info">
-        <span class="chat-avatar">🤖</span>
+        <span class="chat-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H9l-4 4v-4H4z"/><path d="M12 8.2l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z" fill="currentColor" stroke="none"/></svg></span>
         <div>
           <h4 class="chat-bot-name"><span class="ar">مساعد أزرار الذكي</span><span class="en">AZRAR Assistant</span></h4>
           <span class="chat-status"><span class="chat-status-dot"></span><span class="ar">نشط الآن</span><span class="en">Online</span></span>

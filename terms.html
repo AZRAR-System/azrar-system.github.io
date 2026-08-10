@@ -25,6 +25,9 @@ window.addEventListener('load',function(){
 <meta name="description" content="شروط الاستخدام والترخيص لنظام أزرار لإدارة العقارات. Terms of Service & License for AZRAR Real Estate Management System.">
 <meta name="keywords" content="نظام إدارة عقارات, برنامج عقاري, برنامج إدارة عقارات, برنامج عقود إيجار, إدارة أملاك, برنامج محاسبة عقارية, برنامج مكاتب عقارية, إدارة الأقساط والدفعات, برنامج عمولات عقارية, نظام عقاري الأردن, برنامج عقاري السعودية, برنامج عقارات الإمارات, إدارة عقارات الكويت, برنامج عقاري قطر, AZRAR, أزرار, برنامج إدارة الأملاك العقارية, برنامج محاسبة المكاتب العقارية, برنامج إدارة إيجارات العقارات, برنامج تحصيل الإيجارات, برنامج تنظيم عقود الإيجار, برنامج إدارة أملاك الملاك, برنامج حساب عمولات الوسطاء العقاريين, برنامج تذكير بمواعيد تحصيل الإيجار, برنامج إدارة الصيانة للعقارات, برنامج إرسال إشعارات واتساب مكاتب عقارية, برنامج كشف حساب المالك المحاسبي, برنامج إدارة العقارات بدون انترنت, أفضل برنامج عقاري للكمبيوتر لويندوز, برنامج محاسبة ومقاولات عقارية">
 <link rel="canonical" href="https://azrar-systems.com/terms.html">
+<link rel="alternate" hreflang="ar" href="https://azrar-systems.com/terms.html">
+<link rel="alternate" hreflang="en" href="https://azrar-systems.com/terms.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/terms.html">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#181341">
 <link rel="icon" href="logo.png">
@@ -35,8 +38,8 @@ window.addEventListener('load',function(){
 
 :root {
   --navy: #181341; --navy2: #221c55; --navy3: #2a2460;
-  --blue: #4f46e5; --blue-l: #6366f1; --blue-d: #1d4ed8;
-  --gold: #cda434; --gold-l: #e6c55c;
+  --blue: #0d7d63; --blue-l: #14a37f; --blue-d: #0a5c48;
+  --gold: #b98a3d; --gold-l: #dcb15f;
   --ink: #cdd5e8; --head: #ffffff; --muted: #8ea5c8; --muted2: #63799b;
   --bg: #070518; --card: rgba(255,255,255,0.03); --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.04);
   --green: #22c55e; --danger: #ef4444;
@@ -97,7 +100,7 @@ footer a{color:var(--gold-l);text-decoration:none;}
 @media(max-width:460px){.sf-inner{grid-template-columns:1fr;}.sf-bottom{justify-content:center;text-align:center;}}
 
 /* === AZRAR motion system === */
-.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#4f46e5,#6366f1,#e6c55c);box-shadow:0 0 8px rgba(79,70,229,.4);transition:width .12s ease-out;}
+.az-progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:9999;background:linear-gradient(90deg,#0d7d63,#14a37f,#dcb15f);box-shadow:0 0 8px rgba(13,125,99,.4);transition:width .12s ease-out;}
 .az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q){opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1);}
 .az-anim :is(.card,.step,.acard,.vid,.toc,.highlight,.faq-q).in{opacity:1;transform:none;}
 :is(.card,.step,.vid){transition:transform .25s ease,box-shadow .25s ease;}
@@ -224,6 +227,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="faq.html"><span class="ar">الأسئلة الشائعة</span><span class="en">FAQ</span></a>
       <a href="articles.html"><span class="ar">المدونة</span><span class="en">Blog</span></a>
       <a href="use-cases.html"><span class="ar">حالات الاستخدام</span><span class="en">Use Cases</span></a>
+      <a href="videos.html"><span class="ar">الفيديوهات</span><span class="en">Videos</span></a>
     </div>
     <div class="sf-col">
       <h4><span class="ar">قانوني</span><span class="en">Legal</span></h4>
@@ -240,6 +244,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 function toggleLang(){const h=document.documentElement;const cur=h.getAttribute('data-lang');const n=cur==='ar'?'en':'ar';h.setAttribute('data-lang',n);h.setAttribute('lang',n);h.setAttribute('dir',n==='ar'?'rtl':'ltr');try{localStorage.setItem('azrar_lang',n);}catch(e){}}
 try{const s=localStorage.getItem('azrar_lang');if(s&&s!=='ar')toggleLang();}catch(e){}
+</script>
+<script>
+(function(){try{var p=new URLSearchParams(window.location.search).get('lang');if(p==='en'&&document.documentElement.getAttribute('data-lang')!=='en'){toggleLang();}}catch(e){}})();
 </script>
 <script>
 (function(){
