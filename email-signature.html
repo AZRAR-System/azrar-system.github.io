@@ -11,20 +11,26 @@
 <link rel="icon" href="logo.png">
 <style>
 
-  body{background:#eef0f6;font-family:'Segoe UI',Arial,sans-serif;color:#1f2433;margin:0;padding:2rem 1rem;}
+  :root{--navy:#181341;--navy3:#2a2460;--blue:#0d7d63;--gold:#b98a3d;--gold-l:#dcb15f;--ink:#cdd5e8;--head:#ffffff;--muted:#8ea5c8;--bg:#070518;--card:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.08);}
+  body{background:var(--bg);font-family:'Segoe UI',Arial,sans-serif;color:var(--ink);margin:0;padding:2rem 1rem;}
   .page{max-width:680px;margin:0 auto;}
-  h1{font-size:1.4rem;margin:0 0 .25rem;color:#1e1b4b;}
-  .lead{color:#6b7280;font-size:.9rem;margin:0 0 1.75rem;}
-  .card{background:#fff;border:1px solid #e3e6ef;border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:1.5rem;box-shadow:0 2px 10px rgba(30,27,75,.05);}
-  .card h2{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#4f46e5;margin:0 0 1.1rem;}
-  .copybar{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;padding-top:1rem;border-top:1px dashed #e3e6ef;}
-  .copybar small{color:#9aa3b8;}
-  button{background:#4f46e5;color:#fff;border:none;border-radius:8px;padding:.55rem 1.3rem;font-size:.85rem;font-weight:600;cursor:pointer;font-family:inherit;}
-  button:hover{background:#4338ca;}
-  .instructions{background:#fff;border:1px solid #e3e6ef;border-radius:14px;padding:1.25rem 1.75rem;font-size:.88rem;line-height:1.8;}
-  .instructions h2{font-size:1rem;color:#1e1b4b;margin:0 0 .6rem;}
+  .topbar{display:flex;align-items:center;gap:.6rem;margin-bottom:2rem;}
+  .topbar img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}
+  .topbar b{font-family:Arial,sans-serif;font-weight:900;font-size:1.05rem;letter-spacing:.04em;background:linear-gradient(168deg,#f7dd8a 0%,#e7c45f 45%,#c89a30 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  h1{font-size:1.4rem;margin:0 0 .25rem;color:var(--head);}
+  .lead{color:var(--muted);font-size:.9rem;margin:0 0 1.75rem;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:1.5rem;box-shadow:0 4px 16px rgba(0,0,0,.25);backdrop-filter:blur(16px) saturate(1.2);}
+  .card h2{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-l);margin:0 0 1.1rem;}
+  #sig{background:#fff;border-radius:10px;padding:1.25rem;}
+  .copybar{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;padding-top:1rem;border-top:1px dashed var(--border);}
+  .copybar small{color:var(--muted);}
+  button{background:linear-gradient(135deg,var(--gold),var(--gold-l));color:#1a1304;border:none;border-radius:8px;padding:.55rem 1.3rem;font-size:.85rem;font-weight:700;cursor:pointer;font-family:inherit;transition:transform .2s ease,box-shadow .2s ease;}
+  button:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(185,138,61,.35);}
+  .instructions{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.75rem;font-size:.88rem;line-height:1.8;backdrop-filter:blur(16px) saturate(1.2);}
+  .instructions h2{font-size:1rem;color:var(--head);margin:0 0 .6rem;}
+  .instructions strong{color:var(--head);}
   .instructions ol{margin:.3rem 0;padding-inline-start:1.3rem;}
-  .instructions code{background:#f1f2f7;padding:.1rem .4rem;border-radius:4px;font-size:.85em;}
+  .instructions code{background:rgba(255,255,255,.08);color:var(--ink);padding:.1rem .4rem;border-radius:4px;font-size:.85em;}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -46,6 +52,7 @@ src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
 </head>
 <body>
 <div class="page">
+  <div class="topbar"><img src="logo.png" alt="AZRAR"><b>AZRAR SYSTEMS</b></div>
   <h1>AZRAR — Official Email Signature</h1>
   <p class="lead">One unified signature for all mailboxes (info · sales · support). Click “Copy signature”, then paste into Outlook.</p>
 
@@ -58,13 +65,13 @@ src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
           <td width="64" style="vertical-align:top;padding-right:16px;">
             <img src="https://azrar-systems.com/logo.png" alt="AZRAR" width="64" height="64" style="display:block;border:0;border-radius:12px;">
           </td>
-          <td style="vertical-align:top;padding-left:16px;border-left:3px solid #4f46e5;">
+          <td style="vertical-align:top;padding-left:16px;border-left:3px solid #0d7d63;">
             <div style="font-size:19px;font-weight:bold;color:#1e1b4b;">AZRAR SYSTEMS</div>
             <div style="font-size:12px;color:#6b7280;padding:3px 0 9px;">Real Estate Management System &nbsp;|&nbsp; نظام إدارة العقارات</div>
             <table dir="ltr" cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#374151;border-collapse:collapse;">
               <tr>
                 <td style="padding:2px 8px 2px 0;vertical-align:middle;"><img src="https://azrar-systems.com/sig/web.png" alt="Web" width="18" height="18" style="display:block;border:0;"></td>
-                <td style="padding:2px 0;vertical-align:middle;"><a href="https://azrar-systems.com" style="color:#4f46e5;text-decoration:none;font-weight:bold;">azrar-systems.com</a></td>
+                <td style="padding:2px 0;vertical-align:middle;"><a href="https://azrar-systems.com" style="color:#0d7d63;text-decoration:none;font-weight:bold;">azrar-systems.com</a></td>
               </tr>
               <tr>
                 <td style="padding:2px 8px 2px 0;vertical-align:middle;"><img src="https://azrar-systems.com/sig/email.png" alt="Email" width="18" height="18" style="display:block;border:0;"></td>
@@ -99,11 +106,11 @@ src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
   </div>
 
   <div class="instructions">
-    <h2>📋 How to add it in Outlook</h2>
+    <h2>How to add it in Outlook</h2>
     <strong>Outlook on the web (outlook.com / Microsoft 365):</strong>
     <ol>
       <li>Sign in to the mailbox.</li>
-      <li>Settings ⚙️ → <code>Mail</code> → <code>Compose and reply</code> → <code>Email signature</code>.</li>
+      <li>Settings → <code>Mail</code> → <code>Compose and reply</code> → <code>Email signature</code>.</li>
       <li>Click “Copy signature” above, click inside the box, and paste (Ctrl+V).</li>
       <li>Tick “new messages” + “replies/forwards” → <code>Save</code>.</li>
       <li>Repeat for each shared mailbox (open it via your photo → <code>Open another mailbox</code>).</li>
