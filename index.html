@@ -61,7 +61,7 @@
 })();
 </script>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com https://www.googletagmanager.com https://www.google.com https://*.doubleclick.net; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.facebook.com https://stats.g.doubleclick.net https://www.merchant-center-analytics.goog; frame-src https://www.googletagmanager.com https://www.facebook.com; object-src 'none'; base-uri 'self'; form-action 'self' https://www.facebook.com;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net https://get.microsoft.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com https://www.googletagmanager.com https://www.google.com https://*.doubleclick.net https://get.microsoft.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.facebook.com https://stats.g.doubleclick.net https://www.merchant-center-analytics.goog https://get.microsoft.com; frame-src https://www.googletagmanager.com https://www.facebook.com; object-src 'none'; base-uri 'self'; form-action 'self' https://www.facebook.com;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="fb:app_id" content="1012284064548522">
@@ -107,6 +107,7 @@
 <link rel="preload" as="image" href="bg-city.webp" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="style.css">
+<script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
 <style>
 .currency-selector { display: flex; gap: 0.5rem; margin-top: 0.4rem; margin-bottom: 0.4rem; }
 .curr-btn { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); color: #cdd5e8; padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; font-family: inherit; }
@@ -214,11 +215,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="ar">جرّب 30 يوم مجاناً</span>
         <span class="en">Try Free for 30 Days</span>
       </a>
-      <a href="https://apps.microsoft.com/detail/9NJFB5W8ZCSB" target="_blank" rel="noopener" class="btn-store">
-        <svg viewBox="0 0 21 21" aria-hidden="true"><rect x="0" y="0" width="10" height="10" fill="#F25022"/><rect x="11" y="0" width="10" height="10" fill="#7FBA00"/><rect x="0" y="11" width="10" height="10" fill="#00A4EF"/><rect x="11" y="11" width="10" height="10" fill="#FFB900"/></svg>
-        <span class="ar">حمّل من متجر مايكروسوفت</span>
-        <span class="en">Get it on Microsoft Store</span>
-      </a>
+      <ms-store-badge class="ar" productid="9NJFB5W8ZCSB" productname="AZRAR Real Estate Management System" window-mode="direct" theme="auto" size="large" language="ar" animation="on"></ms-store-badge>
+      <ms-store-badge class="en" productid="9NJFB5W8ZCSB" productname="AZRAR Real Estate Management System" window-mode="direct" theme="auto" size="large" language="en-us" animation="on"></ms-store-badge>
       <a href="#modules" class="btn-ghost">
         <span class="ar">اكتشف الأنظمة ↓</span>
         <span class="en">Explore Modules ↓</span>
