@@ -82,7 +82,14 @@ a{color:var(--blue-l);}
 .lightbox{position:fixed;inset:0;z-index:9999;background:rgba(8,12,26,.92);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out;}
 .lightbox.open{display:flex;}
 .lightbox img{max-width:95%;max-height:92vh;border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,.5);}
-.lightbox-x{position:absolute;top:1rem;right:1.4rem;color:#fff;font-size:2.4rem;font-weight:400;}
+.lightbox-x{position:absolute;top:1rem;right:1.4rem;color:#fff;font-size:2.4rem;font-weight:400;cursor:pointer;z-index:2;}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:1.7rem;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;z-index:2;}
+.lightbox-nav:hover{background:rgba(255,255,255,.24);}
+.lightbox-prev{left:1rem;}
+.lightbox-next{right:1rem;}
+.lightbox-caption{position:absolute;bottom:1.1rem;left:0;right:0;text-align:center;color:#fff;font-size:.95rem;font-weight:700;}
+.lightbox-count{display:block;color:#9fb0d1;font-size:.78rem;font-weight:600;margin-top:.2rem;}
+@media(max-width:640px){.lightbox-nav{width:42px;height:42px;font-size:1.4rem;}.lightbox-prev{left:.4rem;}.lightbox-next{right:.4rem;}}
 .cta{background:linear-gradient(135deg,var(--navy),var(--navy3));border-radius:20px;padding:2.4rem 1.5rem;text-align:center;color:#fff;margin-top:2.5rem;}
 .cta h2{font-size:1.45rem;font-weight:900;margin-bottom:.6rem;}.cta p{color:#c4d2ea;margin-bottom:1.3rem;}
 .cta a{display:inline-flex;gap:.5rem;background:#25d366;color:#fff;padding:.85rem 2rem;border-radius:11px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.35);}
@@ -163,29 +170,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="phero"><span class="eyebrow">لقطات النظام</span><h1>شاهد النظام من الداخل</h1><p>واجهة احترافية وبيانات واضحة — اضغط أي صورة لتكبيرها.</p></section>
 <main class="wrap">
   <div class="shots-grid">
-      <figure class="shot wide" onclick="openShot('shots/dashboard.webp')"><img src="shots/dashboard.webp" width="1100" height="687" loading="lazy" alt="AZRAR Reports & Dashboard"><figcaption>التقارير الشاملة ولوحة المعلومات</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/properties.webp')"><img src="shots/properties.webp" width="1100" height="687" loading="lazy" alt="AZRAR Properties"><figcaption>إدارة العقارات والوحدات</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/people.webp')"><img src="shots/people.webp" width="1100" height="687" loading="lazy" alt="AZRAR People"><figcaption>إدارة العملاء والأشخاص</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/contracts.webp')"><img src="shots/contracts.webp" width="1100" height="687" loading="lazy" alt="AZRAR Contracts"><figcaption>عقود الإيجار والتحصيل</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/installments.webp')"><img src="shots/installments.webp" width="1100" height="687" loading="lazy" alt="AZRAR Installments"><figcaption>جدول الأقساط والمدفوعات</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/commissions.webp')"><img src="shots/commissions.webp" width="1100" height="687" loading="lazy" alt="AZRAR Commissions"><figcaption>العمولات والإيرادات</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/reports.webp')"><img src="shots/reports.webp" width="1100" height="687" loading="lazy" alt="AZRAR Financial Reports"><figcaption>التقارير المالية المتقدمة</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/legal.webp')"><img src="shots/legal.webp" width="1100" height="687" loading="lazy" alt="AZRAR Legal Affairs"><figcaption>الشؤون القانونية والقضايا</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/alerts.webp')"><img src="shots/alerts.webp" width="1100" height="687" loading="lazy" alt="AZRAR Notifications"><figcaption>مركز التنبيهات ورسائل الواتساب</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/smart_tools.webp')"><img src="shots/smart_tools.webp" width="1100" height="687" loading="lazy" alt="AZRAR Smart Tools"><figcaption>الأدوات الذكية والربط</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/settings.webp')"><img src="shots/settings.webp" width="1100" height="687" loading="lazy" alt="AZRAR Settings"><figcaption>إعدادات النظام والنسخ الاحتياطي</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/help.webp')"><img src="shots/help.webp" width="1100" height="687" loading="lazy" alt="AZRAR Help & Documentation"><figcaption>مركز المساعدة والدعم</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/login.webp')"><img src="shots/login.webp" width="760" height="475" loading="lazy" alt="AZRAR Login"><figcaption>تسجيل الدخول</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/menu.webp')"><img src="shots/menu.webp" width="263" height="1829" loading="lazy" alt="AZRAR 17 Modules Menu"><figcaption>قائمة الأنظمة الفرعية الـ17</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/owner-portal.webp')"><img src="shots/owner-portal-thumb.webp" width="1062" height="599" loading="lazy" alt="AZRAR Owner Portal"><figcaption>لوحة المالك</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/company-finance.webp')"><img src="shots/company-finance-thumb.webp" width="791" height="446" loading="lazy" alt="AZRAR Company Finance"><figcaption>محاسبة الشركة</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/accounting.webp')"><img src="shots/accounting-thumb.webp" width="784" height="442" loading="lazy" alt="AZRAR Accounting System"><figcaption>النظام المحاسبي</figcaption></figure>
-      <figure class="shot" onclick="openShot('shots/print-catalog.webp')"><img src="shots/print-catalog-thumb.webp" width="798" height="450" loading="lazy" alt="AZRAR Print Catalog"><figcaption>كتالوج الطباعة</figcaption></figure>
+      <figure class="shot wide" data-full="shots/dashboard.webp" onclick="openShot(this)"><img src="shots/dashboard.webp" width="1100" height="687" loading="lazy" alt="AZRAR Reports & Dashboard"><figcaption>التقارير الشاملة ولوحة المعلومات</figcaption></figure>
+      <figure class="shot" data-full="shots/properties.webp" onclick="openShot(this)"><img src="shots/properties.webp" width="1100" height="687" loading="lazy" alt="AZRAR Properties"><figcaption>إدارة العقارات والوحدات</figcaption></figure>
+      <figure class="shot" data-full="shots/people.webp" onclick="openShot(this)"><img src="shots/people.webp" width="1100" height="687" loading="lazy" alt="AZRAR People"><figcaption>إدارة العملاء والأشخاص</figcaption></figure>
+      <figure class="shot" data-full="shots/contracts.webp" onclick="openShot(this)"><img src="shots/contracts.webp" width="1100" height="687" loading="lazy" alt="AZRAR Contracts"><figcaption>عقود الإيجار والتحصيل</figcaption></figure>
+      <figure class="shot" data-full="shots/installments.webp" onclick="openShot(this)"><img src="shots/installments.webp" width="1100" height="687" loading="lazy" alt="AZRAR Installments"><figcaption>جدول الأقساط والمدفوعات</figcaption></figure>
+      <figure class="shot" data-full="shots/commissions.webp" onclick="openShot(this)"><img src="shots/commissions.webp" width="1100" height="687" loading="lazy" alt="AZRAR Commissions"><figcaption>العمولات والإيرادات</figcaption></figure>
+      <figure class="shot" data-full="shots/reports.webp" onclick="openShot(this)"><img src="shots/reports.webp" width="1100" height="687" loading="lazy" alt="AZRAR Financial Reports"><figcaption>التقارير المالية المتقدمة</figcaption></figure>
+      <figure class="shot" data-full="shots/legal.webp" onclick="openShot(this)"><img src="shots/legal.webp" width="1100" height="687" loading="lazy" alt="AZRAR Legal Affairs"><figcaption>الشؤون القانونية والقضايا</figcaption></figure>
+      <figure class="shot" data-full="shots/alerts.webp" onclick="openShot(this)"><img src="shots/alerts.webp" width="1100" height="687" loading="lazy" alt="AZRAR Notifications"><figcaption>مركز التنبيهات ورسائل الواتساب</figcaption></figure>
+      <figure class="shot" data-full="shots/smart_tools.webp" onclick="openShot(this)"><img src="shots/smart_tools.webp" width="1100" height="687" loading="lazy" alt="AZRAR Smart Tools"><figcaption>الأدوات الذكية والربط</figcaption></figure>
+      <figure class="shot" data-full="shots/settings.webp" onclick="openShot(this)"><img src="shots/settings.webp" width="1100" height="687" loading="lazy" alt="AZRAR Settings"><figcaption>إعدادات النظام والنسخ الاحتياطي</figcaption></figure>
+      <figure class="shot" data-full="shots/help.webp" onclick="openShot(this)"><img src="shots/help.webp" width="1100" height="687" loading="lazy" alt="AZRAR Help & Documentation"><figcaption>مركز المساعدة والدعم</figcaption></figure>
+      <figure class="shot" data-full="shots/login.webp" onclick="openShot(this)"><img src="shots/login.webp" width="760" height="475" loading="lazy" alt="AZRAR Login"><figcaption>تسجيل الدخول</figcaption></figure>
+      <figure class="shot" data-full="shots/menu.webp" onclick="openShot(this)"><img src="shots/menu.webp" width="263" height="1829" loading="lazy" alt="AZRAR 17 Modules Menu"><figcaption>قائمة الأنظمة الفرعية الـ17</figcaption></figure>
+      <figure class="shot" data-full="shots/owner-portal.webp" onclick="openShot(this)"><img src="shots/owner-portal-thumb.webp" width="1062" height="599" loading="lazy" alt="AZRAR Owner Portal"><figcaption>لوحة المالك</figcaption></figure>
+      <figure class="shot" data-full="shots/company-finance.webp" onclick="openShot(this)"><img src="shots/company-finance-thumb.webp" width="791" height="446" loading="lazy" alt="AZRAR Company Finance"><figcaption>محاسبة الشركة</figcaption></figure>
+      <figure class="shot" data-full="shots/accounting.webp" onclick="openShot(this)"><img src="shots/accounting-thumb.webp" width="784" height="442" loading="lazy" alt="AZRAR Accounting System"><figcaption>النظام المحاسبي</figcaption></figure>
+      <figure class="shot" data-full="shots/print-catalog.webp" onclick="openShot(this)"><img src="shots/print-catalog-thumb.webp" width="798" height="450" loading="lazy" alt="AZRAR Print Catalog"><figcaption>كتالوج الطباعة</figcaption></figure>
   </div>
   <div class="note">ملاحظة: أسماء العملاء في لقطة العقود مضبّبة حفاظاً على الخصوصية.</div>
   <div class="cta"><h2>جرّب نظام أزرار مجاناً</h2><p>30 يوماً بكل المزايا — بدون بطاقة ائتمان.</p><a href="https://wa.me/962798986465?text=أريد%20تجربة%20نظام%20أزرار%20مجاناً" target="_blank" rel="noopener">تواصل عبر واتساب</a></div>
 </main>
-<div class="lightbox" id="lightbox" onclick="closeShot()"><span class="lightbox-x">&times;</span><img id="lightbox-img" src="" alt="AZRAR screenshot"></div>
+<div class="lightbox" id="lightbox" onclick="closeShot()">
+  <span class="lightbox-x">&times;</span>
+  <span class="lightbox-nav lightbox-prev" onclick="event.stopPropagation();navShot(-1)" role="button" aria-label="السابق">‹</span>
+  <span class="lightbox-nav lightbox-next" onclick="event.stopPropagation();navShot(1)" role="button" aria-label="التالي">›</span>
+  <img id="lightbox-img" src="" alt="AZRAR screenshot">
+  <div class="lightbox-caption"><span id="lightbox-caption-text"></span><span class="lightbox-count" id="lightbox-count"></span></div>
+</div>
 <footer class="site-footer">
   <div class="sf-inner">
     <div class="sf-brand">
@@ -225,9 +238,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 <script>
-function openShot(s){var l=document.getElementById('lightbox');document.getElementById('lightbox-img').src=s;l.classList.add('open');document.body.style.overflow='hidden';}
+var SHOTS=Array.from(document.querySelectorAll('.shot')).map(function(f){return {full:f.getAttribute('data-full'),alt:f.querySelector('img').alt,caption:f.querySelector('figcaption').textContent};});
+var shotIndex=0;
+function showShot(i){
+  shotIndex=(i+SHOTS.length)%SHOTS.length;
+  var s=SHOTS[shotIndex];
+  document.getElementById('lightbox-img').src=s.full;
+  document.getElementById('lightbox-img').alt=s.alt;
+  document.getElementById('lightbox-caption-text').textContent=s.caption;
+  document.getElementById('lightbox-count').textContent=(shotIndex+1)+' / '+SHOTS.length;
+}
+function openShot(el){var l=document.getElementById('lightbox');showShot(SHOTS.findIndex(function(s){return s.full===el.getAttribute('data-full');}));l.classList.add('open');document.body.style.overflow='hidden';}
+function navShot(d){showShot(shotIndex+d);}
 function closeShot(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeShot();});
+document.addEventListener('keydown',function(e){
+  if(!document.getElementById('lightbox').classList.contains('open'))return;
+  if(e.key==='Escape')closeShot();
+  else if(e.key==='ArrowRight')navShot(1);
+  else if(e.key==='ArrowLeft')navShot(-1);
+});
+(function(){
+  var touchStartX=null;
+  var lb=document.getElementById('lightbox');
+  lb.addEventListener('touchstart',function(e){touchStartX=e.changedTouches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(touchStartX===null)return;
+    var dx=e.changedTouches[0].clientX-touchStartX;
+    if(Math.abs(dx)>40)navShot(dx>0?-1:1);
+    touchStartX=null;
+  },{passive:true});
+})();
 </script>
 <script>
 (function(){
