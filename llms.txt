@@ -4,6 +4,8 @@ AZRAR is the most comprehensive real estate management system for offices in Jor
 
 ## Navigation & Key Resources
 - [Main Landing Page](https://azrar-systems.com/): Official homepage with pricing plans, ROI calculator, and interactive tour.
+- [About Us](https://azrar-systems.com/about.html): AZRAR's story and core principles (Arabic).
+- [About Us (English)](https://azrar-systems.com/about-en.html): AZRAR's story and core principles (English).
 - [User Guide](https://azrar-systems.com/guide.html): Complete step-by-step user guide and manual (Arabic).
 - [User Guide (English)](https://azrar-systems.com/guide-en.html): Complete step-by-step user guide and manual (English).
 - [FAQ](https://azrar-systems.com/faq.html): Frequently asked questions about licensing, installation, updates, and database safety (Arabic).

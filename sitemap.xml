@@ -13,6 +13,25 @@
   </url>
 
   <url>
+    <loc>https://azrar-systems.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/about-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/about.html"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/about-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/about-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/about.html"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://azrar-systems.com/guide.html</loc>
     <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/guide.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/guide-en.html"/>
