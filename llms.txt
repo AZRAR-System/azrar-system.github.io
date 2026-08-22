@@ -4,12 +4,17 @@ AZRAR is the most comprehensive real estate management system for offices in Jor
 
 ## Navigation & Key Resources
 - [Main Landing Page](https://azrar-systems.com/): Official homepage with pricing plans, ROI calculator, and interactive tour.
+- [Pricing (structured)](https://azrar-systems.com/pricing.md): Machine-readable pricing for all tiers (Solo, Office, Pro, Enterprise) — device counts, features, and billing terms.
 - [About Us](https://azrar-systems.com/about.html): AZRAR's story and core principles (Arabic).
 - [About Us (English)](https://azrar-systems.com/about-en.html): AZRAR's story and core principles (English).
 - [User Guide](https://azrar-systems.com/guide.html): Complete step-by-step user guide and manual (Arabic).
 - [User Guide (English)](https://azrar-systems.com/guide-en.html): Complete step-by-step user guide and manual (English).
 - [FAQ](https://azrar-systems.com/faq.html): Frequently asked questions about licensing, installation, updates, and database safety (Arabic).
 - [FAQ (English)](https://azrar-systems.com/faq-en.html): Frequently asked questions about licensing, installation, updates, and database safety (English).
+- [Blog](https://azrar-systems.com/articles.html): Practical articles on lease management, late fees, and choosing real estate software (Arabic).
+- [Blog (English)](https://azrar-systems.com/articles-en.html): Same articles in English.
+- [Use Cases](https://azrar-systems.com/use-cases.html): How AZRAR adapts from a solo office to a large multi-branch company (Arabic).
+- [Use Cases (English)](https://azrar-systems.com/use-cases-en.html): Same content in English.
 - [Video Tutorials](https://azrar-systems.com/videos.html): Detailed training and tutorial videos for various system modules.
 - [Screenshots](https://azrar-systems.com/screenshots.html): UI screenshots and mockups of dashboards, contracts, and bills.
 - [Terms of Service](https://azrar-systems.com/terms.html): Official licensing terms and software usage agreements.
