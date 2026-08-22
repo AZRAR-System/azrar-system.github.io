@@ -63,6 +63,11 @@ a{color:var(--blue-l);}
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--head);font-weight:900;font-size:1.05rem;}
 .brand img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}.brand small{display:block;font-size:.66rem;color:var(--muted);font-weight:600;}
 .home-link{background:var(--blue);color:#fff;padding:.5rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:800;text-decoration:none;box-shadow:0 4px 12px rgba(13,125,99,.28);}
+.breadcrumb{max-width:880px;margin:0 auto;padding:.9rem 1.5rem 0;font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;}
+.breadcrumb a{color:var(--muted);text-decoration:none;}
+.breadcrumb a:hover{color:var(--gold-l);}
+.breadcrumb .sep{color:var(--muted2);}
+.breadcrumb .current{color:var(--head);font-weight:700;}
 .phero{background:linear-gradient(160deg,var(--navy),var(--navy3));color:#fff;padding:3.5rem 1.5rem;text-align:center;}
 .phero .eyebrow{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:var(--gold-l);font-family:var(--font-en);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:.35rem 1rem;border-radius:100px;margin-bottom:1.1rem;font-weight:700;}
 .phero h1{font-size:clamp(1.9rem,4.5vw,3rem);font-weight:900;margin-bottom:.8rem;line-height:1.25;}
@@ -167,6 +172,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="index.html" class="brand"><img src="logo.png" alt="AZRAR" class="az-mark" decoding="async"><span class="az-txt"><b>AZRAR</b><small>SYSTEMS</small></span></a>
   <span style="display:flex;gap:.5rem;align-items:center;"><a href="use-cases-en.html" class="lang-link-en" style="border:1px solid var(--border);background:#eef2f9;color:#475569;padding:.45rem .9rem;border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none;">English</a><a href="index.html" class="home-link">→ الرئيسية</a></span>
 </div>
+<nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html">الرئيسية</a><span class="sep">›</span><span class="current">حالات الاستخدام</span></nav>
 <section class="phero">
   <span class="eyebrow">حالات الاستخدام</span>
   <h1>حالات الاستخدام</h1>
@@ -205,6 +211,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="sf-col">
       <h4>موارد</h4>
+      <a href="about.html">من نحن</a>
       <a href="guide.html">الدليل</a>
       <a href="faq.html">الأسئلة الشائعة</a>
       <a href="articles.html">المدونة</a>
