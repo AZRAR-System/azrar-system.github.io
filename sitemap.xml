@@ -165,6 +165,44 @@
   </url>
 
   <url>
+    <loc>https://azrar-systems.com/article-maintenance.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/article-maintenance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/article-maintenance-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/article-maintenance.html"/>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/article-maintenance-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/article-maintenance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/article-maintenance-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/article-maintenance.html"/>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://azrar-systems.com/article-commissions.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/article-commissions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/article-commissions-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/article-commissions.html"/>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/article-commissions-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/article-commissions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/article-commissions-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/article-commissions.html"/>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://azrar-systems.com/screenshots.html</loc>
     <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/screenshots.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/screenshots-en.html"/>
