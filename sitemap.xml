@@ -32,6 +32,25 @@
   </url>
 
   <url>
+    <loc>https://azrar-systems.com/compare-falconpro.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/compare-falconpro.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/compare-falconpro-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/compare-falconpro.html"/>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/compare-falconpro-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/compare-falconpro.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/compare-falconpro-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/compare-falconpro.html"/>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://azrar-systems.com/guide.html</loc>
     <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/guide.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/guide-en.html"/>
