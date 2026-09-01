@@ -75,7 +75,7 @@ a{color:var(--blue-l);}
 .wrap{max-width:880px;margin:0 auto;padding:2.5rem 1.5rem 4rem;}
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.6rem 1.9rem;margin-bottom:1.4rem;box-shadow:0 4px 16px rgba(15,27,51,.05);}
 .card h2{font-size:1.35rem;color:var(--head);font-weight:800;margin-bottom:.7rem;line-height:1.35;}
-.card h3{font-size:1.08rem;color:var(--head);font-weight:800;margin:1.1rem 0 .5rem;}
+.card h3:not(.faq-q){font-size:1.08rem;color:var(--head);font-weight:800;margin:1.1rem 0 .5rem;}
 .card p{margin-bottom:.8rem;}.card ul,.card ol{margin:.4rem 1.5rem .9rem;}.card li{margin-bottom:.5rem;color:var(--ink);}
 .meta{font-size:.82rem;color:var(--muted);margin-bottom:1rem;font-family:var(--font-en);}
 .tip{background:#fff8e8;border:1px solid #ecd9a8;border-radius:10px;padding:.85rem 1.1rem;font-size:.92rem;color:#7a6420;margin:.9rem 0;}
@@ -181,31 +181,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 <div class="wrap">
 <article class="card">
-  <div class="faq-q">هل يعمل نظام أزرار بدون إنترنت؟</div>
+  <h3 class="faq-q">هل يعمل نظام أزرار بدون إنترنت؟</h3>
   <p>نعم، يعمل بشكل كامل offline. البيانات تُخزَّن محلياً على جهازك باستخدام SQLite — لا سيرفر خارجي ولا حاجة لاتصال دائم.</p>
-  <div class="faq-q">ما أنظمة التشغيل المدعومة؟</div>
+  <h3 class="faq-q">ما أنظمة التشغيل المدعومة؟</h3>
   <p>Windows 10 و Windows 11 (بنسخة 64-bit). لا يدعم macOS أو Linux حالياً.</p>
-  <div class="faq-q">كم مدة التجربة المجانية؟</div>
+  <h3 class="faq-q">كم مدة التجربة المجانية؟</h3>
   <p>30 يوماً كاملة بكل المزايا والأنظمة الـ 17، دون بطاقة ائتمان.</p>
-  <div class="faq-q">كم جهازاً يدعم الترخيص؟</div>
+  <h3 class="faq-q">كم جهازاً يدعم الترخيص؟</h3>
   <p>Solo: جهاز واحد، Office: جهازان، Pro: 3 أجهزة. وتتوفّر باقة Enterprise لأجهزة غير محدودة.</p>
-  <div class="faq-q">كيف يحمي النظام بياناتي؟</div>
+  <h3 class="faq-q">كيف يحمي النظام بياناتي؟</h3>
   <p>توقيع رقمي Ed25519 مربوط ببصمة جهازك، فحص سلامة الملفات SHA-256 عند كل إقلاع، وصلاحيات RBAC بأربعة مستويات.</p>
-  <div class="faq-q">هل أستطيع نقل الترخيص لجهاز آخر؟</div>
+  <h3 class="faq-q">هل أستطيع نقل الترخيص لجهاز آخر؟</h3>
   <p>نعم، عبر التواصل مع الدعم وتقديم إيصال تعطيل الجهاز القديم — لضمان عدم تجاوز عدد الأجهزة المرخّصة.</p>
-  <div class="faq-q">كيف تتم التحديثات؟</div>
+  <h3 class="faq-q">كيف تتم التحديثات؟</h3>
   <p>التحديثات مجانية طوال سنة الترخيص، وتحافظ على بياناتك بالكامل عند التحديث.</p>
-  <div class="faq-q">هل يدعم أكثر من عملة؟</div>
+  <h3 class="faq-q">هل يدعم أكثر من عملة؟</h3>
   <p>نعم، يدعم عملات متعددة (دينار، ريال، درهم...) ليناسب الأردن والخليج وبقية الدول العربية.</p>
-  <div class="faq-q">هل يحسب الأقساط والغرامات تلقائياً؟</div>
+  <h3 class="faq-q">هل يحسب الأقساط والغرامات تلقائياً؟</h3>
   <p>نعم، بفرقية الأيام الفعلية (28/29/30/31)، مع دعم الدفعات الجزئية وثلاثة أنواع للغرامات.</p>
-  <div class="faq-q">هل يمكن إرسال رسائل واتساب للمستأجرين؟</div>
+  <h3 class="faq-q">هل يمكن إرسال رسائل واتساب للمستأجرين؟</h3>
   <p>نعم، عبر ميزة واتساب الجماعي المدمجة — رسائل مخصّصة لكل عميل دفعة واحدة مع قوالب جاهزة.</p>
-  <div class="faq-q">ماذا يحدث لبياناتي إذا تعطّل الجهاز؟</div>
+  <h3 class="faq-q">ماذا يحدث لبياناتي إذا تعطّل الجهاز؟</h3>
   <p>إن كان لديك نسخة احتياطية (والنظام يوفّر أداة نسخ مدمجة) فالاسترجاع فوري على أي جهاز.</p>
-  <div class="faq-q">كيف أحصل على الدعم؟</div>
+  <h3 class="faq-q">كيف أحصل على الدعم؟</h3>
   <p>عبر واتساب أو البريد support@azrar-systems.com — ودعم بأولوية لباقتي Office و Pro.</p>
-  <div class="faq-q">هل الأسعار شاملة أم شهرية؟</div>
+  <h3 class="faq-q">هل الأسعار شاملة أم شهرية؟</h3>
   <p>الأسعار سنوية (دفعة واحدة) وتشمل التحديثات والدعم — لا رسوم شهرية مخفية.</p>
   <div class="note">لم تجد سؤالك؟ تواصل معنا عبر <a href="https://wa.me/962798986465">واتساب</a> أو <a href="mailto:info@azrar-systems.com">info@azrar-systems.com</a>.</div>
 </article>
