@@ -15,6 +15,7 @@
         '<span class="stars">★</span>' +
         '<span class="ar">' + stars + ' نجمة على GitHub</span>' +
         '<span class="en">' + stars + ' stars on GitHub</span>';
+      badge.removeAttribute('aria-label'); // injected text is now the accessible name
       badge.hidden = false;
     })
     .catch(function () { /* offline or API unavailable — stay hidden */ });
