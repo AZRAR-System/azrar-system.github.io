@@ -3,6 +3,19 @@
 <head>
 <meta name="facebook-domain-verification" content="y7izcnv560bmb3ihkwxosnbay6v8iu"/>
 <meta charset="UTF-8">
+<script>
+/* Soft-redirect deliberately-removed URLs to a live equivalent.
+   GitHub Pages can't do 301s; only listed paths redirect, so any
+   other unknown URL still resolves as a real 404. */
+(function () {
+  var map = {
+    '/AZRAR-System.html': '/', // removed duplicate of the homepage (2026-08-10)
+    '/index.1.html': '/'       // stray build artifact
+  };
+  var to = map[location.pathname];
+  if (to) location.replace(to);
+})();
+</script>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com https://www.googletagmanager.com https://www.google.com https://*.doubleclick.net; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.facebook.com https://stats.g.doubleclick.net https://www.merchant-center-analytics.goog; frame-src https://www.googletagmanager.com https://www.facebook.com; object-src 'none'; base-uri 'self'; form-action 'self' https://www.facebook.com;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
