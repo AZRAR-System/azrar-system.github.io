@@ -18,6 +18,7 @@
           '<span class="stars">' + stars + '</span>' +
           '<span class="ar">' + rating + ' من 5 · ' + data.ratingCount + ' تقييم على Microsoft Store</span>' +
           '<span class="en">' + rating + ' / 5 · ' + data.ratingCount + ' ratings on Microsoft Store</span>';
+        badge.removeAttribute('aria-label'); // injected text is now the accessible name
         badge.hidden = false;
       }
 
