@@ -1,0 +1,161 @@
+/* AZRAR · hig-base.css — Apple-HIG foundation layer, loaded LAST on every page.
+   طبقة الأساس المستوحاة من Apple HIG — تُحمَّل أخيراً في كل الصفحات.
+   Phase 1: semantic tokens, focus, reduced motion, touch targets, Light mode, static background. */
+
+:root {
+  color-scheme: dark light;
+  /* Semantic roles (HIG: one accent for action, a separate colour for status).
+     أدوار دلالية: الذهبي = الإجراء، الأخضر = الحالة. */
+  --action: var(--gold);
+  --action-l: var(--gold-l);
+  --success: var(--green);
+  --focus-ring: var(--gold-l);
+  --skip-bg: var(--gold-l);
+  --skip-ink: #1a1304;
+}
+
+/* ── Focus (keyboard users) · مؤشر التركيز ── */
+:where(a, button, input, select, textarea, summary, [role="button"], [tabindex]):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ── Skip link · تخطَّ إلى المحتوى ── */
+.skip-link {
+  position: fixed;
+  inset-block-start: .75rem;
+  inset-inline-start: .75rem;
+  z-index: 10000;
+  padding: .7rem 1.1rem;
+  min-height: 44px;
+  background: var(--skip-bg);
+  color: var(--skip-ink);
+  font-weight: 800;
+  border-radius: 10px;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: none; }
+
+/* ── Touch targets ≥ 44px · أهداف اللمس ── */
+:where(.btn-main, .btn-ghost, .btn-ms-store, .home-link, .lang-link, .back) {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── WhatsApp CTA: white on #25d366 was 1.98:1 → dark label 8.7:1 · تباين زر واتساب ── */
+.cta a, .guide-cta a { color: #06210f; }
+
+/* ── Reduced motion · تقليل الحركة ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Light mode · الوضع الفاتح (follows the system) ── */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f5f5f7;
+    --ink: #1d1d1f;
+    --head: #1d1d1f;
+    --muted: #515154;
+    --muted2: #6e6e73;
+    --card: #ffffff;
+    --border: rgba(0, 0, 0, .12);
+    --border2: rgba(0, 0, 0, .07);
+    --blue-l: #0a5c48;   /* links/text on light: 7.4:1 */
+    --gold-l: #8a6420;   /* gold TEXT on light: 5.3:1; dark bands restore it below */
+    --focus-ring: #0a5c48;
+    --green: #15803d;
+    --danger: #b42318;
+    --action-text: #7a5410;
+  }
+
+  /* Dark bands keep the bright gold. */
+  :root:not([data-theme="dark"]) :is(.phero, .cta, .guide-hero, .guide-cta, .topbar, .site-footer, footer, .step-num, .principle-num, .vnum) { --gold-l: #dcb15f; }
+
+  /* Background layers off: calm, content-first surface. */
+  :root:not([data-theme="dark"]) #bg-canvas,
+  :root:not([data-theme="dark"]) .bg-photo { display: none !important; }
+
+  /* Glass bars become light glass; the footer stays dark (hardcoded light text). */
+  :root:not([data-theme="dark"]) .topbar,
+  :root:not([data-theme="dark"]) nav {
+    background: rgba(245, 245, 247, .82) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, .1) !important;
+    box-shadow: none !important;
+  }
+  :root:not([data-theme="dark"]) .brand,
+  :root:not([data-theme="dark"]) .nav-name { color: var(--head) !important; }
+  :root:not([data-theme="dark"]) .lang-link {
+    background: rgba(0, 0, 0, .05) !important;
+    border-color: rgba(0, 0, 0, .14) !important;
+    color: var(--ink) !important;
+  }
+  :root:not([data-theme="dark"]) .lang-link:hover { color: var(--action-text) !important; border-color: var(--action-text) !important; }
+
+  :root:not([data-theme="dark"]) :is(.lang-link, .lang-btn:not(.active)):not(:hover) {
+    background: rgba(0, 0, 0, .05) !important;
+    border-color: rgba(0, 0, 0, .14) !important;
+    color: var(--ink) !important;
+  }
+  /* Title sits on a navy band (inline colour #fff) but .card h2 pulls the dark --head. */
+  :root:not([data-theme="dark"]) #main-video-title { color: #fff; }
+
+  /* Callouts */
+  :root:not([data-theme="dark"]) .step .tip, :root:not([data-theme="dark"]) .tip,
+  :root:not([data-theme="dark"]) .highlight {
+    background: rgba(185, 138, 61, .12) !important;
+    border-color: rgba(185, 138, 61, .4) !important;
+    color: var(--action-text) !important;
+  }
+  :root:not([data-theme="dark"]) .step .note, :root:not([data-theme="dark"]) .note {
+    background: rgba(13, 125, 99, .08) !important;
+    border-color: rgba(13, 125, 99, .3) !important;
+    color: var(--ink) !important;
+  }
+  :root:not([data-theme="dark"]) .step .warn, :root:not([data-theme="dark"]) .warn {
+    background: rgba(180, 35, 24, .07) !important;
+    border-color: rgba(180, 35, 24, .3) !important;
+    color: #b42318 !important;
+  }
+  :root:not([data-theme="dark"]) .tip b, :root:not([data-theme="dark"]) .warn b,
+  :root:not([data-theme="dark"]) .highlight strong { color: var(--head) !important; }
+
+  /* Tables, code, TOC */
+  :root:not([data-theme="dark"]) .cmp-table th { background: rgba(0, 0, 0, .04) !important; }
+  :root:not([data-theme="dark"]) .cmp-table td { border-bottom-color: rgba(0, 0, 0, .1) !important; }
+  :root:not([data-theme="dark"]) .cmp-table tbody td:first-child { color: var(--head) !important; }
+  :root:not([data-theme="dark"]) .path, :root:not([data-theme="dark"]) kbd {
+    background: rgba(0, 0, 0, .06) !important;
+    border-color: rgba(0, 0, 0, .15) !important;
+    color: var(--head) !important;
+  }
+  :root:not([data-theme="dark"]) .toc a::before { background: rgba(0, 0, 0, .06) !important; color: var(--action-text) !important; }
+
+  /* Dark bands keep the dark palette: the footer stays dark in light mode, so re-pin
+     the text tokens it reads (otherwise it inherits the light-mode dark ink → invisible). */
+  :root:not([data-theme="dark"]) :is(.site-footer, footer) {
+    --ink: #cdd5e8; --head: #ffffff; --muted: #8ea5c8; --muted2: #8ea5c8;
+    --border: rgba(255, 255, 255, .08); --border2: rgba(255, 255, 255, .04); --blue-l: #14a37f;
+  }
+  /* Header brand subtitle ("SYSTEMS") was a fixed pale blue on the light bar. */
+  :root:not([data-theme="dark"]) :is(.az-txt, .brand) small { color: var(--muted); }
+
+  /* Cards: opaque surface + hairline, no blur. */
+  :root:not([data-theme="dark"]) :is(.card, .step, .toc, .shot, .faq-item, .fb-card, .how-step, .cmp-table) {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* Pages still authored dark-only (home, until Phase 2) opt out with data-theme="dark".
+   الصفحات الداكنة فقط (الرئيسية حتى المرحلة 2) تستثني نفسها. */
+:root[data-theme="dark"] { color-scheme: dark; }

@@ -65,11 +65,11 @@ a{color:var(--blue-l);}
 .topbar{position:sticky;top:0;z-index:20;background:rgba(20,16,56,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 20px rgba(0,0,0,0.28);padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;}
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--head);font-weight:900;font-size:1.05rem;}
 .brand img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}
-.brand .sub{display:block;font-size:.66rem;color:var(--muted);font-weight:600;}
+.brand .sub{display:block;font-size:0.75rem;color:var(--muted);font-weight:600;}
 .lang-btn{border:1px solid var(--border);background:#eef2f9;color:#475569;padding:.45rem .9rem;border-radius:8px;cursor:pointer;font-size:.8rem;font-weight:800;font-family:inherit;}
 .lang-btn:hover{background:#e2e8f5;}
 .legal-hero{background:linear-gradient(160deg,var(--navy),var(--navy3));color:#fff;padding:3rem 1.5rem 2.6rem;text-align:center;}
-.legal-hero .eyebrow{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:var(--gold-l);font-family:var(--font-en);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;padding:.32rem .95rem;border-radius:100px;margin-bottom:1rem;font-weight:700;}
+.legal-hero .eyebrow{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:var(--gold-l);font-family:var(--font-en);font-size:0.75rem;letter-spacing:.14em;text-transform:uppercase;padding:.32rem .95rem;border-radius:100px;margin-bottom:1rem;font-weight:700;}
 .legal-hero h1{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:900;margin-bottom:.5rem;}
 .legal-hero .updated{color:#9fb2d4;font-size:.82rem;}
 .wrap{max-width:840px;margin:0 auto;padding:2.5rem 1.5rem 3.5rem;}
@@ -80,7 +80,7 @@ a{color:var(--blue-l);}
 .card ul{padding-inline-start:1.4rem;margin-bottom:.8rem;}
 .highlight{background:#eef3ff;border:1px solid #d6e2ff;border-radius:12px;padding:1.1rem 1.3rem;margin:0 0 1.4rem;color:#33415c;}
 .highlight strong{color:var(--head);}
-.back{display:inline-block;margin-top:2rem;color:var(--blue);text-decoration:none;font-weight:800;}
+.back{display:inline-block;margin-top:2rem;color:var(--blue-l);text-decoration:none;font-weight:800;}
 footer{background:var(--navy);color:#aebdd2;text-align:center;padding:1.75rem 1.5rem;font-size:.8rem;line-height:1.95;}
 footer a{color:var(--gold-l);text-decoration:none;}
 .ar{display:inline;}.en{display:none;}
@@ -150,8 +150,10 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<link rel="stylesheet" href="hig-base.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXHDB8R"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -169,7 +171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="updated"><span class="ar">آخر تحديث: 11 أكتوبر 2026</span><span class="en">Last updated: October 11, 2026</span></p>
 </section>
 
-<div class="wrap">
+<div id="main-content" class="wrap">
   <div class="highlight">
     <p><strong><span class="ar">الخلاصة:</span><span class="en">Summary:</span></strong>
     <span class="ar"> بيانات أعمالك مخزّنة على جهازك ويعمل النظام دون اتصال بالإنترنت. لا نجمع بياناتك ولا نستلمها. ميزات اختيارية محددة تستخدم الشبكة (القسم 5) ولا تُرسل شيئاً إلا عند استخدامها.</span>

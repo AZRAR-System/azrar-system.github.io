@@ -61,7 +61,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--font-en);line-heigh
 a{color:var(--blue-l);}
 .topbar{position:sticky;top:0;z-index:20;background:rgba(20,16,56,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 20px rgba(0,0,0,0.28);padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;}
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--head);font-weight:900;font-size:1.05rem;}
-.brand img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}.brand small{display:block;font-size:.66rem;color:var(--muted);font-weight:600;}
+.brand img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}.brand small{display:block;font-size:0.75rem;color:var(--muted);font-weight:600;}
 .tb-right{display:flex;align-items:center;gap:.6rem;}
 .lang-link{border:1px solid var(--border);background:#eef2f9;color:#475569;padding:.45rem .9rem;border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none;}
 .home-link{background:var(--blue);color:#fff;padding:.5rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:800;text-decoration:none;box-shadow:0 4px 12px rgba(13,125,99,.28);}
@@ -85,9 +85,9 @@ a{color:var(--blue-l);}
 .alist{display:grid;gap:1.1rem;}
 .acard{display:block;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.7rem;text-decoration:none;color:inherit;transition:all .2s;box-shadow:0 4px 16px rgba(15,27,51,.05);}
 .acard:hover{transform:translateY(-3px);border-color:var(--blue-l);box-shadow:0 14px 32px rgba(13,125,99,.13);}
-.acard .tag{display:inline-block;background:#eef3ff;color:var(--blue);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;margin-bottom:.7rem;}
+.acard .tag{display:inline-block;background:#eef3ff;color:var(--blue);font-size:0.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;margin-bottom:.7rem;}
 .acard h2{font-size:1.2rem;color:var(--head);margin-bottom:.45rem;}.acard p{color:var(--muted);font-size:.92rem;margin:0;}
-.acard .more{color:var(--blue);font-weight:800;font-size:.85rem;margin-top:.7rem;display:inline-block;}
+.acard .more{color:var(--blue-l);font-weight:800;font-size:.85rem;margin-top:.7rem;display:inline-block;}
 .step{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.6rem 1.9rem;margin-bottom:1.3rem;box-shadow:0 4px 16px rgba(15,27,51,.04);scroll-margin-top:80px;}
 .step-head{display:flex;align-items:center;gap:.9rem;margin-bottom:1rem;}
 .step-num{background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;font-weight:800;font-size:1rem;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -97,13 +97,13 @@ a{color:var(--blue-l);}
 .toc ol{list-style:none;counter-reset:t;display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem;}
 .toc li{counter-increment:t;}
 .toc a{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:600;padding:.4rem .2rem;border-radius:6px;}
-.toc a:hover{color:var(--blue);}
-.toc a::before{content:counter(t);background:#eef3ff;color:var(--blue);font-weight:800;font-size:.72rem;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.toc a:hover{color:var(--blue-l);}
+.toc a::before{content:counter(t);background:#eef3ff;color:var(--blue);font-weight:800;font-size:0.75rem;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .faq-q{font-size:1.05rem;color:var(--head);font-weight:800;margin:1.3rem 0 .4rem;}.faq-q:first-child{margin-top:0;}
 .vid{display:flex;align-items:center;gap:1rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.3rem;margin-bottom:.9rem;box-shadow:0 3px 12px rgba(15,27,51,.04);}
 .vid .vnum{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;}
 .vid .vtxt{flex:1;}.vid .vtxt b{color:var(--head);font-size:1rem;}.vid .vtxt span{display:block;color:var(--muted);font-size:.85rem;}
-.vid .soon{background:#fdf3da;color:#a87d1a;font-size:.7rem;font-weight:800;padding:.25rem .7rem;border-radius:100px;white-space:nowrap;}
+.vid .soon{background:#fdf3da;color:#a87d1a;font-size:0.75rem;font-weight:800;padding:.25rem .7rem;border-radius:100px;white-space:nowrap;}
 .cta{background:linear-gradient(135deg,var(--navy),var(--navy3));border-radius:20px;padding:2.4rem 1.5rem;text-align:center;color:#fff;margin-top:2.5rem;}
 .cta h2{font-size:1.45rem;font-weight:900;margin-bottom:.6rem;}.cta p{color:#c4d2ea;margin-bottom:1.3rem;}
 .cta a{display:inline-flex;align-items:center;gap:.5rem;background:#25d366;color:#fff;padding:.85rem 2rem;border-radius:11px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.35);}
@@ -171,8 +171,10 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<link rel="stylesheet" href="hig-base.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXHDB8R"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -185,7 +187,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html?lang=en">Home</a><span class="sep">›</span><span class="current">Use Cases</span></nav>
 <section class="phero"><span class="eyebrow">USE CASES</span><h1>Use Cases</h1><p>AZRAR adapts to your scale — from a solo office to a large company.</p></section>
-<div class="wrap">
+<div id="main-content" class="wrap">
 <div class="alist"><div class="acard"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:1em;height:1em;vertical-align:-0.14em;margin-inline-end:.4rem;"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8.5 8V6a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>Solo office owner</h2><p style="color:var(--ink)">Managing dozens of contracts yourself? AZRAR's automatic reminders and bulk WhatsApp do the work of a full employee — you never miss an installment or renewal. The Solo plan is ideal.</p></div><div class="acard"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:1em;height:1em;vertical-align:-0.14em;margin-inline-end:.4rem;"><rect x="5" y="3" width="10" height="18" rx="1"/><path d="M9 7h.01M12 7h.01M9 10.3h.01M12 10.3h.01M9 13.6h.01M12 13.6h.01M9 17h.01M12 17h.01"/><path d="M15 11h4v10h-4"/></svg>Small office (1–2 staff)</h2><p style="color:var(--ink)">Distribute tasks with RBAC permissions and track everyone from a single dashboard. Office or Pro plan with multi-device licensing and sync.</p></div><div class="acard"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:1em;height:1em;vertical-align:-0.14em;margin-inline-end:.4rem;"><rect x="3" y="10" width="7" height="11"/><rect x="14" y="4" width="7" height="17"/><path d="M5.5 13h2M5.5 16h2M5.5 19h2M16.5 7h2M16.5 10h2M16.5 13h2M16.5 16h2"/></svg>Large real estate company</h2><p style="color:var(--ink)">Hundreds of units and contracts? SQL Server sync across branches, detailed per-owner reports, and granular permissions. Enterprise plan with unlimited devices.</p></div><div class="acard"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:1em;height:1em;vertical-align:-0.14em;margin-inline-end:.4rem;"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l2 2M14 9l2 2"/></svg>Managing others' properties</h2><p style="color:var(--ink)">Managing properties for multiple owners? The ready owner report shows each owner's income and expenses with one click, plus tenant clearance.</p></div></div>
   <div class="cta"><h2>Try AZRAR Free</h2><p>30 days, all features — no credit card.</p>
   <a href="https://wa.me/962798986465?text=I%20want%20to%20try%20AZRAR%20free" target="_blank" rel="noopener">Contact via WhatsApp</a></div>

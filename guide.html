@@ -92,7 +92,7 @@ a{color:var(--blue-l);}
 .topbar{position:sticky;top:0;z-index:20;background:rgba(20,16,56,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 20px rgba(0,0,0,0.28);padding:0.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;}
 .brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--head);font-weight:900;font-size:1.05rem;}
 .brand img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}
-.brand small{display:block;font-size:.66rem;color:var(--muted);font-weight:600;}
+.brand small{display:block;font-size:0.75rem;color:var(--muted);font-weight:600;}
 .home-link{background:var(--blue);color:#fff;padding:.5rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:800;text-decoration:none;box-shadow:0 4px 12px rgba(13,125,99,.28);}
 .breadcrumb{max-width:880px;margin:0 auto;padding:.9rem 1.5rem 0;font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;}
 .breadcrumb a{color:var(--muted);text-decoration:none;}
@@ -113,8 +113,8 @@ a{color:var(--blue-l);}
 .toc ol{list-style:none;counter-reset:t;display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem;}
 .toc li{counter-increment:t;}
 .toc a{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:600;padding:.4rem .2rem;border-radius:6px;transition:color .15s;}
-.toc a:hover{color:var(--blue);}
-.toc a::before{content:counter(t);background:#eef3ff;color:var(--blue);font-family:var(--font-en);font-weight:800;font-size:.72rem;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.toc a:hover{color:var(--blue-l);}
+.toc a::before{content:counter(t);background:#eef3ff;color:var(--blue);font-family:var(--font-en);font-weight:800;font-size:0.75rem;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 /* sections */
 .step{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.75rem 2rem;margin-bottom:1.5rem;box-shadow:0 4px 16px rgba(15,27,51,.04);scroll-margin-top:80px;}
 .step-head{display:flex;align-items:center;gap:.9rem;margin-bottom:1rem;}
@@ -203,8 +203,10 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<link rel="stylesheet" href="hig-base.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXHDB8R"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -224,7 +226,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>قراءة ~15 دقيقة</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2 2 0 0 1 6 4h13v14H6a2 2 0 0 0-2 2z"/><path d="M4 19.5V5.5"/><path d="M8 8h7M8 11h7"/></svg>14 قسماً</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5l8-1.1v7.1H3z"/><path d="M12.3 5.2L21 4v8.4l-8.7.1z"/><path d="M3 13.4h8v7.1l-8-1.1z"/><path d="M12.3 13.6l8.7.1V20l-8.7-1.2z"/></svg>Windows 10/11</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20v-4M9 20v-8M14 20V8M19 20V4"/></svg>يعمل بدون إنترنت</span></div>
 </section>
 
-<div class="wrap">
+<div id="main-content" class="wrap">
   <nav class="toc" aria-label="محتويات الدليل">
     <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:1em;height:1em;vertical-align:-0.14em;margin-inline-end:.35rem;"><path d="M6 3h12v18l-6-4.2L6 21z"/></svg>محتويات الدليل</h2>
     <ol>
