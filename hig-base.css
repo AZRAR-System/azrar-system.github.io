@@ -199,3 +199,34 @@ html[dir="rtl"] .lightbox-nav { transform: translateY(-50%) scaleX(-1); }
   html[dir="rtl"] .lightbox-prev { right: .4rem; }
   html[dir="rtl"] .lightbox-next { left: .4rem; }
 }
+
+/* ── Reading measure ≈ 68ch for long text (HIG: comfortable line length) · عرض سطر مريح ── */
+:where(.card, .step) :where(p, li) { max-inline-size: 68ch; }
+
+/* ── FAQ accordion ── */
+.faq-d { border-bottom: 1px solid var(--border2); }
+.faq-d:last-of-type { border-bottom: 0; }
+.faq-d > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-block-size: 44px;
+  padding-block: .6rem;
+}
+.faq-d > summary::-webkit-details-marker { display: none; }
+.card .faq-d > summary > h2.faq-q { font-size: 1.05rem; margin: 0; line-height: 1.5; }
+.faq-d > summary::after {
+  content: "";
+  flex: none;
+  inline-size: .55rem;
+  block-size: .55rem;
+  border-inline-end: 2px solid var(--muted);
+  border-block-end: 2px solid var(--muted);
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+}
+.faq-d[open] > summary::after { transform: rotate(-135deg); }
+.faq-d > p { margin: 0 0 1rem; }
