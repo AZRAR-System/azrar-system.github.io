@@ -12,7 +12,14 @@
   }
   function kbd(el) { el.setAttribute('tabindex', '0'); el.setAttribute('role', 'button'); el.setAttribute('data-kbd', ''); }
 
-  document.querySelectorAll('figure.shot[onclick], .vid[onclick]').forEach(kbd);
+  document.querySelectorAll('.vid[onclick]').forEach(kbd);
+  // <figure> accepts no role, so make the image itself a real button (its click bubbles to the figure's onclick).
+  document.querySelectorAll('figure.shot[onclick]').forEach(function (f) {
+    var img = f.querySelector('img'); if (!img) return;
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'shot-open';
+    img.parentNode.insertBefore(b, img); b.appendChild(img);
+  });
   document.addEventListener('keydown', press);
 
   var v = document.getElementById('main-video-player');
@@ -26,7 +33,7 @@
   lb.querySelectorAll('.lightbox-nav').forEach(kbd);
 
   var opener = null, openShotOrig = window.openShot, closeShotOrig = window.closeShot;
-  window.openShot = function (el) { opener = el; openShotOrig(el); if (x) x.focus(); };
+  window.openShot = function (el) { opener = el.querySelector('.shot-open') || el; openShotOrig(el); if (x) x.focus(); };
   window.closeShot = function () { closeShotOrig(); if (opener) opener.focus(); };
 
   // keep Tab inside the dialog while it is open
