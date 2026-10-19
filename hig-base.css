@@ -10,7 +10,7 @@
   --action-l: var(--gold-l);
   --success: var(--green);
   --focus-ring: var(--gold-l);
-  --skip-bg: var(--gold-l);
+  --skip-bg: #dcb15f;   /* literal: --gold-l darkens in Light mode and the label is dark */
   --skip-ink: #1a1304;
 }
 
