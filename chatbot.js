@@ -96,6 +96,7 @@ if (chatTrigger) {
     chatWidget.classList.toggle('open');
     const badge = document.querySelector('.chat-badge');
     if (badge) badge.style.display = 'none';
+    chatTrigger.setAttribute('aria-label', 'Open Chat Assistant');
     if (chatBody && chatBody.children.length === 0) {
       showWelcomeMessage();
     }
