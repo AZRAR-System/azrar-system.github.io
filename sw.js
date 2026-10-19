@@ -1,10 +1,11 @@
-const CACHE_NAME = 'azrar-cache-v1.13';
+const CACHE_NAME = 'azrar-cache-v1.14';
 const ASSETS = [
   './',
   './index.html',
   './style.css',
   './shared-dark.css',
   './hig-base.css',
+  './hig-a11y.js',
   './home-bg.js',
   './chatbot.js',
   './bg-animation.js',

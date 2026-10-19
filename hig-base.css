@@ -178,3 +178,24 @@
   }
   html[data-lang] .how-arrow::after { content: "↓"; font-size: 1.8rem; }
 }
+
+/* ── Utilities · أدوات ── */
+.sr-only { position: absolute; inline-size: 1px; block-size: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* ── Shared footer / breadcrumb touch targets ≥ 44px · أهداف اللمس في التذييل ── */
+.sf-col a { padding-block: .7rem; }
+.sf-social a { inline-size: 44px; block-size: 44px; }
+:where(.sf-logo, .brand) { min-block-size: 44px; }
+.breadcrumb a { display: inline-flex; align-items: center; min-block-size: 44px; }
+
+/* ── Gallery / lightbox ── */
+:where(figure.shot, .vid)[data-kbd] { cursor: pointer; }
+.lightbox-x[data-kbd] { display: inline-flex; align-items: center; justify-content: center; min-inline-size: 44px; min-block-size: 44px; }
+/* RTL: "previous" sits on the right and arrows point with the reading direction */
+html[dir="rtl"] .lightbox-prev { left: auto; right: 1rem; }
+html[dir="rtl"] .lightbox-next { right: auto; left: 1rem; }
+html[dir="rtl"] .lightbox-nav { transform: translateY(-50%) scaleX(-1); }
+@media (max-width: 640px) {
+  html[dir="rtl"] .lightbox-prev { right: .4rem; }
+  html[dir="rtl"] .lightbox-next { left: .4rem; }
+}
