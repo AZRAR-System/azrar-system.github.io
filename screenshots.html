@@ -263,8 +263,8 @@ function closeShot(){document.getElementById('lightbox').classList.remove('open'
 document.addEventListener('keydown',function(e){
   if(!document.getElementById('lightbox').classList.contains('open'))return;
   if(e.key==='Escape')closeShot();
-  else if(e.key==='ArrowRight')navShot(1);
-  else if(e.key==='ArrowLeft')navShot(-1);
+  else if(e.key==='ArrowRight')navShot(-1);
+  else if(e.key==='ArrowLeft')navShot(1);
 });
 (function(){
   var touchStartX=null;
@@ -295,5 +295,6 @@ document.addEventListener('keydown',function(e){
 <script>
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(e){console.log('SW error:',e);});});}
 </script>
+<script src="hig-a11y.js" defer></script>
 </body>
 </html>
