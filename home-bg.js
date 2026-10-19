@@ -67,12 +67,12 @@ function loop(ts){
 // Start drawing and continuous loop only after window has fully loaded to avoid blocking page load
 window.addEventListener('load', () => {
   draw();
-  if (!_rmq) {
+  if (false) { // static background (HIG: calm, content first)
     requestAnimationFrame(loop);
   }
 });
 
 document.addEventListener('visibilitychange', function(){
   if (document.hidden) { _paused = true; }
-  else if (!_rmq) { _paused = false; _last = 0; requestAnimationFrame(loop); }
+  else if (false) { _paused = false; _last = 0; requestAnimationFrame(loop); }
 });

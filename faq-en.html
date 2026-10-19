@@ -61,7 +61,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--font-en);line-heigh
 a{color:var(--blue-l);}
 .topbar{position:sticky;top:0;z-index:20;background:rgba(20,16,56,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 20px rgba(0,0,0,0.28);padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;}
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--head);font-weight:900;font-size:1.05rem;}
-.brand img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}.brand small{display:block;font-size:.66rem;color:var(--muted);font-weight:600;}
+.brand img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}.brand small{display:block;font-size:0.75rem;color:var(--muted);font-weight:600;}
 .tb-right{display:flex;align-items:center;gap:.6rem;}
 .lang-link{border:1px solid var(--border);background:#eef2f9;color:#475569;padding:.45rem .9rem;border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none;}
 .home-link{background:var(--blue);color:#fff;padding:.5rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:800;text-decoration:none;box-shadow:0 4px 12px rgba(13,125,99,.28);}
@@ -85,9 +85,9 @@ a{color:var(--blue-l);}
 .alist{display:grid;gap:1.1rem;}
 .acard{display:block;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.7rem;text-decoration:none;color:inherit;transition:all .2s;box-shadow:0 4px 16px rgba(15,27,51,.05);}
 .acard:hover{transform:translateY(-3px);border-color:var(--blue-l);box-shadow:0 14px 32px rgba(13,125,99,.13);}
-.acard .tag{display:inline-block;background:#eef3ff;color:var(--blue);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;margin-bottom:.7rem;}
+.acard .tag{display:inline-block;background:#eef3ff;color:var(--blue);font-size:0.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;margin-bottom:.7rem;}
 .acard h2{font-size:1.2rem;color:var(--head);margin-bottom:.45rem;}.acard p{color:var(--muted);font-size:.92rem;margin:0;}
-.acard .more{color:var(--blue);font-weight:800;font-size:.85rem;margin-top:.7rem;display:inline-block;}
+.acard .more{color:var(--blue-l);font-weight:800;font-size:.85rem;margin-top:.7rem;display:inline-block;}
 .step{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.6rem 1.9rem;margin-bottom:1.3rem;box-shadow:0 4px 16px rgba(15,27,51,.04);scroll-margin-top:80px;}
 .step-head{display:flex;align-items:center;gap:.9rem;margin-bottom:1rem;}
 .step-num{background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;font-weight:800;font-size:1rem;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -97,13 +97,13 @@ a{color:var(--blue-l);}
 .toc ol{list-style:none;counter-reset:t;display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem;}
 .toc li{counter-increment:t;}
 .toc a{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);font-size:.9rem;font-weight:600;padding:.4rem .2rem;border-radius:6px;}
-.toc a:hover{color:var(--blue);}
-.toc a::before{content:counter(t);background:#eef3ff;color:var(--blue);font-weight:800;font-size:.72rem;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.toc a:hover{color:var(--blue-l);}
+.toc a::before{content:counter(t);background:#eef3ff;color:var(--blue);font-weight:800;font-size:0.75rem;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .faq-q{font-size:1.05rem;color:var(--head);font-weight:800;margin:1.3rem 0 .4rem;}.faq-q:first-child{margin-top:0;}
 .vid{display:flex;align-items:center;gap:1rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.3rem;margin-bottom:.9rem;box-shadow:0 3px 12px rgba(15,27,51,.04);}
 .vid .vnum{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;}
 .vid .vtxt{flex:1;}.vid .vtxt b{color:var(--head);font-size:1rem;}.vid .vtxt span{display:block;color:var(--muted);font-size:.85rem;}
-.vid .soon{background:#fdf3da;color:#a87d1a;font-size:.7rem;font-weight:800;padding:.25rem .7rem;border-radius:100px;white-space:nowrap;}
+.vid .soon{background:#fdf3da;color:#a87d1a;font-size:0.75rem;font-weight:800;padding:.25rem .7rem;border-radius:100px;white-space:nowrap;}
 .cta{background:linear-gradient(135deg,var(--navy),var(--navy3));border-radius:20px;padding:2.4rem 1.5rem;text-align:center;color:#fff;margin-top:2.5rem;}
 .cta h2{font-size:1.45rem;font-weight:900;margin-bottom:.6rem;}.cta p{color:#c4d2ea;margin-bottom:1.3rem;}
 .cta a{display:inline-flex;align-items:center;gap:.5rem;background:#25d366;color:#fff;padding:.85rem 2rem;border-radius:11px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.35);}
@@ -172,8 +172,10 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<link rel="stylesheet" href="hig-base.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXHDB8R"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -186,7 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html?lang=en">Home</a><span class="sep">›</span><span class="current">FAQ</span></nav>
 <section class="phero"><span class="eyebrow">FAQ</span><h1>Frequently Asked Questions</h1><p>Everything you want to know about AZRAR in one place.</p></section>
-<div class="wrap">
+<div id="main-content" class="wrap">
 <article class="card"><h3 class="faq-q">Does AZRAR work without internet?</h3><p>Yes, completely offline. Data is stored locally on your device using SQLite — no external server, no constant connection required.</p><h3 class="faq-q">Which operating systems are supported?</h3><p>Windows 10 and Windows 11 (64-bit). macOS and Linux are not currently supported.</p><h3 class="faq-q">How long is the free trial?</h3><p>30 full days with all features and all 17 modules, no credit card required.</p><h3 class="faq-q">How many devices does a license support?</h3><p>Solo: 1 device, Office: 2 devices, Pro: 3 devices. An Enterprise plan offers unlimited devices.</p><h3 class="faq-q">How does the system protect my data?</h3><p>Ed25519 digital signature bound to your device ID, SHA-256 file integrity check on every launch, and 4-level RBAC permissions.</p><h3 class="faq-q">Can I transfer the license to another device?</h3><p>Yes, by contacting support and providing a deactivation receipt for the old device — to keep within your licensed device count.</p><h3 class="faq-q">How are updates handled?</h3><p>Updates are free for the full license year and preserve all your data.</p><h3 class="faq-q">Does it support multiple currencies?</h3><p>Yes — multiple currencies (Dinar, Riyal, Dirham...) for Jordan, the Gulf and other Arab markets.</p><h3 class="faq-q">Does it calculate installments and late fees automatically?</h3><p>Yes, using actual days (28/29/30/31), with partial payments and three late-fee types.</p><h3 class="faq-q">Can I send WhatsApp messages to tenants?</h3><p>Yes, via the built-in Bulk WhatsApp feature — custom messages to all clients at once with ready templates.</p><h3 class="faq-q">What happens to my data if the device fails?</h3><p>If you have a backup (the system includes a built-in backup tool), restore is instant on any device.</p><h3 class="faq-q">How do I get support?</h3><p>Via WhatsApp or support@azrar-systems.com — with priority support on Office and Pro plans.</p><h3 class="faq-q">Are prices annual or monthly?</h3><p>Prices are annual (one payment) and include updates and support — no hidden monthly fees.</p><div class="note">Didn't find your question? Contact us on <a href="https://wa.me/962798986465">WhatsApp</a> or <a href="mailto:info@azrar-systems.com">info@azrar-systems.com</a>.</div></article>
   <div class="cta"><h2>Try AZRAR Free</h2><p>30 days, all features — no credit card.</p>
   <a href="https://wa.me/962798986465?text=I%20want%20to%20try%20AZRAR%20free" target="_blank" rel="noopener">Contact via WhatsApp</a></div>

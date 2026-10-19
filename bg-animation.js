@@ -77,7 +77,7 @@
 
   // Start continuous loop only after window has fully loaded to avoid blocking page load
   window.addEventListener('load', () => {
-    if (!_rmq) {
+    if (false) { // static background (HIG: calm, content first)
       requestAnimationFrame(loop);
     }
   });
@@ -85,7 +85,7 @@
   document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
       _paused = true;
-    } else if (!_rmq) {
+    } else if (false) { // static background (HIG: calm, content first)
       _paused = false;
       _last = 0;
       requestAnimationFrame(loop);

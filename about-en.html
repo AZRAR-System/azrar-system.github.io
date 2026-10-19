@@ -61,7 +61,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--font-en);line-heigh
 a{color:var(--blue-l);}
 .topbar{position:sticky;top:0;z-index:20;background:rgba(20,16,56,0.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.08);box-shadow:0 4px 20px rgba(0,0,0,0.28);padding:.85rem 1.5rem;display:flex;align-items:center;justify-content:space-between;}
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--head);font-weight:900;font-size:1.05rem;}
-.brand img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}.brand small{display:block;font-size:.66rem;color:var(--muted);font-weight:600;}
+.brand img{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.12);}.brand small{display:block;font-size:0.75rem;color:var(--muted);font-weight:600;}
 .home-link{background:var(--blue);color:#fff;padding:.5rem 1.1rem;border-radius:8px;font-size:.82rem;font-weight:800;text-decoration:none;box-shadow:0 4px 12px rgba(13,125,99,.28);}
 .breadcrumb{max-width:880px;margin:0 auto;padding:.9rem 1.5rem 0;font-size:.82rem;color:var(--muted);display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;}
 .breadcrumb a{color:var(--muted);text-decoration:none;}
@@ -156,8 +156,10 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<link rel="stylesheet" href="hig-base.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXHDB8R"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -174,7 +176,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h1>Your data stays yours — that's the principle AZRAR is built on</h1>
   <p>The AZRAR story, and the principles behind every technical decision we make building this real estate management system.</p>
 </section>
-<div class="wrap">
+<div id="main-content" class="wrap">
 
 <article class="card">
   <h2>Why We Built AZRAR</h2>
