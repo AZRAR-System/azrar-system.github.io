@@ -252,3 +252,15 @@ html[dir="rtl"] .lightbox-nav { transform: translateY(-50%) scaleX(-1); }
 }
 .faq-d[open] > summary::after { transform: rotate(-135deg); }
 .faq-d > p { margin: 0 0 1rem; }
+
+/* ── Phase 5: 404 + legal · الأخطاء والصفحات القانونية ── */
+.nf-links a { display: inline-flex; align-items: center; min-block-size: 44px; padding-inline: .4rem; }
+html:not([data-theme="dark"]) .lang-btn { min-block-size: 44px; min-inline-size: 44px; }
+@media (prefers-color-scheme: light) {
+  /* secondary buttons were hard-coded white → invisible on the light surface */
+  :root:not([data-theme="dark"]) :is(.btn-ghost, .btn-ms-store) {
+    color: var(--head);
+    background: rgba(0, 0, 0, .04);
+    border-color: rgba(0, 0, 0, .2);
+  }
+}
