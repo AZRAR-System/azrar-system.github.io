@@ -1,4 +1,4 @@
-const CACHE_NAME = 'azrar-cache-v1.15';
+const CACHE_NAME = 'azrar-cache-v1.16';
 const ASSETS = [
   './',
   './index.html',
@@ -52,37 +52,51 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+  const req = event.request;
   // Bypass non-GET requests (e.g. Analytics tracking)
-  if (event.request.method !== 'GET') return;
-  
+  if (req.method !== 'GET') return;
+
   // Bypass third-party domains (Analytics, Facebook API, Fonts)
-  const url = new URL(event.request.url);
+  const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
 
+  const isHtml = req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html');
+
+  // Pages: network first, so a deploy shows up on the next load. 'no-cache' makes the browser
+  // revalidate with the server instead of reusing GitHub Pages' max-age=600 copy.
+  // Cache is only the offline fallback.
+  if (isHtml) {
+    event.respondWith(
+      fetch(req, { cache: 'no-cache' }).then(res => {
+        if (res.status === 200) {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(req, copy));
+        }
+        return res;
+      }).catch(() =>
+        caches.match(req, { ignoreSearch: true })
+          .then(hit => hit || caches.match('./index.html'))
+          .then(hit => hit || caches.match('./'))
+      )
+    );
+    return;
+  }
+
+  // Assets: cache first, refreshed in the background (also revalidating past the HTTP cache).
   event.respondWith(
-    caches.match(event.request).then(cachedResponse => {
-      if (cachedResponse) {
-        // Return cached asset, fetch fresh in background (stale-while-revalidate)
-        fetch(event.request).then(networkResponse => {
-          if (networkResponse.status === 200) {
-            caches.open(CACHE_NAME).then(cache => cache.put(event.request, networkResponse));
-          }
-        }).catch(() => {});
-        return cachedResponse;
-      }
-      return fetch(event.request).then(networkResponse => {
-        if (networkResponse.status === 200) {
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseClone));
+    caches.match(req).then(cached => {
+      const refresh = fetch(req, { cache: 'no-cache' }).then(res => {
+        if (res.status === 200) {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(req, copy));
         }
-        return networkResponse;
-      }).catch(() => {
-        // Fallback to offline index.html if html is requested
-        const acceptHeader = event.request.headers.get('accept') || '';
-        if (acceptHeader.includes('text/html')) {
-          return caches.match('./index.html') || caches.match('./');
-        }
+        return res;
       });
+      if (cached) {
+        refresh.catch(() => {});
+        return cached;
+      }
+      return refresh;
     })
   );
 });
