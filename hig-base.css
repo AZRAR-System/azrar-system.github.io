@@ -139,3 +139,42 @@
 /* Pages still authored dark-only (home, until Phase 2) opt out with data-theme="dark".
    الصفحات الداكنة فقط (الرئيسية حتى المرحلة 2) تستثني نفسها. */
 :root[data-theme="dark"] { color-scheme: dark; }
+
+/* ── Collapsible secondary sections (home) · أقسام ثانوية قابلة للطي ── */
+.more-block > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 44px;
+  padding-block: .5rem;
+  border-bottom: 1px solid var(--border);
+}
+.more-block > summary::-webkit-details-marker { display: none; }
+.more-block > summary > :is(h2, h3) { margin: 0; }
+.more-block > summary::after {
+  content: "";
+  flex: none;
+  inline-size: .6rem;
+  block-size: .6rem;
+  border-inline-end: 2px solid var(--muted);
+  border-block-end: 2px solid var(--muted);
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+}
+.more-block[open] > summary::after { transform: rotate(-135deg); }
+.more-block[open] > summary { margin-block-end: 1.5rem; }
+
+/* ── "How" arrows: rotating a full-width box overflowed the viewport on phones (RTL).
+      Swap the glyph instead of rotating the box. · الأسهم: نستبدل الرمز بدل تدوير الصندوق ── */
+@media (max-width: 760px) {
+  html[data-lang] .how-arrow {
+    transform: none;
+    flex-basis: 100%;
+    justify-content: center;
+    font-size: 0;
+  }
+  html[data-lang] .how-arrow::after { content: "↓"; font-size: 1.8rem; }
+}

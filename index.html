@@ -195,8 +195,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="hero-badge">v3.15.4 · 6,400+ <span class="ar">اختبار آلي</span><span class="en">automated tests</span> · Production Ready</div>
-
     <h1>
       <span class="ar"><span class="white">نظام عقاري</span><br><span class="hl">احترافي بالكامل</span><br><span class="dm">للسوق العربي</span></span>
       <span class="en"><span class="white">Professional</span><br><span class="hl">Real Estate</span><br><span class="dm">Management System</span></span>
@@ -209,13 +207,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="hero-actions">
       <a href="https://apps.microsoft.com/detail/9NJFB5W8ZCSB" target="_blank" rel="noopener" class="btn-main">
-        <span class="ar">جرّب 30 يوم مجاناً</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="margin-inline-end:.5rem"><path fill="#f25022" d="M2 2h9.5v9.5H2z"/><path fill="#7fba00" d="M12.5 2H22v9.5h-9.5z"/><path fill="#00a4ef" d="M2 12.5h9.5V22H2z"/><path fill="#ffb900" d="M12.5 12.5H22V22h-9.5z"/></svg><span class="ar">جرّب 30 يوم مجاناً</span>
         <span class="en">Try Free for 30 Days</span>
-      </a>
-      <a href="https://apps.microsoft.com/detail/9NJFB5W8ZCSB" target="_blank" rel="noopener" class="btn-ms-store">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#f25022" d="M2 2h9.5v9.5H2z"/><path fill="#7fba00" d="M12.5 2H22v9.5h-9.5z"/><path fill="#00a4ef" d="M2 12.5h9.5V22H2z"/><path fill="#ffb900" d="M12.5 12.5H22V22h-9.5z"/></svg>
-        <span class="ar">متوفر على متجر Microsoft</span>
-        <span class="en">Get it from Microsoft Store</span>
       </a>
       <a href="#modules" class="btn-ghost">
         <span class="ar">اكتشف الأنظمة ↓</span>
@@ -356,10 +349,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sec-label reveal">
       <span class="ar">أسواقنا</span><span class="en">Our Markets</span>
     </div>
-    <h2 class="sec-title reveal">
+    <details class="more-block" id="markets-more"><summary><h2 class="sec-title reveal">
       <span class="ar">مصمم للسوق العربي بالكامل</span>
       <span class="en">Built for the Arab World</span>
-    </h2>
+    </h2></summary>
     <p class="sec-sub reveal">
       <span class="ar">أزرار يدعم عملات وأنظمة إيجار متعددة — من الأردن إلى الخليج وسائر الدول العربية.</span>
       <span class="en">AZRAR supports multiple currencies and rental systems — from Jordan to the Gulf and across Arab markets.</span>
@@ -382,7 +375,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="market-item"><img class="market-flag" src="flags/tn.png" width="46" height="31" alt="Tunisia" loading="lazy"><div class="market-name ar">تونس</div><div class="market-name en">Tunisia</div><div class="market-sub">TND</div></div>
       <div class="market-item"><span class="market-flag-emoji">🌍</span><div class="market-name ar">وأكثر</div><div class="market-name en">&amp; More</div><div class="market-sub ar">دول عربية</div><div class="market-sub en">Arab markets</div></div>
     </div>
-  </div>
+  </details></div>
 </section>
 
 <hr class="divider">
@@ -641,7 +634,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="roi-calculator" class="reveal">
   <div class="container">
     <div class="sec-label"><span class="ar">حاسبة العائد المالي</span><span class="en">ROI Calculator</span></div>
-    <h2 class="sec-title"><span class="ar">كم يوفّر برنامج إدارة العقارات من الوقت والتكلفة؟</span><span class="en">How Much Time and Money Does a Real Estate System Save?</span></h2>
+    <details class="more-block" id="roi-more"><summary><h2 class="sec-title"><span class="ar">كم يوفّر برنامج إدارة العقارات من الوقت والتكلفة؟</span><span class="en">How Much Time and Money Does a Real Estate System Save?</span></h2></summary>
     <p class="sec-sub"><span class="ar">احسب قيمة ما ستوفره مكتبك مع أزرار.</span><span class="en">Estimate what your office would save with AZRAR.</span></p>
     
     <div class="calc-grid">
@@ -693,7 +686,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
-  </div>
+  </details></div>
 </section>
 
 <hr class="divider">
@@ -1098,6 +1091,9 @@ window.addEventListener('load', () => {
 
 
 
+</script>
+<script>
+(function(){function o(){var h=location.hash.slice(1);if(!h)return;var e=document.getElementById(h);var d=e&&(e.matches('details')?e:e.querySelector('details.more-block'));if(d)d.open=true;}addEventListener('hashchange',o);o();})();
 </script>
 <script id="azrar-ga-events">
 // GA4 conversion tracking: fire named events on WhatsApp / trial / contact clicks
