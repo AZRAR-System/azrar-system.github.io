@@ -135,13 +135,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <div class="bg-photo" aria-hidden="true"></div>
-<canvas id="bg-canvas"></canvas>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
 
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-brand" aria-label="AZRAR SYSTEMS">
     <img src="logo.png" alt="AZRAR" class="nav-logo-img" width="42" height="42" decoding="async">
-    <span class="nav-wm"><b>AZRAR</b><small>SYSTEMS</small></span>
+    <span class="nav-wm"><b>AZRAR</b> <small>SYSTEMS</small></span>
   </a>
   <div class="nav-links">
     <a href="#features"><span class="ar">المزايا</span><span class="en">Features</span></a>
@@ -195,8 +195,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="hero-badge">v3.15.4 · 6,400+ <span class="ar">اختبار آلي</span><span class="en">automated tests</span> · Production Ready</div>
-
     <h1>
       <span class="ar"><span class="white">نظام عقاري</span><br><span class="hl">احترافي بالكامل</span><br><span class="dm">للسوق العربي</span></span>
       <span class="en"><span class="white">Professional</span><br><span class="hl">Real Estate</span><br><span class="dm">Management System</span></span>
@@ -209,13 +207,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="hero-actions">
       <a href="https://apps.microsoft.com/detail/9NJFB5W8ZCSB" target="_blank" rel="noopener" class="btn-main">
-        <span class="ar">جرّب 30 يوم مجاناً</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="margin-inline-end:.5rem"><path fill="#f25022" d="M2 2h9.5v9.5H2z"/><path fill="#7fba00" d="M12.5 2H22v9.5h-9.5z"/><path fill="#00a4ef" d="M2 12.5h9.5V22H2z"/><path fill="#ffb900" d="M12.5 12.5H22V22h-9.5z"/></svg><span class="ar">جرّب 30 يوم مجاناً</span>
         <span class="en">Try Free for 30 Days</span>
-      </a>
-      <a href="https://apps.microsoft.com/detail/9NJFB5W8ZCSB" target="_blank" rel="noopener" class="btn-ms-store">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#f25022" d="M2 2h9.5v9.5H2z"/><path fill="#7fba00" d="M12.5 2H22v9.5h-9.5z"/><path fill="#00a4ef" d="M2 12.5h9.5V22H2z"/><path fill="#ffb900" d="M12.5 12.5H22V22h-9.5z"/></svg>
-        <span class="ar">متوفر على متجر Microsoft</span>
-        <span class="en">Get it from Microsoft Store</span>
       </a>
       <a href="#modules" class="btn-ghost">
         <span class="ar">اكتشف الأنظمة ↓</span>
@@ -356,10 +349,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sec-label reveal">
       <span class="ar">أسواقنا</span><span class="en">Our Markets</span>
     </div>
-    <h2 class="sec-title reveal">
+    <details class="more-block" id="markets-more"><summary><h2 class="sec-title reveal">
       <span class="ar">مصمم للسوق العربي بالكامل</span>
       <span class="en">Built for the Arab World</span>
-    </h2>
+    </h2></summary>
     <p class="sec-sub reveal">
       <span class="ar">أزرار يدعم عملات وأنظمة إيجار متعددة — من الأردن إلى الخليج وسائر الدول العربية.</span>
       <span class="en">AZRAR supports multiple currencies and rental systems — from Jordan to the Gulf and across Arab markets.</span>
@@ -382,7 +375,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="market-item"><img class="market-flag" src="flags/tn.png" width="46" height="31" alt="Tunisia" loading="lazy"><div class="market-name ar">تونس</div><div class="market-name en">Tunisia</div><div class="market-sub">TND</div></div>
       <div class="market-item"><span class="market-flag-emoji">🌍</span><div class="market-name ar">وأكثر</div><div class="market-name en">&amp; More</div><div class="market-sub ar">دول عربية</div><div class="market-sub en">Arab markets</div></div>
     </div>
-  </div>
+  </details></div>
 </section>
 
 <hr class="divider">
@@ -641,7 +634,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="roi-calculator" class="reveal">
   <div class="container">
     <div class="sec-label"><span class="ar">حاسبة العائد المالي</span><span class="en">ROI Calculator</span></div>
-    <h2 class="sec-title"><span class="ar">كم يوفّر برنامج إدارة العقارات من الوقت والتكلفة؟</span><span class="en">How Much Time and Money Does a Real Estate System Save?</span></h2>
+    <details class="more-block" id="roi-more"><summary><h2 class="sec-title"><span class="ar">كم يوفّر برنامج إدارة العقارات من الوقت والتكلفة؟</span><span class="en">How Much Time and Money Does a Real Estate System Save?</span></h2></summary>
     <p class="sec-sub"><span class="ar">احسب قيمة ما ستوفره مكتبك مع أزرار.</span><span class="en">Estimate what your office would save with AZRAR.</span></p>
     
     <div class="calc-grid">
@@ -693,7 +686,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </div>
-  </div>
+  </details></div>
 </section>
 
 <hr class="divider">
@@ -802,14 +795,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<div class="wa-float">
+<aside class="wa-float" aria-label="تواصل سريع · Quick contact">
   <span class="wa-float-tip"><span class="ar">تواصل معنا</span><span class="en">Contact us</span></span>
   <a href="https://wa.me/962798986465" class="wa-float-btn" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#fff" aria-hidden="true"><path d="M16.04 4C9.96 4 5 8.96 5 15.04c0 2.12.59 4.09 1.62 5.79L5 28l7.36-1.93a11 11 0 0 0 3.68.64h.01c6.08 0 11.04-4.96 11.04-11.04C27.09 8.96 22.12 4 16.04 4zm6.45 15.6c-.27.76-1.58 1.46-2.18 1.5-.56.05-1.27.24-4.27-.94-3.6-1.42-5.9-5.1-6.08-5.34-.18-.24-1.45-1.93-1.45-3.68 0-1.76.92-2.62 1.24-2.97.32-.36.7-.45.94-.45.24 0 .47 0 .68.01.22.01.51-.08.8.61.27.66.93 2.28 1.01 2.45.08.17.13.36.02.59-.11.24-.17.39-.33.6-.16.21-.34.47-.49.63-.16.17-.33.35-.14.68.18.33.82 1.35 1.77 2.18 1.21 1.08 2.23 1.42 2.55 1.58.33.16.52.13.71-.08.19-.21.82-.95 1.04-1.28.21-.33.43-.28.71-.17.29.11 1.85.87 2.17 1.03.32.16.53.24.61.37.08.13.08.76-.19 1.51z"/></svg></a>
-</div>
+</aside>
 
 <!-- AI Chatbot Widget -->
 <div class="chat-widget" id="chat-widget">
-  <button class="chat-trigger" id="chat-trigger" aria-label="Open Chat Assistant" title="مساعد أزرار الذكي">
+  <button class="chat-trigger" id="chat-trigger" aria-label="Open Chat Assistant — 1 new message" title="مساعد أزرار الذكي">
     <span class="chat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H9l-4 4v-4H4z"/><path d="M12 8.2l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z" fill="currentColor" stroke="none"/></svg></span>
     <span class="chat-badge">1</span>
   </button>
@@ -1098,6 +1091,9 @@ window.addEventListener('load', () => {
 
 
 
+</script>
+<script>
+(function(){function o(){var h=location.hash.slice(1);if(!h)return;var e=document.getElementById(h);var d=e&&(e.matches('details')?e:e.querySelector('details.more-block'));if(d)d.open=true;}addEventListener('hashchange',o);o();})();
 </script>
 <script id="azrar-ga-events">
 // GA4 conversion tracking: fire named events on WhatsApp / trial / contact clicks
