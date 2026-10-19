@@ -47,7 +47,7 @@
 }
 
 /* ── WhatsApp CTA: white on #25d366 was 1.98:1 → dark label 8.7:1 · تباين زر واتساب ── */
-:where(.cta, .guide-cta) a { color: #06210f; }
+.cta a, .guide-cta a { color: #06210f; }
 
 /* ── Reduced motion · تقليل الحركة ── */
 @media (prefers-reduced-motion: reduce) {
