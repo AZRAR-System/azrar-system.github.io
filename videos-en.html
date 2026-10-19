@@ -191,7 +191,7 @@ footer a{color:var(--gold-l);text-decoration:none;}
 .sf-social{display:flex;gap:.5rem;}
 .sf-social a{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#cdd9ec;text-decoration:none;transition:.2s;}
 .sf-social a:hover{background:var(--gold,#b98a3d);color:#1a1205;border-color:transparent;}
-.sf-col h4{color:#fff;font-size:.9rem;margin-bottom:.85rem;font-weight:800;}
+.sf-col h3{color:#fff;font-size:.9rem;margin-bottom:.85rem;font-weight:800;}
 .sf-col a{display:block;color:#9fb0cc;text-decoration:none;padding:.26rem 0;font-size:.85rem;transition:.15s;}
 .sf-col a:hover{color:var(--gold-l,#dcb15f);}
 .sf-bottom{max-width:1080px;margin:2rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;color:var(--ink);font-size:.78rem;}
@@ -248,12 +248,13 @@ src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="bg-photo" aria-hidden="true"></div>
-<canvas id="bg-canvas"></canvas>
-<div class="topbar">
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<header class="topbar">
   <a href="index.html" class="brand"><img src="logo.png" alt="AZRAR" class="az-mark" decoding="async"><span class="az-txt"><b>AZRAR</b><small>SYSTEMS</small></span></a>
   <div class="tb-right"><a href="videos.html" class="lang-link">العربية</a><a href="index.html?lang=en" class="home-link">Home →</a></div>
-</div>
-<nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html?lang=en">Home</a><span class="sep">›</span><span class="current">Videos</span></nav>
+</header>
+<nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html?lang=en">Home</a><span class="sep">›</span><span class="current" aria-current="page">Videos</span></nav>
+<main id="main-content">
 <section class="phero"><span class="eyebrow">VIDEOS</span><h1>Video Tutorials</h1><p>A visual series to master the system — the written guide is available now.</p></section>
 <div id="main-content" class="wrap">
   <style>
@@ -289,7 +290,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <article id="main-video-section" class="card" style="margin-bottom: 2rem; overflow: hidden; padding: 0; scroll-margin-top: 100px;">
     <div style="background: var(--navy3); padding: 1.5rem 1.5rem 1.2rem; color: #fff; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.08);">
-      <h3 id="main-video-title" style="font-weight: 900; margin-bottom: 0.5rem; font-size: 1.25rem;">System Quick Tour (Video Walkthrough)</h3>
+      <h2 id="main-video-title" style="font-weight: 900; margin-bottom: 0.5rem; font-size: 1.25rem;">System Quick Tour (Video Walkthrough)</h2>
       <p id="main-video-desc" style="color: #c4d2ea; font-size: 0.88rem;">Watch the real system interface, navigation, and smart financial dashboards.</p>
     </div>
     <div style="position: relative; padding-bottom: 56.25%; height: 0; background: #080c1a;">
@@ -386,6 +387,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="cta"><h2>Try AZRAR Free</h2><p>30 days, all features — no credit card.</p>
   <a href="https://wa.me/962798986465?text=I%20want%20to%20try%20AZRAR%20free" target="_blank" rel="noopener">Contact via WhatsApp</a></div>
 </div>
+</main>
 <footer class="site-footer">
   <div class="sf-inner">
     <div class="sf-brand">
@@ -398,14 +400,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="sf-col">
-      <h4>Product</h4>
+      <h3>Product</h3>
       <a href="index?lang=en#features">Features</a>
       <a href="index?lang=en#pricing">Pricing</a>
       <a href="index?lang=en#modules">Modules</a>
       <a href="screenshots-en.html">Screenshots</a>
     </div>
     <div class="sf-col">
-      <h4>Resources</h4>
+      <h3>Resources</h3>
       <a href="about-en.html">About Us</a>
       <a href="guide-en.html">Guide</a>
       <a href="faq-en.html">FAQ</a>
@@ -414,7 +416,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="videos-en.html">Videos</a>
     </div>
     <div class="sf-col">
-      <h4>Legal</h4>
+      <h3>Legal</h3>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="intellectual-property.html">Intellectual Property</a>

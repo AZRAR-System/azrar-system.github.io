@@ -111,7 +111,7 @@ footer a{color:var(--gold-l);text-decoration:none;}
 .sf-social{display:flex;gap:.5rem;}
 .sf-social a{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:#cdd9ec;text-decoration:none;transition:.2s;}
 .sf-social a:hover{background:var(--gold,#b98a3d);color:#1a1205;border-color:transparent;}
-.sf-col h4{color:#fff;font-size:.9rem;margin-bottom:.85rem;font-weight:800;}
+.sf-col h3{color:#fff;font-size:.9rem;margin-bottom:.85rem;font-weight:800;}
 .sf-col a{display:block;color:#9fb0cc;text-decoration:none;padding:.26rem 0;font-size:.85rem;transition:.15s;}
 .sf-col a:hover{color:var(--gold-l,#dcb15f);}
 .sf-bottom{max-width:1080px;margin:2rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;color:var(--ink);font-size:.78rem;}
@@ -170,12 +170,13 @@ src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="bg-photo" aria-hidden="true"></div>
-<canvas id="bg-canvas"></canvas>
-<div class="topbar">
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<header class="topbar">
   <a href="index.html" class="brand"><img src="logo.png" alt="AZRAR" class="az-mark" decoding="async"><span class="az-txt"><b>AZRAR</b><small>SYSTEMS</small></span></a>
   <span style="display:flex;gap:.5rem;align-items:center;"><a href="faq-en.html" class="lang-link-en" style="border:1px solid var(--border);background:#eef2f9;color:#475569;padding:.45rem .9rem;border-radius:8px;font-size:.8rem;font-weight:800;text-decoration:none;">English</a><a href="index.html" class="home-link">→ الرئيسية</a></span>
-</div>
-<nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html">الرئيسية</a><span class="sep">›</span><span class="current">الأسئلة الشائعة</span></nav>
+</header>
+<nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html">الرئيسية</a><span class="sep">›</span><span class="current" aria-current="page">الأسئلة الشائعة</span></nav>
+<main id="main-content">
 <section class="phero">
   <span class="eyebrow">الأسئلة الشائعة</span>
   <h1>الأسئلة الشائعة</h1>
@@ -183,32 +184,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 <div id="main-content" class="wrap">
 <article class="card">
-  <h3 class="faq-q">هل يعمل نظام أزرار بدون إنترنت؟</h3>
-  <p>نعم، يعمل بشكل كامل offline. البيانات تُخزَّن محلياً على جهازك باستخدام SQLite — لا سيرفر خارجي ولا حاجة لاتصال دائم.</p>
-  <h3 class="faq-q">ما أنظمة التشغيل المدعومة؟</h3>
-  <p>Windows 10 و Windows 11 (بنسخة 64-bit). لا يدعم macOS أو Linux حالياً.</p>
-  <h3 class="faq-q">كم مدة التجربة المجانية؟</h3>
-  <p>30 يوماً كاملة بكل المزايا والأنظمة الـ 17، دون بطاقة ائتمان.</p>
-  <h3 class="faq-q">كم جهازاً يدعم الترخيص؟</h3>
-  <p>Solo: جهاز واحد، Office: جهازان، Pro: 3 أجهزة. وتتوفّر باقة Enterprise لأجهزة غير محدودة.</p>
-  <h3 class="faq-q">كيف يحمي النظام بياناتي؟</h3>
-  <p>توقيع رقمي Ed25519 مربوط ببصمة جهازك، فحص سلامة الملفات SHA-256 عند كل إقلاع، وصلاحيات RBAC بأربعة مستويات.</p>
-  <h3 class="faq-q">هل أستطيع نقل الترخيص لجهاز آخر؟</h3>
-  <p>نعم، عبر التواصل مع الدعم وتقديم إيصال تعطيل الجهاز القديم — لضمان عدم تجاوز عدد الأجهزة المرخّصة.</p>
-  <h3 class="faq-q">كيف تتم التحديثات؟</h3>
-  <p>التحديثات مجانية طوال سنة الترخيص، وتحافظ على بياناتك بالكامل عند التحديث.</p>
-  <h3 class="faq-q">هل يدعم أكثر من عملة؟</h3>
-  <p>نعم، يدعم عملات متعددة (دينار، ريال، درهم...) ليناسب الأردن والخليج وبقية الدول العربية.</p>
-  <h3 class="faq-q">هل يحسب الأقساط والغرامات تلقائياً؟</h3>
-  <p>نعم، بفرقية الأيام الفعلية (28/29/30/31)، مع دعم الدفعات الجزئية وثلاثة أنواع للغرامات.</p>
-  <h3 class="faq-q">هل يمكن إرسال رسائل واتساب للمستأجرين؟</h3>
-  <p>نعم، عبر ميزة واتساب الجماعي المدمجة — رسائل مخصّصة لكل عميل دفعة واحدة مع قوالب جاهزة.</p>
-  <h3 class="faq-q">ماذا يحدث لبياناتي إذا تعطّل الجهاز؟</h3>
-  <p>إن كان لديك نسخة احتياطية (والنظام يوفّر أداة نسخ مدمجة) فالاسترجاع فوري على أي جهاز.</p>
-  <h3 class="faq-q">كيف أحصل على الدعم؟</h3>
-  <p>عبر واتساب أو البريد support@azrar-systems.com — ودعم بأولوية لباقتي Office و Pro.</p>
-  <h3 class="faq-q">هل الأسعار شاملة أم شهرية؟</h3>
-  <p>الأسعار سنوية (دفعة واحدة) وتشمل التحديثات والدعم — لا رسوم شهرية مخفية.</p>
+  <details class="faq-d"><summary><h2 class="faq-q">هل يعمل نظام أزرار بدون إنترنت؟</h2></summary><p>نعم، يعمل بشكل كامل offline. البيانات تُخزَّن محلياً على جهازك باستخدام SQLite — لا سيرفر خارجي ولا حاجة لاتصال دائم.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">ما أنظمة التشغيل المدعومة؟</h2></summary><p>Windows 10 و Windows 11 (بنسخة 64-bit). لا يدعم macOS أو Linux حالياً.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">كم مدة التجربة المجانية؟</h2></summary><p>30 يوماً كاملة بكل المزايا والأنظمة الـ 17، دون بطاقة ائتمان.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">كم جهازاً يدعم الترخيص؟</h2></summary><p>Solo: جهاز واحد، Office: جهازان، Pro: 3 أجهزة. وتتوفّر باقة Enterprise لأجهزة غير محدودة.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">كيف يحمي النظام بياناتي؟</h2></summary><p>توقيع رقمي Ed25519 مربوط ببصمة جهازك، فحص سلامة الملفات SHA-256 عند كل إقلاع، وصلاحيات RBAC بأربعة مستويات.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">هل أستطيع نقل الترخيص لجهاز آخر؟</h2></summary><p>نعم، عبر التواصل مع الدعم وتقديم إيصال تعطيل الجهاز القديم — لضمان عدم تجاوز عدد الأجهزة المرخّصة.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">كيف تتم التحديثات؟</h2></summary><p>التحديثات مجانية طوال سنة الترخيص، وتحافظ على بياناتك بالكامل عند التحديث.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">هل يدعم أكثر من عملة؟</h2></summary><p>نعم، يدعم عملات متعددة (دينار، ريال، درهم...) ليناسب الأردن والخليج وبقية الدول العربية.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">هل يحسب الأقساط والغرامات تلقائياً؟</h2></summary><p>نعم، بفرقية الأيام الفعلية (28/29/30/31)، مع دعم الدفعات الجزئية وثلاثة أنواع للغرامات.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">هل يمكن إرسال رسائل واتساب للمستأجرين؟</h2></summary><p>نعم، عبر ميزة واتساب الجماعي المدمجة — رسائل مخصّصة لكل عميل دفعة واحدة مع قوالب جاهزة.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">ماذا يحدث لبياناتي إذا تعطّل الجهاز؟</h2></summary><p>إن كان لديك نسخة احتياطية (والنظام يوفّر أداة نسخ مدمجة) فالاسترجاع فوري على أي جهاز.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">كيف أحصل على الدعم؟</h2></summary><p>عبر واتساب أو البريد support@azrar-systems.com — ودعم بأولوية لباقتي Office و Pro.</p></details>
+  <details class="faq-d"><summary><h2 class="faq-q">هل الأسعار شاملة أم شهرية؟</h2></summary><p>الأسعار سنوية (دفعة واحدة) وتشمل التحديثات والدعم — لا رسوم شهرية مخفية.</p></details>
   <div class="note">لم تجد سؤالك؟ تواصل معنا عبر <a href="https://wa.me/962798986465">واتساب</a> أو <a href="mailto:info@azrar-systems.com">info@azrar-systems.com</a>.</div>
 </article>
   <div class="cta">
@@ -217,6 +205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="https://wa.me/962798986465?text=أريد%20تجربة%20نظام%20أزرار%20مجاناً" target="_blank" rel="noopener">تواصل عبر واتساب</a>
   </div>
 </div>
+</main>
 <footer class="site-footer">
   <div class="sf-inner">
     <div class="sf-brand">
@@ -229,14 +218,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="sf-col">
-      <h4>المنتج</h4>
+      <h3>المنتج</h3>
       <a href="index#features">المزايا</a>
       <a href="index#pricing">الأسعار</a>
       <a href="index#modules">الأنظمة</a>
       <a href="screenshots.html">لقطات النظام</a>
     </div>
     <div class="sf-col">
-      <h4>موارد</h4>
+      <h3>موارد</h3>
       <a href="about.html">من نحن</a>
       <a href="guide.html">الدليل</a>
       <a href="faq.html">الأسئلة الشائعة</a>
@@ -245,7 +234,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="videos.html">الفيديوهات</a>
     </div>
     <div class="sf-col">
-      <h4>قانوني</h4>
+      <h3>قانوني</h3>
       <a href="privacy.html">الخصوصية</a>
       <a href="terms.html">الشروط</a>
       <a href="intellectual-property.html">الحماية الفكرية</a>
