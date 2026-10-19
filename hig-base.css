@@ -198,7 +198,9 @@
 .breadcrumb a { display: inline-flex; align-items: center; min-block-size: 44px; }
 
 /* ── Gallery / lightbox ── */
-:where(figure.shot, .vid)[data-kbd] { cursor: pointer; }
+.vid[data-kbd] { cursor: pointer; }
+.shot-open { display: flex; flex-direction: column; flex: 1 1 auto; min-block-size: 0; inline-size: 100%; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: inherit; cursor: pointer; border-radius: inherit; }
+figure.shot { cursor: pointer; }
 .lightbox-x[data-kbd] { display: inline-flex; align-items: center; justify-content: center; min-inline-size: 44px; min-block-size: 44px; }
 /* RTL: "previous" sits on the right and arrows point with the reading direction */
 html[dir="rtl"] .lightbox-prev { left: auto; right: 1rem; }
