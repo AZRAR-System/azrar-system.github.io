@@ -1,4 +1,4 @@
-const CACHE_NAME = 'azrar-cache-v1.16';
+const CACHE_NAME = 'azrar-cache-v1.17';
 const ASSETS = [
   './',
   './index.html',
@@ -39,16 +39,16 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys => {
-      return Promise.all(
-        keys.map(key => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
-      );
+      // An older cache means this is an UPDATE (not a first visit).
+      const isUpdate = keys.some(key => key !== CACHE_NAME);
+      return Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
+        .then(() => self.clients.claim())
+        .then(() => (isUpdate ? self.clients.matchAll({ type: 'window' }) : []))
+        // The page that triggered the update was served by the old worker; reload it once
+        // so a returning visitor sees the new deploy now instead of on the visit after.
+        .then(clients => clients.forEach(client => client.navigate(client.url)));
     })
   );
-  self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {
