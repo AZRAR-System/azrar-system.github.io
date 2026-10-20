@@ -325,4 +325,58 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://azrar-systems.com/alternative-excel.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/alternative-excel.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/alternative-excel-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/alternative-excel.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/alternative-excel-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/alternative-excel.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/alternative-excel-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/alternative-excel.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/real-estate-software-jordan.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/real-estate-software-jordan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/real-estate-software-jordan-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/real-estate-software-jordan.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/real-estate-software-jordan-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/real-estate-software-jordan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/real-estate-software-jordan-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/real-estate-software-jordan.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/real-estate-software-gulf.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/real-estate-software-gulf.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/real-estate-software-gulf-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/real-estate-software-gulf.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/real-estate-software-gulf-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/real-estate-software-gulf.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/real-estate-software-gulf-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/real-estate-software-gulf.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
