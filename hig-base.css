@@ -264,3 +264,15 @@ html:not([data-theme="dark"]) .lang-btn { min-block-size: 44px; min-inline-size:
     border-color: rgba(0, 0, 0, .2);
   }
 }
+
+/* ── Late-fee calculator (article) · حاسبة غرامة التأخير ── */
+.calc { margin: 1.25rem 0 1.5rem; padding: 1.1rem 1.25rem; border: 1px solid var(--border); border-radius: 14px; background: rgba(127, 127, 127, .06); }
+.calc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .9rem 1rem; }
+.calc label { display: flex; flex-direction: column; gap: .35rem; font-size: .9rem; font-weight: 700; color: var(--head); }
+.calc :is(input, select) {
+  min-block-size: 44px; padding: .5rem .75rem; border-radius: 10px; border: 1px solid var(--border);
+  background: var(--card); color: var(--head); font: inherit; font-weight: 600; inline-size: 100%;
+}
+.calc-out { display: flex; flex-wrap: wrap; gap: .75rem 2rem; margin-top: 1rem; padding-top: .9rem; border-top: 1px solid var(--border2); font-size: 1rem; color: var(--ink); }
+.calc-out b { font-size: 1.25rem; color: var(--head); }
+.calc-note { margin: .75rem 0 0; font-size: .85rem; color: var(--muted); }
