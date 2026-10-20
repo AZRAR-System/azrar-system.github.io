@@ -276,3 +276,7 @@ html:not([data-theme="dark"]) .lang-btn { min-block-size: 44px; min-inline-size:
 .calc-out { display: flex; flex-wrap: wrap; gap: .75rem 2rem; margin-top: 1rem; padding-top: .9rem; border-top: 1px solid var(--border2); font-size: 1rem; color: var(--ink); }
 .calc-out b { font-size: 1.25rem; color: var(--head); }
 .calc-note { margin: .75rem 0 0; font-size: .85rem; color: var(--muted); }
+
+/* Language-paired links (<a class="ar"> + <a class="en">) in the bilingual-in-one-document pages.
+   `.sf-col a { display:block }` outranked the generic .en rule on the legal pages. */
+html[data-lang="ar"] a.en, html[data-lang="en"] a.ar { display: none !important; }
