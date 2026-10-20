@@ -1,4 +1,4 @@
-const CACHE_NAME = 'azrar-cache-v1.17';
+const CACHE_NAME = 'azrar-cache-v1.18';
 const ASSETS = [
   './',
   './index.html',
@@ -61,11 +61,13 @@ self.addEventListener('fetch', event => {
   if (url.origin !== self.location.origin) return;
 
   const isHtml = req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html');
+  // Code that must match the page it ships with (CSS/JS) is treated like the page itself.
+  const isCode = /\.(?:css|js)$/.test(url.pathname);
 
-  // Pages: network first, so a deploy shows up on the next load. 'no-cache' makes the browser
+  // Pages and code: network first, so a deploy shows up on the next load. 'no-cache' makes the browser
   // revalidate with the server instead of reusing GitHub Pages' max-age=600 copy.
   // Cache is only the offline fallback.
-  if (isHtml) {
+  if (isHtml || isCode) {
     event.respondWith(
       fetch(req, { cache: 'no-cache' }).then(res => {
         if (res.status === 200) {
@@ -75,14 +77,14 @@ self.addEventListener('fetch', event => {
         return res;
       }).catch(() =>
         caches.match(req, { ignoreSearch: true })
-          .then(hit => hit || caches.match('./index.html'))
-          .then(hit => hit || caches.match('./'))
+          .then(hit => hit || (isHtml ? caches.match('./index.html') : undefined))
+          .then(hit => hit || (isHtml ? caches.match('./') : undefined))
       )
     );
     return;
   }
 
-  // Assets: cache first, refreshed in the background (also revalidating past the HTTP cache).
+  // Other assets (images, fonts, media): cache first, refreshed in the background.
   event.respondWith(
     caches.match(req).then(cached => {
       const refresh = fetch(req, { cache: 'no-cache' }).then(res => {
@@ -93,7 +95,8 @@ self.addEventListener('fetch', event => {
         return res;
       });
       if (cached) {
-        refresh.catch(() => {});
+        // keep the worker alive until the background refresh is stored, or the browser may drop it
+        event.waitUntil(refresh.catch(() => {}));
         return cached;
       }
       return refresh;
