@@ -13,6 +13,8 @@ AZRAR is the most comprehensive real estate management system for offices in Jor
 - [FAQ (English)](https://azrar-systems.com/faq-en.html): Frequently asked questions about licensing, installation, updates, and database safety (English).
 - [Blog](https://azrar-systems.com/articles.html): Practical articles on lease management, late fees, and choosing real estate software (Arabic).
 - [Blog (English)](https://azrar-systems.com/articles-en.html): Same articles in English.
+- [Tenant & lease account statement](https://azrar-systems.com/tenant-statement-en.html): What a statement should include and how AZRAR issues it per contract or per month (Arabic: https://azrar-systems.com/tenant-statement.html).
+- [Payment receipts & vouchers](https://azrar-systems.com/payment-receipts-vouchers-en.html): Receipts, receipt/payment vouchers and owner payouts, and what AZRAR supports (Arabic: https://azrar-systems.com/payment-receipts-vouchers.html).
 - [Excel alternative for property management](https://azrar-systems.com/alternative-excel-en.html): When a spreadsheet stops being enough for leases and installments, and how to migrate (Arabic: https://azrar-systems.com/alternative-excel.html).
 - [Real estate software in Jordan](https://azrar-systems.com/real-estate-software-jordan-en.html): What AZRAR offers Jordanian offices, with honest limits (Arabic: https://azrar-systems.com/real-estate-software-jordan.html).
 - [Real estate software for Saudi Arabia & the Gulf](https://azrar-systems.com/real-estate-software-gulf-en.html): Gulf currencies, bilingual interface, VAT, and what it does not integrate with (Arabic: https://azrar-systems.com/real-estate-software-gulf.html).

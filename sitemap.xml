@@ -379,4 +379,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://azrar-systems.com/tenant-statement.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/tenant-statement.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/tenant-statement-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/tenant-statement.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/tenant-statement-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/tenant-statement.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/tenant-statement-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/tenant-statement.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/payment-receipts-vouchers.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/payment-receipts-vouchers.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/payment-receipts-vouchers-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/payment-receipts-vouchers.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://azrar-systems.com/payment-receipts-vouchers-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://azrar-systems.com/payment-receipts-vouchers.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://azrar-systems.com/payment-receipts-vouchers-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/payment-receipts-vouchers.html"/>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
