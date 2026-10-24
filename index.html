@@ -319,7 +319,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="sec-title reveal"><span class="ar">تعرّف على أزرار في 48 ثانية</span><span class="en">Meet AZRAR in 48 Seconds</span></h2>
     <p class="sec-sub reveal" style="max-width:640px;margin-inline:auto;">
       <span class="ar">عقودك وأقساطك ومحاسبتك وتقاريرك في مكان واحد، وبياناتك على جهازك.</span>
-      <span class="en">Contracts, installments, accounting and reports in one place, with your data on your own device. (Arabic on-screen text.)</span>
+      <span class="en">Contracts, installments, accounting and reports in one place, with your data on your own device.</span>
     </p>
     <div class="video-container reveal" style="position: relative; max-width: 960px; margin: 2rem auto 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.4); background: #000; aspect-ratio: 16/9;">
       <video id="promo-video-el" poster="videos/azrar-promo-poster.webp" preload="none" playsinline controlslist="nodownload" aria-label="فيديو تعريفي بنظام أزرار" style="width: 100%; height: 100%; display: block; object-fit: cover;"></video>
@@ -918,6 +918,7 @@ function setLang(lang) {
   try { localStorage.setItem('azrar_lang', lang); } catch(e) {};
   if (typeof calculateROI === 'function') calculateROI();
   if (typeof resetChatLanguage === 'function') resetChatLanguage();
+  if (typeof syncPromoVideo === 'function') syncPromoVideo();
 }
 // Restore saved language
 try { const saved = localStorage.getItem('azrar_lang'); if (saved) setLang(saved); } catch(e) {}
@@ -1084,12 +1085,37 @@ function playHeroVideo() {
 }
 
 // Promo video: loads only after the visitor taps play (no bandwidth until then).
+// One video per page language; switching language resets the player to its poster.
+const PROMO_VIDEOS = {
+  ar: {src: "videos/azrar-promo.mp4", poster: "videos/azrar-promo-poster.webp", label: "فيديو تعريفي بنظام أزرار", play: "تشغيل الفيديو التعريفي"},
+  en: {src: "videos/azrar-promo-en.mp4", poster: "videos/azrar-promo-en-poster.webp", label: "AZRAR intro video", play: "Play the intro video"}
+};
+function promoLang() {
+  return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'ar';
+}
+function syncPromoVideo() {
+  const video = document.getElementById('promo-video-el');
+  const overlay = document.getElementById('promo-play-overlay');
+  if (!video) return;
+  const cfg = PROMO_VIDEOS[promoLang()];
+  video.poster = cfg.poster;
+  video.setAttribute('aria-label', cfg.label);
+  if (overlay) overlay.setAttribute('aria-label', cfg.play);
+  if (video.getAttribute('src') && video.getAttribute('src') !== cfg.src) {
+    video.pause();
+    video.removeAttribute('src');
+    video.controls = false;
+    video.load();
+    if (overlay) overlay.style.display = 'flex';
+  }
+}
 function playPromoVideo() {
   const video = document.getElementById('promo-video-el');
   const overlay = document.getElementById('promo-play-overlay');
   if (!video) return;
-  if (!video.src) {
-    video.src = "videos/azrar-promo.mp4";
+  const cfg = PROMO_VIDEOS[promoLang()];
+  if (video.getAttribute('src') !== cfg.src) {
+    video.src = cfg.src;
     video.preload = "auto";
     video.load();
   }
