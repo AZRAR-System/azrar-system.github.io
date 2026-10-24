@@ -312,6 +312,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <hr class="divider">
 
+<!-- PROMO VIDEO -->
+<section id="promo-video">
+  <div class="container">
+    <div class="sec-label reveal"><span class="ar">فيديو تعريفي</span><span class="en">Intro Video</span></div>
+    <h2 class="sec-title reveal"><span class="ar">تعرّف على أزرار في 48 ثانية</span><span class="en">Meet AZRAR in 48 Seconds</span></h2>
+    <p class="sec-sub reveal" style="max-width:640px;margin-inline:auto;">
+      <span class="ar">عقودك وأقساطك ومحاسبتك وتقاريرك في مكان واحد، وبياناتك على جهازك.</span>
+      <span class="en">Contracts, installments, accounting and reports in one place, with your data on your own device. (Arabic on-screen text.)</span>
+    </p>
+    <div class="video-container reveal" style="position: relative; max-width: 960px; margin: 2rem auto 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.4); background: #000; aspect-ratio: 16/9;">
+      <video id="promo-video-el" poster="videos/azrar-promo-poster.webp" preload="none" playsinline controlslist="nodownload" aria-label="فيديو تعريفي بنظام أزرار" style="width: 100%; height: 100%; display: block; object-fit: cover;"></video>
+      <button id="promo-play-overlay" onclick="playPromoVideo()" aria-label="تشغيل الفيديو التعريفي" title="تشغيل الفيديو" style="position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); border: none; cursor: pointer; z-index: 6; padding: 0;">
+        <span style="width: 72px; height: 72px; border-radius: 50%; background: rgba(7,5,24,0.72); border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.7rem; color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">▶</span>
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section id="how">
   <div class="container">
@@ -1061,6 +1079,22 @@ function playHeroVideo() {
     if (overlay) overlay.style.display = 'none';
     if (controls) controls.style.display = 'flex';
   }).catch(e => console.log("Hero video play failed:", e));
+}
+
+// Promo video: loads only after the visitor taps play (no bandwidth until then).
+function playPromoVideo() {
+  const video = document.getElementById('promo-video-el');
+  const overlay = document.getElementById('promo-play-overlay');
+  if (!video) return;
+  if (!video.src) {
+    video.src = "videos/azrar-promo.mp4";
+    video.preload = "auto";
+    video.load();
+  }
+  video.play().then(() => {
+    video.controls = true;
+    if (overlay) overlay.style.display = 'none';
+  }).catch(e => console.log("Promo video play failed:", e));
 }
 
 function initHeroVideo() {
