@@ -918,6 +918,7 @@ function setLang(lang) {
   try { localStorage.setItem('azrar_lang', lang); } catch(e) {};
   if (typeof calculateROI === 'function') calculateROI();
   if (typeof resetChatLanguage === 'function') resetChatLanguage();
+  if (typeof syncPromoVideo === 'function') syncPromoVideo();
 }
 // Restore saved language
 try { const saved = localStorage.getItem('azrar_lang'); if (saved) setLang(saved); } catch(e) {}
@@ -1084,12 +1085,37 @@ function playHeroVideo() {
 }
 
 // Promo video: loads only after the visitor taps play (no bandwidth until then).
+// One video per page language; switching language resets the player to its poster.
+const PROMO_VIDEOS = {
+  ar: {src: "videos/azrar-promo.mp4", poster: "videos/azrar-promo-poster.webp", label: "فيديو تعريفي بنظام أزرار", play: "تشغيل الفيديو التعريفي"},
+  en: {src: "videos/azrar-promo-en.mp4", poster: "videos/azrar-promo-en-poster.webp", label: "AZRAR intro video", play: "Play the intro video"}
+};
+function promoLang() {
+  return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'ar';
+}
+function syncPromoVideo() {
+  const video = document.getElementById('promo-video-el');
+  const overlay = document.getElementById('promo-play-overlay');
+  if (!video) return;
+  const cfg = PROMO_VIDEOS[promoLang()];
+  video.poster = cfg.poster;
+  video.setAttribute('aria-label', cfg.label);
+  if (overlay) overlay.setAttribute('aria-label', cfg.play);
+  if (video.getAttribute('src') && video.getAttribute('src') !== cfg.src) {
+    video.pause();
+    video.removeAttribute('src');
+    video.controls = false;
+    video.load();
+    if (overlay) overlay.style.display = 'flex';
+  }
+}
 function playPromoVideo() {
   const video = document.getElementById('promo-video-el');
   const overlay = document.getElementById('promo-play-overlay');
   if (!video) return;
-  if (!video.src) {
-    video.src = "videos/azrar-promo.mp4";
+  const cfg = PROMO_VIDEOS[promoLang()];
+  if (video.getAttribute('src') !== cfg.src) {
+    video.src = cfg.src;
     video.preload = "auto";
     video.load();
   }
