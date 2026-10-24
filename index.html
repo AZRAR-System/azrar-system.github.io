@@ -321,7 +321,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="ar">عقودك وأقساطك ومحاسبتك وتقاريرك في مكان واحد، وبياناتك على جهازك.</span>
       <span class="en">Contracts, installments, accounting and reports in one place, with your data on your own device.</span>
     </p>
-    <div class="video-container reveal" style="position: relative; max-width: 960px; margin: 2rem auto 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.4); background: #000; aspect-ratio: 16/9;">
+    <div id="promo-video-frame" class="video-container reveal" style="position: relative; max-width: 960px; margin: 2rem auto 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.4); background: #000; aspect-ratio: 16/9;">
       <video id="promo-video-el" poster="videos/azrar-promo-poster.webp" preload="none" playsinline controlslist="nodownload" aria-label="فيديو تعريفي بنظام أزرار" style="width: 100%; height: 100%; display: block; object-fit: cover;"></video>
       <button id="promo-play-overlay" onclick="playPromoVideo()" aria-label="تشغيل الفيديو التعريفي" title="تشغيل الفيديو" style="position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); border: none; cursor: pointer; z-index: 6; padding: 0;">
         <span style="width: 72px; height: 72px; border-radius: 50%; background: rgba(7,5,24,0.72); border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.7rem; color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">▶</span>
@@ -1087,21 +1087,41 @@ function playHeroVideo() {
 // Promo video: loads only after the visitor taps play (no bandwidth until then).
 // One video per page language; switching language resets the player to its poster.
 const PROMO_VIDEOS = {
-  ar: {src: "videos/azrar-promo.mp4", poster: "videos/azrar-promo-poster.webp", label: "فيديو تعريفي بنظام أزرار", play: "تشغيل الفيديو التعريفي"},
-  en: {src: "videos/azrar-promo-en.mp4", poster: "videos/azrar-promo-en-poster.webp", label: "AZRAR intro video", play: "Play the intro video"}
+  ar: {
+    wide: {src: "videos/azrar-promo.mp4", poster: "videos/azrar-promo-poster.webp"},
+    tall: {src: "videos/azrar-promo-vertical.mp4", poster: "videos/azrar-promo-vertical-poster.webp"},
+    label: "فيديو تعريفي بنظام أزرار", play: "تشغيل الفيديو التعريفي"
+  },
+  en: {
+    wide: {src: "videos/azrar-promo-en.mp4", poster: "videos/azrar-promo-en-poster.webp"},
+    tall: {src: "videos/azrar-promo-en-vertical.mp4", poster: "videos/azrar-promo-en-vertical-poster.webp"},
+    label: "AZRAR intro video", play: "Play the intro video"
+  }
 };
+const PROMO_MOBILE_QUERY = window.matchMedia ? window.matchMedia('(max-width: 640px)') : null;
 function promoLang() {
   return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'ar';
+}
+// Phones in portrait get the vertical (9:16) cut; everything wider gets the 16:9 cut.
+function promoSource() {
+  const cfg = PROMO_VIDEOS[promoLang()];
+  const tall = !!(PROMO_MOBILE_QUERY && PROMO_MOBILE_QUERY.matches);
+  return {cfg: cfg, tall: tall, media: tall ? cfg.tall : cfg.wide};
 }
 function syncPromoVideo() {
   const video = document.getElementById('promo-video-el');
   const overlay = document.getElementById('promo-play-overlay');
+  const frame = document.getElementById('promo-video-frame');
   if (!video) return;
-  const cfg = PROMO_VIDEOS[promoLang()];
-  video.poster = cfg.poster;
-  video.setAttribute('aria-label', cfg.label);
-  if (overlay) overlay.setAttribute('aria-label', cfg.play);
-  if (video.getAttribute('src') && video.getAttribute('src') !== cfg.src) {
+  const pick = promoSource();
+  video.poster = pick.media.poster;
+  video.setAttribute('aria-label', pick.cfg.label);
+  if (overlay) overlay.setAttribute('aria-label', pick.cfg.play);
+  if (frame) {
+    frame.style.aspectRatio = pick.tall ? '9 / 16' : '16 / 9';
+    frame.style.maxWidth = pick.tall ? '420px' : '960px';
+  }
+  if (video.getAttribute('src') && video.getAttribute('src') !== pick.media.src) {
     video.pause();
     video.removeAttribute('src');
     video.controls = false;
@@ -1109,13 +1129,17 @@ function syncPromoVideo() {
     if (overlay) overlay.style.display = 'flex';
   }
 }
+if (PROMO_MOBILE_QUERY && PROMO_MOBILE_QUERY.addEventListener) {
+  PROMO_MOBILE_QUERY.addEventListener('change', syncPromoVideo);
+}
+syncPromoVideo();
 function playPromoVideo() {
   const video = document.getElementById('promo-video-el');
   const overlay = document.getElementById('promo-play-overlay');
   if (!video) return;
-  const cfg = PROMO_VIDEOS[promoLang()];
-  if (video.getAttribute('src') !== cfg.src) {
-    video.src = cfg.src;
+  const pick = promoSource();
+  if (video.getAttribute('src') !== pick.media.src) {
+    video.src = pick.media.src;
     video.preload = "auto";
     video.load();
   }
