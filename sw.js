@@ -1,7 +1,10 @@
-const CACHE_NAME = 'azrar-cache-v1.19';
+const CACHE_NAME = 'azrar-cache-v1.20-lessons';
 const ASSETS = [
   './',
   './index.html',
+  './videos.html',
+  './learn.css',
+  './learn.js',
   './style.css',
   './shared-dark.css',
   './hig-base.css',
@@ -59,6 +62,9 @@ self.addEventListener('fetch', event => {
   // Bypass third-party domains (Analytics, Facebook API, Fonts)
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+
+  // Let the browser and server handle video range requests; avoid caching large media.
+  if (req.headers.has('range') || /\.(?:mp4|webm|srt)$/i.test(url.pathname)) return;
 
   const isHtml = req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html');
   // Code that must match the page it ships with (CSS/JS) is treated like the page itself.

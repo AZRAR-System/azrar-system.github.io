@@ -125,6 +125,7 @@ src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
 /></noscript>
 <link rel="stylesheet" href="hig-base.css">
 <link rel="stylesheet" href="home-light.css">
+<link rel="stylesheet" href="learn.css">
 </head>
 <body>
 <a class="skip-link" href="#main-content"><span class="ar">انتقل إلى المحتوى</span><span class="en">Skip to content</span></a>
@@ -146,6 +147,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="#features"><span class="ar">المزايا</span><span class="en">Features</span></a>
     <a href="#pricing"><span class="ar">الأسعار</span><span class="en">Pricing</span></a>
     <a href="about.html"><span class="ar">من نحن</span><span class="en">About</span></a>
+    <a href="videos.html"><span class="ar">الدروس</span><span class="en">Videos</span></a>
     <a href="guide.html"><span class="ar">الدليل</span><span class="en">Guide</span></a>
     <a href="articles.html"><span class="ar">المدونة</span><span class="en">Blog</span></a>
     <a href="screenshots.html"><span class="ar">لقطات</span><span class="en">Screenshots</span></a>
@@ -168,6 +170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="#features" onclick="closeMenu()"><span class="ar">المزايا</span><span class="en">Features</span><span>›</span></a>
   <a href="#pricing" onclick="closeMenu()"><span class="ar">الأسعار</span><span class="en">Pricing</span><span>›</span></a>
   <a href="about.html" onclick="closeMenu()"><span class="ar">من نحن</span><span class="en">About</span><span>›</span></a>
+  <a href="videos.html"><span class="ar">دروس الفيديو</span><span class="en">Video Lessons</span><span>›</span></a>
   <a href="guide.html"><span class="ar">دليل الاستخدام</span><span class="en">Guide</span><span>›</span></a>
   <a href="articles.html"><span class="ar">المدونة</span><span class="en">Blog</span><span>›</span></a>
   <a href="screenshots.html"><span class="ar">لقطات النظام</span><span class="en">Screenshots</span><span>›</span></a>
@@ -279,7 +282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="badge" style="background: rgba(185,138,61,0.12); color: var(--gold-l); font-size: 0.62rem; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(185,138,61,0.22); font-family: var(--mono); font-weight: bold; letter-spacing: 0.04em;">DEMO TOUR</span>
       </div>
       <div class="video-container" style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.4); background: #000; aspect-ratio: 16/9;">
-        <video id="hero-tour-video" poster="shots/dashboard.webp" preload="none" muted loop playsinline style="width: 100%; height: 100%; display: block; object-fit: cover;"></video>
+        <video id="hero-tour-video" poster="shots/dashboard.webp" preload="none" muted loop playsinline style="width: 100%; height: 100%; display: block; object-fit: contain;"></video>
         <button id="hero-play-overlay" onclick="playHeroVideo()" aria-label="تشغيل الفيديو" title="تشغيل الفيديو" style="position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); border: none; cursor: pointer; z-index: 6; padding: 0;">
           <span style="width: 60px; height: 60px; border-radius: 50%; background: rgba(7,5,24,0.72); border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">▶</span>
         </button>
@@ -316,19 +319,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="promo-video">
   <div class="container">
     <div class="sec-label reveal"><span class="ar">فيديو تعريفي</span><span class="en">Intro Video</span></div>
-    <h2 class="sec-title reveal"><span class="ar">تعرّف على أزرار في 48 ثانية</span><span class="en">Meet AZRAR in 48 Seconds</span></h2>
+    <h2 class="sec-title reveal"><span class="ar">تعرّف على أزرار في 35 ثانية</span><span class="en">Meet AZRAR in 48 Seconds</span></h2>
     <p class="sec-sub reveal" style="max-width:640px;margin-inline:auto;">
       <span class="ar">عقودك وأقساطك ومحاسبتك وتقاريرك في مكان واحد، وبياناتك على جهازك.</span>
       <span class="en">Contracts, installments, accounting and reports in one place, with your data on your own device.</span>
     </p>
     <div id="promo-video-frame" class="video-container reveal" style="position: relative; max-width: 960px; margin: 2rem auto 0; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.4); background: #000; aspect-ratio: 16/9;">
-      <video id="promo-video-el" poster="videos/azrar-promo-poster.webp" preload="none" playsinline controlslist="nodownload" aria-label="فيديو تعريفي بنظام أزرار" style="width: 100%; height: 100%; display: block; object-fit: cover;"></video>
+      <video id="promo-video-el" poster="videos/lessons/AZRAR-real-00-cover.png" preload="none" playsinline controlslist="nodownload" aria-label="فيديو تعريفي بنظام أزرار" style="width: 100%; height: 100%; display: block; object-fit: cover;"></video>
       <button id="promo-play-overlay" onclick="playPromoVideo()" aria-label="تشغيل الفيديو التعريفي" title="تشغيل الفيديو" style="position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); border: none; cursor: pointer; z-index: 6; padding: 0;">
         <span style="width: 72px; height: 72px; border-radius: 50%; background: rgba(7,5,24,0.72); border: 1px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.7rem; color: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">▶</span>
       </button>
     </div>
   </div>
-</section>
+<div class="learn-home-cta"><a href="videos.html" class="btn-main"><span class="ar">شاهد الدروس الأربعة عشر ←</span><span class="en">Watch 14 Arabic video lessons →</span></a><p><span class="ar">تعلّم الأشخاص والعقارات والعقود والدفعات والمحاسبة من واجهة أزرار الفعلية.</span><span class="en">Explore people, properties, contracts, payments and accounting in the real AZRAR interface.</span></p></div></section>
 
 <!-- HOW IT WORKS -->
 <section id="how">
@@ -1088,8 +1091,8 @@ function playHeroVideo() {
 // One video per page language; switching language resets the player to its poster.
 const PROMO_VIDEOS = {
   ar: {
-    wide: {src: "videos/azrar-promo.mp4", poster: "videos/azrar-promo-poster.webp"},
-    tall: {src: "videos/azrar-promo-vertical.mp4", poster: "videos/azrar-promo-vertical-poster.webp"},
+    wide: {src: "videos/lessons/AZRAR-real-00.mp4", poster: "videos/lessons/AZRAR-real-00-cover.png"},
+    tall: {src: "videos/lessons/AZRAR-real-00.mp4", poster: "videos/lessons/AZRAR-real-00-cover.png"},
     label: "فيديو تعريفي بنظام أزرار", play: "تشغيل الفيديو التعريفي"
   },
   en: {
@@ -1102,10 +1105,10 @@ const PROMO_MOBILE_QUERY = window.matchMedia ? window.matchMedia('(max-width: 64
 function promoLang() {
   return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'ar';
 }
-// Phones in portrait get the vertical (9:16) cut; everything wider gets the 16:9 cut.
+// Keep the Arabic real-interface video wide on every screen; retain the English vertical promo on phones.
 function promoSource() {
   const cfg = PROMO_VIDEOS[promoLang()];
-  const tall = !!(PROMO_MOBILE_QUERY && PROMO_MOBILE_QUERY.matches);
+  const tall = promoLang() === 'en' && !!(PROMO_MOBILE_QUERY && PROMO_MOBILE_QUERY.matches);
   return {cfg: cfg, tall: tall, media: tall ? cfg.tall : cfg.wide};
 }
 function syncPromoVideo() {
