@@ -1,0 +1,35 @@
+# AZRAR SYSTEMS
+
+Windows desktop software for real estate and rental management. Data is local by default; optional sync and integrations use network access when used. Arabic and English interfaces. 30-day trial. Annual licensing. SQL Server sync is available in every plan, subject to licensed device counts.
+
+## Pages
+- index: https://azrar-systems.com/index.html
+- index (English): https://azrar-systems.com/index-en.html
+- product: https://azrar-systems.com/product.html
+- product (English): https://azrar-systems.com/product-en.html
+- pricing: https://azrar-systems.com/pricing.html
+- pricing (English): https://azrar-systems.com/pricing-en.html
+- download: https://azrar-systems.com/download.html
+- download (English): https://azrar-systems.com/download-en.html
+- learn: https://azrar-systems.com/learn.html
+- learn (English): https://azrar-systems.com/learn-en.html
+- videos: https://azrar-systems.com/videos.html
+- videos (English): https://azrar-systems.com/videos-en.html
+- guide: https://azrar-systems.com/guide.html
+- guide (English): https://azrar-systems.com/guide-en.html
+- support: https://azrar-systems.com/support.html
+- support (English): https://azrar-systems.com/support-en.html
+- articles: https://azrar-systems.com/articles.html
+- articles (English): https://azrar-systems.com/articles-en.html
+- screenshots: https://azrar-systems.com/screenshots.html
+- screenshots (English): https://azrar-systems.com/screenshots-en.html
+- faq: https://azrar-systems.com/faq.html
+- faq (English): https://azrar-systems.com/faq-en.html
+- about: https://azrar-systems.com/about.html
+- about (English): https://azrar-systems.com/about-en.html
+
+## Pricing
+See https://azrar-systems.com/pricing.md for current USD plans and renewal details.
+
+## Lessons
+The 14 actual recordings have Arabic on-screen instructions and no voice-over. English page titles describe these same Arabic recordings; they are not English-translated videos. Some recordings are field-and-tab tours and do not save a completed transaction.

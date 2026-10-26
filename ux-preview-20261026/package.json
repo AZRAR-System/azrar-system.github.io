@@ -1,0 +1,8 @@
+{
+  "name": "azrar-official-website",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-site.cjs",
+    "test": "node scripts/check-site.cjs"
+  }
+}

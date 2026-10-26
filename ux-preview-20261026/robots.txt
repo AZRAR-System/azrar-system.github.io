@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /site-templates/
+
+Sitemap: https://azrar-systems.com/sitemap.xml

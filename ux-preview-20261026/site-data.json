@@ -1,0 +1,535 @@
+{
+  "version": "3.17.1",
+  "released": "2026-10-21",
+  "trialDays": 30,
+  "annual": true,
+  "sqlSync": "all-plans",
+  "installer": "https://github.com/AZRAR-System/azrar-releases/releases/download/v3.17.1/AZRAR-Setup-3.17.1.exe",
+  "installerBytes": 356220120,
+  "store": "https://apps.microsoft.com/detail/9NJFB5W8ZCSB",
+  "releasePage": "https://github.com/AZRAR-System/azrar-releases/releases/latest",
+  "offerEnds": "2026-12-31",
+  "plans": [
+    {
+      "id": "solo",
+      "name": "Solo",
+      "devices": 1,
+      "price": 49,
+      "listPrice": 99,
+      "setup": false,
+      "training": false
+    },
+    {
+      "id": "office",
+      "name": "Office",
+      "devices": 2,
+      "price": 79,
+      "listPrice": 169,
+      "setup": true,
+      "training": false
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "devices": 3,
+      "price": 119,
+      "listPrice": 239,
+      "setup": true,
+      "training": true
+    }
+  ],
+  "groups": [
+    {
+      "ar": "العقارات والعملاء",
+      "en": "Properties & people",
+      "descAr": "ملفات الملاك والمستأجرين والوحدات، مرتبطة بالعقود والحسابات.",
+      "descEn": "Keep owners, tenants and units connected to contracts and accounts.",
+      "shot": "properties",
+      "guide": "properties",
+      "lesson": 2
+    },
+    {
+      "ar": "العقود والتحصيل",
+      "en": "Contracts & collection",
+      "descAr": "عقود وأقساط ودفعات جزئية ومتابعة للمستحق والمتأخر.",
+      "descEn": "Manage leases, installments, part payments and overdue balances.",
+      "shot": "contracts",
+      "guide": "contracts",
+      "lesson": 3
+    },
+    {
+      "ar": "الحسابات والتقارير",
+      "en": "Accounts & reports",
+      "descAr": "محاسبة الشركة والمالك والعمولات والتقارير وكتالوج الطباعة.",
+      "descEn": "Company and owner accounts, commissions, reports and print templates.",
+      "shot": "accounting",
+      "guide": "reports",
+      "lesson": 8
+    },
+    {
+      "ar": "المتابعة والصيانة",
+      "en": "Follow-up & maintenance",
+      "descAr": "طلبات صيانة وتنبيهات وقوالب رسائل تساعدك على تنظيم المتابعة.",
+      "descEn": "Maintenance, alerts and message templates for day-to-day follow-up.",
+      "shot": "smart_tools",
+      "guide": "maintenance",
+      "lesson": 6
+    }
+  ],
+  "modules": [
+    [
+      "العقود",
+      "Contracts"
+    ],
+    [
+      "الدفعات والتحصيل",
+      "Payments & collection"
+    ],
+    [
+      "العقارات",
+      "Properties"
+    ],
+    [
+      "الأشخاص",
+      "People"
+    ],
+    [
+      "المبيعات",
+      "Sales"
+    ],
+    [
+      "العمولات",
+      "Commissions"
+    ],
+    [
+      "التنبيهات",
+      "Alerts"
+    ],
+    [
+      "التقارير",
+      "Reports"
+    ],
+    [
+      "الصيانة",
+      "Maintenance"
+    ],
+    [
+      "واتساب",
+      "WhatsApp"
+    ],
+    [
+      "المركز القانوني",
+      "Legal templates"
+    ],
+    [
+      "لوحة المعلومات",
+      "Dashboard"
+    ],
+    [
+      "لوحة المالك",
+      "Owner dashboard"
+    ],
+    [
+      "محاسبة الشركة",
+      "Company finance"
+    ],
+    [
+      "النظام المحاسبي",
+      "Accounting"
+    ],
+    [
+      "الأدوات الذكية",
+      "Smart tools"
+    ],
+    [
+      "كتالوج الطباعة",
+      "Print catalog"
+    ]
+  ],
+  "lessons": [
+    {
+      "number": 0,
+      "title": {
+        "ar": "تعرّف على أزرار للكمبيوتر",
+        "en": "Meet AZRAR for Windows"
+      },
+      "goal": {
+        "ar": "جولة سريعة في أهم أقسام النظام الفعلية.",
+        "en": "A quick tour of the actual application."
+      },
+      "duration": 35,
+      "video": "videos/lessons/AZRAR-real-00.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-00-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-00-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-00-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-00-cover-480.webp",
+      "guide": "dashboard",
+      "category": "start",
+      "transcript": [
+        "تعرّف على أزرار للكمبيوتر — جولة سريعة في أهم أقسام النظام الفعلية.",
+        "إدارة الأشخاص والعقارات والعقود في واجهة واحدة.",
+        "تفاصيل العقار: مواصفات وبيانات تسجيل وبيع.",
+        "إعداد العقد وقيمته وتكرار دفعاته.",
+        "متابعة الأقساط والمدفوع والمتبقي وحالة كل استحقاق.",
+        "حسابات ويومية وميزان مراجعة.",
+        "طلبات صيانة مع أولوية ومسؤول عن الدفع.",
+        "تقارير وقوالب طباعة تساعدك على مراجعة العمل.",
+        "تعلّم أزرار · دروس عملية من النظام الحقيقي"
+      ]
+    },
+    {
+      "number": 1,
+      "title": {
+        "ar": "إدارة الأشخاص: نموذج ملف جديد",
+        "en": "People: a new person form"
+      },
+      "goal": {
+        "ar": "فتح النموذج وإدخال اسم توضيحي واختيار دور المالك.",
+        "en": "Open the form, enter a sample name and choose an owner role."
+      },
+      "duration": 60,
+      "video": "videos/lessons/AZRAR-real-01-people.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-01-people-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-01-people-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-01-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-01-cover-480.webp",
+      "guide": "people",
+      "category": "basics",
+      "transcript": [
+        "من إدارة الأشخاص، نضغط «ملف جديد» لفتح نموذج الإضافة.",
+        "نوع الملف هنا «فرد». ننتقل إلى حقل الاسم الكامل.",
+        "نكتب اسمًا توضيحيًا للتصوير؛ لم نحفظ هذا المثال.",
+        "في تصنيف الأدوار، نلغي تحديد «مستأجر» الافتراضي.",
+        "نختار «مالك» ليتوافق دور الملف مع الشخص الذي نضيفه.",
+        "عند الإغلاق، ينبهنا أزرار إلى وجود بيانات غير محفوظة.",
+        "قبل الحفظ: أكمل الحقول المطلوبة وراجع بيانات الملف."
+      ]
+    },
+    {
+      "number": 2,
+      "title": {
+        "ar": "إضافة عقار: جولة في التبويبات",
+        "en": "Properties: explore the tabs"
+      },
+      "goal": {
+        "ar": "البيانات الأساسية والمواصفات والتسجيل والبيع والملاحظات.",
+        "en": "Basic details, specifications, registration, sale and notes."
+      },
+      "duration": 79,
+      "video": "videos/lessons/AZRAR-real-02.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-02-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-02-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-02-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-02-cover-480.webp",
+      "guide": "properties",
+      "category": "basics",
+      "transcript": [
+        "إضافة عقار: جولة في التبويبات — البيانات الأساسية والمواصفات والتسجيل والبيع والملاحظات.",
+        "من إدارة العقارات نفتح «عقار جديد»؛ المالك مطلوب والكود يولّد تلقائيًا.",
+        "المواصفات: العنوان والمدينة والمنطقة والمساحة وعدد الغرف وصفة العقار.",
+        "التسجيل: المديرية والقرية والحوض والقطعة وبيانات اشتراكات الخدمات.",
+        "تبويب البيع يعرض خيار تجهيز العقار للبيع.",
+        "عند تفعيل «عرض للبيع» تظهر الأسعار وخيار «للبيع فقط». المثال غير محفوظ.",
+        "الملاحظات: وصف حدود المأجور وإضافة التفاصيل التي تحتاجها لاحقًا.",
+        "لم يُحفظ عقار أو عرض بيع في هذا المثال."
+      ]
+    },
+    {
+      "number": 3,
+      "title": {
+        "ar": "العقد: الأطراف والبيانات المالية",
+        "en": "Contracts: parties and financial details"
+      },
+      "goal": {
+        "ar": "اختيار العقار والمستأجر وفهم قيمة الإيجار وتكرار الدفع.",
+        "en": "Choose a property and tenant and understand rent and payment frequency."
+      },
+      "duration": 84,
+      "video": "videos/lessons/AZRAR-real-03.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-03-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-03-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-03-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-03-cover-480.webp",
+      "guide": "contracts",
+      "category": "basics",
+      "transcript": [
+        "العقد: الأطراف والبيانات المالية — اختيار العقار والمستأجر وفهم قيمة الإيجار وتكرار الدفع.",
+        "من العقود نفتح «عقد جديد» لتحديد العقار والمستأجر.",
+        "قائمة العقار تعرض الخيارات المتاحة. حُجبت بيانات المالك والموقع.",
+        "نختار المستأجر من القائمة؛ بيانات الأشخاص محجوبة في الفيديو.",
+        "الخطوة الثانية تجمع تاريخ البداية والمدة والقيمة السنوية والتأمين.",
+        "مثال غير محفوظ: ٣٦٠٠ سنويًا لمدة ١٢ شهرًا، ويعرض أزرار ٣٠٠ شهريًا.",
+        "معاينة غير محفوظة؛ لم يُنشأ عقد أو جدول فعلي."
+      ]
+    },
+    {
+      "number": 4,
+      "title": {
+        "ar": "الدفعات: قراءة الاستحقاقات والمتأخرات",
+        "en": "Payments: dues and overdue balances"
+      },
+      "goal": {
+        "ar": "فهم المؤشرات وتصفية المتأخر وقراءة جدول الأقساط.",
+        "en": "Read the indicators, filter overdue items and review installments."
+      },
+      "duration": 59,
+      "video": "videos/lessons/AZRAR-real-04.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-04-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-04-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-04-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-04-cover-480.webp",
+      "guide": "payments",
+      "category": "daily",
+      "transcript": [
+        "الدفعات: قراءة الاستحقاقات والمتأخرات — فهم المؤشرات وتصفية المتأخر وقراءة جدول الأقساط.",
+        "توضح المؤشرات المحصّل والمتأخر والمتوقع ونسبة التحصيل.",
+        "نختار «متأخر» لعرض العقود التي تحتوي دفعات متأخرة.",
+        "نفتح صف العقد لعرض إجمالياته وأقساطه.",
+        "نقرأ تاريخ الاستحقاق والقيمة والمدفوع والمتبقي والحالة لكل دفعة.",
+        "هذه جولة قراءة؛ لم يُسجّل أي تحصيل."
+      ]
+    },
+    {
+      "number": 5,
+      "title": {
+        "ar": "العمولات: التبويبات والتصفية الشهرية",
+        "en": "Commissions: tabs and monthly filters"
+      },
+      "goal": {
+        "ar": "التنقل بين أنواع العمولات وتحديد الشهر المحاسبي.",
+        "en": "Explore commission types and select an accounting month."
+      },
+      "duration": 60,
+      "video": "videos/lessons/AZRAR-real-05.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-05-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-05-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-05-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-05-cover-480.webp",
+      "guide": "commissions",
+      "category": "daily",
+      "transcript": [
+        "العمولات: التبويبات والتصفية الشهرية — التنقل بين أنواع العمولات وتحديد الشهر المحاسبي.",
+        "قسم العمولات يجمع عمولات العقود والبيع والخارجية والموظفين.",
+        "تبويب العمولات الخارجية يتضمن تصفية النوع والشهر.",
+        "تبويب الموظفين يضيف تصفية الموظف إلى النوع والشهر.",
+        "نفتح اختيار الشهر لمراجعة الفترة المطلوبة. لا توجد نتائج في الفترة المعروضة.",
+        "راجع الشهر والفلاتر قبل قراءة النتائج."
+      ]
+    },
+    {
+      "number": 6,
+      "title": {
+        "ar": "الصيانة: حقول الطلب والأولوية",
+        "en": "Maintenance: request fields and priority"
+      },
+      "goal": {
+        "ar": "التعرّف إلى طلب الصيانة والأولوية والمسؤول عن الدفع.",
+        "en": "Understand the request, priority and who pays."
+      },
+      "duration": 66,
+      "video": "videos/lessons/AZRAR-real-06.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-06-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-06-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-06-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-06-cover-480.webp",
+      "guide": "maintenance",
+      "category": "daily",
+      "transcript": [
+        "الصيانة: حقول الطلب والأولوية — التعرّف إلى طلب الصيانة والأولوية والمسؤول عن الدفع.",
+        "تعرض صفحة الصيانة الطلبات وحالاتها، ومن هنا نفتح طلبًا جديدًا.",
+        "النموذج يجمع العقار والمستأجر الاختياري ووصف المشكلة والتاريخ.",
+        "الأولوية: منخفضة أو متوسطة أو عالية بحسب أثر المشكلة على السكن والأمان.",
+        "المسؤول عن الدفع: المالك أو المستأجر أو مشترك. الحقل للمعلومات ولا يخصم تلقائيًا.",
+        "نغلق النموذج الفارغ دون حفظ تذكرة.",
+        "لم تُحفظ تذكرة صيانة في هذه الجولة."
+      ]
+    },
+    {
+      "number": 7,
+      "title": {
+        "ar": "محاسبة الشركة: اللوحة والمصروفات",
+        "en": "Company finance: overview and expenses"
+      },
+      "goal": {
+        "ar": "قراءة الملخص المالي والتعرّف إلى المصروف ودورة الحياة.",
+        "en": "Read the financial overview and explore expense fields."
+      },
+      "duration": 64,
+      "video": "videos/lessons/AZRAR-real-07.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-07-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-07-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-07-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-07-cover-480.webp",
+      "guide": "company-finance",
+      "category": "finance",
+      "transcript": [
+        "محاسبة الشركة: اللوحة والمصروفات — قراءة الملخص المالي والتعرّف إلى المصروف ودورة الحياة.",
+        "تعرض اللوحة الإيرادات والمصاريف وصافي الربح والتدفق النقدي للفترة المختارة.",
+        "تبويب المصاريف يعرض مصروفات الفترة وزر الإضافة.",
+        "نموذج المصروف: الفئة والمبلغ والتاريخ والبيان والمستفيد وطريقة الدفع والمرفقات.",
+        "دورة الحياة تعرض القيود مع البحث وتصفية النوع.",
+        "لم يُحفظ مصروف أو قيد خلال التصوير."
+      ]
+    },
+    {
+      "number": 8,
+      "title": {
+        "ar": "النظام المحاسبي: الحسابات واليومية",
+        "en": "Accounting: accounts and journals"
+      },
+      "goal": {
+        "ar": "التنقل بين الملخص وشجرة الحسابات واليومية وميزان المراجعة.",
+        "en": "Explore the overview, chart of accounts, journal and trial balance."
+      },
+      "duration": 67,
+      "video": "videos/lessons/AZRAR-real-08.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-08-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-08-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-08-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-08-cover-480.webp",
+      "guide": "accounting",
+      "category": "finance",
+      "transcript": [
+        "النظام المحاسبي: الحسابات واليومية — التنقل بين الملخص وشجرة الحسابات واليومية وميزان المراجعة.",
+        "الملخص يعرض أرصدة الصندوق والذمم والإيرادات والمصروفات.",
+        "شجرة الحسابات ترتب الأصول والخصوم وحقوق الملكية والإيرادات.",
+        "دفتر اليومية يوضح طرفَي القيد: المدين والدائن، مع التاريخ والقيمة.",
+        "ميزان المراجعة يعرض إجمالي المدين والدائن لكل حساب.",
+        "راجع الفترة المختارة عند مقارنة الأرصدة."
+      ]
+    },
+    {
+      "number": 9,
+      "title": {
+        "ar": "المبيعات: العروض والاتفاقيات",
+        "en": "Sales: offers and agreements"
+      },
+      "goal": {
+        "ar": "التعرّف إلى عرض البيع وعروض الشراء والاتفاقيات.",
+        "en": "Explore listings, purchase offers and agreements."
+      },
+      "duration": 60,
+      "video": "videos/lessons/AZRAR-real-09.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-09-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-09-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-09-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-09-cover-480.webp",
+      "guide": "sales",
+      "category": "daily",
+      "transcript": [
+        "المبيعات: العروض والاتفاقيات — التعرّف إلى عرض البيع وعروض الشراء والاتفاقيات.",
+        "تعرض المبيعات مؤشرات النشاط وتبويبات العروض والاتفاقيات.",
+        "عرض البيع الجديد يجمع العقار والسعر والملاحظات وإتاحة العقار للإيجار أيضًا.",
+        "تبويب عروض الشراء يجمع العروض وحالاتها. حُجبت أسماء المشترين.",
+        "الاتفاقيات تعرض السعر النهائي والعمولة وتاريخ التنازل والحالة.",
+        "لم يُنشأ عرض بيع أو اتفاقية أثناء التصوير."
+      ]
+    },
+    {
+      "number": 10,
+      "title": {
+        "ar": "لوحة المالك: المحفظة وكشف الحساب",
+        "en": "Owner dashboard: portfolio and statements"
+      },
+      "goal": {
+        "ar": "فهم اختيار المالك ومؤشرات المحفظة وتبويبات الحساب.",
+        "en": "Choose an owner and read portfolio indicators and account tabs."
+      },
+      "duration": 63,
+      "video": "videos/lessons/AZRAR-real-10.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-10-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-10-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-10-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-10-cover-480.webp",
+      "guide": "owner-portal",
+      "category": "finance",
+      "transcript": [
+        "لوحة المالك: المحفظة وكشف الحساب — فهم اختيار المالك ومؤشرات المحفظة وتبويبات الحساب.",
+        "من لوحة المالك نحدد المالك لعرض محفظته. بيانات قائمة الملاك محجوبة.",
+        "تظهر مؤشرات التحصيل والإشغال والمتأخرات، ثم تبويب العقارات.",
+        "كشف الحساب يعرض سجل الدفعات التفصيلي للمالك المحدد.",
+        "تبويب المالية يوضح المحصّل والخصومات وصافي المستحق للمالك.",
+        "تتغير النتائج وفق المالك والعقود المختارة."
+      ]
+    },
+    {
+      "number": 11,
+      "title": {
+        "ar": "التقارير وكتالوج الطباعة",
+        "en": "Reports and print catalog"
+      },
+      "goal": {
+        "ar": "العثور على التقارير والملخصات وقوالب الطباعة.",
+        "en": "Find reports, summaries and print templates."
+      },
+      "duration": 79,
+      "video": "videos/lessons/AZRAR-real-11.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-11-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-11-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-11-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-11-cover-480.webp",
+      "guide": "reports",
+      "category": "finance",
+      "transcript": [
+        "التقارير وكتالوج الطباعة — العثور على التقارير والملخصات وقوالب الطباعة.",
+        "مركز التقارير يجمع المؤشرات والبحث وخيارات الطباعة والتصدير.",
+        "ملخص الشهر والملخص السريع يساعدان على مراجعة أرقام الفترة.",
+        "توجد تقارير مالية وتقارير للعقود، ومنها السارية والقريبة من الانتهاء.",
+        "كتالوج الطباعة يجمع قوائم العقود والعقارات والأشخاص وكشوف الملاك.",
+        "توجد أيضًا نماذج للأقساط والعمولات والدخل وميزان المراجعة وغيرها.",
+        "اختر التقرير والفترة المناسبة قبل التصدير."
+      ]
+    },
+    {
+      "number": 12,
+      "title": {
+        "ar": "المركز القانوني: القوالب والمتغيرات",
+        "en": "Legal templates: variables and notices"
+      },
+      "goal": {
+        "ar": "التعرّف إلى سجل الإخطارات ودليل متغيرات القوالب.",
+        "en": "Explore the notice register and template variable reference."
+      },
+      "duration": 39,
+      "video": "videos/lessons/AZRAR-real-12.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-12-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-12-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-12-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-12-cover-480.webp",
+      "guide": "legal",
+      "category": "advanced",
+      "transcript": [
+        "المركز القانوني: القوالب والمتغيرات — التعرّف إلى سجل الإخطارات ودليل متغيرات القوالب.",
+        "المركز القانوني يجمع القوالب وسجل الإخطارات وربط الإخطار بالعقد.",
+        "دليل المتغيرات يعرض حقول العقد والعقار والمستأجر والدفعات لدمجها في القالب.",
+        "هذه جولة في الواجهة؛ لم يُنشأ أو يُرسل إخطار."
+      ]
+    },
+    {
+      "number": 13,
+      "title": {
+        "ar": "الأدوات الذكية: حاسبات ومعاينة",
+        "en": "Smart tools: calculators and previews"
+      },
+      "goal": {
+        "ar": "التعرّف إلى حاسبة العقد والدفعات وحاسبة العمولة.",
+        "en": "Explore contract, installment and commission calculators."
+      },
+      "duration": 52,
+      "video": "videos/lessons/AZRAR-real-13.mp4",
+      "subtitle": "videos/lessons/AZRAR-real-13-ar.srt",
+      "vtt": "videos/lessons/AZRAR-real-13-ar.vtt",
+      "poster": "assets/lessons/AZRAR-real-13-cover-960.webp",
+      "smallPoster": "assets/lessons/AZRAR-real-13-cover-480.webp",
+      "guide": "smart-tools",
+      "category": "advanced",
+      "transcript": [
+        "الأدوات الذكية: حاسبات ومعاينة — التعرّف إلى حاسبة العقد والدفعات وحاسبة العمولة.",
+        "الأدوات الذكية توفر الحاسبات والمعاينة. الاعتماد إجراء منفصل.",
+        "حاسبة العقد تجمع الأطراف والمدة والقيمة والتكرار والتأمين قبل معاينة الدفعات.",
+        "حاسبة العمولة تجمع العقد والشهر وقيم عمولة المالك والمستأجر.",
+        "المعاينة تسبق الاعتماد؛ لم نعتمد أي نتيجة."
+      ]
+    }
+  ]
+}

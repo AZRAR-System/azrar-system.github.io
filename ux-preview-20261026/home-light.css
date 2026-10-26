@@ -1,0 +1,56 @@
+/* AZRAR · home-light.css — Light mode for the home page (loaded only by index.html, after hig-base.css).
+   الوضع الفاتح للرئيسية. The hero and the "new" bar stay immersive dark bands (as on inner pages);
+   everything else follows the light tokens from hig-base.css. */
+@media (prefers-color-scheme: light) {
+  /* Dark bands keep the dark palette for the tokens they read. */
+  :root:not([data-theme="dark"]) :is(.hero, .coming-soon-bar, .enterprise-box, .cta-box) {
+    --ink: #cdd5e8; --head: #ffffff; --muted: #8ea5c8; --muted2: #8ea5c8;
+    --gold-l: #dcb15f; --blue-l: #14a37f; --green: #22c55e; --danger: #ef4444;
+    --card: rgba(255, 255, 255, .03); --border: rgba(255, 255, 255, .08); --border2: rgba(255, 255, 255, .04);
+  }
+  :root:not([data-theme="dark"]) .coming-soon-bar { background: #181341; border-bottom-color: rgba(255, 255, 255, .08); }
+
+  /* Top bar (light glass from hig-base.css): links, subtitle, language switch, burger. */
+  :root:not([data-theme="dark"]) .nav-links a { color: var(--ink); }
+  :root:not([data-theme="dark"]) .nav-links a:hover { color: var(--action-text); }
+  :root:not([data-theme="dark"]) .nav-wm small { color: var(--muted); }
+  :root:not([data-theme="dark"]) .lang-switcher { background: rgba(0, 0, 0, .05); border-color: rgba(0, 0, 0, .12); }
+  :root:not([data-theme="dark"]) .lang-btn { color: var(--ink); }
+  :root:not([data-theme="dark"]) .lang-btn.active { color: #fff; }
+  :root:not([data-theme="dark"]) .lang-btn:hover:not(.active) { color: var(--action-text); }
+  :root:not([data-theme="dark"]) .hamburger span { background: var(--ink); }
+
+  /* Phone menu */
+  :root:not([data-theme="dark"]) .mobile-menu {
+    background: rgba(245, 245, 247, .97);
+    border-bottom-color: rgba(0, 0, 0, .1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+  }
+  :root:not([data-theme="dark"]) .mobile-menu a { color: var(--ink); border-bottom-color: rgba(0, 0, 0, .08); }
+  :root:not([data-theme="dark"]) .mobile-menu a:hover { color: var(--action-text); }
+  :root:not([data-theme="dark"]) .mobile-menu a.mm-cta { color: #fff; }
+}
+
+/* ── Section content: components that hard-code dark-theme colours ── */
+@media (prefers-color-scheme: light) {
+  /* Gold TEXT darkens on light surfaces; gold FILLS (buttons, badges, dots) keep the bright gold. */
+  :root:not([data-theme="dark"]) { --gold-l: #7a5410; }
+  :root:not([data-theme="dark"]) :is(.btn-main, .plan-cta-main, .plan-badge, .notif-dot, .hero-badge, .coming-soon-bar, .hero, .enterprise-box, .cta-box) { --gold-l: #dcb15f; }
+
+  :root:not([data-theme="dark"]) .plan-feats li { color: var(--ink); }
+  :root:not([data-theme="dark"]) .plan-cta-ghost {
+    color: var(--head);
+    background: rgba(0, 0, 0, .04);
+    border-color: rgba(0, 0, 0, .2);
+  }
+  :root:not([data-theme="dark"]) .plan-cta-ghost:hover { color: var(--action-text); background: rgba(0, 0, 0, .07); }
+  :root:not([data-theme="dark"]) .faq-chevron { color: var(--ink); background: rgba(0, 0, 0, .06); }
+  :root:not([data-theme="dark"]) .faq-item.open .faq-chevron { color: #fff; }
+  :root:not([data-theme="dark"]) .curr-btn { color: var(--ink); background: rgba(0, 0, 0, .04); border-color: rgba(0, 0, 0, .12); }
+  :root:not([data-theme="dark"]) .curr-btn:hover { color: var(--head); background: rgba(0, 0, 0, .07); border-color: rgba(0, 0, 0, .2); }
+  :root:not([data-theme="dark"]) .curr-btn.active { color: #1a1304; }
+}
+
+/* ── Brand buttons: label/background pairs under 4.5:1 (both schemes) · أزرار العلامات ── */
+.wa-btn { color: #06210f; }                 /* white on #25d366 was 2.0:1 → 8.7:1 */
+.fb-follow-btn { background: #1563df; }     /* white on #1877f2 was 4.2:1 → 5.4:1 */
