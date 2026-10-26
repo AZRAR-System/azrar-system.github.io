@@ -120,3 +120,5 @@ for(const p of fs.readdirSync(SITE).filter(n=>n.endsWith('.html')&&n!=='email-si
  h=h.replace(/(<div class="footer-brand">[\s\S]*?<a href="mailto:info@azrar-systems.com">info@azrar-systems.com<\/a>)(?!<a class="contact-phone")/,'$1<a class="contact-phone" href="tel:+962786170080" dir="ltr">00962786170080</a><a href="https://wa.me/962786170080" target="_blank" rel="noopener">WhatsApp</a>');
  write(p,h);
 }
+
+require('./seo-site.cjs');
