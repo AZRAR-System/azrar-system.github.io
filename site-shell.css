@@ -4,3 +4,6 @@
 @media(max-width:700px){.global-header-inner{padding:9px 16px;min-height:70px;gap:8px}.site-brand{gap:7px}.site-brand img{width:38px;height:38px}.site-brand b{font-size:17px}.site-brand small{font-size:8px}.site-header-actions{gap:6px}.site-download{padding:8px 10px;font-size:12px}.site-language{font-size:12px;padding:7px}.page-wrap{width:calc(100% - 32px)}.footer-grid{grid-template-columns:1fr 1fr;gap:25px}.footer-brand{grid-column:1/-1}}
 @media(max-width:360px){.site-brand img{width:32px;height:32px}.site-brand b{font-size:15px}.site-brand small{font-size:7px}.global-header-inner{padding-inline:10px}.site-header-actions{gap:4px}.site-download{padding-inline:8px}.site-language{min-width:36px}.site-menu-button{min-width:38px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+/* Keep links readable on the guide’s light article cards. */
+.step a:not(.topic-lesson-link){color:#175f50;text-decoration:underline}.step a:not(.topic-lesson-link):hover{color:#11473c}
