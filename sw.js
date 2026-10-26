@@ -1,11 +1,6 @@
 const CACHE_NAME = 'azrar-cache-v1.21-ux-repair';
 const ASSETS = [
   './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
-  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
-  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
-  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
-  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
-  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
   './',
   './index.html',
   './videos.html',
