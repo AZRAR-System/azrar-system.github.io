@@ -5,5 +5,5 @@
 @media(max-width:360px){.site-brand img{width:32px;height:32px}.site-brand b{font-size:15px}.site-brand small{font-size:7px}.global-header-inner{padding-inline:10px}.site-header-actions{gap:4px}.site-download{padding-inline:8px}.site-language{min-width:36px}.site-menu-button{min-width:38px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 
-/* Keep links readable on the guide’s light article cards. */
-.step a:not(.topic-lesson-link){color:#175f50;text-decoration:underline}.step a:not(.topic-lesson-link):hover{color:#11473c}
+/* Keep links readable on dark guide cards and light callouts. */
+.step a:not(.topic-lesson-link){color:#a5f3d6!important;text-decoration:underline}.step :is(.note,.tip,.warn) a:not(.topic-lesson-link){color:#175f50!important}
