@@ -1,27 +1,14 @@
-const CACHE_NAME = 'azrar-cache-v1.21-ux-repair';
+const CACHE_NAME = 'azrar-cache-v1.22-performance';
 const ASSETS = [
-  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
-  './',
-  './index.html',
-  './videos.html',
-  './learn.css',
-  './learn.js',
-  './style.css',
-  './shared-dark.css',
-  './hig-base.css',
-  './home-light.css',
-  './hig-a11y.js',
-  './home-bg.js',
-  './chatbot.js',
-  './bg-animation.js',
-  './logo.png',
-  './bg-city.webp',
-  './favicon.ico',
-  './android-chrome-192x192.png',
-  './favicon-32x32.png',
-  './favicon-16x16.png',
-  './apple-touch-icon.png',
-  './site.webmanifest'
+  "./",
+  "./site.js",
+  "./youtube-lite.js?v=1",
+  "./azrar-performance.css?v=20261026-1",
+  "./assets/logo-64.webp",
+  "./assets/fonts/tajawal-400-arabic.woff2",
+  "./assets/fonts/tajawal-900-arabic.woff2",
+  "./assets/youtube-a3-Igtky25E-960.webp",
+  "./favicon.ico"
 ];
 
 self.addEventListener('install', event => {

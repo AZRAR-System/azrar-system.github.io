@@ -122,3 +122,5 @@ for(const p of fs.readdirSync(SITE).filter(n=>n.endsWith('.html')&&n!=='email-si
 }
 
 require('./seo-site.cjs');
+
+require('./performance-site.cjs');

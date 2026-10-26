@@ -3,6 +3,6 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-site.cjs",
-    "test": "node scripts/check-site.cjs && node scripts/check-seo.cjs"
+    "test": "node scripts/check-site.cjs && node scripts/check-seo.cjs && node scripts/check-performance.cjs"
   }
 }
