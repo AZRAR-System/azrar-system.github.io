@@ -1,5 +1,11 @@
-const CACHE_NAME = 'azrar-cache-v1.20-lessons';
+const CACHE_NAME = 'azrar-cache-v1.21-ux-repair';
 const ASSETS = [
+  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
+  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
+  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
+  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
+  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
+  './site-shell.css', './site-pages.css', './site.js', './lessons-data.js', './site-data.json', './index-en.html', './download.html', './download-en.html', './learn.html', './learn-en.html',
   './',
   './index.html',
   './videos.html',
@@ -64,7 +70,7 @@ self.addEventListener('fetch', event => {
   if (url.origin !== self.location.origin) return;
 
   // Let the browser and server handle video range requests; avoid caching large media.
-  if (req.headers.has('range') || /\.(?:mp4|webm|srt)$/i.test(url.pathname)) return;
+  if (req.headers.has('range') || /\.(?:mp4|webm|srt|vtt)$/i.test(url.pathname)) return;
 
   const isHtml = req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html');
   // Code that must match the page it ships with (CSS/JS) is treated like the page itself.

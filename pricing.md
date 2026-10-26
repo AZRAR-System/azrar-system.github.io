@@ -1,53 +1,37 @@
-# Pricing — AZRAR Real Estate Management System
+# AZRAR annual licensing
 
-AZRAR is a Windows desktop application (not a hosted SaaS). Pricing is a single annual license fee per device — no monthly subscription, no per-seat add-on fees, no usage-based charges. All tiers include the same 17 modules; tiers differ only by device count and support priority.
-
-All tiers include a 30-day free trial with full features, no credit card required.
+Single annual payment in USD. Every plan includes all application modules and optional SQL Server synchronization. Licensed application device counts still apply. Server/network setup is required for synchronization.
 
 ## Solo
-- Price: $49/year (single annual payment, currently discounted from $49 list — promotional pricing may vary, confirm current price at https://azrar-systems.com/#pricing)
-- Devices: 1
-- Best for: a single office owner managing everything themselves
-- Includes:
-  - All 17 modules (contracts, installments, sales, commissions, maintenance, legal documents, dashboard, etc.)
-  - Unlimited contracts and installments
-  - Built-in bulk WhatsApp messaging
-  - Free updates for 1 year
-  - Direct WhatsApp support
+- Current launch price: $49/year (list $99)
+- Licensed app devices: 1
+- SQL Server sync: included
+- Updates and support: during the license year
+- Setup session: not included
+- Team training: not included
 
-## Office (most popular)
-- Price: $79/year
-- Devices: 2 (e.g. laptop + desktop)
-- Best for: a small office running from two machines
-- Includes: everything in Solo, plus:
-  - 2 device licenses
-  - Priority WhatsApp support
-  - Free setup session
+## Office
+- Current launch price: $79/year (list $169)
+- Licensed app devices: 2
+- SQL Server sync: included
+- Updates and support: during the license year
+- Setup session: included
+- Team training: not included
 
 ## Pro
-- Price: $119/year
-- Devices: 3
-- Best for: an office with 1-2 staff members
-- Includes: everything in Office, plus:
-  - 3 device licenses
-  - Top-priority WhatsApp support
-  - Setup + team training
+- Current launch price: $119/year (list $239)
+- Licensed app devices: 3
+- SQL Server sync: included
+- Updates and support: during the license year
+- Setup session: included
+- Team training: included
 
 ## Enterprise
-- Price: Custom — contact via WhatsApp (+962798986465) or info@azrar-systems.com
-- Devices: Unlimited
-- Best for: large real estate companies with multiple branches
-- Includes:
-  - Unlimited device licenses
-  - SQL Server sync across devices with automatic conflict resolution
-  - Team training
-  - Dedicated support
+Unlimited licensed devices, setup, training and dedicated support by custom quote. SQL Server sync included.
 
-## Notes for evaluation
-- Billing: one annual payment per license, not monthly. No hidden recurring fees.
-- Trial: 30 days, all features, all 17 modules, no credit card required.
-- Data: 100% local (SQLite), works fully offline — no cloud subscription cost or data-residency dependency.
-- Distribution: Microsoft Store (https://apps.microsoft.com/detail/9NJFB5W8ZCSB) or direct download (https://azrar-systems.com/guide.html#install).
-- Markets supported: Jordan, Saudi Arabia, UAE, Kuwait, Qatar, Oman, Bahrain, Iraq, Egypt, Palestine, Lebanon, Morocco, Sudan, Algeria, Tunisia (multi-currency).
+## Trial and renewal
+30-day full-feature trial; no payment card required. Listed launch prices run through 2026-12-31. Renewal is required after license expiry; confirm the renewal price when ordering. Do not assume automatic continuation of the launch price.
 
-Full pricing page with live currency switcher: https://azrar-systems.com/#pricing
+Pricing: https://azrar-systems.com/pricing-en.html
+Download: https://azrar-systems.com/download-en.html
+Support: https://azrar-systems.com/support-en.html
