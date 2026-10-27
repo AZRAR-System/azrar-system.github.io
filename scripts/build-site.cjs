@@ -126,3 +126,5 @@ require('./seo-site.cjs');
 require('./performance-site.cjs');
 
 require('./youtube-watch.cjs');
+
+require('./analytics-site.cjs');
