@@ -10,21 +10,21 @@ const chatIcons = {
 
 const chatData = {
   ar: {
-    welcome: "مرحباً بك! أنا مساعد أزرار الذكي. كيف يمكنني مساعدتك اليوم؟",
+    welcome: "مرحباً بك! أنا مساعد أزرار. كيف يمكنني مساعدتك اليوم؟",
     options: [
       { id: "what", text: "ما هو نظام أزرار؟", next: "ans_what" },
-      { id: "offline", text: "هل يعمل بدون إنترنت؟", next: "ans_offline" },
+      { id: "offline", text: "هل أحتاج إنترنت؟", next: "ans_offline" },
       { id: "price", text: "ما هي الباقات والأسعار؟", next: "ans_price" },
       { id: "reqs", text: "ما هي متطلبات التشغيل؟", next: "ans_reqs" },
       { id: "trial", text: "كيف أقوم بتجربة النظام؟", next: "ans_trial" },
       { id: "human", text: "أريد التحدث مع الدعم الفني", next: "ans_human" }
     ],
     ans_what: {
-      text: "نظام <b>أزرار</b> هو برنامج إدارة عقارات متكامل موجه للمكاتب والشركات العقارية. يقوم بإدارة العقود، الأقساط، العمولات، الصيانة، الصادر والوارد، إصدار سندات الصرف والقبض، وله مساعد ذكي مدمج ويدعم واتساب جماعي لإرسال تذكيرات الدفع والرسائل التلقائية لعملائك بنقرة واحدة.",
+      text: "نظام <b>أزرار</b> هو برنامج إدارة عقارات متكامل موجه للمكاتب والشركات العقارية. يقوم بإدارة العقود، الأقساط، العمولات، الصيانة، الصادر والوارد، إصدار سندات الصرف والقبض، وفيه مساعد إرشادي بأجوبة جاهزة وميزة توليد بالذكاء الاصطناعي اختيارية بمفتاحك الخاص (تتطلب إنترنت)، ويدعم واتساب جماعي لإرسال تذكيرات الدفع والرسائل التلقائية لعملائك بنقرة واحدة.",
       options: ["price", "offline", "trial", "human", "back"]
     },
     ans_offline: {
-      text: "<b>نعم، وبشكل كامل!</b> نظام أزرار مصمم ليعمل بدون إنترنت تماماً (Offline 100%) لحماية خصوصية بياناتك. يتم حفظ قاعدة البيانات محلياً على جهازك وتشفيرها، مما يمنحك سرعة فائقة في معالجة آلاف العقود دون أي بطء أو انقطاع.",
+      text: "<b>بياناتك محلية على جهازك.</b> يتطلب التفعيل بالمفتاح اتصالاً بالإنترنت، كما يلزم اتصال دوري للتحقق من الترخيص وفق شروط الترخيص؛ وبين مرات التحقق يستمر العمل محلياً. هذا يحمي خصوصية بياناتك. يتم حفظ قاعدة البيانات محلياً على جهازك وتشفيرها، مما يمنحك سرعة فائقة في معالجة آلاف العقود دون أي بطء أو انقطاع.",
       options: ["what", "trial", "human", "back"]
     },
     ans_price: {
@@ -50,18 +50,18 @@ const chatData = {
     welcome: "Welcome! I am the AZRAR Assistant. How can I help you today?",
     options: [
       { id: "what", text: "What is AZRAR?", next: "ans_what" },
-      { id: "offline", text: "Does it work offline?", next: "ans_offline" },
+      { id: "offline", text: "Do I need internet?", next: "ans_offline" },
       { id: "price", text: "Plans & Pricing?", next: "ans_price" },
       { id: "reqs", text: "System Requirements?", next: "ans_reqs" },
       { id: "trial", text: "How to start a free trial?", next: "ans_trial" },
       { id: "human", text: "Contact Support", next: "ans_human" }
     ],
     ans_what: {
-      text: "<b>AZRAR</b> is an offline real estate management system. It handles contracts, installments, receipts, payments, commissions, maintenance, WhatsApp reminders, and has a built-in AI assistant. It manages everything on your local device without needing cloud servers.",
+      text: "<b>AZRAR</b> is a Windows real estate management system that keeps your data on your device. It handles contracts, installments, receipts, payments, commissions, maintenance, WhatsApp reminders, and includes a guided help assistant (ready-made answers) plus an optional AI generation feature that uses your own Gemini/Groq key (internet required). It manages everything on your local device without needing cloud servers.",
       options: ["price", "offline", "trial", "human", "back"]
     },
     ans_offline: {
-      text: "<b>Yes, 100%!</b> AZRAR works completely offline. Your database is stored locally on your device, ensuring maximum privacy, zero downtime, and extremely fast search and processing of contracts.",
+      text: "<b>Your data stays local.</b> Activating with a key requires an internet connection, and a periodic connection is also required to verify the license, per the license terms; between checks you keep working locally. Your database is stored locally on your device, ensuring maximum privacy, zero downtime, and extremely fast search and processing of contracts.",
       options: ["what", "trial", "human", "back"]
     },
     ans_price: {
