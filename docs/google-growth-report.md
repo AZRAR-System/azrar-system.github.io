@@ -2,8 +2,8 @@
 التاريخ | Date: 2026-11-09 · الفرع | Branch: `feat/seo-conversion-google` (PR #39)
 
 ## 0. تصحيح مسار العمل | Course correction
-الفرع الأول بُني على `main` القديم (`264a1a1`) بينما تقدّم `main` بـ 38 إيداعاً (تصميم حديث، صفحة تنزيل، أسعار بأربع باقات، نموذج طلب، تتبع GA4). هذا ما جعل الفرع «يعيد التصميم القديم». الفرق سببه **ملفات قديمة** وليس فشل تحميل CSS (تم التمييز بتشغيل الموقع فعلياً).
-The first branch was cut from an old `main`; `main` moved ahead 38 commits. Cause = stale base, not CSS load failure.
+الفرع الأول بُني على `main` القديم (`264a1a1`) بينما تقدّم `main` بـ 33 إيداعاً (تصميم حديث، صفحة تنزيل، أسعار بأربع باقات، نموذج طلب، تتبع GA4). هذا ما جعل الفرع «يعيد التصميم القديم». الفرق سببه **ملفات قديمة** وليس فشل تحميل CSS (تم التمييز بتشغيل الموقع فعلياً).
+The first branch was cut from an old `main`; `main` moved ahead 33 commits. Cause = stale base, not CSS load failure.
 
 الإصلاح: دمج `origin/main` ثم أخذ شجرته كاملة (لا حذف لعمل الآخرين) وإعادة تطبيق تعديلاتي الصغيرة فقط فوقها. حُذف `track.js` والكتل `cta` والتعديلات التي تكرر ما في `main` (الموقع الحديث يملك صفحات تنزيل وتتبع `site.js` خصوصي أصلاً). نُسخت نهايات الأسطر كما هي، فالفرق الآن 35 ملفاً بأسطر قليلة.
 Fix: merged `origin/main`, took its tree, re-applied only my small edits. Dropped `track.js` and CTA blocks (already covered by main). Line endings preserved.
