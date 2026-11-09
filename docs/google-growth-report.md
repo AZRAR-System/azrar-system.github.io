@@ -44,3 +44,7 @@ Fix: merged `origin/main`, took its tree, re-applied only my small edits. Droppe
 
 ## 4. التالي | Next
 بعد المراجعة والدمج: Search Console (إرسال sitemap وطلب فهرسة الصفحات الأساسية) وفحص GA4/GTM الحي. لا وعد بترتيب.
+
+## 5. حالة النشر | Deployment status
+PR #39 دُمج في 2026-11-09 (`08dfea0`). نشر Pages التلقائي فشل ثلاث مرات بانتهاء مهلة مرحلة `deploy` (انظر الروابط في ملخص الـ PR). أُضيف هذا القسم فقط ليُنشأ إيداع جديد بمعرّف نشر جديد؛ السبب الجذري لم يثبت.
+PR #39 merged on 2026-11-09 (`08dfea0`); the automatic Pages deploy timed out three times in the `deploy` step. This section only creates a new commit (new deployment ID); root cause not established.
