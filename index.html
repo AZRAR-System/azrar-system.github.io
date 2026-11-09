@@ -5,6 +5,12 @@
 <!-- Performance Optimization: Delayed Unified Trackers (GTM, GA4, Meta Pixel) -->
 <script>
 (function() {
+  // Queue gtag calls right away; only the network load of gtag.js waits for the first interaction,
+  // so an event fired by the very first click is not lost and stays after js/config in the queue.
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){dataLayer.push(arguments);};
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-2559V4GJ25', { allow_google_signals: false, allow_ad_personalization_signals: false });
   var scriptsLoaded = false;
   function loadTrackingScripts() {
     if (scriptsLoaded) return;
@@ -18,10 +24,6 @@
     })(window,document,'script','dataLayer','GTM-WXHDB8R');
     
     // 2. Google Analytics (gtag.js)
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function(){dataLayer.push(arguments);}
-    window.gtag('js', new Date());
-    window.gtag('config', 'G-2559V4GJ25', { allow_google_signals: false, allow_ad_personalization_signals: false });
     var gaScript = document.createElement('script');
     gaScript.async = true;
     gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-2559V4GJ25';
@@ -65,9 +67,9 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="fb:app_id" content="1012284064548522">
-<title>برنامج إدارة العقارات والإيجارات — أزرار AZRAR | بدون إنترنت</title>
-<meta name="description" content="برنامج أزرار لإدارة العقارات والإيجارات للمكاتب العقارية في الأردن والخليج: عقود، أقساط، تحصيل، عمولات وكشوف مالكين. يعمل بدون إنترنت، جرّب 30 يوماً مجاناً.">
-<meta name="keywords" content="برنامج إدارة العقارات, نظام إدارة العقارات, برنامج إدارة الإيجارات, برنامج إدارة الأملاك, برنامج مكتب عقاري, برنامج عقود إيجار, برنامج تحصيل الإيجارات, برنامج محاسبة عقارية, كشف حساب المالك, برنامج عمولات الوسطاء العقاريين, تذكير إيجار واتساب, برنامج عقاري بدون إنترنت, برنامج عقاري لويندوز, برنامج إدارة العقارات الأردن, برنامج إدارة العقارات السعودية, برنامج إدارة العقارات الإمارات, برنامج إدارة العقارات الكويت, برنامج إدارة العقارات قطر, برنامج إدارة العقارات مصر, real estate management software, property management software Arabic, rental management software, lease management software offline, rent collection software, AZRAR, أزرار">
+<title>برنامج إدارة العقارات والإيجارات للمكاتب العقارية — أزرار AZRAR</title>
+<meta name="description" content="برنامج أزرار لإدارة العقارات والإيجارات للمكاتب العقارية في الأردن والخليج: عقود، أقساط، تحصيل، عمولات وكشوف مالكين. بياناتك محلية على جهازك، وتجربة مجانية 30 يوماً دون بطاقة ائتمان.">
+<meta name="keywords" content="برنامج إدارة العقارات, نظام إدارة العقارات, برنامج إدارة الإيجارات, برنامج إدارة الأملاك, برنامج مكتب عقاري, برنامج عقود إيجار, برنامج تحصيل الإيجارات, برنامج محاسبة عقارية, كشف حساب المالك, برنامج عمولات الوسطاء العقاريين, تذكير إيجار واتساب, برنامج عقاري محلي, برنامج عقاري لويندوز, برنامج إدارة العقارات الأردن, برنامج إدارة العقارات السعودية, برنامج إدارة العقارات الإمارات, برنامج إدارة العقارات الكويت, برنامج إدارة العقارات قطر, برنامج إدارة العقارات مصر, real estate management software, property management software Arabic, rental management software, lease management software, rent collection software, AZRAR, أزرار">
 <meta name="robots" content="index, follow">
 <meta name="author" content="AZRAR SYSTEMS">
 <meta name="application-name" content="AZRAR SYSTEMS">
@@ -88,7 +90,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://azrar-systems.com/">
 <meta property="og:title" content="برنامج إدارة العقارات والإيجارات — أزرار AZRAR">
-<meta property="og:description" content="نظام أزرار: 17 نظاماً في تطبيق واحد. بيانات محلية 100% بدون إنترنت. تجربة 30 يوم مجانية.">
+<meta property="og:description" content="نظام أزرار: 17 نظاماً في تطبيق واحد. بيانات محلية على جهازك. تجربة 30 يوماً مجانية دون بطاقة.">
 <meta property="og:image" content="https://azrar-systems.com/og-image.png?v=9">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -100,7 +102,6 @@
 <meta name="twitter:image" content="https://azrar-systems.com/og-image.png?v=9">
 <meta name="twitter:image:alt" content="AZRAR SYSTEMS — Real Estate Management">
 <link rel="alternate" hreflang="ar" href="https://azrar-systems.com/">
-<link rel="alternate" hreflang="en" href="https://azrar-systems.com/?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://azrar-systems.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -118,7 +119,7 @@
 .chat-icon svg, .chat-avatar svg { width: 1.3em; height: 1.3em; display: block; }
 </style>
 
-<script type="application/ld+json" id="ld-schema">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AZRAR - نظام أزرار","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","softwareVersion":"3.16.1","datePublished":"2026-09-02","url":"https://azrar-systems.com/","downloadUrl":"https://apps.microsoft.com/detail/9NJFB5W8ZCSB","installUrl":"https://apps.microsoft.com/detail/9NJFB5W8ZCSB","offers":[{"@type":"Offer","name":"Solo","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Office","price":"79","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"119","priceCurrency":"USD"}],"description":"برنامج لإدارة العقارات والإيجارات للمكاتب العقارية: عقود وأقساط وتحصيل وعمولات وكشوف مالكين وتنبيهات وواتساب جماعي، يعمل بدون إنترنت على ويندوز.","inLanguage":["ar","en"],"countriesSupported":"JO, SA, AE, KW, QA, OM, BH, EG, IQ, LB","featureList":["إدارة عقود الإيجار والأقساط","تحصيل الإيجارات وتذكيرات واتساب","حساب غرامات التأخير","عمولات الوسطاء العقاريين","كشف حساب المالك","إدارة الصيانة","يعمل بدون إنترنت"],"keywords":"برنامج إدارة العقارات, برنامج إدارة الإيجارات, real estate management software"},{"@type":"Organization","name":"AZRAR SYSTEMS","url":"https://azrar-systems.com/","sameAs":["https://www.facebook.com/azrar.systems/"],"contactPoint":{"@type":"ContactPoint","telephone":"+962798986465","contactType":"customer support"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل يعمل نظام أزرار بدون إنترنت؟","acceptedAnswer":{"@type":"Answer","text":"نعم تماماً — يعمل بشكل كامل offline. البيانات تُخزَّن محلياً باستخدام SQLite. لا سيرفر خارجي ولا cloud."}},{"@type":"Question","name":"ما نظام التشغيل المدعوم؟","acceptedAnswer":{"@type":"Answer","text":"Windows 10 وWindows 11 (64-bit). لا يدعم macOS أو Linux حالياً."}},{"@type":"Question","name":"كم مدة التجربة المجانية؟","acceptedAnswer":{"@type":"Answer","text":"30 يوماً كاملة بكل المزايا — الأنظمة الـ17 بدون بطاقة ائتمان."}},{"@type":"Question","name":"هل يعمل على أكثر من جهاز؟","acceptedAnswer":{"@type":"Answer","text":"باقة Office: جهازان، وPro: 3 أجهزة. ويدعم مزامنة SQL Server للمكاتب الكبيرة."}},{"@type":"Question","name":"كيف يحمي النظام بياناتي؟","acceptedAnswer":{"@type":"Answer","text":"توقيع Ed25519 مربوط ببصمة جهازك، فحص SHA-256 عند كل إقلاع، وتشفير AES."}},{"@type":"Question","name":"كيف يتم التحديث؟","acceptedAnswer":{"@type":"Answer","text":"التحديثات تلقائية: النظام يكتشف الإصدار الأحدث عند التشغيل ويعرض زرّ تحديث بنقرة واحدة مع الحفاظ الكامل على بياناتك، ومجانية طوال سنة الترخيص."}}]}]}</script>
+<script type="application/ld+json" id="ld-schema">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"AZRAR - نظام أزرار","applicationCategory":"BusinessApplication","operatingSystem":"Windows 10, Windows 11","datePublished":"2026-09-02","url":"https://azrar-systems.com/","downloadUrl":"https://apps.microsoft.com/detail/9NJFB5W8ZCSB","installUrl":"https://apps.microsoft.com/detail/9NJFB5W8ZCSB","offers":[{"@type":"Offer","name":"Solo","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Office","price":"79","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"119","priceCurrency":"USD"}],"description":"برنامج Windows لإدارة العقارات والإيجارات للمكاتب العقارية: عقود وأقساط وتحصيل وعمولات وكشوف مالكين وتنبيهات وواتساب جماعي، بياناتك محلية على ويندوز مع تفعيل وتحقق دوري من الترخيص عبر الإنترنت.","inLanguage":["ar","en"],"countriesSupported":"JO, SA, AE, KW, QA, OM, BH, EG, IQ, LB","featureList":["إدارة عقود الإيجار والأقساط","تحصيل الإيجارات وتذكيرات واتساب","حساب غرامات التأخير","عمولات الوسطاء العقاريين","كشف حساب المالك","إدارة الصيانة","بيانات محلية على جهازك"],"keywords":"برنامج إدارة العقارات, برنامج إدارة الإيجارات, real estate management software"},{"@type":"Organization","name":"AZRAR SYSTEMS","url":"https://azrar-systems.com/","sameAs":["https://www.facebook.com/azrar.systems/"],"contactPoint":{"@type":"ContactPoint","telephone":"+962798986465","contactType":"customer support"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"هل أحتاج إنترنت لاستخدام نظام أزرار؟","acceptedAnswer":{"@type":"Answer","text":"بياناتك تُخزَّن محلياً على جهازك باستخدام SQLite ولا تُرفع إلى سيرفر خارجي. يتطلب التفعيل اتصالاً بالإنترنت، ثم التحقق من الترخيص مرة كل 7 أيام على الأقل؛ وبين مرات التحقق يستمر العمل محلياً."}},{"@type":"Question","name":"ما نظام التشغيل المدعوم؟","acceptedAnswer":{"@type":"Answer","text":"Windows 10 وWindows 11 (64-bit). لا يدعم macOS أو Linux حالياً."}},{"@type":"Question","name":"كم مدة التجربة المجانية؟","acceptedAnswer":{"@type":"Answer","text":"30 يوماً كاملة بكل المزايا — الأنظمة الـ17 بدون بطاقة ائتمان."}},{"@type":"Question","name":"هل يعمل على أكثر من جهاز؟","acceptedAnswer":{"@type":"Answer","text":"باقة Office: جهازان، وPro: 3 أجهزة. ويدعم مزامنة SQL Server للمكاتب الكبيرة."}},{"@type":"Question","name":"كيف يحمي النظام بياناتي؟","acceptedAnswer":{"@type":"Answer","text":"توقيع Ed25519 مربوط ببصمة جهازك، فحص SHA-256 عند كل إقلاع، وتشفير AES."}},{"@type":"Question","name":"كيف يتم التحديث؟","acceptedAnswer":{"@type":"Answer","text":"التحديثات تلقائية: النظام يكتشف الإصدار الأحدث عند التشغيل ويعرض زرّ تحديث بنقرة واحدة مع الحفاظ الكامل على بياناتك، ومجانية طوال سنة الترخيص."}}]}]}</script>
 <!-- Meta Pixel Code noscript fallback -->
 <noscript><img height="1" width="1" style="display:none" alt=""
 src="https://www.facebook.com/tr?id=1318471933825544&ev=PageView&noscript=1"
@@ -195,19 +196,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <h1>
-      <span class="ar"><span class="white">نظام عقاري</span><br><span class="hl">احترافي بالكامل</span><br><span class="dm">للسوق العربي</span></span>
-      <span class="en"><span class="white">Professional</span><br><span class="hl">Real Estate</span><br><span class="dm">Management System</span></span>
+      <span class="ar"><span class="white">برنامج إدارة العقارات</span><br><span class="hl">والإيجارات والأقساط</span><br><span class="dm">للمكاتب العقارية العربية</span></span>
+      <span class="en"><span class="white">Real Estate &amp; Rental</span><br><span class="hl">Management Software</span><br><span class="dm">for Arab Property Offices</span></span>
     </h1>
 
     <p class="hero-sub">
-      <span class="ar">أزرار — عقودك، أقساطك، عمولاتك، وتنبيهاتك في مكان واحد. بياناتك على جهازك، يعمل بدون إنترنت، مصمم لعقود الإيجار العربية.</span>
-      <span class="en">AZRAR — contracts, installments, commissions, and alerts all in one place. Your data stays on your device, works offline, built for Arab real estate markets.</span>
+      <span class="ar">أزرار — عقودك، أقساطك، عمولاتك، وتنبيهاتك في مكان واحد. بياناتك على جهازك، ومصمم لعقود الإيجار العربية.</span>
+      <span class="en">AZRAR — contracts, installments, commissions, and alerts all in one place. Your data stays on your device, built for Arab real estate markets.</span>
     </p>
 
     <div class="hero-actions">
       <a href="https://apps.microsoft.com/detail/9NJFB5W8ZCSB" target="_blank" rel="noopener" class="btn-main">
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="margin-inline-end:.5rem"><path fill="#f25022" d="M2 2h9.5v9.5H2z"/><path fill="#7fba00" d="M12.5 2H22v9.5h-9.5z"/><path fill="#00a4ef" d="M2 12.5h9.5V22H2z"/><path fill="#ffb900" d="M12.5 12.5H22V22h-9.5z"/></svg><span class="ar">جرّب 30 يوم مجاناً</span>
-        <span class="en">Try Free for 30 Days</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="margin-inline-end:.5rem"><path fill="#f25022" d="M2 2h9.5v9.5H2z"/><path fill="#7fba00" d="M12.5 2H22v9.5h-9.5z"/><path fill="#00a4ef" d="M2 12.5h9.5V22H2z"/><path fill="#ffb900" d="M12.5 12.5H22V22h-9.5z"/></svg><span class="ar">حمّل من Microsoft Store — تجربة 30 يوماً مجاناً</span>
+        <span class="en">Download from Microsoft Store — 30-Day Free Trial</span>
       </a>
       <a href="#modules" class="btn-ghost">
         <span class="ar">اكتشف الأنظمة ↓</span>
@@ -216,6 +217,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <a href="guide.html#install" class="hero-alt-download ar">ليس لديك حساب Microsoft؟ حمّل مباشرة بدون متجر ←</a>
     <a href="guide-en.html#install" class="hero-alt-download en">No Microsoft account? Download directly without the Store ←</a>
+    <p class="hero-req ar">Windows 10/11 (64-bit) · تجربة 30 يوماً دون بطاقة ائتمان · الاستمرار بعد التجربة يتطلب ترخيصاً · التفعيل يحتاج إنترنت. واتساب للأسئلة وطلب الترخيص فقط.</p>
+    <p class="hero-req en">Windows 10/11 (64-bit) · 30-day trial, no credit card · a license is required after the trial · activation needs internet. WhatsApp is for questions and license requests only.</p>
     <a href="https://apps.microsoft.com/detail/9NJFB5W8ZCSB" target="_blank" rel="noopener" id="store-rating-badge" class="store-rating-badge" aria-label="AZRAR on Microsoft Store" hidden></a>
 
     <div class="hero-stats">
@@ -304,8 +307,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sec-label reveal"><span class="ar">نظرة سريعة</span><span class="en">Overview</span></div>
     <h2 class="sec-title reveal"><span class="ar">ما هو برنامج AZRAR لإدارة العقارات؟</span><span class="en">What Is AZRAR Real Estate Management Software?</span></h2>
     <p class="sec-sub reveal" style="max-width:780px;margin-inline:auto;">
-      <span class="ar">AZRAR (أزرار) هو برنامج إدارة عقارات لسطح المكتب على Windows، مخصص للمكاتب العقارية في الأردن ودول الخليج والأسواق العربية. يدير عقود الإيجار، والأقساط والدفعات، والمبيعات، وعمولات الوسطاء، والصيانة، وكشوفات حساب الملاك، ورسائل واتساب الجماعية — ضمن 17 نظاماً فرعياً. يعمل بالكامل بدون إنترنت عبر قاعدة بيانات SQLite محلية، بترخيص سنوي واحد لكل جهاز وتجربة مجانية 30 يوماً.</span>
-      <span class="en">AZRAR is a Windows desktop real estate management application for property offices in Jordan, the Gulf, and Arab markets. It handles lease contracts, installments and payments, sales, broker commissions, maintenance, owner statements, and bulk WhatsApp messaging across 17 modules. It runs fully offline on a local SQLite database, with a single annual per-device license and a 30-day free trial.</span>
+      <span class="ar">AZRAR (أزرار) هو برنامج إدارة عقارات لسطح المكتب على Windows، مخصص للمكاتب العقارية في الأردن ودول الخليج والأسواق العربية. يدير عقود الإيجار، والأقساط والدفعات، والمبيعات، وعمولات الوسطاء، والصيانة، وكشوفات حساب الملاك، ورسائل واتساب الجماعية — ضمن 17 نظاماً فرعياً. يخزّن بياناتك محلياً في قاعدة SQLite على جهازك (التفعيل والتحقق من الترخيص يحتاجان اتصالاً مرة كل 7 أيام على الأقل)، بترخيص سنوي واحد لكل جهاز وتجربة مجانية 30 يوماً.</span>
+      <span class="en">AZRAR is a Windows desktop real estate management application for property offices in Jordan, the Gulf, and Arab markets. It handles lease contracts, installments and payments, sales, broker commissions, maintenance, owner statements, and bulk WhatsApp messaging across 17 modules. It stores your data locally in SQLite on your device (activation and license checks need internet at least once every 7 days), with a single annual per-device license and a 30-day free trial.</span>
     </p>
   </div>
 </section>
@@ -322,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="how-step">
         <div class="how-num">1</div>
         <h3><span class="ar">حمّل وثبّت</span><span class="en">Download &amp; Install</span></h3>
-        <p><span class="ar">نزّل النظام على Windows وثبّته كأي برنامج — بدون إنترنت.</span><span class="en">Download AZRAR on Windows and install it like any app — offline.</span></p>
+        <p><span class="ar">نزّل النظام من Microsoft Store وثبّته كأي برنامج على Windows. التفعيل يحتاج إنترنت.</span><span class="en">Download AZRAR from the Microsoft Store and install it like any Windows app. Activation needs internet.</span></p>
       </div>
       <div class="how-arrow">→</div>
       <div class="how-step">
@@ -480,7 +483,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="sec-title reveal"><span class="ar">ما الذي يميّز AZRAR عن برامج إدارة العقارات الأخرى؟</span><span class="en">What Makes AZRAR Different From Other Real Estate Software?</span></h2>
     <p class="sec-sub reveal"><span class="ar">مزايا لا تجدها في أنظمة إدارة العقارات الأخرى.</span><span class="en">Capabilities you won't find in other real estate management systems.</span></p>
     <div class="feat-grid reveal">
-      <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><circle cx="7" cy="6" r=".6" fill="currentColor" stroke="none"/></svg></div><h3><span class="ar">بيانات محلية 100%</span><span class="en">100% Local Data</span></h3><p><span class="ar">بياناتك على جهازك — لا سيرفر خارجي، لا cloud. يعمل بدون إنترنت تماماً.</span><span class="en">Your data stays on your device — no external server, no cloud. Works completely offline.</span></p></div>
+      <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><circle cx="7" cy="6" r=".6" fill="currentColor" stroke="none"/></svg></div><h3><span class="ar">بيانات محلية 100%</span><span class="en">100% Local Data</span></h3><p><span class="ar">بياناتك على جهازك — لا سيرفر خارجي، لا cloud. العمل اليومي محلي، والترخيص يُتحقق منه مرة كل 7 أيام على الأقل.</span><span class="en">Your data stays on your device — no external server, no cloud. Daily work is local; the license is verified at least once every 7 days.</span></p></div>
       <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h2M8 17h2M14 14h2M14 17h2"/></svg></div><h3><span class="ar">فرقية الأيام الفعلية</span><span class="en">Actual Day Calculation</span></h3><p><span class="ar">الحساب بأيام الشهر الفعلية (28/29/30/31) — دقة مالية تحمي حقوقك وعملائك.</span><span class="en">Calculated using actual days per month (28/29/30/31) — financial accuracy that protects everyone.</span></p></div>
       <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.6-4.6M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.6 4.6M20 20v-4h-4"/></svg></div><h3><span class="ar">دورة حياة العقد الكاملة</span><span class="en">Full Contract Lifecycle</span></h3><p><span class="ar">إنشاء → تجديد → فسخ → أرشفة تلقائية. نظام تحصيل متكامل وترحيل أرصدة.</span><span class="en">Create → Renew → Terminate → Auto-archive. Full collection system and balance rollover.</span></p></div>
       <div class="feat"><div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><path d="M9.5 16l1.8 1.8L15 14.2"/></svg></div><h3><span class="ar">توقيع رقمي Ed25519</span><span class="en">Ed25519 Digital Signature</span></h3><p><span class="ar">ترخيص مربوط بجهازك بتوقيع رقمي لا يمكن تزويره. فحص سلامة عند كل إقلاع.</span><span class="en">License bound to your device with unforgeable digital signature. Integrity check on every launch.</span></p></div>
@@ -560,7 +563,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="ar">تحديثات مجانية سنة كاملة</span><span class="en">Free updates for 1 year</span></li>
           <li><span class="ar">دعم واتساب مباشر</span><span class="en">Direct WhatsApp support</span></li>
         </ul>
-        <a href="https://wa.me/962798986465?text=Solo%20Plan" class="plan-cta plan-cta-ghost" aria-label="ابدأ تجربة باقة Solo مجاناً 30 يوم"><span class="ar">ابدأ مجاناً 30 يوم</span><span class="en">Start Free 30 Days</span></a>
+        <a href="https://wa.me/962798986465?text=Solo%20Plan" class="plan-cta plan-cta-ghost" aria-label="اطلب ترخيص باقة Solo عبر واتساب"><span class="ar">اطلب الترخيص عبر واتساب</span><span class="en">Request a license on WhatsApp</span></a>
       </div>
       <div class="plan hot">
         <div class="plan-badge"><span class="ar">الأكثر طلباً</span><span class="en">Most Popular</span></div>
@@ -577,7 +580,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="ar">دعم واتساب أولوية</span><span class="en">Priority WhatsApp support</span></li>
           <li><span class="ar">جلسة إعداد مجانية</span><span class="en">Free setup session</span></li>
         </ul>
-        <a href="https://wa.me/962798986465?text=Office%20Plan" class="plan-cta plan-cta-main" aria-label="ابدأ تجربة باقة Office مجاناً 30 يوم"><span class="ar">ابدأ مجاناً 30 يوم</span><span class="en">Start Free 30 Days</span></a>
+        <a href="https://wa.me/962798986465?text=Office%20Plan" class="plan-cta plan-cta-main" aria-label="اطلب ترخيص باقة Office عبر واتساب"><span class="ar">اطلب الترخيص عبر واتساب</span><span class="en">Request a license on WhatsApp</span></a>
       </div>
       <div class="plan">
         <div class="plan-name">PRO</div>
@@ -593,7 +596,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><span class="ar">دعم واتساب أولوية قصوى</span><span class="en">Top priority WhatsApp support</span></li>
           <li><span class="ar">إعداد + تدريب الفريق</span><span class="en">Setup + team training</span></li>
         </ul>
-        <a href="https://wa.me/962798986465?text=Pro%20Plan" class="plan-cta plan-cta-ghost" aria-label="ابدأ تجربة باقة Pro مجاناً 30 يوم"><span class="ar">ابدأ مجاناً 30 يوم</span><span class="en">Start Free 30 Days</span></a>
+        <a href="https://wa.me/962798986465?text=Pro%20Plan" class="plan-cta plan-cta-ghost" aria-label="اطلب ترخيص باقة Pro عبر واتساب"><span class="ar">اطلب الترخيص عبر واتساب</span><span class="en">Request a license on WhatsApp</span></a>
       </div>
     </div>
     <div class="enterprise-box reveal">
@@ -697,7 +700,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="sec-title reveal"><span class="ar">أسئلة شائعة عن برنامج إدارة العقارات AZRAR</span><span class="en">Frequently Asked Questions About AZRAR Real Estate Software</span></h2>
     <p class="sec-sub reveal"><span class="ar">إجابات واضحة على أكثر الأسئلة تكراراً.</span><span class="en">Clear answers to the most frequently asked questions about AZRAR.</span></p>
     <div class="faq-list reveal">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><span class="ar">هل يعمل نظام أزرار بدون إنترنت؟</span><span class="en">Does AZRAR work without internet?</span></span><span class="faq-chevron">&#9660;</span></div><div class="faq-a"><span class="ar">نعم تماماً — يعمل بشكل كامل offline. البيانات تُخزَّن محلياً باستخدام SQLite. لا سيرفر خارجي.</span><span class="en">Yes, completely offline. Data stored locally via SQLite. No external server, no cloud.</span></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><span class="ar">هل أحتاج إنترنت لاستخدام نظام أزرار؟</span><span class="en">Do I need internet to use AZRAR?</span></span><span class="faq-chevron">&#9660;</span></div><div class="faq-a"><span class="ar">بياناتك تُخزَّن محلياً على جهازك باستخدام SQLite ولا تُرفع إلى سيرفر خارجي. يتطلب التفعيل اتصالاً بالإنترنت، ثم التحقق من الترخيص مرة كل 7 أيام على الأقل؛ وبين مرات التحقق يستمر العمل محلياً.</span><span class="en">Your data is stored locally on your device using SQLite and is not uploaded to an external server. Activation requires an internet connection, followed by a license check at least once every 7 days; between checks you keep working locally.</span></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><span class="ar">ما نظام التشغيل المدعوم؟</span><span class="en">What OS is supported?</span></span><span class="faq-chevron">&#9660;</span></div><div class="faq-a"><span class="ar">Windows 10 وWindows 11 (64-bit). لا يدعم macOS أو Linux حالياً.</span><span class="en">Windows 10 and Windows 11 (64-bit). macOS and Linux are not currently supported.</span></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><span class="ar">كم مدة التجربة المجانية؟</span><span class="en">How long is the free trial?</span></span><span class="faq-chevron">&#9660;</span></div><div class="faq-a"><span class="ar">30 يوماً كاملة بكل المزايا — الأنظمة الـ 17 بدون بطاقة ائتمان.</span><span class="en">30 full days with all features — all 17 modules. No credit card required.</span></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span><span class="ar">هل يعمل على أكثر من جهاز؟</span><span class="en">Multiple devices?</span></span><span class="faq-chevron">&#9660;</span></div><div class="faq-a"><span class="ar">Office: جهازان، Pro: 3 أجهزة. يدعم مزامنة SQL Server.</span><span class="en">Office: 2 devices, Pro: 3 devices. Supports SQL Server sync.</span></div></div>
@@ -884,15 +887,15 @@ function setLang(lang) {
   const ogDesc = document.querySelector('meta[property="og:description"]');
   
   if (lang === 'ar') {
-    document.title = "برنامج إدارة العقارات والإيجارات — أزرار AZRAR | بدون إنترنت";
-    if (metaDesc) metaDesc.setAttribute('content', "برنامج أزرار لإدارة العقارات والإيجارات للمكاتب العقارية في الأردن والخليج: عقود، أقساط، تحصيل، عمولات وكشوف مالكين. يعمل بدون إنترنت، جرّب 30 يوماً مجاناً.");
+    document.title = "برنامج إدارة العقارات والإيجارات للمكاتب العقارية — أزرار AZRAR";
+    if (metaDesc) metaDesc.setAttribute('content', "برنامج أزرار لإدارة العقارات والإيجارات للمكاتب العقارية في الأردن والخليج: عقود، أقساط، تحصيل، عمولات وكشوف مالكين. بياناتك محلية على جهازك، وتجربة مجانية 30 يوماً دون بطاقة ائتمان.");
     if (ogTitle) ogTitle.setAttribute('content', "برنامج إدارة العقارات والإيجارات — أزرار AZRAR");
-    if (ogDesc) ogDesc.setAttribute('content', "نظام أزرار: 17 نظاماً في تطبيق واحد. بيانات محلية 100% بدون إنترنت. تجربة 30 يوم مجانية.");
+    if (ogDesc) ogDesc.setAttribute('content', "نظام أزرار: 17 نظاماً في تطبيق واحد. بيانات محلية على جهازك. تجربة 30 يوماً مجانية دون بطاقة.");
   } else {
-    document.title = "Real Estate & Rental Management Software — AZRAR | Works Offline";
-    if (metaDesc) metaDesc.setAttribute('content', "AZRAR real estate and rental management software for offices in Jordan and the Gulf: contracts, installments, rent collection, commissions and owner statements. Works offline, 30-day free trial.");
+    document.title = "Real Estate & Rental Management Software for Offices — AZRAR";
+    if (metaDesc) metaDesc.setAttribute('content', "AZRAR real estate and rental management software for offices in Jordan and the Gulf: contracts, installments, rent collection, commissions and owner statements. Local data on your device, 30-day free trial with no credit card.");
     if (ogTitle) ogTitle.setAttribute('content', "Real Estate & Rental Management Software — AZRAR");
-    if (ogDesc) ogDesc.setAttribute('content', "AZRAR: 17 modules in one application. 100% local database works offline. Free 30-day trial.");
+    if (ogDesc) ogDesc.setAttribute('content', "AZRAR: 17 modules in one application. Local database on your device. Free 30-day trial.");
   }
   
   try { localStorage.setItem('azrar_lang', lang); } catch(e) {};
@@ -1098,21 +1101,7 @@ window.addEventListener('load', () => {
 <script>
 (function(){function o(){var h=location.hash.slice(1);if(!h)return;var e=document.getElementById(h);var d=e&&(e.matches('details')?e:e.querySelector('details.more-block'));if(d)d.open=true;}addEventListener('hashchange',o);o();})();
 </script>
-<script id="azrar-ga-events">
-// GA4 conversion tracking: fire named events on WhatsApp / trial / contact clicks
-document.addEventListener('click',function(e){
-  var a=e.target.closest&&e.target.closest('a'); if(!a) return;
-  var href=a.getAttribute('href')||'';
-  if(typeof gtag!=='function') return;
-  if(href.indexOf('wa.me')>-1||href.indexOf('api.whatsapp')>-1){
-    var t=decodeURIComponent(href);
-    var isTrial=/تجرب|مجان|trial|free/i.test(t);
-    gtag('event', isTrial?'trial_lead':'whatsapp_click', {transport_type:'beacon', link_url:href});
-  } else if(href.indexOf('mailto:')===0){
-    gtag('event','email_click',{transport_type:'beacon'});
-  }
-},true);
-</script>
+<script src="track.js" defer></script>
 <script>
 (function(){var bar=document.createElement('div');bar.className='az-progress';document.body.appendChild(bar);
  function p(){var h=document.documentElement,s=h.scrollTop||document.body.scrollTop,m=(h.scrollHeight-h.clientHeight)||1;bar.style.width=(s/m*100)+'%';}

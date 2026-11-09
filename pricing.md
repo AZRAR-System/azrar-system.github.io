@@ -46,7 +46,7 @@ All tiers include a 30-day free trial with full features, no credit card require
 ## Notes for evaluation
 - Billing: one annual payment per license, not monthly. No hidden recurring fees.
 - Trial: 30 days, all features, all 17 modules, no credit card required.
-- Data: 100% local (SQLite), works fully offline — no cloud subscription cost or data-residency dependency.
+- Data: Stored locally on the device (SQLite) — no cloud subscription cost. Activation needs internet and the license is re-verified at least once every 7 days.
 - Distribution: Microsoft Store (https://apps.microsoft.com/detail/9NJFB5W8ZCSB) or direct download (https://azrar-systems.com/guide.html#install).
 - Markets supported: Jordan, Saudi Arabia, UAE, Kuwait, Qatar, Oman, Bahrain, Iraq, Egypt, Palestine, Lebanon, Morocco, Sudan, Algeria, Tunisia (multi-currency).
 

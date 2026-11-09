@@ -1,6 +1,6 @@
 # AZRAR SYSTEMS - Real Estate Management System
 
-AZRAR is the most comprehensive real estate management system for offices in Jordan and the Gulf. It manages contracts, installments, sales, commissions, maintenance, legal documentation, and WhatsApp bulk messaging. It is designed to work completely offline with a secure local SQLite database, custom device bindings, and Ed25519 digital signatures.
+AZRAR is the most comprehensive real estate management system for offices in Jordan and the Gulf. It manages contracts, installments, sales, commissions, maintenance, legal documentation, and WhatsApp bulk messaging. It stores data locally in a SQLite database on the user's device (activation needs internet, and the license is re-verified online at least once every 7 days), custom device bindings, and Ed25519 digital signatures.
 
 ## Navigation & Key Resources
 - [Main Landing Page](https://azrar-systems.com/): Official homepage with pricing plans, ROI calculator, and interactive tour.

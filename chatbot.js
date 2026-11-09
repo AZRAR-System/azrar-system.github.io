@@ -13,7 +13,7 @@ const chatData = {
     welcome: "مرحباً بك! أنا مساعد أزرار الذكي. كيف يمكنني مساعدتك اليوم؟",
     options: [
       { id: "what", text: "ما هو نظام أزرار؟", next: "ans_what" },
-      { id: "offline", text: "هل يعمل بدون إنترنت؟", next: "ans_offline" },
+      { id: "offline", text: "هل أحتاج إنترنت؟", next: "ans_offline" },
       { id: "price", text: "ما هي الباقات والأسعار؟", next: "ans_price" },
       { id: "reqs", text: "ما هي متطلبات التشغيل؟", next: "ans_reqs" },
       { id: "trial", text: "كيف أقوم بتجربة النظام؟", next: "ans_trial" },
@@ -24,7 +24,7 @@ const chatData = {
       options: ["price", "offline", "trial", "human", "back"]
     },
     ans_offline: {
-      text: "<b>نعم، وبشكل كامل!</b> نظام أزرار مصمم ليعمل بدون إنترنت تماماً (Offline 100%) لحماية خصوصية بياناتك. يتم حفظ قاعدة البيانات محلياً على جهازك وتشفيرها، مما يمنحك سرعة فائقة في معالجة آلاف العقود دون أي بطء أو انقطاع.",
+      text: "<b>بياناتك محلية على جهازك.</b> يتطلب التفعيل اتصالاً بالإنترنت، ثم التحقق من الترخيص مرة كل 7 أيام على الأقل؛ وبين مرات التحقق يستمر العمل محلياً. هذا يحمي خصوصية بياناتك. يتم حفظ قاعدة البيانات محلياً على جهازك وتشفيرها، مما يمنحك سرعة فائقة في معالجة آلاف العقود دون أي بطء أو انقطاع.",
       options: ["what", "trial", "human", "back"]
     },
     ans_price: {
@@ -50,18 +50,18 @@ const chatData = {
     welcome: "Welcome! I am the AZRAR Assistant. How can I help you today?",
     options: [
       { id: "what", text: "What is AZRAR?", next: "ans_what" },
-      { id: "offline", text: "Does it work offline?", next: "ans_offline" },
+      { id: "offline", text: "Do I need internet?", next: "ans_offline" },
       { id: "price", text: "Plans & Pricing?", next: "ans_price" },
       { id: "reqs", text: "System Requirements?", next: "ans_reqs" },
       { id: "trial", text: "How to start a free trial?", next: "ans_trial" },
       { id: "human", text: "Contact Support", next: "ans_human" }
     ],
     ans_what: {
-      text: "<b>AZRAR</b> is an offline real estate management system. It handles contracts, installments, receipts, payments, commissions, maintenance, WhatsApp reminders, and has a built-in AI assistant. It manages everything on your local device without needing cloud servers.",
+      text: "<b>AZRAR</b> is a Windows real estate management system that keeps your data on your device. It handles contracts, installments, receipts, payments, commissions, maintenance, WhatsApp reminders, and has a built-in AI assistant. It manages everything on your local device without needing cloud servers.",
       options: ["price", "offline", "trial", "human", "back"]
     },
     ans_offline: {
-      text: "<b>Yes, 100%!</b> AZRAR works completely offline. Your database is stored locally on your device, ensuring maximum privacy, zero downtime, and extremely fast search and processing of contracts.",
+      text: "<b>Your data stays local.</b> Activation requires an internet connection, followed by a license check at least once every 7 days; between checks you keep working locally. Your database is stored locally on your device, ensuring maximum privacy, zero downtime, and extremely fast search and processing of contracts.",
       options: ["what", "trial", "human", "back"]
     },
     ans_price: {
