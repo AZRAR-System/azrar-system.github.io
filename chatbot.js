@@ -24,7 +24,7 @@ const chatData = {
       options: ["price", "offline", "trial", "human", "back"]
     },
     ans_offline: {
-      text: "<b>بياناتك محلية على جهازك.</b> يتطلب التفعيل اتصالاً بالإنترنت، ثم التحقق من الترخيص مرة كل 7 أيام على الأقل؛ وبين مرات التحقق يستمر العمل محلياً. هذا يحمي خصوصية بياناتك. يتم حفظ قاعدة البيانات محلياً على جهازك وتشفيرها، مما يمنحك سرعة فائقة في معالجة آلاف العقود دون أي بطء أو انقطاع.",
+      text: "<b>بياناتك محلية على جهازك.</b> يتطلب التفعيل بالمفتاح اتصالاً بالإنترنت، كما يلزم اتصال دوري للتحقق من الترخيص وفق شروط الترخيص؛ وبين مرات التحقق يستمر العمل محلياً. هذا يحمي خصوصية بياناتك. يتم حفظ قاعدة البيانات محلياً على جهازك وتشفيرها، مما يمنحك سرعة فائقة في معالجة آلاف العقود دون أي بطء أو انقطاع.",
       options: ["what", "trial", "human", "back"]
     },
     ans_price: {
@@ -61,7 +61,7 @@ const chatData = {
       options: ["price", "offline", "trial", "human", "back"]
     },
     ans_offline: {
-      text: "<b>Your data stays local.</b> Activation requires an internet connection, followed by a license check at least once every 7 days; between checks you keep working locally. Your database is stored locally on your device, ensuring maximum privacy, zero downtime, and extremely fast search and processing of contracts.",
+      text: "<b>Your data stays local.</b> Activating with a key requires an internet connection, and a periodic connection is also required to verify the license, per the license terms; between checks you keep working locally. Your database is stored locally on your device, ensuring maximum privacy, zero downtime, and extremely fast search and processing of contracts.",
       options: ["what", "trial", "human", "back"]
     },
     ans_price: {
