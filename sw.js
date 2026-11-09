@@ -1,23 +1,14 @@
-const CACHE_NAME = 'azrar-cache-v1.19';
+const CACHE_NAME = 'azrar-cache-v1.22-performance';
 const ASSETS = [
-  './',
-  './index.html',
-  './style.css',
-  './shared-dark.css',
-  './hig-base.css',
-  './home-light.css',
-  './hig-a11y.js',
-  './home-bg.js',
-  './chatbot.js',
-  './bg-animation.js',
-  './logo.png',
-  './bg-city.webp',
-  './favicon.ico',
-  './android-chrome-192x192.png',
-  './favicon-32x32.png',
-  './favicon-16x16.png',
-  './apple-touch-icon.png',
-  './site.webmanifest'
+  "./",
+  "./site.js",
+  "./youtube-lite.js?v=1",
+  "./azrar-performance.css?v=20261026-1",
+  "./assets/logo-64.webp",
+  "./assets/fonts/tajawal-400-arabic.woff2",
+  "./assets/fonts/tajawal-900-arabic.woff2",
+  "./assets/youtube-a3-Igtky25E-960.webp",
+  "./favicon.ico"
 ];
 
 self.addEventListener('install', event => {
@@ -59,6 +50,9 @@ self.addEventListener('fetch', event => {
   // Bypass third-party domains (Analytics, Facebook API, Fonts)
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+
+  // Let the browser and server handle video range requests; avoid caching large media.
+  if (req.headers.has('range') || /\.(?:mp4|webm|srt|vtt)$/i.test(url.pathname)) return;
 
   const isHtml = req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html');
   // Code that must match the page it ships with (CSS/JS) is treated like the page itself.

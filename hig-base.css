@@ -280,9 +280,3 @@ html:not([data-theme="dark"]) .lang-btn { min-block-size: 44px; min-inline-size:
 /* Language-paired links (<a class="ar"> + <a class="en">) in the bilingual-in-one-document pages.
    `.sf-col a { display:block }` outranked the generic .en rule on the legal pages. */
 html[data-lang="ar"] a.en, html[data-lang="en"] a.ar { display: none !important; }
-
-/* Conversion CTAs: Store = primary (download/trial), WhatsApp = secondary (questions / license) */
-.cta .cta-store{background:#fff;color:#181341;box-shadow:0 8px 24px rgba(0,0,0,.25);margin:.3rem .4rem;}
-.cta .cta-wa{background:transparent;border:1px solid #25d366;color:#fff;box-shadow:none;margin:.3rem .4rem;}
-.cta .cta-note,.hero-req{font-size:.8rem;line-height:1.6;color:#a9b8d6;margin:.9rem auto 0;max-width:42rem;}
-.cta .cta-store svg{flex-shrink:0;}

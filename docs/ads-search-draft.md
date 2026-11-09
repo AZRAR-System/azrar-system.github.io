@@ -10,7 +10,7 @@
 | السوق الافتراضي | الأردن (لا توجد بيانات Search Console متاحة لتغييره). Default: Jordan, changeable. |
 | اللغة | العربية أولاً، الإنجليزية مجموعة إعلانية منفصلة. |
 | الميزانية | **بانتظار قرارك.** لا رقم مقترح. / Awaiting your decision. |
-| التحويل الرئيسي | `store_click` (نقرة، وليست تثبيتاً). الثانوي: `trial_lead`, `whatsapp_click`. |
+| التحويل الرئيسي | `download_select` مع `method=store` (نقرة المتجر، وليست تثبيتاً). الثانوي: `download_open`, `activation_request`, `support_contact` (أحداث الموقع الموجودة في `site.js`). |
 | استهداف | الموقع الفعلي أو المهتمون بالموقع (Presence)؛ جدول: أيام العمل. |
 
 ## 2. الكلمات | Keywords (مطابقة عبارة/تامة، لا واسعة)
@@ -36,7 +36,7 @@
 | بديل إكسل | `https://azrar-systems.com/alternative-excel.html` |
 | كشف حساب | `https://azrar-systems.com/tenant-statement.html` |
 | عام | `https://azrar-systems.com/` |
-(نسخ `-en.html` للمجموعة الإنجليزية.) كل صفحة فيها زر Microsoft Store كزر أساسي.
+(نسخ `-en.html` للمجموعة الإنجليزية.) كل صفحة فيها زر «تحميل وتجربة» يقود إلى صفحة التنزيل (المتجر أو المثبّت).
 
 ## 5. أهلية Merchant Center ومراجعات Google | Eligibility check
 - **Merchant Center / Shopping:** مخصص لمنتجات مادية قابلة للشراء من الموقع؛ ترخيص برنامج يُطلب عبر واتساب، فالأهلية **غير مرجحة**. لا يُستخدم.
@@ -44,4 +44,4 @@
 - Neither is a prerequisite for search optimisation.
 
 ## 6. قياس الحدود | Measurement limits
-نقرة المتجر ≠ تثبيت؛ التثبيت الفعلي يظهر في Partner Center فقط. نقرة واتساب ≠ بيع. استيراد التحويلات إلى Google Ads يتطلب ربط GA4 وتفعيل `store_click` كحدث رئيسي (Key event) بعد موافقتك.
+نقرة المتجر ≠ تثبيت؛ التثبيت الفعلي يظهر في Partner Center فقط. نقرة واتساب ≠ بيع. استيراد التحويلات إلى Google Ads يتطلب ربط GA4 وتفعيل `download_select` (store) كحدث رئيسي (Key event) بعد موافقتك.
