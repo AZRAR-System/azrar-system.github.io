@@ -135,3 +135,12 @@ body::before,body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-ev
 @media(prefers-reduced-motion:reduce){body::before,.brand-hero .hero-screenshot,.brand-hero .eyebrow::before{animation:none}.feature-card:hover,.price-card:hover,.download-card:hover,.resource-card:hover,.lesson-card:hover,.primary-button:hover,.site-download:hover{transform:none}}
 
 .youtube-facade,.youtube-frame{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;background:#070518}.youtube-facade{position:relative;padding:0;overflow:hidden;cursor:pointer;color:#fff}.youtube-facade img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}.youtube-facade::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,#0005)}.youtube-play-icon{position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:#f03;border-radius:14px;box-shadow:0 7px 24px #0005;display:grid;place-items:center}.youtube-play-icon::after{content:"";width:0;height:0;border-block:11px solid transparent;border-inline-start:18px solid white;margin-inline-start:4px}.youtube-facade:hover .youtube-play-icon{background:#ff2347;box-shadow:0 8px 30px #0008}.youtube-frame:focus-visible,.youtube-facade:focus-visible{outline:3px solid #dcb15f;outline-offset:-4px}.app-picture figcaption a{color:inherit}.brand-hero .hero-screenshot{animation:none}@media(max-width:700px){body::before{animation:none}}
+/* Microsoft Store card: crisp logo + blurred glow behind it */
+.store-card{position:relative;overflow:hidden;isolation:isolate}
+.store-card>*{position:relative;z-index:1}
+.store-card>.store-bg{position:absolute;z-index:0;inset-inline-end:-36px;bottom:-34px;width:230px;height:230px;opacity:.4;filter:blur(9px);pointer-events:none}
+.store-card>.store-logo{width:44px;height:44px;margin-bottom:10px;filter:drop-shadow(0 6px 14px #0008)}
+.store-card::after{content:'';position:absolute;z-index:0;inset-inline-end:-60px;bottom:-60px;width:260px;height:240px;border-radius:50%;background:radial-gradient(circle,#00a4ef44,#7fba0022 45%,transparent 70%);filter:blur(30px);pointer-events:none}
+
+.gh-card::after{background:radial-gradient(circle,#ffffff2e,#8b7cff1f 45%,transparent 70%)}
+.gh-card>.store-bg{opacity:.18}
