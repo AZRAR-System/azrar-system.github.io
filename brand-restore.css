@@ -15,3 +15,6 @@ body::before,body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-ev
 .store-card>.store-bg{position:absolute;z-index:0;inset-inline-end:-36px;bottom:-34px;width:230px;height:230px;opacity:.4;filter:blur(9px);pointer-events:none}
 .store-card>.store-logo{width:44px;height:44px;margin-bottom:10px;filter:drop-shadow(0 6px 14px #0008)}
 .store-card::after{content:'';position:absolute;z-index:0;inset-inline-end:-60px;bottom:-60px;width:260px;height:240px;border-radius:50%;background:radial-gradient(circle,#00a4ef44,#7fba0022 45%,transparent 70%);filter:blur(30px);pointer-events:none}
+
+.gh-card::after{background:radial-gradient(circle,#ffffff2e,#8b7cff1f 45%,transparent 70%)}
+.gh-card>.store-bg{opacity:.18}

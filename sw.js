@@ -1,4 +1,4 @@
-const CACHE_NAME = 'azrar-cache-v1.24-store-logo';
+const CACHE_NAME = 'azrar-cache-v1.25-store-gh-logo';
 const ASSETS = [
   "./",
   "./site.js",
