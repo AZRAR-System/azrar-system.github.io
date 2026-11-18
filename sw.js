@@ -1,4 +1,4 @@
-const CACHE_NAME = 'azrar-cache-v1.29-version-3.20.1';
+const CACHE_NAME = 'azrar-cache-v1.30-version-3.21.0';
 const ASSETS = [
   "./",
   "./site.js",
