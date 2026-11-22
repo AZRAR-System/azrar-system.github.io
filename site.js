@@ -1,6 +1,32 @@
 
 'use strict';
-(function(){const html=document.documentElement,lang=html.lang==='en'?'en':'ar',ar=lang==='ar';html.dataset.lang=lang;const query=new URLSearchParams(location.search),requested=query.get('lang');if(requested&&requested!==lang&&['ar','en'].includes(requested)){const alt=document.querySelector('link[rel="alternate"][hreflang="'+requested+'"]');if(alt){const u=new URL(alt.href);if(u.pathname!==location.pathname){u.hash=location.hash;location.replace(u.href);return;}}}
+(function(){const html=document.documentElement,lang=html.lang==='en'?'en':'ar',ar=lang==='ar';html.dataset.lang=lang;const query=new URLSearchParams(location.search),requested=query.get('lang');if(requested&&requested!==lang&&['ar','en'].includes(requested)){const alt=document.querySelector('link[rel="alternate"][hreflang="'+requested+'"]');if(alt){const u=new URL(alt.href);if(u.pathname!==location.pathname){for(const [key,value] of query){if(key.startsWith('utm_')||['gclid','fbclid','msclkid'].includes(key))u.searchParams.set(key,value);}u.hash=location.hash;location.replace(u.href);return;}}}
+// Only explicitly tagged AZRAR campaign IDs are forwarded to the Store.
+const campaignKey = 'azrar_store_campaign';
+const campaignId = query.get('utm_id');
+const taggedVisit = [...query.keys()].some(key => key.startsWith('utm_') || ['gclid','fbclid','msclkid'].includes(key));
+const validCampaign = value => typeof value === 'string' && /^azrar-[a-z0-9][a-z0-9_-]{0,79}$/.test(value);
+let storeCampaign = validCampaign(campaignId) ? campaignId : '';
+try {
+  if (taggedVisit) {
+    sessionStorage.removeItem(campaignKey);
+    if (storeCampaign) sessionStorage.setItem(campaignKey, JSON.stringify({id: storeCampaign, time: Date.now()}));
+  } else if (document.referrer && new URL(document.referrer).origin === location.origin) {
+    const saved = JSON.parse(sessionStorage.getItem(campaignKey) || 'null');
+    if (saved && Date.now() - saved.time < 30 * 60 * 1000 && validCampaign(saved.id)) storeCampaign = saved.id;
+  } else {
+    sessionStorage.removeItem(campaignKey);
+  }
+} catch { /* Direct tagged links also work when browser storage is disabled. */ }
+if (storeCampaign) {
+  for (const button of document.querySelectorAll('a[data-method="store"]')) {
+    const target = new URL(button.href);
+    if (target.origin === 'https://apps.microsoft.com') {
+      target.searchParams.set('cid', storeCampaign);
+      button.href = target.href;
+    }
+  }
+}
 const language=document.querySelector('[data-language-link]');if(language&&location.hash){const u=new URL(language.href);u.hash=location.hash;language.href=u.href;}
 const menu=document.querySelector('.site-menu-button'),nav=document.getElementById('site-navigation');function closeMenu(focus){if(!menu||!nav)return;menu.setAttribute('aria-expanded','false');nav.dataset.open='false';if(focus)menu.focus();}if(menu&&nav){menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';if(open){closeMenu(true)}else{menu.setAttribute('aria-expanded','true');nav.dataset.open='true';nav.querySelector('a')?.focus();}});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){e.preventDefault();closeMenu(true);}});document.addEventListener('click',e=>{if(!e.target.closest('.global-header')&&menu.getAttribute('aria-expanded')==='true')closeMenu(false);});nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu(false);});window.matchMedia('(min-width:1051px)').addEventListener('change',e=>{if(e.matches)closeMenu(false);});}
 const pendingAnalytics=[];
