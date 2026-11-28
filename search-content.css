@@ -1,0 +1,8 @@
+/* Task-specific explanations share the existing brand and do not require JavaScript. */
+.search-content{max-width:1160px;width:calc(100% - 48px);margin:48px auto;padding:28px;border:1px solid #ffffff24;border-radius:16px;background:#ffffff04;color:inherit;line-height:1.9;overflow-wrap:anywhere}
+.search-content h2{font-size:clamp(1.4rem,3vw,2rem);line-height:1.5;margin:0 0 20px;color:var(--head,#fff)}
+.search-content h3{font-size:1.15rem;margin:18px 0 8px;color:var(--head,#fff)}
+.search-content p{margin:0 0 16px}.search-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.search-content figure{margin:0}.search-content img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid #ffffff24}.search-content figcaption{font-size:.9rem;margin-top:10px}
+.search-content ul,.search-content ol{padding-inline-start:24px;margin-block:12px}.search-content li{margin-block:8px}.search-links a{color:#78e2c3;text-underline-offset:4px}.search-links a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+@media(max-width:700px){.search-content{padding:20px;width:calc(100% - 32px);margin-block:32px}.search-grid{grid-template-columns:1fr;gap:20px}}

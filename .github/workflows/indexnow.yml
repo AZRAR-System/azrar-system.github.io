@@ -1,0 +1,30 @@
+name: Notify search engines with IndexNow
+on:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: indexnow-main
+  cancel-in-progress: false
+jobs:
+  notify:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 2
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            /*.html
+            /*.xml
+            /scripts/submit-indexnow.mjs
+          sparse-checkout-cone-mode: false
+      - name: Submit updated public pages after deployment
+        run: node scripts/submit-indexnow.mjs
