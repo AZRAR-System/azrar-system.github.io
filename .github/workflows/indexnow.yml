@@ -1,8 +1,15 @@
 name: Notify search engines with IndexNow
 on:
-  workflow_run:
-    workflows: ["pages build and deployment"]
-    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - '**.css'
+      - '**.js'
+      - 'sitemap.xml'
+      - 'video-sitemap.xml'
+      - 'scripts/submit-indexnow.mjs'
+      - '.github/workflows/indexnow.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -11,13 +18,12 @@ concurrency:
   cancel-in-progress: false
 jobs:
   notify:
-    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          ref: ${{ github.sha }}
           fetch-depth: 2
           persist-credentials: false
           filter: blob:none
